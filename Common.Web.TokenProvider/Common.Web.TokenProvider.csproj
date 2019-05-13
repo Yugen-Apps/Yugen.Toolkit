@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description></Description>
+    <Authors></Authors>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Common.Web.TokenProvider</AssemblyName>
+    <PackageId>Common.Web.TokenProvider</PackageId>
+    <PackageTags></PackageTags>
+    <Company>Common.Web.TokenProvider</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
+  </ItemGroup>
+
+</Project>

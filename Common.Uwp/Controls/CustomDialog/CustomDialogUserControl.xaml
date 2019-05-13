@@ -1,0 +1,104 @@
+﻿<UserControl
+    x:Class="Common.Uwp.Controls.CustomDialog.CustomDialogUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:Common.Uwp.Converters"
+    mc:Ignorable="d"
+    Background="Gray"
+    d:DesignHeight="300"
+    Visibility="{x:Bind IsVisible, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </UserControl.Resources>
+
+    <Grid Background="{x:Bind ContentBackground, Mode=OneWay}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Grid Visibility="{x:Bind IsTopBarVisible,Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
+              Background="{x:Bind TopBarBackground,Mode=OneWay}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{x:Bind DialogTitle,Mode=OneWay}"
+                       Foreground="{x:Bind TopBarForeground, Mode=OneWay}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="18" />
+
+            <Grid Grid.Column="0"
+                  Width="30" 
+                  Height="30" 
+                  HorizontalAlignment="Right" 
+                  Tapped="Close_Tapped" 
+                  Background="Transparent"
+                  x:Name="CloseButton">
+
+                <Grid.Resources>
+                    <Storyboard x:Name="CloseButtonStoryboard">
+                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="CloseButton"
+                                                      Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)">
+                            <LinearColorKeyFrame KeyTime="0:0:0" Value="Transparent" />
+                            <LinearColorKeyFrame KeyTime="0:0:0.2" Value="Black" />
+                            <LinearColorKeyFrame KeyTime="0:0:0.4" Value="Transparent" />
+                        </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                </Grid.Resources>
+
+                <FontIcon Glyph="&#xE106;" Foreground="{x:Bind CloseGlyphForeground, Mode=OneWay}" />
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <ContentControl Content="{x:Bind Content, Mode=OneWay}"
+                            VerticalContentAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch"
+                            Padding="8"/>
+
+        </Grid>
+
+        <Grid Grid.Row="2"
+              Visibility="{x:Bind IsButtonAreaVisible,Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
+              Background="{x:Bind ButtonAreaBackground, Mode=OneWay}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" 
+                    x:Name="LeftButton" 
+                    Tapped="LeftButton_Tapped"
+                    Style="{x:Bind LeftButtonStyle,Mode=OneWay}"
+                    Visibility="{x:Bind IsButtonLeftVisible, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
+                    Content="{x:Bind LeftButtonText,Mode=OneWay}"
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" />
+
+            <Button Grid.Column="1" 
+                    x:Name="RightButton" 
+                    Tapped="RightButton_Tapped"
+                    Style="{x:Bind RightButtonStyle, Mode=OneWay}"
+                    Content="{x:Bind RightButtonText,Mode=OneWay}"
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" />
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>
