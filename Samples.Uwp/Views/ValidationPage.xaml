@@ -59,8 +59,7 @@
             <validation:ValidatingButtonControl
                 Content="Register"
                 IsEnterEnabled="True"
-                Tapped="ValidatingButtonControl_OnTapped">
-            </validation:ValidatingButtonControl>
+                Tapped="ValidatingButtonControl_OnTapped"/>
         </StackPanel>
     </ScrollViewer>
 </Page>

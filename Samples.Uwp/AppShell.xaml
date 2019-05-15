@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Samples.Uwp"
+    xmlns:models="using:Samples.Uwp.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -10,21 +11,22 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <NavigationView ItemInvoked="NavigationView_OnItemInvoked"
-                        SelectionChanged="NavigationView_OnSelectionChanged"
-                        OpenPaneLength="200"
+        <NavigationView OpenPaneLength="200"
                         IsBackButtonVisible="Collapsed">
 
-            <NavigationView.MenuItems>
-                <NavigationViewItem Content="Home" Tag="HomePage">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE10F;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-                <NavigationViewItemSeparator/>
-                <NavigationViewItemHeader Content="Controls"/>
-                <NavigationViewItem Icon="AllApps" Content="ValidationPage" Tag="ValidationPage"/>
-            </NavigationView.MenuItems>
+            <NavigationView.PaneCustomContent>
+                <TreeView Name="MenuTree"
+                          ItemsSource="{x:Bind MenuCollection}"
+                          ItemInvoked="MenuTree_ItemInvoked">
+                    <TreeView.ItemTemplate>
+                        <DataTemplate x:DataType="models:MenuItem">
+                            <TreeViewItem ItemsSource="{x:Bind Children}"
+                                          Content="{x:Bind Name}"
+                                          IsExpanded="{x:Bind IsExpanded}"/>
+                        </DataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </NavigationView.PaneCustomContent>
 
             <Frame x:Name="MainFrame" 
                    x:FieldModifier="public"

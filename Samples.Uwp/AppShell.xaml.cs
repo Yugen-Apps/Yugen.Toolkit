@@ -1,4 +1,7 @@
 ﻿using Common.Uwp.Services;
+using Samples.Uwp.Constants;
+using Samples.Uwp.Models;
+using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -10,21 +13,17 @@ namespace Samples.Uwp
     /// </summary>
     public sealed partial class AppShell : Page
     {
+        private ObservableCollection<MenuItem> MenuCollection = new ObservableCollection<MenuItem>(Menu.MenuCollection);
+
         public AppShell()
         {
             this.InitializeComponent();
         }
 
-        private void NavigationView_OnItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        private void MenuTree_ItemInvoked(TreeView sender, TreeViewItemInvokedEventArgs args)
         {
-            if (args.InvokedItem is NavigationViewItem item)
-                NavigationService.NavigateToPage(item.Tag.ToString());
-        }
-
-        private void NavigationView_OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-        {
-            if (args.SelectedItem is NavigationViewItem item)
-                NavigationService.NavigateToPage(item.Tag.ToString());
+            if (args.InvokedItem is MenuItem item)
+                NavigationService.NavigateToPage(item.Tag);
         }
     }
 }
