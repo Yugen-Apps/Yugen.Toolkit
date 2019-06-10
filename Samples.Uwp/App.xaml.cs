@@ -47,7 +47,7 @@ namespace Samples.Uwp
             }
 
             // adds callbacks for Back requests and changes 
-            NavigationService.Initialize(typeof(App), shell.MainFrame, typeof(MainPage));
+            NavigationService.Initialize(typeof(App), shell.MainFrame, typeof(HomePage));
 
             // Place our app shell in the current Window
             Window.Current.Content = shell;
@@ -56,7 +56,7 @@ namespace Samples.Uwp
             {
                 // When the navigation stack isn't restored, navigate to the first page
                 // suppressing the initial entrance animation.
-                NavigationService.NavigateToPage(typeof(MainPage), e.Arguments, new SuppressNavigationTransitionInfo());
+                NavigationService.NavigateToPage(typeof(HomePage), e.Arguments, new SuppressNavigationTransitionInfo());
             }
 
             // Ensure the current window is active

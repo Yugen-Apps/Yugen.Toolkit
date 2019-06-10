@@ -13,7 +13,7 @@ namespace Samples.Uwp
     /// </summary>
     public sealed partial class AppShell : Page
     {
-        private ObservableCollection<MenuItem> MenuCollection = new ObservableCollection<MenuItem>(Menu.MenuCollection);
+        private readonly ObservableCollection<MenuItem> MenuCollection = new ObservableCollection<MenuItem>(Menu.MenuCollection);
 
         public AppShell()
         {
