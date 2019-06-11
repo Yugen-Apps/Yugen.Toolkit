@@ -1,7 +1,7 @@
-﻿using Samples.Uwp.Models;
+﻿using UwpCommunity.Uwp.Samples.Models;
 using System.Collections.Generic;
 
-namespace Samples.Uwp.Constants
+namespace UwpCommunity.Uwp.Samples.Constants
 {
     public static class Menu
     {

@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="Samples.Uwp.App"
+    x:Class="UwpCommunity.Uwp.Samples.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Samples.Uwp"
+    xmlns:local="using:UwpCommunity.Uwp.Samples"
     xmlns:validation="using:UwpCommunity.Standard.Validation">
 
     <Application.Resources>

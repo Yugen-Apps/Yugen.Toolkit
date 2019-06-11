@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UwpCommunity.Uwp.ViewModels;
 
-namespace Samples.Uwp.ViewModels
+namespace UwpCommunity.Uwp.Samples.ViewModels
 {
     public class ValidationViewModel : BaseViewModel
     {

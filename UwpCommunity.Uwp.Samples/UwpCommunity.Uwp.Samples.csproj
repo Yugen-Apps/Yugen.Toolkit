@@ -7,8 +7,8 @@
     <ProjectGuid>{9FB8D2FD-2C73-4E1F-B428-F6029B78E42B}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Samples.Uwp</RootNamespace>
-    <AssemblyName>Samples.Uwp</AssemblyName>
+    <RootNamespace>UwpCommunity.Uwp.Samples</RootNamespace>
+    <AssemblyName>UwpCommunity.Uwp.Samples</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>

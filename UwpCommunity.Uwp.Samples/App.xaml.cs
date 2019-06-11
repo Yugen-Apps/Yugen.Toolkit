@@ -6,9 +6,9 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using UwpCommunity.Uwp.Services;
-using Samples.Uwp.Views;
+using UwpCommunity.Uwp.Samples.Views;
 
-namespace Samples.Uwp
+namespace UwpCommunity.Uwp.Samples
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

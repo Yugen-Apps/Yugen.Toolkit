@@ -2,7 +2,7 @@
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace Samples.Uwp.Models
+namespace UwpCommunity.Uwp.Samples.Models
 {
     public class MenuItem
     {
