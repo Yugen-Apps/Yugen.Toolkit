@@ -16,10 +16,5 @@ namespace UwpCommunity.Standard.Helpers
 
             return string.Empty;
         }
-
-        public static string GetAppVersion()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
