@@ -1,9 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Common.Printer.UsbPos.Service</AssemblyName>
-    <RootNamespace>Common.Printer.UsbPos.Service</RootNamespace>
-  </PropertyGroup>
-
-</Project>

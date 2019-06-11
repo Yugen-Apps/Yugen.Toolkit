@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>UwpCommunity.Standard.Printer</AssemblyName>
+    <RootNamespace>UwpCommunity.Standard.Printer</RootNamespace>
+  </PropertyGroup>
+
+</Project>
