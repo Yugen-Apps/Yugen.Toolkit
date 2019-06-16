@@ -99,16 +99,21 @@
     <Compile Include="AppShell.xaml.cs">
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
-    <Compile Include="Views\ValidationPage.xaml.cs">
+    <Compile Include="ViewModels\Controls\GraphViewModel.cs" />
+    <Compile Include="Views\Controls\GraphPage.xaml.cs">
+      <DependentUpon>GraphPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ValidationPage.xaml.cs">
       <DependentUpon>ValidationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ValidationViewModel.cs" />
+    <Compile Include="ViewModels\Controls\ValidationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -135,7 +140,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\ValidationPage.xaml">
+    <Page Include="Views\Controls\GraphPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\ValidationPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -154,9 +163,9 @@
       <Project>{01b7d7df-9c32-425d-9b53-737519345032}</Project>
       <Name>UwpCommunity.Standard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UwpCommunity.Uwp.Controls.Validation\UwpCommunity.Uwp.Controls.Validation.csproj">
-      <Project>{15b8b24c-abac-48f7-b728-82a084a80972}</Project>
-      <Name>UwpCommunity.Uwp.Controls.Validation</Name>
+    <ProjectReference Include="..\UwpCommunity.Uwp.Controls\UwpCommunity.Uwp.Controls.csproj">
+      <Project>{f41590ba-11b3-4a1f-8374-a7de83d58dc7}</Project>
+      <Name>UwpCommunity.Uwp.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\UwpCommunity.Uwp\UwpCommunity.Uwp.csproj">
       <Project>{e535535b-b033-4f77-bd09-2c6ef2054b5d}</Project>

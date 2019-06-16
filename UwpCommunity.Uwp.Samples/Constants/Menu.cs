@@ -28,6 +28,11 @@ namespace UwpCommunity.Uwp.Samples.Constants
                 {
                     Name = "Validation",
                     Tag = "ValidationPage"
+                },
+                new MenuItem
+                {
+                    Name = "Graph",
+                    Tag = "GraphPage"
                 }
             }
         };

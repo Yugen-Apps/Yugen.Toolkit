@@ -21,20 +21,5 @@
         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Useful Links</TextBlock>
 
         <HyperlinkButton Content="GitHub Repository" NavigateUri="https://github.com/UWPCommunity/Toolkit/"/>
-
-        <!--<TextBox Header="Username"></TextBox>
-
-        <PasswordBox Header="Password"></PasswordBox>
-
-        <validation:ValidatingTextBoxUserControl Header="Name"/>
-
-        <validation:ValidatingPasswordBoxUserControl Header="Password"/>
-
-        <Button Content="Login"
-                Click="ButtonBase_OnClick">
-            <Button.KeyboardAccelerators>
-                <KeyboardAccelerator Key="Enter"/>
-            </Button.KeyboardAccelerators>
-        </Button>-->
     </StackPanel>
 </Page>

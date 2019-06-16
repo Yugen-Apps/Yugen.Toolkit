@@ -1,11 +1,11 @@
 ﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
-using UwpCommunity.Uwp.Samples.ViewModels;
 using Windows.UI.Popups;
+using UwpCommunity.Uwp.Samples.ViewModels.Controls;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace UwpCommunity.Uwp.Samples.Views
+namespace UwpCommunity.Uwp.Samples.Views.Controls
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

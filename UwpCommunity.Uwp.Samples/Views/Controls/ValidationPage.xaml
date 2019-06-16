@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="UwpCommunity.Uwp.Samples.Views.ValidationPage"
+    x:Class="UwpCommunity.Uwp.Samples.Views.Controls.ValidationPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UwpCommunity.Uwp.Samples"
@@ -101,3 +101,13 @@
         </Grid>
     </ScrollViewer>
 </Page>
+
+<!--<TextBox Header="Username"></TextBox>
+    <PasswordBox Header="Password"></PasswordBox>
+
+    <Button Content="Login"
+            Click="ButtonBase_OnClick">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator Key="Enter"/>
+        </Button.KeyboardAccelerators>
+    </Button>-->

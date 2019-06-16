@@ -13,10 +13,5 @@ namespace UwpCommunity.Uwp.Samples.Views
         {
             this.InitializeComponent();
         }
-
-        //private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    LoggerHelper.WriteLine(GetType(), "");
-        //}
     }
 }

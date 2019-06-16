@@ -106,9 +106,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Controls\GraphUserControl.xaml.cs">
-      <DependentUpon>GraphUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\NotificationBannerUserControl.xaml.cs">
       <DependentUpon>NotificationBannerUserControl.xaml</DependentUpon>
     </Compile>
@@ -118,6 +115,7 @@
     <Compile Include="Converters\BoolToNullableConverter.cs" />
     <Compile Include="Converters\DebugToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Evaluators\BindingEvaluator.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="Handlers\BarcodeHandler.cs" />
     <Compile Include="Helpers\DebugVisibilityHelper.cs" />
@@ -155,10 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\CustomDialog\CustomDialogUserControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\GraphUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

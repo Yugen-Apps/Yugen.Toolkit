@@ -2,16 +2,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:controls="using:UwpCommunity.Uwp.Controls"
-             x:Class="UwpCommunity.Uwp.Controls.GraphUserControl"
+             xmlns:graphs="using:UwpCommunity.Uwp.Controls.Graphs"
+             x:Class="UwpCommunity.Uwp.Controls.Graphs.BarGraphUserControl"
              mc:Ignorable="d"
              d:DesignHeight="300"
              d:DesignWidth="400"
-             x:Name="GraphhUserControl">
+             x:Name="ThisBarGraphUserControl">
 
     <UserControl.Resources>
 
-        <controls:GraphRealGoalConverter x:Key="GraphRealGoalConverter" />
+        <graphs:RealGoalConverter x:Key="RealGoalConverter" />
 
         <Style x:Key="ScaleBarStyle"
                TargetType="Rectangle">
@@ -173,7 +173,7 @@
             </ListView.ItemsPanel>
 
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="controls:ValueListViewModel">
+                <DataTemplate x:DataType="graphs:ValueListViewModel">
                     <Grid Width="10">
                         <!--Width="{x:Bind ColumnWidth, Mode=OneWay}">-->
 
