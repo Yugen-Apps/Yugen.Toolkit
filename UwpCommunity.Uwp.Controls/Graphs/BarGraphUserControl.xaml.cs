@@ -233,6 +233,22 @@ namespace UwpCommunity.Uwp.Controls.Graphs
 
         #endregion
 
+        #region BottomContentProperty
+
+        public static readonly DependencyProperty BottomContentProperty = DependencyProperty.Register(
+            nameof(BottomContent),
+            typeof(string),
+            typeof(BarGraphUserControl),
+            new PropertyMetadata(default(string)));
+
+        public string BottomContent
+        {
+            get { return (string)GetValue(BottomContentProperty); }
+            set { SetValue(BottomContentProperty, value); }
+        }
+
+        #endregion
+
         // TODO: improve https://stackoverflow.com/questions/7321710/wpf-binding-collection-property-in-usercontrol
         public ObservableCollection<ValueListViewModel> ValueCollection { get; set; } = new ObservableCollection<ValueListViewModel>();
                 

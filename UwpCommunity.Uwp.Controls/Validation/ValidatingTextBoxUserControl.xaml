@@ -66,6 +66,8 @@
                  IsSpellCheckEnabled="{x:Bind IsSpellCheckEnabled, Mode=OneWay}"
                  InputScope="{x:Bind InputScope, Mode=OneWay}"
                  Style="{x:Bind TextBoxStyle, Mode=OneWay}" />
+        <!--UpdateSourceTrigger
+        https://docs.microsoft.com/en-us/windows/uwp/data-binding/data-binding-in-depth-->
         
         <Border x:Name="MessageBox"
                 Padding="4"
