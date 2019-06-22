@@ -11,8 +11,6 @@
 
     <UserControl.Resources>
 
-        <graphs:RealGoalConverter x:Key="RealGoalConverter" />
-
         <Style x:Key="ScaleBarStyle"
                TargetType="Rectangle">
             <Setter Property="Fill"
@@ -181,7 +179,7 @@
                 <DataTemplate x:DataType="graphs:ValueListViewModel">
                     <Grid Width="{Binding ColumnWidth, Mode=OneWay, ElementName=ThisBarGraphUserControl}">
 
-                            <Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
@@ -206,10 +204,9 @@
 
         <Rectangle Style="{StaticResource GoalLineStyle}"
                    Width="{x:Bind Width, Mode=OneWay}"
-                   VerticalAlignment="Top"
-                   RenderTransformOrigin="0.5,0.5">
+                   VerticalAlignment="Bottom">
             <Rectangle.RenderTransform>
-                <CompositeTransform TranslateY="{x:Bind Goal, Mode=OneWay}" />
+                <CompositeTransform TranslateY="{x:Bind RealGoal, Mode=OneWay}" />
             </Rectangle.RenderTransform>
         </Rectangle>
 

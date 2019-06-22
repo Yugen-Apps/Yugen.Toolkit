@@ -162,7 +162,11 @@ namespace UwpCommunity.Uwp.Controls.Graphs
         public int ScaleBarValue
         {
             get { return (int)GetValue(ScaleBarValueProperty); }
-            set { SetValue(ScaleBarValueProperty, value); }
+            set
+            {
+                SetValue(ScaleBarValueProperty, value);
+                RealGoal = (Goal * ScaleBarValue / 100) * -1;
+            }
         }
 
         #endregion
@@ -229,7 +233,11 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             set { SetValue(GoalProperty, value); }
         }
 
-        public int RealGoal => Goal * ScaleBarValue / 100;
+        private int RealGoal
+        {
+            get { return (int)GetValue(GoalProperty); }
+            set { SetValue(GoalProperty, value); }
+        }
 
         #endregion
 

@@ -125,7 +125,6 @@
       <DependentUpon>BarGraphUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Graphs\ValueListViewModel.cs" />
-    <Compile Include="Graphs\RealGoalConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\BaseValidatingUserControl.cs" />
     <Compile Include="Validation\Helpers\ValidatingFormHelper.cs" />

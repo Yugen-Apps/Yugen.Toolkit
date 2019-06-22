@@ -115,6 +115,7 @@
     <Compile Include="Converters\BoolToNullableConverter.cs" />
     <Compile Include="Converters\DebugToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\ParameterConverter.cs" />
     <Compile Include="Evaluators\BindingEvaluator.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="Handlers\BarcodeHandler.cs" />

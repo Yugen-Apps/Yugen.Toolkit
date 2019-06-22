@@ -16,6 +16,7 @@
             ValueMemberPath="Value" 
             ColumnWidth="50"
             BottomContent="bla bla bla"
-            Goal="50"/>
+            Goal="70"
+            ScaleBarValue="200"/>
     </Grid>
 </Page>
