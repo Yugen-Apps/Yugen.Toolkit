@@ -1,9 +1,12 @@
 using System;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
+using UwpCommunity.Uwp.Interfaces;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Navigation;
 
 namespace UwpCommunity.Uwp.Services
 {
@@ -18,6 +21,23 @@ namespace UwpCommunity.Uwp.Services
             _appAssembly = app.GetTypeInfo().Assembly;
             _rootFrame = rootFrame;
             _rootPage = rootPage;
+
+            _rootFrame.Navigating += async (s, e) =>
+            {
+                if (e.Cancel)
+                    return;
+
+                // allow the viewmodel to cancel navigation
+                //e.Cancel = !NavigatingFrom(false);
+                if (!e.Cancel)
+                {
+                    await NavigateFromAsync(false);
+                }
+            };
+            _rootFrame.Navigated += (s, e) =>
+            {
+                NavigateTo(e.NavigationMode, e.Parameter);
+            };
 
             AddBackButton();
         }
@@ -90,7 +110,7 @@ namespace UwpCommunity.Uwp.Services
             ClearBackStackTillLevel(1);
         }
 
-        public static void NavigateToPageFromLogin(Type page, object parameter = null, bool force = false)
+        public static void NavigateToPageAndRemoveLastFromStack(Type page, object parameter = null, bool force = false)
         {
             NavigateToPage(page, parameter, null, force);
 
@@ -112,5 +132,58 @@ namespace UwpCommunity.Uwp.Services
 
             return false;
         }
+
+
+        public static void NavigateTo(NavigationMode mode, object parameter)
+        {
+            var page = _rootFrame.Content as Page;
+            if (page != null)
+            {
+                // call viewmodel
+                var dataContext = page.DataContext as INavigable;
+                if (dataContext != null)
+                {
+                    dataContext.OnNavigatedTo(parameter, mode, null);
+                }
+            }
+        }
+
+        // after navigate
+        public static async Task NavigateFromAsync(bool suspending)
+        {
+            var page = _rootFrame.Content as Page;
+            if (page != null)
+            {
+                // call viewmodel
+                var dataContext = page.DataContext as INavigable;
+                if (dataContext != null)
+                {
+                    //var pageState = _rootFrame.CurrentSourcePageType.GetType();
+                    await dataContext.OnNavigatedFromAsync(null, suspending);
+                }
+            }
+        }
+
+        // before navigate (cancellable)
+        //public static bool NavigatingFrom(bool suspending)
+        //{
+        //    var page = _rootFrame.Content as Page;
+        //    if (page != null)
+        //    {
+        //        var dataContext = page.DataContext as INavigable;
+        //        if (dataContext != null)
+        //        {
+        //            var args = new NavigatingEventArgs
+        //            {
+        //                PageType = _rootFrame.CurrentSourcePageType,
+        //                Parameter = _rootFrame.CurrentSourcePageTypeProperty,
+        //                Suspending = suspending,
+        //            };
+        //            dataContext.OnNavigatingFrom(args);
+        //            return !args.Cancel;
+        //        }
+        //    }
+        //    return true;
+        //}
     }
 }

@@ -135,6 +135,7 @@
     <Compile Include="Helpers\FilePickerHelper.cs" />
     <Compile Include="Extensions\FocusExtension.cs" />
     <Compile Include="Providers\ImageProvider.cs" />
+    <Compile Include="Interfaces\INavigable.cs" />
     <Compile Include="Services\LocalizationService.cs" />
     <Compile Include="Helpers\MessageDialogHelper.cs" />
     <Compile Include="Services\NavigationService.cs" />

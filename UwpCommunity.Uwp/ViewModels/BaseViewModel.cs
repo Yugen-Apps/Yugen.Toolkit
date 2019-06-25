@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using UwpCommunity.Uwp.Interfaces;
+using Windows.UI.Xaml.Navigation;
 
 namespace UwpCommunity.Uwp.ViewModels
 {
-    public abstract class BaseViewModel : INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged, INavigable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -44,6 +47,11 @@ namespace UwpCommunity.Uwp.ViewModels
             doSet.Invoke();
             RaisePropertyChanged(property);
         }
+
+
+        public virtual void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state) { /* nothing by default */ }
+        public virtual async Task OnNavigatedFromAsync(IDictionary<string, object> state, bool suspending) { await Task.Yield(); }
+        //public virtual void OnNavigatingFrom(NavigatingEventArgs args) { /* nothing by default */ }
     }
 
     public class BaseViewModel<T> : BaseViewModel where T : class, new()

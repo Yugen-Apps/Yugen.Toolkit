@@ -9,7 +9,7 @@ namespace UwpCommunity.Uwp.Samples.Constants
         {
             HomeMenu,
             ControlsMenu,
-            //LearningMenu
+            NavigationMenu
         };
 
         public static MenuItem HomeMenu => new MenuItem
@@ -37,32 +37,18 @@ namespace UwpCommunity.Uwp.Samples.Constants
             }
         };
 
-        public static MenuItem LearningMenu => new MenuItem
+        public static MenuItem NavigationMenu => new MenuItem
         {
-            Name = "70-357 Developing Mobile Apps",
+            Name = "Navigation",
             IsExpanded = false,
             Children =
             {
                 new MenuItem
                 {
-                    Name = "XAML",
-                    Children =
-                    {
-                        new MenuItem
-                        {
-                            Name = "Page layout",
-                            Children =
-                            {
-                                new MenuItem
-                                {
-                                    Name = "RelativePanel",
-                                    Tag = "ValidationPage"
-                                }
-                            }
-                        }
-                    }
+                    Name = "Basic Navigation",
+                    Tag = "NavigationPage"
                 }
-            }
+            }                      
         };
     }
 }
