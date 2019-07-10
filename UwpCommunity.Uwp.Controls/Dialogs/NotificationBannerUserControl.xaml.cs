@@ -1,21 +1,27 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace UwpCommunity.Uwp.Controls
+namespace UwpCommunity.Uwp.Controls.Dialogs
 {
     public sealed partial class NotificationBannerUserControl : UserControl
     {
+        #region DependencyProperties
+        
         public string Message
         {
             get { return (string)GetValue(MessageProperty); }
             set { SetValue(MessageProperty, value); }
         }
 
-        public static readonly DependencyProperty MessageProperty =
-            DependencyProperty.Register(nameof(Message), typeof(string), typeof(NotificationBannerUserControl), new PropertyMetadata(string.Empty));
+        public static readonly DependencyProperty MessageProperty =DependencyProperty.Register(
+            nameof(Message), 
+            typeof(string), 
+            typeof(NotificationBannerUserControl), 
+            new PropertyMetadata(string.Empty));
 
         public Style UcStyle
         {
@@ -23,8 +29,11 @@ namespace UwpCommunity.Uwp.Controls
             set { SetValue(UcStyleProperty, value); }
         }
 
-        public static readonly DependencyProperty UcStyleProperty =
-            DependencyProperty.Register(nameof(UcStyle), typeof(Style), typeof(NotificationBannerUserControl), new PropertyMetadata(default(Style)));
+        public static readonly DependencyProperty UcStyleProperty = DependencyProperty.Register(
+            nameof(UcStyle), 
+            typeof(Style), 
+            typeof(NotificationBannerUserControl), 
+            new PropertyMetadata(default(Style)));
 
         public bool BannerButtonCloseVisibility
         {
@@ -32,17 +41,23 @@ namespace UwpCommunity.Uwp.Controls
             set { SetValue(BannerButtonCloseVisibilityProperty, value); }
         }
 
-        public static readonly DependencyProperty BannerButtonCloseVisibilityProperty =
-            DependencyProperty.Register(nameof(BannerButtonCloseVisibility), typeof(bool), typeof(NotificationBannerUserControl), new PropertyMetadata(false));
+        public static readonly DependencyProperty BannerButtonCloseVisibilityProperty = DependencyProperty.Register(
+            nameof(BannerButtonCloseVisibility), 
+            typeof(bool), 
+            typeof(NotificationBannerUserControl), 
+            new PropertyMetadata(false));
 
-        public string Duration
+        public TimeSpan Duration
         {
-            get { return (string)GetValue(DurationProperty); }
+            get { return (TimeSpan)GetValue(DurationProperty); }
             set { SetValue(DurationProperty, value); }
         }
 
-        public static readonly DependencyProperty DurationProperty =
-            DependencyProperty.Register(nameof(Duration), typeof(string), typeof(NotificationBannerUserControl), new PropertyMetadata("0:0:1"));
+        public static readonly DependencyProperty DurationProperty = DependencyProperty.Register(
+            nameof(Duration), 
+            typeof(TimeSpan), 
+            typeof(NotificationBannerUserControl), 
+            new PropertyMetadata(null));
 
         public bool AutoReverse
         {
@@ -50,8 +65,11 @@ namespace UwpCommunity.Uwp.Controls
             set { SetValue(AutoReverseProperty, value); }
         }
 
-        public static readonly DependencyProperty AutoReverseProperty =
-            DependencyProperty.Register(nameof(AutoReverse), typeof(bool), typeof(NotificationBannerUserControl), new PropertyMetadata(true));
+        public static readonly DependencyProperty AutoReverseProperty = DependencyProperty.Register(
+            nameof(AutoReverse), 
+            typeof(bool), 
+            typeof(NotificationBannerUserControl), 
+            new PropertyMetadata(true));
 
         public string BannerSymbol
         {
@@ -59,10 +77,14 @@ namespace UwpCommunity.Uwp.Controls
             set { SetValue(BannerSymbolProperty, value); }
         }
 
-        public static readonly DependencyProperty BannerSymbolProperty =
-            DependencyProperty.Register(nameof(BannerSymbol), typeof(string), typeof(NotificationBannerUserControl), new PropertyMetadata("Accept"));
+        public static readonly DependencyProperty BannerSymbolProperty = DependencyProperty.Register(
+            nameof(BannerSymbol), 
+            typeof(string), 
+            typeof(NotificationBannerUserControl), 
+            new PropertyMetadata("Accept"));
 
-        public string DefaultMessage { get; set; } = "Message";
+        #endregion
+
         public string DefaultSuccess { get; set; } = "Success";
         public string DefaultError { get; set; } = "Error";
         public string DefaultWarning { get; set; } = "Warning";
@@ -71,27 +93,22 @@ namespace UwpCommunity.Uwp.Controls
         {
             this.InitializeComponent();
         }
-
-        private void NotificationBannerUserControl_OnLoaded(object sender, RoutedEventArgs e)
-        {
-            Message = DefaultMessage;
-        }
-
+        
         private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
         {
             if (this.Opacity > 0) return;
-            FadeInStoryboard.Stop();
-            this.Opacity = 1;
+            FadeStoryboard.Stop();
+            Opacity = 1;
         }
 
         private void ClearButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             if (!(sender is Button) || this.Opacity < 1) return;
-            FadeInStoryboard.Stop();
-            this.Opacity = 0;
+            FadeStoryboard.Stop();
+            Opacity = 0;
         }
 
-        public void ShowIsSuccess(bool success, string message = "", bool buttonClose = false, bool autoreverse = true, string duration = "0:0:1")
+        public void ShowIsSuccess(bool success, string message = "", bool buttonClose = false, bool autoreverse = true, int duration = 1000)
         {
             if (success)
                 ShowSuccess(message, buttonClose, autoreverse, duration);
@@ -99,7 +116,7 @@ namespace UwpCommunity.Uwp.Controls
                 ShowError(message, buttonClose, autoreverse, duration);
         }
 
-        public void ShowSuccess(string message = "", bool buttonClose = false, bool autoreverse = true, string duration = "0:0:1")
+        public void ShowSuccess(string message = "", bool buttonClose = false, bool autoreverse = true, int duration = 1000)
         {
             Message = string.IsNullOrEmpty(message) ? DefaultSuccess : message;
             BannerSymbol = "Accept";
@@ -108,7 +125,7 @@ namespace UwpCommunity.Uwp.Controls
             ShowNotificationBanner(buttonClose, autoreverse, duration);
         }
 
-        public void ShowWarning(string message = "", bool buttonClose = false, bool autoreverse = true, string duration = "0:0:1")
+        public void ShowWarning(string message = "", bool buttonClose = false, bool autoreverse = true, int duration = 1000)
         {
             Message = string.IsNullOrEmpty(message) ? DefaultWarning : message;
             BannerSymbol = "Important";
@@ -117,7 +134,7 @@ namespace UwpCommunity.Uwp.Controls
             ShowNotificationBanner(buttonClose, autoreverse, duration);
         }
 
-        public void ShowError(string message = "", bool buttonClose = false, bool autoreverse = true, string duration = "0:0:1")
+        public void ShowError(string message = "", bool buttonClose = false, bool autoreverse = true, int duration = 1000)
         {
             Message = string.IsNullOrEmpty(message) ? DefaultError : message;
             BannerSymbol = "Important";
@@ -126,14 +143,14 @@ namespace UwpCommunity.Uwp.Controls
             ShowNotificationBanner(buttonClose, autoreverse, duration);
         }
 
-        private void ShowNotificationBanner(bool buttonClose = false, bool autoreverse = true, string duration = "0:0:1")
+        private void ShowNotificationBanner(bool buttonClose, bool autoreverse, int duration)
         {
             BannerButtonCloseVisibility = buttonClose;
             AutoReverse = autoreverse;
-            Duration = duration;
+            Duration = new TimeSpan(0,0,0,0,duration);
 
-            this.Opacity = 0;
-            FadeInStoryboard.Begin();
+            Opacity = 0;
+            FadeStoryboard.Begin();
         }
     }
 }

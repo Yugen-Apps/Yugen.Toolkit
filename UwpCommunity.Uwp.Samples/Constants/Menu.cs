@@ -1,5 +1,8 @@
 ﻿using UwpCommunity.Uwp.Samples.Models;
 using System.Collections.Generic;
+using UwpCommunity.Uwp.Samples.Views;
+using UwpCommunity.Uwp.Samples.Views.Controls;
+using UwpCommunity.Uwp.Samples.Views.Navigation;
 
 namespace UwpCommunity.Uwp.Samples.Constants
 {
@@ -15,7 +18,7 @@ namespace UwpCommunity.Uwp.Samples.Constants
         public static MenuItem HomeMenu => new MenuItem
         {
             Name = "Home",
-            Tag = "HomePage"
+            Tag = nameof(HomePage)
         };
 
         public static MenuItem ControlsMenu => new MenuItem
@@ -27,12 +30,22 @@ namespace UwpCommunity.Uwp.Samples.Constants
                 new MenuItem
                 {
                     Name = "Validation",
-                    Tag = "ValidationPage"
+                    Tag = nameof(ValidationPage)
                 },
                 new MenuItem
                 {
                     Name = "Graph",
-                    Tag = "GraphPage"
+                    Tag = nameof(GraphPage)
+                },
+                new MenuItem
+                {
+                    Name = "Custom Dialog",
+                    Tag = nameof(CustomDialogPage)
+                },
+                new MenuItem
+                {
+                    Name = "Notification Banner",
+                    Tag = nameof(NotificationBannerPage)
                 }
             }
         };
@@ -46,7 +59,7 @@ namespace UwpCommunity.Uwp.Samples.Constants
                 new MenuItem
                 {
                     Name = "Basic Navigation",
-                    Tag = "NavigationPage"
+                    Tag = nameof(NavigationPage)
                 }
             }                      
         };

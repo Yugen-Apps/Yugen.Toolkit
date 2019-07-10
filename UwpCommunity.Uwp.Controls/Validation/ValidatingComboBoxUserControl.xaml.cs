@@ -5,13 +5,7 @@ namespace UwpCommunity.Uwp.Controls.Validation
 {
     public partial class ValidatingComboBoxUserControl
     {
-        #region ItemsSourceProperty
-
-        public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
-            nameof(ItemsSource),
-            typeof(object),
-            typeof(ValidatingComboBoxUserControl),
-            new PropertyMetadata(null));
+        #region DependencyProperties
 
         public object ItemsSource
         {
@@ -19,12 +13,8 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(ItemsSourceProperty, value); }
         }
 
-        #endregion
-
-        #region SelectedItemProperty
-
-        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
-            nameof(SelectedItem),
+        public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
+            nameof(ItemsSource),
             typeof(object),
             typeof(ValidatingComboBoxUserControl),
             new PropertyMetadata(null));
@@ -35,13 +25,9 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(SelectedItemProperty, value); }
         }
 
-        #endregion
-
-        #region ItemTemplateProperty
-
-        public static readonly DependencyProperty ItemTemplateProperty = DependencyProperty.Register(
-            nameof(ItemTemplate),
-            typeof(DataTemplate),
+        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
+            nameof(SelectedItem),
+            typeof(object),
             typeof(ValidatingComboBoxUserControl),
             new PropertyMetadata(null));
 
@@ -50,6 +36,12 @@ namespace UwpCommunity.Uwp.Controls.Validation
             get { return (DataTemplate)GetValue(ItemTemplateProperty); }
             set { SetValue(ItemTemplateProperty, value); }
         }
+
+        public static readonly DependencyProperty ItemTemplateProperty = DependencyProperty.Register(
+            nameof(ItemTemplate),
+            typeof(DataTemplate),
+            typeof(ValidatingComboBoxUserControl),
+            new PropertyMetadata(null));
 
         #endregion
 

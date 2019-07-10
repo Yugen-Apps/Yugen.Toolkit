@@ -11,7 +11,17 @@ namespace UwpCommunity.Uwp.Controls.Graphs
     public sealed partial class BarGraphUserControl : UserControl
     {
         //https://raw.githubusercontent.com/ailon/UWPQuickCharts/master/UWPCharts/SerialChart.cs
-        #region CategoryValueMemberPathProperty
+        #region DependencyProperties
+
+        /// <summary>
+        /// Gets or sets path to the property holding category values in data source.
+        /// This is a dependency property.
+        /// </summary>
+        public string CategoryValueMemberPath
+        {
+            get { return (string)GetValue(CategoryValueMemberPathProperty); }
+            set { SetValue(CategoryValueMemberPathProperty, value); }
+        }
 
         /// <summary>
         /// Identifies <see cref="CategoryValueMemberPath"/> dependency property.
@@ -24,18 +34,14 @@ namespace UwpCommunity.Uwp.Controls.Graphs
         );
 
         /// <summary>
-        /// Gets or sets path to the property holding category values in data source.
+        /// Gets or sets path to the member in the datasource holding values for this graph.
         /// This is a dependency property.
         /// </summary>
-        public string CategoryValueMemberPath
+        public string ValueMemberPath
         {
-            get { return (string)GetValue(CategoryValueMemberPathProperty); }
-            set { SetValue(CategoryValueMemberPathProperty, value); }
+            get { return (string)GetValue(ValueMemberPathProperty); }
+            set { SetValue(ValueMemberPathProperty, value); }
         }
-
-        #endregion
-
-        #region ValueMemberPathProperty
 
         /// <summary>
         /// Identifies <see cref="ValueMemberPath"/> dependency property.
@@ -46,16 +52,6 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             typeof(BarGraphUserControl),
             new PropertyMetadata(null, new PropertyChangedCallback(BarGraphUserControl.OnValueMemberPathPropertyChanged))
         );
-
-        /// <summary>
-        /// Gets or sets path to the member in the datasource holding values for this graph.
-        /// This is a dependency property.
-        /// </summary>
-        public string ValueMemberPath
-        {
-            get { return (string)GetValue(ValueMemberPathProperty); }
-            set { SetValue(ValueMemberPathProperty, value); }
-        }
 
         private static void OnValueMemberPathPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -68,18 +64,6 @@ namespace UwpCommunity.Uwp.Controls.Graphs
         /// </summary>
         public event EventHandler<DataPathEventArgs> ValueMemberPathChanged;
 
-        #endregion
-
-        #region DataSourceProperty
-
-        /// <summary>
-        /// Identifies <see cref="DataSource"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty DataSourceProperty = DependencyProperty.Register(
-            nameof(DataSource), 
-            typeof(IEnumerable), 
-            typeof(BarGraphUserControl),
-            new PropertyMetadata(null, new PropertyChangedCallback(BarGraphUserControl.OnDataSourcePropertyChanged)));
 
         /// <summary>
         /// Gets or sets data source for the chart.
@@ -90,6 +74,15 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             get { return (IEnumerable)GetValue(DataSourceProperty); }
             set { SetValue(DataSourceProperty, value); }
         }
+
+        /// <summary>
+        /// Identifies <see cref="DataSource"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty DataSourceProperty = DependencyProperty.Register(
+            nameof(DataSource), 
+            typeof(IEnumerable), 
+            typeof(BarGraphUserControl),
+            new PropertyMetadata(null, new PropertyChangedCallback(BarGraphUserControl.OnDataSourcePropertyChanged)));
         
         private static void OnDataSourcePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -132,16 +125,7 @@ namespace UwpCommunity.Uwp.Controls.Graphs
                 ValueCollection.Add(new ValueListViewModel { Percentage = percentage, Text = text });
             }
         }
-
-        #endregion
-
-        #region ScaleBarStyleProperty
-
-        public static readonly DependencyProperty ScaleBarStyleProperty = DependencyProperty.Register(
-            nameof(ScaleBarStyle),
-            typeof(Style),
-            typeof(BarGraphUserControl),
-            new PropertyMetadata(default(Style)));
+        
 
         public Style ScaleBarStyle
         {
@@ -149,15 +133,11 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             set { SetValue(ScaleBarStyleProperty, value); }
         }
 
-        #endregion
-
-        #region ScaleBarValueProperty
-
-        public static readonly DependencyProperty ScaleBarValueProperty = DependencyProperty.Register(
-            nameof(ScaleBarValue),
-            typeof(int),
+        public static readonly DependencyProperty ScaleBarStyleProperty = DependencyProperty.Register(
+            nameof(ScaleBarStyle),
+            typeof(Style),
             typeof(BarGraphUserControl),
-            new PropertyMetadata(100));
+            new PropertyMetadata(default(Style)));
 
         public int ScaleBarValue
         {
@@ -169,15 +149,11 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             }
         }
 
-        #endregion
-
-        #region TrailBarStyleProperty
-
-        public static readonly DependencyProperty TrailBarStyleProperty = DependencyProperty.Register(
-            nameof(TrailBarStyle),
-            typeof(Style),
+        public static readonly DependencyProperty ScaleBarValueProperty = DependencyProperty.Register(
+            nameof(ScaleBarValue),
+            typeof(int),
             typeof(BarGraphUserControl),
-            new PropertyMetadata(default(Style)));
+            new PropertyMetadata(100));
 
         public Style TrailBarStyle
         {
@@ -185,15 +161,11 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             set { SetValue(TrailBarStyleProperty, value); }
         }
 
-        #endregion
-
-        #region ColumnWidthProperty
-
-        public static readonly DependencyProperty ColumnWidthProperty = DependencyProperty.Register(
-            nameof(ColumnWidth),
-            typeof(int),
+        public static readonly DependencyProperty TrailBarStyleProperty = DependencyProperty.Register(
+            nameof(TrailBarStyle),
+            typeof(Style),
             typeof(BarGraphUserControl),
-            new PropertyMetadata(40));
+            new PropertyMetadata(default(Style)));
 
         public int ColumnWidth
         {
@@ -201,15 +173,11 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             set { SetValue(ColumnWidthProperty, value); }
         }
 
-        #endregion
-
-        #region LabelCountProperty
-
-        public static readonly DependencyProperty LabelCountProperty = DependencyProperty.Register(
-            nameof(LabelCount),
+        public static readonly DependencyProperty ColumnWidthProperty = DependencyProperty.Register(
+            nameof(ColumnWidth),
             typeof(int),
             typeof(BarGraphUserControl),
-            new PropertyMetadata(1));
+            new PropertyMetadata(40));
 
         public int LabelCount
         {
@@ -217,15 +185,11 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             set { SetValue(LabelCountProperty, value); }
         }
 
-        #endregion
-
-        #region GoalProperty
-
-        public static readonly DependencyProperty GoalProperty = DependencyProperty.Register(
-            nameof(Goal),
+        public static readonly DependencyProperty LabelCountProperty = DependencyProperty.Register(
+            nameof(LabelCount),
             typeof(int),
             typeof(BarGraphUserControl),
-            new PropertyMetadata(0));
+            new PropertyMetadata(1));
 
         public int Goal
         {
@@ -233,21 +197,11 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             set { SetValue(GoalProperty, value); }
         }
 
-        private int RealGoal
-        {
-            get { return (int)GetValue(GoalProperty); }
-            set { SetValue(GoalProperty, value); }
-        }
-
-        #endregion
-
-        #region BottomContentProperty
-
-        public static readonly DependencyProperty BottomContentProperty = DependencyProperty.Register(
-            nameof(BottomContent),
-            typeof(string),
+        public static readonly DependencyProperty GoalProperty = DependencyProperty.Register(
+            nameof(Goal),
+            typeof(int),
             typeof(BarGraphUserControl),
-            new PropertyMetadata(default(string)));
+            new PropertyMetadata(0));
 
         public string BottomContent
         {
@@ -255,7 +209,19 @@ namespace UwpCommunity.Uwp.Controls.Graphs
             set { SetValue(BottomContentProperty, value); }
         }
 
+        public static readonly DependencyProperty BottomContentProperty = DependencyProperty.Register(
+            nameof(BottomContent),
+            typeof(string),
+            typeof(BarGraphUserControl),
+            new PropertyMetadata(default(string)));
+
         #endregion
+
+        private int RealGoal
+        {
+            get { return (int)GetValue(GoalProperty); }
+            set { SetValue(GoalProperty, value); }
+        }
 
         // TODO: improve https://stackoverflow.com/questions/7321710/wpf-binding-collection-property-in-usercontrol
         public ObservableCollection<ValueListViewModel> ValueCollection { get; set; } = new ObservableCollection<ValueListViewModel>();

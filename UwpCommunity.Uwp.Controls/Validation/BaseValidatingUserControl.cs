@@ -8,13 +8,7 @@ namespace UwpCommunity.Uwp.Controls.Validation
 {
     public class BaseValidatingUserControl : UserControl
     {
-        #region PlaceholderTextProperty
-
-        public static readonly DependencyProperty PlaceholderTextProperty = DependencyProperty.Register(
-            nameof(PlaceholderText),
-            typeof(string),
-            typeof(ValidatingComboBoxUserControl),
-            new PropertyMetadata(null));
+        #region DependencyProperties
 
         public string PlaceholderText
         {
@@ -22,15 +16,11 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(PlaceholderTextProperty, value); }
         }
 
-        #endregion
-
-        #region HeaderProperty
-
-        public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
-            nameof(Header),
+        public static readonly DependencyProperty PlaceholderTextProperty = DependencyProperty.Register(
+            nameof(PlaceholderText),
             typeof(string),
             typeof(ValidatingComboBoxUserControl),
-            new PropertyMetadata(string.Empty));
+            new PropertyMetadata(null));
 
         public string Header
         {
@@ -38,15 +28,11 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(HeaderProperty, value); }
         }
 
-        #endregion
-
-        #region IsValidByDefaultProperty
-
-        public static readonly DependencyProperty IsValidByDefaultProperty = DependencyProperty.Register(
-            nameof(IsValidByDefault),
-            typeof(bool),
+        public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
+            nameof(Header),
+            typeof(string),
             typeof(ValidatingComboBoxUserControl),
-            new PropertyMetadata(true));
+            new PropertyMetadata(string.Empty));
 
         public bool IsValidByDefault
         {
@@ -54,15 +40,11 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(IsValidByDefaultProperty, value); }
         }
 
-        #endregion
-
-        #region IsMandatoryProperty
-
-        public static readonly DependencyProperty IsMandatoryProperty = DependencyProperty.Register(
-            nameof(IsMandatory),
+        public static readonly DependencyProperty IsValidByDefaultProperty = DependencyProperty.Register(
+            nameof(IsValidByDefault),
             typeof(bool),
             typeof(ValidatingComboBoxUserControl),
-            new PropertyMetadata(false));
+            new PropertyMetadata(true));
 
         public bool IsMandatory
         {
@@ -70,15 +52,11 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(IsMandatoryProperty, value); }
         }
 
-        #endregion
-
-        #region MandatoryValidationMessageProperty
-
-        public static readonly DependencyProperty MandatoryValidationMessageProperty = DependencyProperty.Register(
-            nameof(MandatoryValidationMessage),
-            typeof(string),
+        public static readonly DependencyProperty IsMandatoryProperty = DependencyProperty.Register(
+            nameof(IsMandatory),
+            typeof(bool),
             typeof(ValidatingComboBoxUserControl),
-            new PropertyMetadata("A value is required."));
+            new PropertyMetadata(false));
 
         public string MandatoryValidationMessage
         {
@@ -86,15 +64,11 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(MandatoryValidationMessageProperty, value); }
         }
 
-        #endregion
-
-        #region IsCustomValidProperty
-
-        public static readonly DependencyProperty IsCustomValidProperty = DependencyProperty.Register(
-            nameof(IsCustomValid),
-            typeof(bool),
+        public static readonly DependencyProperty MandatoryValidationMessageProperty = DependencyProperty.Register(
+            nameof(MandatoryValidationMessage),
+            typeof(string),
             typeof(ValidatingComboBoxUserControl),
-            new PropertyMetadata(true, Update));
+            new PropertyMetadata("A value is required."));
 
         public bool IsCustomValid
         {
@@ -102,16 +76,11 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(IsCustomValidProperty, value); }
         }
 
-        #endregion
-
-        #region ValidationRulesProperty
-
-        public static readonly DependencyProperty ValidationRulesProperty =
-            DependencyProperty.Register(
-                nameof(ValidationRules),
-                typeof(ValidationRules),
-                typeof(ValidatingComboBoxUserControl),
-                new PropertyMetadata(null));
+        public static readonly DependencyProperty IsCustomValidProperty = DependencyProperty.Register(
+            nameof(IsCustomValid),
+            typeof(bool),
+            typeof(ValidatingComboBoxUserControl),
+            new PropertyMetadata(true, Update));
 
         public ValidationRules ValidationRules
         {
@@ -119,14 +88,9 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(ValidationRulesProperty, value); }
         }
 
-        #endregion
-
-        #region RuleValidationMessageProperty
-
-        public static readonly DependencyProperty RuleValidationMessageProperty =
-            DependencyProperty.Register(
-                nameof(RuleValidationMessage),
-                typeof(string),
+        public static readonly DependencyProperty ValidationRulesProperty = DependencyProperty.Register(
+                nameof(ValidationRules),
+                typeof(ValidationRules),
                 typeof(ValidatingComboBoxUserControl),
                 new PropertyMetadata(null));
 
@@ -136,22 +100,23 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(RuleValidationMessageProperty, value); }
         }
 
-        #endregion
-
-        #region CustomValidationMessageProperty
-
-        public static readonly DependencyProperty CustomValidationMessageProperty =
-            DependencyProperty.Register(
-                nameof(CustomValidationMessage),
+        public static readonly DependencyProperty RuleValidationMessageProperty = DependencyProperty.Register(
+                nameof(RuleValidationMessage),
                 typeof(string),
                 typeof(ValidatingComboBoxUserControl),
-                new PropertyMetadata("Custom validation failed", UpdateCustomMessage));
+                new PropertyMetadata(null));
 
         public string CustomValidationMessage
         {
             get { return (string)GetValue(CustomValidationMessageProperty); }
             set { SetValue(CustomValidationMessageProperty, value); }
         }
+        
+        public static readonly DependencyProperty CustomValidationMessageProperty = DependencyProperty.Register(
+                nameof(CustomValidationMessage),
+                typeof(string),
+                typeof(ValidatingComboBoxUserControl),
+                new PropertyMetadata("Custom validation failed", UpdateCustomMessage));
 
         #endregion
 

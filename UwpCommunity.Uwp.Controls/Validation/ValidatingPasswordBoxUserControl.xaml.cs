@@ -10,13 +10,7 @@ namespace UwpCommunity.Uwp.Controls.Validation
 {
     public sealed partial class ValidatingPasswordBoxUserControl
     {
-        #region TextProperty
-
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-            nameof(Text),
-            typeof(string),
-            typeof(ValidatingPasswordBoxUserControl),
-            new PropertyMetadata(null));
+        #region DependencyProperties
 
         public string Text
         {
@@ -24,12 +18,8 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(TextProperty, value); }
         }
 
-        #endregion
-
-        #region OtherPasswordControlProperty
-
-        public static readonly DependencyProperty OtherPasswordControlProperty = DependencyProperty.Register(
-            nameof(OtherPasswordControl),
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
+            nameof(Text),
             typeof(string),
             typeof(ValidatingPasswordBoxUserControl),
             new PropertyMetadata(null));
@@ -40,21 +30,23 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(OtherPasswordControlProperty, value); }
         }
 
-        #endregion
-
-        #region IsConfirmPasswordProperty
-
-        public static readonly DependencyProperty IsConfirmPasswordProperty = DependencyProperty.Register(
-            nameof(IsConfirmPassword),
-            typeof(bool),
+        public static readonly DependencyProperty OtherPasswordControlProperty = DependencyProperty.Register(
+            nameof(OtherPasswordControl),
+            typeof(string),
             typeof(ValidatingPasswordBoxUserControl),
-            new PropertyMetadata(false));
+            new PropertyMetadata(null));
 
         public bool IsConfirmPassword
         {
             get { return (bool)GetValue(IsConfirmPasswordProperty); }
             set { SetValue(IsConfirmPasswordProperty, value); }
         }
+
+        public static readonly DependencyProperty IsConfirmPasswordProperty = DependencyProperty.Register(
+            nameof(IsConfirmPassword),
+            typeof(bool),
+            typeof(ValidatingPasswordBoxUserControl),
+            new PropertyMetadata(false));
 
         #endregion
         

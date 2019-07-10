@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              d:DesignHeight="300"
              d:DesignWidth="400"
-             x:Name="ThisBarGraphUserControl">
+             x:Name="BarGraph">
 
     <UserControl.Resources>
 
@@ -177,7 +177,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="graphs:ValueListViewModel">
-                    <Grid Width="{Binding ColumnWidth, Mode=OneWay, ElementName=ThisBarGraphUserControl}">
+                    <Grid Width="{Binding ColumnWidth, Mode=OneWay, ElementName=BarGraph}">
 
                         <Grid.RowDefinitions>
                             <RowDefinition />
@@ -186,7 +186,7 @@
 
                         <Rectangle Grid.Row="0"
                                    Style="{StaticResource ScaleBarStyle}"
-                                   Height="{Binding ScaleBarValue, Mode=OneWay, ElementName=ThisBarGraphUserControl}"/>
+                                   Height="{Binding ScaleBarValue, Mode=OneWay, ElementName=BarGraph}"/>
 
                         <Rectangle Grid.Row="0"
                                    Style="{StaticResource TrailBarStyle}"

@@ -104,8 +104,14 @@
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="ViewModels\Controls\GraphViewModel.cs" />
     <Compile Include="ViewModels\Navigation\NavigationParameterViewModel.cs" />
+    <Compile Include="Views\Controls\CustomDialogPage.xaml.cs">
+      <DependentUpon>CustomDialogPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\GraphPage.xaml.cs">
       <DependentUpon>GraphPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\NotificationBannerPage.xaml.cs">
+      <DependentUpon>NotificationBannerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\ValidationPage.xaml.cs">
       <DependentUpon>ValidationPage.xaml</DependentUpon>
@@ -148,7 +154,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Controls\CustomDialogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Controls\GraphPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\NotificationBannerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

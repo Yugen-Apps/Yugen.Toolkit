@@ -1,4 +1,4 @@
-﻿namespace UwpCommunity.Uwp.Controls.CustomDialog
+﻿namespace UwpCommunity.Uwp.Controls.Dialogs
 {
     /// <summary>
     /// Dialog display type

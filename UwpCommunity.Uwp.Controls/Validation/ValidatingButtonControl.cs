@@ -11,17 +11,21 @@ namespace UwpCommunity.Uwp.Controls.Validation
 {
     public sealed class ValidatingButtonControl : Button
     {
-        public static readonly DependencyProperty IsEnterEnabledProperty = DependencyProperty.Register(
-            nameof(IsEnterEnabled),
-            typeof(bool),
-            typeof(ValidatingComboBoxUserControl),
-            new PropertyMetadata(false));
+        #region DependencyProperties
 
         public bool IsEnterEnabled
         {
             get { return (bool)GetValue(IsEnterEnabledProperty); }
             set { SetValue(IsEnterEnabledProperty, value); }
         }
+
+        public static readonly DependencyProperty IsEnterEnabledProperty = DependencyProperty.Register(
+            nameof(IsEnterEnabled),
+            typeof(bool),
+            typeof(ValidatingComboBoxUserControl),
+            new PropertyMetadata(false));
+
+        #endregion
 
         public new event TappedEventHandler Tapped;
         private DependencyObject _page;

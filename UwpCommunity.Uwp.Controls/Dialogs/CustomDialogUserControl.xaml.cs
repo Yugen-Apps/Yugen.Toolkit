@@ -1,48 +1,21 @@
-﻿using Windows.UI;
+﻿using System;
+using System.Threading.Tasks;
+using UwpCommunity.Uwp.Controls.Dialogs;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 
-namespace UwpCommunity.Uwp.Controls.CustomDialog
+namespace UwpCommunity.Uwp.Controls.Dialogs
 {
     /// <summary>
     /// A dialog
     /// </summary>
     public sealed partial class CustomDialogUserControl : UserControl
     {
-        #region events
-
-        /// <summary>
-        /// Left Button tapped event
-        /// </summary>
-        public event TappedEventHandler LeftButtonTapped;
-
-        /// <summary>
-        /// Right button tapped event
-        /// </summary>
-        public event TappedEventHandler RightButtonTapped;
-
-        /// <summary>
-        /// Close button tapped event (append to close event)
-        /// </summary>
-        public event TappedEventHandler CloseButtonTapped;
-
-        /// <summary>
-        /// Event in opening
-        /// </summary>
-        public event OpenEventHandler DialogOpening;
-
-        /// <summary>
-        /// Opening popup event's delegate
-        /// </summary>
-        /// <param name="content"></param>
-        public delegate void OpenEventHandler(object content);
-
-        #endregion
-
-        #region propdp
+        #region DependencyProperties
 
         /// <summary>
         /// Dialog title
@@ -56,8 +29,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for DialogTitle.  This enables animation, styling, binding, etc...
         /// </summary>        
-        public static readonly DependencyProperty DialogTitleProperty =
-            DependencyProperty.Register(nameof(DialogTitle), typeof(string), typeof(CustomDialogUserControl), new PropertyMetadata(string.Empty));
+        public static readonly DependencyProperty DialogTitleProperty = DependencyProperty.Register(
+            nameof(DialogTitle), 
+            typeof(string), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(string.Empty));
         
         /// <summary>
         /// Close button X Foreground
@@ -71,8 +47,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for CloseGlyphForeground.  This enables animation, styling, binding, etc...
         /// </summary>        
-        public static readonly DependencyProperty CloseGlyphForegroundProperty =
-            DependencyProperty.Register(nameof(CloseGlyphForeground), typeof(SolidColorBrush), typeof(CustomDialogUserControl), new PropertyMetadata(new SolidColorBrush(Colors.Black)));
+        public static readonly DependencyProperty CloseGlyphForegroundProperty = DependencyProperty.Register(
+            nameof(CloseGlyphForeground), 
+            typeof(SolidColorBrush), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(new SolidColorBrush(Colors.Black)));
 
         /// <summary>
         /// Top bar Background
@@ -86,8 +65,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for TopBarBackground.  This enables animation, styling, binding, etc... 
         /// </summary>
-        public static readonly DependencyProperty TopBarBackgroundProperty =
-            DependencyProperty.Register(nameof(TopBarBackground), typeof(Brush), typeof(CustomDialogUserControl), new PropertyMetadata(new SolidColorBrush(Colors.WhiteSmoke)));
+        public static readonly DependencyProperty TopBarBackgroundProperty = DependencyProperty.Register(
+            nameof(TopBarBackground), 
+            typeof(Brush), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(new SolidColorBrush(Colors.WhiteSmoke)));
         
         /// <summary>
         /// Top Bar foreground
@@ -101,8 +83,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for TopBarForeground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty TopBarForegroundProperty =
-            DependencyProperty.Register(nameof(TopBarForeground), typeof(SolidColorBrush), typeof(CustomDialogUserControl), new PropertyMetadata(new SolidColorBrush(Colors.Black)));
+        public static readonly DependencyProperty TopBarForegroundProperty = DependencyProperty.Register(
+            nameof(TopBarForeground), 
+            typeof(SolidColorBrush), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(new SolidColorBrush(Colors.Black)));
     
         /// <summary>
         /// Content Background
@@ -116,8 +101,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty ContentBackgroundProperty =
-            DependencyProperty.Register(nameof(ContentBackground), typeof(Brush), typeof(CustomDialogUserControl), new PropertyMetadata(new SolidColorBrush(Colors.WhiteSmoke)));
+        public static readonly DependencyProperty ContentBackgroundProperty = DependencyProperty.Register(
+            nameof(ContentBackground), 
+            typeof(Brush), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(new SolidColorBrush(Colors.WhiteSmoke)));
 
         /// <summary>
         /// The main content
@@ -131,8 +119,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for MessageFontFamily.  This enables animation, styling, binding, etc...
         /// </summary>
-        public new static readonly DependencyProperty ContentProperty =
-            DependencyProperty.Register(nameof(ContentProperty), typeof(UIElement), typeof(CustomDialogUserControl), new PropertyMetadata(null));
+        public new static readonly DependencyProperty ContentProperty = DependencyProperty.Register(
+            nameof(ContentProperty), 
+            typeof(UIElement), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(null));
     
         /// <summary>
         /// Button bar background
@@ -146,8 +137,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty ButtonAreaBackgroundProperty =
-            DependencyProperty.Register(nameof(ButtonAreaBackground), typeof(Brush), typeof(CustomDialogUserControl), new PropertyMetadata(new SolidColorBrush(Colors.WhiteSmoke)));
+        public static readonly DependencyProperty ButtonAreaBackgroundProperty = DependencyProperty.Register(
+            nameof(ButtonAreaBackground), 
+            typeof(Brush), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(new SolidColorBrush(Colors.WhiteSmoke)));
 
         /// <summary>
         /// Left button style
@@ -161,8 +155,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty LeftButtonStyleProperty =
-            DependencyProperty.Register(nameof(LeftButtonStyle), typeof(Style), typeof(CustomDialogUserControl), new PropertyMetadata(null));
+        public static readonly DependencyProperty LeftButtonStyleProperty = DependencyProperty.Register(
+            nameof(LeftButtonStyle), 
+            typeof(Style), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(null));
 
         public string LeftButtonText
         {
@@ -170,8 +167,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
             set { SetValue(LeftButtonTextProperty, value); }
         }
    
-        public static readonly DependencyProperty LeftButtonTextProperty =
-            DependencyProperty.Register(nameof(LeftButtonText), typeof(string), typeof(CustomDialogUserControl), new PropertyMetadata(string.Empty));
+        public static readonly DependencyProperty LeftButtonTextProperty = DependencyProperty.Register(
+            nameof(LeftButtonText), 
+            typeof(string), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(string.Empty));
 
         /// <summary>
         /// Right button style
@@ -185,8 +185,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty RightButtonStyleProperty =
-            DependencyProperty.Register(nameof(RightButtonStyle), typeof(Style), typeof(CustomDialogUserControl), new PropertyMetadata(null));
+        public static readonly DependencyProperty RightButtonStyleProperty = DependencyProperty.Register(
+            nameof(RightButtonStyle), 
+            typeof(Style), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(null));
 
         public string RightButtonText
         {
@@ -195,7 +198,10 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         }
 
         public static readonly DependencyProperty RightButtonTextProperty = DependencyProperty.Register(
-            nameof(RightButtonText), typeof(string), typeof(CustomDialogUserControl), new PropertyMetadata(default(string)));
+            nameof(RightButtonText), 
+            typeof(string), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(default(string)));
 
         /// <summary>
         /// Dialog type 
@@ -245,8 +251,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty TypeProperty =
-            DependencyProperty.Register(nameof(Type), typeof(CustomDialogTypeEnum), typeof(CustomDialogUserControl), new PropertyMetadata(CustomDialogTypeEnum.OnlyTopBar));
+        public static readonly DependencyProperty TypeProperty = DependencyProperty.Register(
+            nameof(Type), 
+            typeof(CustomDialogTypeEnum), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(CustomDialogTypeEnum.OnlyTopBar));
 
         /// <summary>
         /// Control visibility
@@ -260,8 +269,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty IsVisibleProperty =
-            DependencyProperty.Register(nameof(IsVisible), typeof(bool), typeof(CustomDialogUserControl), new PropertyMetadata(true));
+        public static readonly DependencyProperty IsVisibleProperty = DependencyProperty.Register(
+            nameof(IsVisible), 
+            typeof(bool), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(true));
 
         /// <summary>
         /// Top bar visibility
@@ -275,8 +287,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty IsTopBarVisibleProperty =
-            DependencyProperty.Register(nameof(IsTopBarVisible), typeof(bool), typeof(CustomDialogUserControl), new PropertyMetadata(true));
+        public static readonly DependencyProperty IsTopBarVisibleProperty = DependencyProperty.Register(
+            nameof(IsTopBarVisible), 
+            typeof(bool), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(true));
 
         /// <summary>
         /// Bottom bar visibility
@@ -290,8 +305,11 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty IsButtonAreaVisibleProperty =
-            DependencyProperty.Register(nameof(IsButtonAreaVisible), typeof(bool), typeof(CustomDialogUserControl), new PropertyMetadata(true));
+        public static readonly DependencyProperty IsButtonAreaVisibleProperty = DependencyProperty.Register(
+            nameof(IsButtonAreaVisible), 
+            typeof(bool), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(true));
 
         /// <summary>
         /// Bottom bar visibility
@@ -305,17 +323,61 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <summary>
         /// Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
         /// </summary>
-        public static readonly DependencyProperty IsButtonLeftVisibleProperty =
-            DependencyProperty.Register(nameof(IsButtonLeftVisible), typeof(bool), typeof(CustomDialogUserControl), new PropertyMetadata(true));
-        
+        public static readonly DependencyProperty IsButtonLeftVisibleProperty = DependencyProperty.Register(
+            nameof(IsButtonLeftVisible), 
+            typeof(bool), 
+            typeof(CustomDialogUserControl), 
+            new PropertyMetadata(true));
+
+        public TimeSpan Duration
+        {
+            get { return (TimeSpan)GetValue(DurationProperty); }
+            set { SetValue(DurationProperty, value); }
+        }
+
+        public static readonly DependencyProperty DurationProperty = DependencyProperty.Register(
+            nameof(Duration),
+            typeof(TimeSpan),
+            typeof(NotificationBannerUserControl),
+            new PropertyMetadata(null));
+
         #endregion
-        
+
+        #region Events
+
+        /// <summary>
+        /// Left Button tapped event
+        /// </summary>
+        public event TappedEventHandler LeftButtonTapped;
+
+        /// <summary>
+        /// Right button tapped event
+        /// </summary>
+        public event TappedEventHandler RightButtonTapped;
+
+        /// <summary>
+        /// Close button tapped event (append to close event)
+        /// </summary>
+        public event TappedEventHandler CloseButtonTapped;
+
+        /// <summary>
+        /// Event in opening
+        /// </summary>
+        /// <param name="content"></param>
+        public event Action<object> DialogOpening;
+
+        //public event OpenEventHandler DialogOpening;
+        //public delegate void OpenEventHandler(object content);
+
+        #endregion
+
         /// <summary>
         /// Constructor
         /// </summary>
         public CustomDialogUserControl()
         {
             InitializeComponent();
+            FadeStoryboard.Completed += FadeStoryboard_Completed;
         }
 
         /// <summary>
@@ -351,35 +413,47 @@ namespace UwpCommunity.Uwp.Controls.CustomDialog
         /// <param name="e"></param>
         private void Close_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Grid g = sender as Grid;
-            Storyboard s = g.Resources["CloseButtonStoryboard"] as Storyboard;
-            s.Begin();
+            //Grid g = sender as Grid;
+            //Storyboard s = g.Resources["CloseButtonStoryboard"] as Storyboard;
+            CloseButtonStoryboard.Begin();
             CloseButtonTapped?.Invoke(Content, e);
-            HideDialog(300);
+            HideDialog();
         }
 
         /// <summary>
         /// Show a dialog with fadein animation
         /// </summary>
         /// <param name="animationDuration">the translate time</param>
-        public void ShowDialog(int animationDuration = 500)
+        public void ShowDialog(int animationDuration = 1000)
         {
             if (IsVisible) return;
             DialogOpening?.Invoke(Content);
-            IsVisible = true;
 
-            //Opacity = 0;
-            //await this.Fade(1, animationDuration, 0).StartAsync();
+            IsVisible = true;            
+            Fade(0, 1, animationDuration);
         }
 
         /// <summary>
         /// Hide dialog with fadeout animation
         /// <param name="animationDuration">the translate time</param>
         /// </summary>
-        public void HideDialog(int animationDuration = 500)
+        public void HideDialog(int animationDuration = 1000)
         {
-            IsVisible = false;
-            //await this.Fade(0, animationDuration, 0).StartAsync();
+            Fade(1, 0, animationDuration);
+        }
+
+        private void Fade(int from, int to, int animationDuration = 1000)
+        {
+            Duration = new TimeSpan(0, 0, 0, 0, animationDuration);
+            FadeAnimation.From = from;
+            FadeAnimation.To = to;
+            FadeStoryboard.Begin();
+        }
+
+        private void FadeStoryboard_Completed(object sender, object e)
+        {
+            if(Opacity == 0)
+                IsVisible = false;
         }
     }
 }

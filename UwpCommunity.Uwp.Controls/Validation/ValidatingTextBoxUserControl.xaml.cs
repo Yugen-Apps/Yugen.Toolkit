@@ -8,13 +8,7 @@ namespace UwpCommunity.Uwp.Controls.Validation
 {
     public sealed partial class ValidatingTextBoxUserControl
     {
-        #region TextProperty
-
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-            nameof(Text),
-            typeof(string),
-            typeof(ValidatingTextBoxUserControl),
-            new PropertyMetadata(null));
+        #region DependencyProperties
 
         public string Text
         {
@@ -22,15 +16,11 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(TextProperty, value); }
         }
 
-        #endregion
-
-        #region IsSpellCheckEnabledProperty
-
-        public static readonly DependencyProperty IsSpellCheckEnabledProperty = DependencyProperty.Register(
-            nameof(IsSpellCheckEnabled),
-            typeof(bool),
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
+            nameof(Text),
+            typeof(string),
             typeof(ValidatingTextBoxUserControl),
-            new PropertyMetadata(true));
+            new PropertyMetadata(null));
 
         public bool IsSpellCheckEnabled
         {
@@ -38,9 +28,17 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(IsSpellCheckEnabledProperty, value); }
         }
 
-        #endregion
+        public static readonly DependencyProperty IsSpellCheckEnabledProperty = DependencyProperty.Register(
+            nameof(IsSpellCheckEnabled),
+            typeof(bool),
+            typeof(ValidatingTextBoxUserControl),
+            new PropertyMetadata(true));
 
-        #region InputScopeProperty
+        public string InputScope
+        {
+            get { return (string)GetValue(InputScopeProperty); }
+            set { SetValue(InputScopeProperty, value); }
+        }
 
         public static readonly DependencyProperty InputScopeProperty =
             DependencyProperty.Register(
@@ -49,34 +47,14 @@ namespace UwpCommunity.Uwp.Controls.Validation
                 typeof(ValidatingTextBoxUserControl),
                 new PropertyMetadata("Default"));
 
-        public string InputScope
-        {
-            get { return (string)GetValue(InputScopeProperty); }
-            set { SetValue(InputScopeProperty, value); }
-        }
-
-        #endregion
-
-        #region IsRealTimeValidationEnabledProperty
-
-        public static readonly DependencyProperty IsRealTimeValidationEnabledProperty = DependencyProperty.Register(
-            nameof(IsRealTimeValidationEnabled),
-            typeof(bool),
-            typeof(ValidatingTextBoxUserControl),
-            new PropertyMetadata(false));
-
         public bool IsRealTimeValidationEnabled
         {
             get { return (bool)GetValue(IsRealTimeValidationEnabledProperty); }
             set { SetValue(IsRealTimeValidationEnabledProperty, value); }
         }
 
-        #endregion
-
-        #region IsSelectAllOnFocusEnabledProperty
-
-        public static readonly DependencyProperty IsSelectAllOnFocusEnabledProperty = DependencyProperty.Register(
-            nameof(IsSelectAllOnFocusEnabled),
+        public static readonly DependencyProperty IsRealTimeValidationEnabledProperty = DependencyProperty.Register(
+            nameof(IsRealTimeValidationEnabled),
             typeof(bool),
             typeof(ValidatingTextBoxUserControl),
             new PropertyMetadata(false));
@@ -87,19 +65,23 @@ namespace UwpCommunity.Uwp.Controls.Validation
             set { SetValue(IsSelectAllOnFocusEnabledProperty, value); }
         }
 
-        #endregion
-
-        #region TextBoxSyleProperty
-
-        public static readonly DependencyProperty TextBoxStyleProperty =
-            DependencyProperty.Register(nameof(TextBoxStyle), typeof(Style), typeof(ValidatingTextBoxUserControl),
-                new PropertyMetadata(default(Style)));
+        public static readonly DependencyProperty IsSelectAllOnFocusEnabledProperty = DependencyProperty.Register(
+            nameof(IsSelectAllOnFocusEnabled),
+            typeof(bool),
+            typeof(ValidatingTextBoxUserControl),
+            new PropertyMetadata(false));
 
         public Style TextBoxStyle
         {
             get { return (Style)GetValue(TextBoxStyleProperty); }
             set { SetValue(TextBoxStyleProperty, value); }
         }
+
+        public static readonly DependencyProperty TextBoxStyleProperty = DependencyProperty.Register(
+            nameof(TextBoxStyle), 
+            typeof(Style), 
+            typeof(ValidatingTextBoxUserControl),
+            new PropertyMetadata(default(Style)));
 
         #endregion
 

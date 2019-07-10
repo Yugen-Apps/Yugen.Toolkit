@@ -106,9 +106,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Controls\NotificationBannerUserControl.xaml.cs">
-      <DependentUpon>NotificationBannerUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\PageBarUserControl.xaml.cs">
       <DependentUpon>PageBarUserControl.xaml</DependentUpon>
     </Compile>
@@ -126,10 +123,6 @@
     <Compile Include="Converters\ComboBoxConverter.cs" />
     <Compile Include="Converters\CommandToVisibilityConverter.cs" />
     <Compile Include="Converters\DecimalConverter.cs" />
-    <Compile Include="Controls\CustomDialog\CustomDialogUserControl.xaml.cs">
-      <DependentUpon>CustomDialogUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\CustomDialog\CustomDialogTypeEnum.cs" />
     <Compile Include="Controls\EdgeTappedListView.cs" />
     <Compile Include="Controls\EdgeTappedListViewEventArgs.cs" />
     <Compile Include="Helpers\FilePickerHelper.cs" />
@@ -154,14 +147,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\CustomDialog\CustomDialogUserControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\NotificationBannerUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Controls\PageBarUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
