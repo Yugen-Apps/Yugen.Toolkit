@@ -3,18 +3,23 @@ using Windows.UI.Xaml.Controls;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace UwpCommunity.Uwp.Controls
+namespace UwpCommunity.Uwp.Controls.Menu
 {
-    public sealed partial class PageBarUserControl : UserControl
+    public sealed partial class TitleImageCommandBarUserControl : UserControl
     {
+        #region DependencyProperties
+
         public string Title
         {
             get { return (string)GetValue(TitleProperty); }
             set { SetValue(TitleProperty, value); }
         }
 
-        public static readonly DependencyProperty TitleProperty =
-            DependencyProperty.Register(nameof(Title), typeof(string), typeof(PageBarUserControl), new PropertyMetadata(string.Empty));
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+            nameof(Title), 
+            typeof(string), 
+            typeof(TitleImageCommandBarUserControl), 
+            new PropertyMetadata(string.Empty));
 
         public string ImageSource
         {
@@ -22,10 +27,15 @@ namespace UwpCommunity.Uwp.Controls
             set { SetValue(ImageSourceProperty, value); }
         }
 
-        public static readonly DependencyProperty ImageSourceProperty =
-            DependencyProperty.Register(nameof(ImageSource), typeof(string), typeof(PageBarUserControl), new PropertyMetadata(string.Empty));
+        public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register(
+            nameof(ImageSource), 
+            typeof(string), 
+            typeof(TitleImageCommandBarUserControl), 
+            new PropertyMetadata(string.Empty));
 
-        public PageBarUserControl()
+        #endregion
+
+        public TitleImageCommandBarUserControl()
         {
             this.InitializeComponent();
         }

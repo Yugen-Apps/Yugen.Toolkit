@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Threading.Tasks;
-using UwpCommunity.Uwp.Controls.Dialogs;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Animation;
 
 namespace UwpCommunity.Uwp.Controls.Dialogs
 {

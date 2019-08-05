@@ -106,9 +106,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Controls\PageBarUserControl.xaml.cs">
-      <DependentUpon>PageBarUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converters\BoolToNullableConverter.cs" />
     <Compile Include="Converters\DebugToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
@@ -123,8 +120,6 @@
     <Compile Include="Converters\ComboBoxConverter.cs" />
     <Compile Include="Converters\CommandToVisibilityConverter.cs" />
     <Compile Include="Converters\DecimalConverter.cs" />
-    <Compile Include="Controls\EdgeTappedListView.cs" />
-    <Compile Include="Controls\EdgeTappedListViewEventArgs.cs" />
     <Compile Include="Helpers\FilePickerHelper.cs" />
     <Compile Include="Extensions\FocusExtension.cs" />
     <Compile Include="Providers\ImageProvider.cs" />
@@ -145,12 +140,6 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.8</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Controls\PageBarUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UwpCommunity.Standard\UwpCommunity.Standard.csproj">

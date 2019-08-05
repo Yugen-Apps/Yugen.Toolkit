@@ -1,7 +1,7 @@
 using System;
 using Windows.UI.Xaml.Controls;
 
-namespace UwpCommunity.Uwp.Controls
+namespace UwpCommunity.Uwp.Controls.Collections
 {
     public class EdgeTappedListViewEventArgs : EventArgs
     {

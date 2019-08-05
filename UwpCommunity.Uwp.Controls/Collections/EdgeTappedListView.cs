@@ -1,4 +1,5 @@
-﻿using Windows.Devices.Input;
+﻿using System;
+using Windows.Devices.Input;
 using Windows.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -6,7 +7,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
 
-namespace UwpCommunity.Uwp.Controls
+namespace UwpCommunity.Uwp.Controls.Collections
 {
     public class EdgeTappedListView : ListView
     {
@@ -17,8 +18,9 @@ namespace UwpCommunity.Uwp.Controls
         private ListViewItem _listViewItemHighlighted;
         private Rectangle _visualIndicator;
 
-        public delegate void ListViewEdgeTappedEventHandler(ListView sender, EdgeTappedListViewEventArgs e);
-        public event ListViewEdgeTappedEventHandler ItemLeftEdgeTapped;
+        public event Action<ListView, EdgeTappedListViewEventArgs> ItemLeftEdgeTapped;
+        //public delegate void ListViewEdgeTappedEventHandler(ListView sender, EdgeTappedListViewEventArgs e);
+        //public event ListViewEdgeTappedEventHandler ItemLeftEdgeTapped;
 
         public Brush LeftEdgeBrush { get; set; }
         public bool IsItemLeftEdgeTapEnabled { get; set; }

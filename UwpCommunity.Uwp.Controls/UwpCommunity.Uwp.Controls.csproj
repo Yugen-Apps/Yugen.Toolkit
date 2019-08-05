@@ -120,6 +120,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Collections\EdgeTappedListView.cs" />
+    <Compile Include="Collections\EdgeTappedListViewEventArgs.cs" />
     <Compile Include="Dialogs\CustomDialogTypeEnum.cs" />
     <Compile Include="Dialogs\CustomDialogUserControl.xaml.cs">
       <DependentUpon>CustomDialogUserControl.xaml</DependentUpon>
@@ -132,6 +134,9 @@
       <DependentUpon>BarGraphUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Graphs\ValueListViewModel.cs" />
+    <Compile Include="Menu\TitleImageCommandBarUserControl.xaml.cs">
+      <DependentUpon>TitleImageCommandBarUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\BaseValidatingUserControl.cs" />
     <Compile Include="Validation\Helpers\ValidatingFormHelper.cs" />
@@ -162,6 +167,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Graphs\BarGraphUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Menu\TitleImageCommandBarUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
