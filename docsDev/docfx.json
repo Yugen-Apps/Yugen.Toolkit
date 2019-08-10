@@ -4,12 +4,12 @@
       "src": [
         {
           "files": [
-            "../docs/**.csproj"
+            "src/**.csproj"
           ],
           "exclude": [
             "**/obj/**",
             "**/bin/**",
-            "_site/**"
+            "docs/**"
           ],
           "cwd": ".."
         }
@@ -34,7 +34,7 @@
         ],
         "exclude": [
           "obj/**",
-          "_site/**"
+          "docs/**"
         ]
       }
     ],
@@ -45,7 +45,7 @@
         ],
         "exclude": [
           "obj/**",
-          "_site/**"
+          "docs/**"
         ]
       }
     ],
@@ -56,11 +56,11 @@
         ],
         "exclude": [
           "obj/**",
-          "_site/**"
+          "docs/**"
         ]
       }
     ],
-    "dest": "",
+    "dest": "docs",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
