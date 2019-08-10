@@ -1,0 +1,1065 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Dev/UwpCommunity.Toolkit/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Collections.GroupInfoList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Collections.GroupInfoList.html",
+          "hash": "3dDdRk66MJ9JKIhUT+vG4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Collections.MultiDictionary-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Collections.MultiDictionary-2.html",
+          "hash": "EPCQVvQyl9lq2SSNueYtXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Collections.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Collections.html",
+          "hash": "Qzyx5cdKs+1CqbyvPP9B1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Extensions.UnitOfWorkServiceCollectionExtentions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Extensions.UnitOfWorkServiceCollectionExtentions.html",
+          "hash": "dmElIEerARMl0UgdDNwmRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Extensions.html",
+          "hash": "TfgL5sdwkNrSqxg8i3SPww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IBaseEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IBaseEntity.html",
+          "hash": "QQP7njEn9Y94Q4Zxy49Mcw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IBaseRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IBaseRepository-1.html",
+          "hash": "fRE8hQRsqSIGy69uvZ9g3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IBaseService-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IBaseService-1.html",
+          "hash": "/CH7L8F6AQQjuewJDfNCZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IRepositoryFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IRepositoryFactory.html",
+          "hash": "yiSfFMpC6E06rqSyBdSF+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IUnitOfWork-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IUnitOfWork-1.html",
+          "hash": "W900cQdpzZqrPzak/dtJVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IUnitOfWork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Interfaces.IUnitOfWork.html",
+          "hash": "8kRUDEQUMD6jOYmHZCX8Qw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Interfaces.html",
+          "hash": "XyKLJePkbASXCgzcOoy5tg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Models.BaseEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Models.BaseEntity.html",
+          "hash": "srd5RIRi0thd42gsAxy3eA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Models.html",
+          "hash": "7m+rnddJ/Crcnj48mPYwBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Repository.BaseRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Repository.BaseRepository-1.html",
+          "hash": "ocSoSDXcmWip6mu2SQGiIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Repository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Repository.html",
+          "hash": "c/sF8YotOVRr4Z2MEUpVsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Result-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Result-1.html",
+          "hash": "oPwAls/JspOLPbchCZe49A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Result.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Result.html",
+          "hash": "6I3TN9Jq5KcNi4hsEHPIWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Service.BaseService-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Service.BaseService-1.html",
+          "hash": "vfsJi3DtOXSI21NV1PS2bQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.Service.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.Service.html",
+          "hash": "sy5DUb3zNo127dGrMtIW6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.UnitOfWork-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.UnitOfWork-1.html",
+          "hash": "nysq/GRdvBi4JZvAaQ5bqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Data.html",
+          "hash": "rTcdRw7sDrqZl/ElBtA4RA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Extensions.DictionaryExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Extensions.DictionaryExtensions.html",
+          "hash": "HI2/9DHyE3YVXcl1cjfhOw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Extensions.ObservableCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Extensions.ObservableCollectionExtensions.html",
+          "hash": "+0gKMaUscPD1eZLcp34CDQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Extensions.ResultExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Extensions.ResultExtensions.html",
+          "hash": "UKpg0hMkpSh2zZCF0MP7NA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Extensions.StringExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Extensions.StringExtensions.html",
+          "hash": "cxQF/2vcLw6fwbb7huKMpw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Extensions.html",
+          "hash": "MICqat+52p9ytCsLMA5lxw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Handlers.CommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Handlers.CommandHandler.html",
+          "hash": "lJIWg50++DncIs+HjTyCBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Handlers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Handlers.html",
+          "hash": "ztaiC4s3NJizqCpEZ5t2ig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.CollectionHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.CollectionHelper.html",
+          "hash": "4C1C7r7JR0w8aYXmaXPU1w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.DecimalConverteSample.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.DecimalConverteSample.html",
+          "hash": "NX5rfQVaWWGkWYYWNAKtOg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.GuidHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.GuidHelper.html",
+          "hash": "26ys2OcgtZGa9sxKN8qbpQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.LoggerHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.LoggerHelper.html",
+          "hash": "VrsO5PT/Ptcv+3YCxxl3/g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.PasswordHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.PasswordHelper.html",
+          "hash": "gdPCwhDeiLFRtGP3biajBQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.PriceCalculatorHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.PriceCalculatorHelper.html",
+          "hash": "mhNGgyVEhJSKGRE5wJpz7A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.ScreenUnitHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.ScreenUnitHelper.html",
+          "hash": "ZV1AvSOF5Qrcmttgh8lQAA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.StringHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.StringHelper.html",
+          "hash": "jKtzMapZ1QhmQQY6Z7oMvw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.SystemHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.SystemHelper.html",
+          "hash": "0x6EWYbG4AYtn8CkIw0p4w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Helpers.html",
+          "hash": "oDlDLhgslYQicawVbF6BMw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Http.BodyTypeEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Http.BodyTypeEnum.html",
+          "hash": "cCBvOI+L4g2VYA3mF3Uusw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Http.RestClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Http.RestClient.html",
+          "hash": "O1VE3931eseKgcT2fMeXRg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Http.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Http.html",
+          "hash": "hNQlfRTRpRV8vgrutG/d2A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.AsciiControlChars.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.AsciiControlChars.html",
+          "hash": "IBX/aR5oUumaE6+OyOFvvA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.BinaryWriterExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.BinaryWriterExtensions.html",
+          "hash": "2MF/8ApzcHnRyOcViB81rg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.Interfaces.IPrinterService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.Interfaces.IPrinterService.html",
+          "hash": "/h6OAwV+yOtb0fIkLeVtfQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.Interfaces.html",
+          "hash": "aXR/nPYjJLzQsEdtzWSYwg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.NativeMethods.DOCINFO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.NativeMethods.DOCINFO.html",
+          "hash": "ObugfF8ZIG/oN08z5VjNEQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.NativeMethods.DOC_INFO_1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.NativeMethods.DOC_INFO_1.html",
+          "hash": "78bH9UMObxzvhNgvBH9k5Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.NativeMethods.DeviceCap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.NativeMethods.DeviceCap.html",
+          "hash": "/glUrJhhseCJIO7jjkYhKw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.NativeMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.NativeMethods.html",
+          "hash": "Yvhx1vLM4QasBQIhGwOPmw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.PrinterUsbPosService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.PrinterUsbPosService.html",
+          "hash": "T3tZwwsVMvjoqj8JEUO4fw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Printer.UsbPos.html",
+          "hash": "hSlmslHOCC+a5CEnE17mIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Providers.JsonProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Providers.JsonProvider.html",
+          "hash": "9/6+8FC1fgIk9h/Vdh1fiA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Providers.MediatorProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Providers.MediatorProvider.html",
+          "hash": "3ttzfImBuMleBlfAJjs+yQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Providers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Providers.html",
+          "hash": "I17zc0tYW05dH+36pHHSLQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Services.MediatorService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Services.MediatorService.html",
+          "hash": "4ohfoq6WUhUco1xxKD4fyw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Services.html",
+          "hash": "vzSA+QJMF5nhUrpiepy06g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.BaseValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.BaseValidationRule.html",
+          "hash": "BKwIxMiL85ov0ihpnMKoZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.CharacterLimitValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.CharacterLimitValidationRule.html",
+          "hash": "JOIR5mk1aU5UUVzZAJ9F2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.DecimalValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.DecimalValidationRule.html",
+          "hash": "tvCuIzdN+yhiQlaGIZ7URw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.DoubleValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.DoubleValidationRule.html",
+          "hash": "Le3PVQTyfpJTarjPvYVInw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.EmailValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.EmailValidationRule.html",
+          "hash": "MmUVVFEOKE+pKUzTgD+W3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.IntValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.IntValidationRule.html",
+          "hash": "P59K2X7Zxnl9yNN2K8rDbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.NameValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.NameValidationRule.html",
+          "hash": "ZhX8PHhgd+kweNub3X8EEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.PasswordValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.PasswordValidationRule.html",
+          "hash": "6PLTIj+vLFkpvtBQfcb5DQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.RegexValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.RegexValidationRule.html",
+          "hash": "8xsCxNXNA5XI1Ah1yG3DPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.UrlValidationRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.UrlValidationRule.html",
+          "hash": "TuwjY+StHhChj21O2ZPG0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.ValidationRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.ValidationRules.html",
+          "hash": "p2cEV9xT308MbyK0y/bkZQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Standard.Validation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Standard.Validation.html",
+          "hash": "LnqBu7k8qCQHMTVK6eyiaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Web.TokenProvider.AppBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Web.TokenProvider.AppBuilderExtensions.html",
+          "hash": "ELfm550gFtghokObTUpsVg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Web.TokenProvider.JwtTokenHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Web.TokenProvider.JwtTokenHandler.html",
+          "hash": "EsqFj1T8L9zH6WcpX98wcg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Web.TokenProvider.Middleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Web.TokenProvider.Middleware.html",
+          "hash": "2sl4XVNHtJEwDwwbj5inkw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Web.TokenProvider.Models.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Web.TokenProvider.Models.Options.html",
+          "hash": "NptN6PdZZPcL4UOU7QQLMQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Web.TokenProvider.Models.Token.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Web.TokenProvider.Models.Token.html",
+          "hash": "dxrpX2GisAVE6PmXaoB9cQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Web.TokenProvider.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Web.TokenProvider.Models.html",
+          "hash": "7GFvbUpdm+sjXUf+w6YUsQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UwpCommunity.Web.TokenProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UwpCommunity.Web.TokenProvider.html",
+          "hash": "0N45plmtlt1goNERt3UVTw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "SRsSzz3DeRmC3EWOXeuV7Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "2xKb/e1BBNDpFRwV+BbgMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/example.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/example.html",
+          "hash": "WwHxd08ib+Tn6xYqaspqYA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/inner-example.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/inner-example.html",
+          "hash": "LqyIEEEMxkX4xHMwt2KHkg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "xqByxJqA/j2BbdXDQNm46w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "cfkaLyN9c/86VKhY5+fC4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "+IsmKdNVkBCdNzheL8lJ9A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "k+/dkjFuwAVS32HduMpmBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 76,
+          "skipped_file_count": 52
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 5,
+          "skipped_file_count": 5
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
       "src": [
         {
           "files": [
-            "src/**.csproj"
+            "../docs/**.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -60,7 +60,7 @@
         ]
       }
     ],
-    "dest": "_site",
+    "dest": "",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
