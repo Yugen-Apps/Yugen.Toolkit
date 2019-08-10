@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UwpCommunity.Web.TokenProvider", "UwpCommunity.Web.TokenProvider\UwpCommunity.Web.TokenProvider.csproj", "{60110756-63B8-4263-BD1A-2492A04BF37B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UwpCommunity.Web.TokenProvider", "src\UwpCommunity.Web.TokenProvider\UwpCommunity.Web.TokenProvider.csproj", "{60110756-63B8-4263-BD1A-2492A04BF37B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UwpCommunity.Standard", "UwpCommunity.Standard\UwpCommunity.Standard.csproj", "{01B7D7DF-9C32-425D-9B53-737519345032}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UwpCommunity.Standard", "src\UwpCommunity.Standard\UwpCommunity.Standard.csproj", "{01B7D7DF-9C32-425D-9B53-737519345032}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpCommunity.Uwp", "UwpCommunity.Uwp\UwpCommunity.Uwp.csproj", "{E535535B-B033-4F77-BD09-2C6EF2054B5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpCommunity.Uwp", "src\UwpCommunity.Uwp\UwpCommunity.Uwp.csproj", "{E535535B-B033-4F77-BD09-2C6EF2054B5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpCommunity.Uwp.Samples", "UwpCommunity.Uwp.Samples\UwpCommunity.Uwp.Samples.csproj", "{9FB8D2FD-2C73-4E1F-B428-F6029B78E42B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpCommunity.Uwp.Samples", "src\UwpCommunity.Uwp.Samples\UwpCommunity.Uwp.Samples.csproj", "{9FB8D2FD-2C73-4E1F-B428-F6029B78E42B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UwpCommunity.Standard.Data", "UwpCommunity.Standard.Data\UwpCommunity.Standard.Data.csproj", "{3F42AE3F-E4F8-4F91-BA04-10290C4B9B29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UwpCommunity.Standard.Data", "src\UwpCommunity.Standard.Data\UwpCommunity.Standard.Data.csproj", "{3F42AE3F-E4F8-4F91-BA04-10290C4B9B29}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UwpCommunity.Standard.Printer", "UwpCommunity.Standard.Printer\UwpCommunity.Standard.Printer.csproj", "{A82DDA02-DDE6-4177-9CE8-4892C9DE2BDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UwpCommunity.Standard.Printer", "src\UwpCommunity.Standard.Printer\UwpCommunity.Standard.Printer.csproj", "{A82DDA02-DDE6-4177-9CE8-4892C9DE2BDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpCommunity.Uwp.Printer", "UwpCommunity.Uwp.Printer\UwpCommunity.Uwp.Printer.csproj", "{D6CBD581-1DBC-45A1-9B0F-2B3CA23AB792}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpCommunity.Uwp.Printer", "src\UwpCommunity.Uwp.Printer\UwpCommunity.Uwp.Printer.csproj", "{D6CBD581-1DBC-45A1-9B0F-2B3CA23AB792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpCommunity.Uwp.Controls", "UwpCommunity.Uwp.Controls\UwpCommunity.Uwp.Controls.csproj", "{F41590BA-11B3-4A1F-8374-A7DE83D58DC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpCommunity.Uwp.Controls", "src\UwpCommunity.Uwp.Controls\UwpCommunity.Uwp.Controls.csproj", "{F41590BA-11B3-4A1F-8374-A7DE83D58DC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,6 +19,7 @@
 
         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Useful Links</TextBlock>
 
-        <HyperlinkButton Content="GitHub Repository" NavigateUri="https://github.com/UWPCommunity/Toolkit/"/>
+        <HyperlinkButton Content="GitHub Repository"
+                         NavigateUri="https://github.com/UWPCommunity/Toolkit/" />
     </StackPanel>
 </Page>
