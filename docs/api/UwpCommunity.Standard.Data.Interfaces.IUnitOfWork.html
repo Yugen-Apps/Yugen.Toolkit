@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     
     
     
-  </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -75,12 +75,6 @@
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.IDisposable.Dispose()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="UwpCommunity.Standard.Data.Interfaces.html">UwpCommunity.Standard.Data.Interfaces</a></h6>
   <h6><strong>Assembly</strong>: UwpCommunity.Standard.Data.dll</h6>
   <h5 id="UwpCommunity_Standard_Data_Interfaces_IUnitOfWork_syntax">Syntax</h5>
@@ -103,7 +97,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IBaseRepository&lt;TEntity&gt; GetRepository&lt;TEntity&gt;()
-
     where TEntity : BaseEntity</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -150,7 +143,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">int SaveChanges&lt;TEntity&gt;(bool updateModified = true)
-
     where TEntity : BaseEntity</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

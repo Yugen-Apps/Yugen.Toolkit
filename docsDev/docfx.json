@@ -14,6 +14,9 @@
           "cwd": ".."
         }
       ],
+      "properties": {
+        "TargetFrameworks": "netstandard2.0"
+      },
       "dest": "api"
     }
   ],
@@ -64,7 +67,8 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+      "templates/darkfx"
     ],
     "postProcessors": [],
     "noLangKeyword": false,

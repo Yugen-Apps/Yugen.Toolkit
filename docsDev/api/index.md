@@ -2,4 +2,4 @@
 
 Welcome to the API Reference! 
 
-[DemoClUwpCommunity.Standard.Collectionsass](UwpCommunity.Standard.Collections.html) class.
+[UwpCommunity.Standard.Collections](UwpCommunity.Standard.Collections.html) class.

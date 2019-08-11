@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     
     
     
-  </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -84,35 +84,11 @@
     <h5>Implements</h5>
     <div><a class="xref" href="UwpCommunity.Standard.Data.Interfaces.IBaseService-1.html">IBaseService</a>&lt;T&gt;</div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="UwpCommunity.Standard.Data.Service.html">UwpCommunity.Standard.Data.Service</a></h6>
   <h6><strong>Assembly</strong>: UwpCommunity.Standard.Data.dll</h6>
   <h5 id="UwpCommunity_Standard_Data_Service_BaseService_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class BaseService&lt;T&gt; : IBaseService&lt;T&gt; where T : BaseEntity</code></pre>
+    <pre><code class="lang-csharp hljs">public class BaseService&lt;T&gt; : object, IBaseService&lt;T&gt; where T : BaseEntity</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -298,13 +274,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdate_System_Collections_Generic_List__0__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.AddOrUpdate(System.Collections.Generic.List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdate_List__0__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.AddOrUpdate(List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L375">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdate_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.AddOrUpdate*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdate_System_Collections_Generic_List__0__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.AddOrUpdate(System.Collections.Generic.List{`0})">AddOrUpdate(List&lt;T&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdate_List__0__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.AddOrUpdate(List{`0})">AddOrUpdate(List&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -322,7 +298,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
         <td><span class="parametername">entityList</span></td>
         <td></td>
       </tr>
@@ -398,13 +374,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdateWithoutEntity_System_Collections_Generic_List__0__System_Boolean_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.AddOrUpdateWithoutEntity(System.Collections.Generic.List%7B%600%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdateWithoutEntity_List__0__System_Boolean_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.AddOrUpdateWithoutEntity(List%7B%600%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L412">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdateWithoutEntity_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.AddOrUpdateWithoutEntity*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdateWithoutEntity_System_Collections_Generic_List__0__System_Boolean_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.AddOrUpdateWithoutEntity(System.Collections.Generic.List{`0},System.Boolean)">AddOrUpdateWithoutEntity(List&lt;T&gt;, Boolean)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_AddOrUpdateWithoutEntity_List__0__System_Boolean_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.AddOrUpdateWithoutEntity(List{`0},System.Boolean)">AddOrUpdateWithoutEntity(List&lt;T&gt;, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -422,7 +398,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
         <td><span class="parametername">entityList</span></td>
         <td></td>
       </tr>
@@ -527,60 +503,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Delete_System_Collections_Generic_List__0__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Delete(System.Collections.Generic.List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L335">View Source</a>
-  </span>
-  <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Delete_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Delete*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Delete_System_Collections_Generic_List__0__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Delete(System.Collections.Generic.List{`0})">Delete(List&lt;T&gt;)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Result Delete(List&lt;T&gt; entityList)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
-        <td><span class="parametername">entityList</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result.html">Result</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Delete_System_Guid_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Delete(System.Guid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Delete_Guid_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Delete(Guid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L329">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Delete_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Delete*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Delete_System_Guid_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Delete(System.Guid)">Delete(Guid)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Delete_Guid_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Delete(Guid)">Delete(Guid)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -598,7 +527,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Guid</span></td>
+        <td><span class="xref">Guid</span></td>
         <td><span class="parametername">id</span></td>
         <td></td>
       </tr>
@@ -621,13 +550,60 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_First_System_Linq_Expressions_Expression_System_Func__0_System_DateTime___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.First(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.DateTime%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Delete_List__0__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Delete(List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L335">View Source</a>
+  </span>
+  <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Delete_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Delete*"></a>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Delete_List__0__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Delete(List{`0})">Delete(List&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result Delete(List&lt;T&gt; entityList)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
+        <td><span class="parametername">entityList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result.html">Result</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_First_Expression_Func__0_DateTime___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.First(Expression%7BFunc%7B%600%2CDateTime%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L225">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_First_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.First*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_First_System_Linq_Expressions_Expression_System_Func__0_System_DateTime___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})">First(Expression&lt;Func&lt;T, DateTime&gt;&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_First_Expression_Func__0_DateTime___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.First(Expression{Func{`0,DateTime}})">First(Expression&lt;Func&lt;T, DateTime&gt;&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -645,7 +621,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.DateTime</span>&gt;&gt;</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">DateTime</span>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -668,13 +644,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_First_System_Linq_Expressions_Expression_System_Func__0_System_Int32___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.First(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Int32%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_First_Expression_Func__0_System_Int32___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.First(Expression%7BFunc%7B%600%2CSystem.Int32%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L254">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_First_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.First*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_First_System_Linq_Expressions_Expression_System_Func__0_System_Int32___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">First(Expression&lt;Func&lt;T, Int32&gt;&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_First_Expression_Func__0_System_Int32___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.First(Expression{Func{`0,System.Int32}})">First(Expression&lt;Func&lt;T, Int32&gt;&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -692,7 +668,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Int32</span>&gt;&gt;</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Int32</span>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -738,20 +714,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;&gt;</td>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">IEnumerable</span>&lt;T&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Get_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Get(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Boolean%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Get_Expression_Func__0_System_Boolean___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Get(Expression%7BFunc%7B%600%2CSystem.Boolean%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L53">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">Get(Expression&lt;Func&lt;T, Boolean&gt;&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_Expression_Func__0_System_Boolean___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get(Expression{Func{`0,System.Boolean}})">Get(Expression&lt;Func&lt;T, Boolean&gt;&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -769,7 +745,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -785,72 +761,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;&gt;</td>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">IEnumerable</span>&lt;T&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Get_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Get(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Boolean%7D%7D%2CSystem.Func%7BSystem.Linq.IQueryable%7B%600%7D%2CSystem.Linq.IQueryable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L96">View Source</a>
-  </span>
-  <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})">Get(Expression&lt;Func&lt;T, Boolean&gt;&gt;, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Result&lt;IEnumerable&lt;T&gt;&gt; Get(Expression&lt;Func&lt;T, bool&gt;&gt; predicate, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt; func)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
-        <td><span class="parametername">predicate</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Linq.IQueryable</span>&lt;T&gt;, <span class="xref">System.Linq.IQueryable</span>&lt;T&gt;&gt;</td>
-        <td><span class="parametername">func</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Get_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0_System_Object_____.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Get(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Boolean%7D%7D%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Get_Expression_Func__0_System_Boolean___Expression_Func__0_System_Object_____.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Get(Expression%7BFunc%7B%600%2CSystem.Boolean%7D%7D%2CExpression%7BFunc%7B%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L81">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0_System_Object_____" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">Get(Expression&lt;Func&lt;T, Boolean&gt;&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_Expression_Func__0_System_Boolean___Expression_Func__0_System_Object_____" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get(Expression{Func{`0,System.Boolean}},Expression{Func{`0,System.Object}}[])">Get(Expression&lt;Func&lt;T, Boolean&gt;&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -868,12 +792,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Object</span>&gt;&gt;[]</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Object</span>&gt;&gt;[]</td>
         <td><span class="parametername">includeProperties</span></td>
         <td></td>
       </tr>
@@ -889,20 +813,72 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;&gt;</td>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">IEnumerable</span>&lt;T&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Get_System_Linq_Expressions_Expression_System_Func__0_System_Object_____.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Get(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Get_Expression_Func__0_System_Boolean___Func_IQueryable__0__IQueryable__0___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Get(Expression%7BFunc%7B%600%2CSystem.Boolean%7D%7D%2CFunc%7BIQueryable%7B%600%7D%2CIQueryable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L96">View Source</a>
+  </span>
+  <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get*"></a>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_Expression_Func__0_System_Boolean___Func_IQueryable__0__IQueryable__0___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get(Expression{Func{`0,System.Boolean}},Func{IQueryable{`0},IQueryable{`0}})">Get(Expression&lt;Func&lt;T, Boolean&gt;&gt;, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result&lt;IEnumerable&lt;T&gt;&gt; Get(Expression&lt;Func&lt;T, bool&gt;&gt; predicate, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">IQueryable</span>&lt;T&gt;, <span class="xref">IQueryable</span>&lt;T&gt;&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">IEnumerable</span>&lt;T&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Get_Expression_Func__0_System_Object_____.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Get(Expression%7BFunc%7B%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L67">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_System_Linq_Expressions_Expression_System_Func__0_System_Object_____" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">Get(Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Get_Expression_Func__0_System_Object_____" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Get(Expression{Func{`0,System.Object}}[])">Get(Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -920,7 +896,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Object</span>&gt;&gt;[]</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Object</span>&gt;&gt;[]</td>
         <td><span class="parametername">includeProperties</span></td>
         <td></td>
       </tr>
@@ -936,20 +912,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;&gt;</td>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">IEnumerable</span>&lt;T&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_System_DateTimeOffset_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.GetLastSyncChanges(System.DateTimeOffset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_DateTimeOffset_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.GetLastSyncChanges(DateTimeOffset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L112">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.GetLastSyncChanges*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_System_DateTimeOffset_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.GetLastSyncChanges(System.DateTimeOffset)">GetLastSyncChanges(DateTimeOffset)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_DateTimeOffset_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.GetLastSyncChanges(DateTimeOffset)">GetLastSyncChanges(DateTimeOffset)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -967,7 +943,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.DateTimeOffset</span></td>
+        <td><span class="xref">DateTimeOffset</span></td>
         <td><span class="parametername">lastSync</span></td>
         <td></td>
       </tr>
@@ -983,20 +959,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;&gt;</td>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">IEnumerable</span>&lt;T&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_System_DateTimeOffset_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.GetLastSyncChanges(System.DateTimeOffset%2CSystem.Func%7BSystem.Linq.IQueryable%7B%600%7D%2CSystem.Linq.IQueryable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_DateTimeOffset_Func_IQueryable__0__IQueryable__0___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.GetLastSyncChanges(DateTimeOffset%2CFunc%7BIQueryable%7B%600%7D%2CIQueryable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L130">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.GetLastSyncChanges*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_System_DateTimeOffset_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.GetLastSyncChanges(System.DateTimeOffset,System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})">GetLastSyncChanges(DateTimeOffset, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_GetLastSyncChanges_DateTimeOffset_Func_IQueryable__0__IQueryable__0___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.GetLastSyncChanges(DateTimeOffset,Func{IQueryable{`0},IQueryable{`0}})">GetLastSyncChanges(DateTimeOffset, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1014,12 +990,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.DateTimeOffset</span></td>
+        <td><span class="xref">DateTimeOffset</span></td>
         <td><span class="parametername">lastSync</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Linq.IQueryable</span>&lt;T&gt;, <span class="xref">System.Linq.IQueryable</span>&lt;T&gt;&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">IQueryable</span>&lt;T&gt;, <span class="xref">IQueryable</span>&lt;T&gt;&gt;</td>
         <td><span class="parametername">func</span></td>
         <td></td>
       </tr>
@@ -1035,7 +1011,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;&gt;</td>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;<span class="xref">IEnumerable</span>&lt;T&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1072,13 +1048,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Last_System_Linq_Expressions_Expression_System_Func__0_System_DateTime___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Last(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.DateTime%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Last_Expression_Func__0_DateTime___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Last(Expression%7BFunc%7B%600%2CDateTime%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L239">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Last_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Last*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Last_System_Linq_Expressions_Expression_System_Func__0_System_DateTime___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Last(System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})">Last(Expression&lt;Func&lt;T, DateTime&gt;&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Last_Expression_Func__0_DateTime___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Last(Expression{Func{`0,DateTime}})">Last(Expression&lt;Func&lt;T, DateTime&gt;&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1096,7 +1072,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.DateTime</span>&gt;&gt;</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">DateTime</span>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -1119,13 +1095,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Last_System_Linq_Expressions_Expression_System_Func__0_System_Int32___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Last(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Int32%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Last_Expression_Func__0_System_Int32___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Last(Expression%7BFunc%7B%600%2CSystem.Int32%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L268">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Last_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Last*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Last_System_Linq_Expressions_Expression_System_Func__0_System_Int32___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Last(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">Last(Expression&lt;Func&lt;T, Int32&gt;&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Last_Expression_Func__0_System_Int32___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Last(Expression{Func{`0,System.Int32}})">Last(Expression&lt;Func&lt;T, Int32&gt;&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1143,7 +1119,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Int32</span>&gt;&gt;</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Int32</span>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -1196,13 +1172,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_PullSync_System_Collections_Generic_List__0__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.PullSync(System.Collections.Generic.List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_PullSync_List__0__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.PullSync(List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L503">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_PullSync_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.PullSync*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_PullSync_System_Collections_Generic_List__0__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.PullSync(System.Collections.Generic.List{`0})">PullSync(List&lt;T&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_PullSync_List__0__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.PullSync(List{`0})">PullSync(List&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1220,7 +1196,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
         <td><span class="parametername">entityList</span></td>
         <td></td>
       </tr>
@@ -1243,13 +1219,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_PushSync_System_Collections_Generic_List__0__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.PushSync(System.Collections.Generic.List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_PushSync_List__0__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.PushSync(List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L459">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_PushSync_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.PushSync*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_PushSync_System_Collections_Generic_List__0__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.PushSync(System.Collections.Generic.List{`0})">PushSync(List&lt;T&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_PushSync_List__0__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.PushSync(List{`0})">PushSync(List&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1267,7 +1243,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
         <td><span class="parametername">entityList</span></td>
         <td></td>
       </tr>
@@ -1337,60 +1313,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Guid_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(System.Guid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L151">View Source</a>
-  </span>
-  <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Guid_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(System.Guid)">Single(Guid)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Result&lt;T&gt; Single(Guid id)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Guid</span></td>
-        <td><span class="parametername">id</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;T&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Boolean%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_Expression_Func__0_System_Boolean___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(Expression%7BFunc%7B%600%2CSystem.Boolean%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L180">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">Single(Expression&lt;Func&lt;T, Boolean&gt;&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_Expression_Func__0_System_Boolean___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(Expression{Func{`0,System.Boolean}})">Single(Expression&lt;Func&lt;T, Boolean&gt;&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1408,7 +1337,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -1431,65 +1360,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Boolean%7D%7D%2CSystem.Func%7BSystem.Linq.IQueryable%7B%600%7D%2CSystem.Linq.IQueryable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L209">View Source</a>
-  </span>
-  <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})">Single(Expression&lt;Func&lt;T, Boolean&gt;&gt;, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Result&lt;T&gt; Single(Expression&lt;Func&lt;T, bool&gt;&gt; predicate, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt; func)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
-        <td><span class="parametername">predicate</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Linq.IQueryable</span>&lt;T&gt;, <span class="xref">System.Linq.IQueryable</span>&lt;T&gt;&gt;</td>
-        <td><span class="parametername">func</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;T&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0_System_Object_____.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Boolean%7D%7D%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_Expression_Func__0_System_Boolean___Expression_Func__0_System_Object_____.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(Expression%7BFunc%7B%600%2CSystem.Boolean%7D%7D%2CExpression%7BFunc%7B%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L194">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0_System_Object_____" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">Single(Expression&lt;Func&lt;T, Boolean&gt;&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_Expression_Func__0_System_Boolean___Expression_Func__0_System_Object_____" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(Expression{Func{`0,System.Boolean}},Expression{Func{`0,System.Object}}[])">Single(Expression&lt;Func&lt;T, Boolean&gt;&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1507,12 +1384,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, <span class="xref">System.Object</span>&gt;&gt;[]</td>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Object</span>&gt;&gt;[]</td>
         <td><span class="parametername">includeProperties</span></td>
         <td></td>
       </tr>
@@ -1535,13 +1412,112 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Nullable_System_Guid__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(System.Nullable%7BSystem.Guid%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_Expression_Func__0_System_Boolean___Func_IQueryable__0__IQueryable__0___.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(Expression%7BFunc%7B%600%2CSystem.Boolean%7D%7D%2CFunc%7BIQueryable%7B%600%7D%2CIQueryable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L209">View Source</a>
+  </span>
+  <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single*"></a>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_Expression_Func__0_System_Boolean___Func_IQueryable__0__IQueryable__0___" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(Expression{Func{`0,System.Boolean}},Func{IQueryable{`0},IQueryable{`0}})">Single(Expression&lt;Func&lt;T, Boolean&gt;&gt;, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result&lt;T&gt; Single(Expression&lt;Func&lt;T, bool&gt;&gt; predicate, Func&lt;IQueryable&lt;T&gt;, IQueryable&lt;T&gt;&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">IQueryable</span>&lt;T&gt;, <span class="xref">IQueryable</span>&lt;T&gt;&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_Guid_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(Guid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L151">View Source</a>
+  </span>
+  <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single*"></a>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_Guid_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(Guid)">Single(Guid)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result&lt;T&gt; Single(Guid id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Guid</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="UwpCommunity.Standard.Data.Result-1.html">Result</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Nullable_Guid__.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Single(System.Nullable%7BGuid%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L149">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Nullable_System_Guid__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(System.Nullable{System.Guid})">Single(Nullable&lt;Guid&gt;)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Single_System_Nullable_Guid__" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Single(System.Nullable{Guid})">Single(Nullable&lt;Guid&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1559,7 +1535,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Guid</span>&gt;</td>
         <td><span class="parametername">id</span></td>
         <td></td>
       </tr>
@@ -1629,13 +1605,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_SoftDelete_System_Guid_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.SoftDelete(System.Guid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_SoftDelete_Guid_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.SoftDelete(Guid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L359">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_SoftDelete_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.SoftDelete*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_SoftDelete_System_Guid_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.SoftDelete(System.Guid)">SoftDelete(Guid)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_SoftDelete_Guid_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.SoftDelete(Guid)">SoftDelete(Guid)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1653,7 +1629,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Guid</span></td>
+        <td><span class="xref">Guid</span></td>
         <td><span class="parametername">id</span></td>
         <td></td>
       </tr>
@@ -1723,13 +1699,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Update__0_System_Guid_System_Boolean_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Update(%600%2CSystem.Guid%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/UWPCommunity/Toolkit/new/master/apiSpec/new?filename=UwpCommunity_Standard_Data_Service_BaseService_1_Update__0_Guid_System_Boolean_.md&amp;value=---%0Auid%3A%20UwpCommunity.Standard.Data.Service.BaseService%601.Update(%600%2CGuid%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/UWPCommunity/Toolkit/blob/master/src/UwpCommunity.Standard.Data/Service/BaseService.cs/#L298">View Source</a>
   </span>
   <a id="UwpCommunity_Standard_Data_Service_BaseService_1_Update_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Update*"></a>
-  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Update__0_System_Guid_System_Boolean_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Update(`0,System.Guid,System.Boolean)">Update(T, Guid, Boolean)</h4>
+  <h4 id="UwpCommunity_Standard_Data_Service_BaseService_1_Update__0_Guid_System_Boolean_" data-uid="UwpCommunity.Standard.Data.Service.BaseService`1.Update(`0,Guid,System.Boolean)">Update(T, Guid, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1752,7 +1728,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Guid</span></td>
+        <td><span class="xref">Guid</span></td>
         <td><span class="parametername">id</span></td>
         <td></td>
       </tr>
