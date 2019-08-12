@@ -1,4 +1,3 @@
-# Documentation
+# Articles
 
-This is the Documentation section of the demo site.
-In the `toc.yml` we can add more pages to our documentation.
+This is just a placholder, go to [Documentation](../documentation/index.html)

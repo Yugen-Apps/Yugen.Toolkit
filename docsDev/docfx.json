@@ -17,15 +17,15 @@
       "properties": {
         "TargetFrameworks": "netstandard2.0"
       },
-      "dest": "api"
+      "dest": "documentation"
     }
   ],
   "build": {
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
+          "documentation/**.yml",
+          "documentation/index.md"
         ]
       },
       {

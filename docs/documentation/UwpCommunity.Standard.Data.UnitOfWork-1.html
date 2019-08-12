@@ -85,13 +85,37 @@
     <div><a class="xref" href="UwpCommunity.Standard.Data.Interfaces.IRepositoryFactory.html">IRepositoryFactory</a></div>
     <div><a class="xref" href="UwpCommunity.Standard.Data.Interfaces.IUnitOfWork-1.html">IUnitOfWork</a>&lt;TContext&gt;</div>
     <div><a class="xref" href="UwpCommunity.Standard.Data.Interfaces.IUnitOfWork.html">IUnitOfWork</a></div>
-    <div><span class="xref">IDisposable</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="UwpCommunity.Standard.Data.html">UwpCommunity.Standard.Data</a></h6>
   <h6><strong>Assembly</strong>: UwpCommunity.Standard.Data.dll</h6>
   <h5 id="UwpCommunity_Standard_Data_UnitOfWork_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class UnitOfWork&lt;TContext&gt; : object, IRepositoryFactory, IUnitOfWork&lt;TContext&gt;, IUnitOfWork, IDisposable where TContext : DbContext</code></pre>
+    <pre><code class="lang-csharp hljs">public class UnitOfWork&lt;TContext&gt; : IRepositoryFactory, IUnitOfWork&lt;TContext&gt;, IUnitOfWork, IDisposable where TContext : DbContext</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -205,6 +229,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IBaseRepository&lt;TEntity&gt; GetRepository&lt;TEntity&gt;()
+
     where TEntity : BaseEntity</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -251,6 +276,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int SaveChanges&lt;TEntity&gt;(bool updateModified = true)
+
     where TEntity : BaseEntity</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -311,7 +337,7 @@
       <a class="xref" href="UwpCommunity.Standard.Data.Interfaces.IUnitOfWork.html">IUnitOfWork</a>
   </div>
   <div>
-      <span class="xref">IDisposable</span>
+      <span class="xref">System.IDisposable</span>
   </div>
 </article>
           </div>
