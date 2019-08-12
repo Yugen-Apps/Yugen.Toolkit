@@ -15,9 +15,19 @@ namespace UwpCommunity.Uwp.Samples.Views.Controls
             this.InitializeComponent();
         }
 
-        private void Button_Tapped(object sender, TappedRoutedEventArgs e)
+        private void SuccessButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MyBanner.ShowSuccess();
+        }
+
+        private void WarningButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MyBanner.ShowWarning();
+        }
+
+        private void ErrorButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MyBanner.ShowError();
         }
     }
 }

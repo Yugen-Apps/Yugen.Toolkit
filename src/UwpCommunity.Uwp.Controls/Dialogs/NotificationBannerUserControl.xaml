@@ -2,7 +2,6 @@
     x:Class="UwpCommunity.Uwp.Controls.Dialogs.NotificationBannerUserControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UwpCommunity.Uwp.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:converters="using:UwpCommunity.Uwp.Converters"
@@ -21,7 +20,7 @@
                              Storyboard.TargetProperty="Opacity"
                              From="0.0"
                              To="1.0"
-                             Duration="{x:Bind Duration, Mode=OneWay}"
+                             Duration="{x:Bind AnimationDuration, Mode=OneWay}"
                              AutoReverse="{x:Bind AutoReverse, Mode=OneWay}"
                              RepeatBehavior="1x" />
         </Storyboard>
@@ -49,7 +48,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <SymbolIcon Symbol="{x:Bind BannerSymbol, Mode=OneWay}"
+        <SymbolIcon Symbol="{x:Bind Symbol, Mode=OneWay}"
                     Margin="10"
                     Grid.Column="0"
                     Grid.RowSpan="2" />
@@ -65,7 +64,7 @@
                     Grid.Row="0"
                     HorizontalAlignment="Stretch">
             <Button Background="WhiteSmoke"
-                    Visibility="{x:Bind BannerButtonCloseVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                    Visibility="{x:Bind IsCloseButtonVisible, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
                     Tapped="ClearButton_Tapped">
                 <SymbolIcon Symbol="Clear" />
             </Button>
