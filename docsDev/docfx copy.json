@@ -4,7 +4,7 @@
       "src": [
         {
           "files": [
-            "src/UwpCommunity.Uwp.Controls/**.csproj"
+            "src/**.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -17,30 +17,53 @@
       "properties": {
         "TargetFrameworks": "netstandard2.0"
       },
-      "dest": "metadata/UwpCommunity.Uwp.Controls"
+      "dest": "documentation"
     }
   ],
   "build": {
     "content": [
       {
         "files": [
+          "documentation/**.yml",
+          "documentation/index.md"
+        ]
+      },
+      {
+        "files": [
+          "articles/**.md",
+          "articles/**/toc.yml",
           "toc.yml",
-          "index.md",
-          "metadata/toc.yml",
-          "metadata/index.md",
-          "metadata/UwpCommunity.Uwp.Controls/*.yml",
-          "metadata/UwpCommunity.Uwp.Controls/index.md"
+          "*.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "docs/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ],
+        "exclude": [
+          "obj/**",
+          "docs/**"
         ]
       }
     ],
     "overwrite": [
       {
         "files": [
-          "overwrite/**.md"
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "docs/**"
         ]
       }
     ],
-    "dest": "build",
+    "dest": "docs",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [

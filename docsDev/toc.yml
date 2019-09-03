@@ -1,5 +1,8 @@
-- name: Articles
-  href: articles/
+# - name: Articles
+#   href: articles/
 - name: Documentation
-  href: documentation/
-  homepage: documentation/index.md
+  href: metadata/
+  homepage: metadata/index.md
+- name: UwpCommunity.Uwp.Controls
+  href: metadata/UwpCommunity.Uwp.Controls
+  homepage: metadata/UwpCommunity.Uwp.Controls/index.md

@@ -1,3 +1,1 @@
-docfx serve docs
-
-Read-Host -Prompt "Press Enter to exit"
+docfx docfx.json --serve -p 8080
