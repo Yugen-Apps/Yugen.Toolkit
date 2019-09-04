@@ -17,7 +17,7 @@
       "properties": {
         "TargetFrameworks": "netstandard2.0"
       },
-      "dest": "metadata/UwpCommunity.Uwp.Controls"
+      "dest": "metadata/uwp.controls"
     }
   ],
   "build": {
@@ -28,8 +28,10 @@
           "index.md",
           "metadata/toc.yml",
           "metadata/index.md",
-          "metadata/UwpCommunity.Uwp.Controls/*.yml",
-          "metadata/UwpCommunity.Uwp.Controls/index.md"
+          "articles/**/toc.yml",
+          "articles/**.md",
+          "metadata/uwp.controls/*.yml",
+          "metadata/uwp.controls/index.md"
         ]
       }
     ],

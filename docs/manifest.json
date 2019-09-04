@@ -5,22 +5,73 @@
   "files": [
     {
       "type": "Conceptual",
-      "source_relative_path": "index.md",
+      "source_relative_path": "articles/gettingStarted.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "m6vNTu7ttS5HcN0ikNh6vg=="
+          "relative_path": "articles/gettingStarted.html",
+          "hash": "E+uLSt3MY0d36tcL9iDd3Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guidelines.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guidelines.html",
+          "hash": "By/o63OS7gGxJ/cLbGnBCQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guidelines/codingStandard.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guidelines/codingStandard.html",
+          "hash": "TVVlXeZ7pnBnFf0DPmbrpQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "43XocWYeaToTDkclheK9Xg=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Collections.EdgeTappedListView.yml",
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Collections.EdgeTappedListView.html",
+          "relative_path": "index.html",
+          "hash": "4D5YquajID2dUknUCyuIEQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Collections.EdgeTappedListView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Collections.EdgeTappedListView.html",
           "hash": "+HY8nXJtp0vMV/Fuq+bMoQ=="
         }
       },
@@ -29,10 +80,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Collections.EdgeTappedListViewEventArgs.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Collections.EdgeTappedListViewEventArgs.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Collections.EdgeTappedListViewEventArgs.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Collections.EdgeTappedListViewEventArgs.html",
           "hash": "GnRYjkLI1/Vr3CRmfhULqA=="
         }
       },
@@ -41,11 +92,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Collections.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Collections.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Collections.html",
-          "hash": "Lysbg1UYqzqitcTXQL/s3Q=="
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Collections.html",
+          "hash": "gIZDPc/J2/PdYDhCkFiEkg=="
         }
       },
       "is_incremental": true,
@@ -53,11 +104,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Dialogs.CustomDialogTypeEnum.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Dialogs.CustomDialogTypeEnum.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Dialogs.CustomDialogTypeEnum.html",
-          "hash": "PIdo6YBJKFMJ9tDYLaA0HA=="
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Dialogs.CustomDialogTypeEnum.html",
+          "hash": "YHCYtmJUCc2hip2E4A14bQ=="
         }
       },
       "is_incremental": true,
@@ -65,11 +116,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Dialogs.CustomDialogUserControl.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Dialogs.CustomDialogUserControl.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Dialogs.CustomDialogUserControl.html",
-          "hash": "ZC+sbdQ7JUQ/d/dfxKI0tg=="
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Dialogs.CustomDialogUserControl.html",
+          "hash": "JUcZJBSXt1YyfKxMQfLydw=="
         }
       },
       "is_incremental": true,
@@ -77,11 +128,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Dialogs.NotificationBannerUserControl.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Dialogs.NotificationBannerUserControl.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Dialogs.NotificationBannerUserControl.html",
-          "hash": "mUki4dz3qk0WFU/2Z2F2tg=="
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Dialogs.NotificationBannerUserControl.html",
+          "hash": "nrx6hpsoGhM+3ON0xAvOFA=="
         }
       },
       "is_incremental": true,
@@ -89,11 +140,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Dialogs.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Dialogs.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Dialogs.html",
-          "hash": "GsLRVHwCeRa2WmAPsFmGSQ=="
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Dialogs.html",
+          "hash": "jDnAQB8WKSWIYkFBxMWpBg=="
         }
       },
       "is_incremental": true,
@@ -101,11 +152,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Graphs.BarGraphUserControl.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Graphs.BarGraphUserControl.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Graphs.BarGraphUserControl.html",
-          "hash": "j75yxML6MTBqwTi9+gDFEg=="
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Graphs.BarGraphUserControl.html",
+          "hash": "I6OYh8wF+SKGulB3Vv2ZwQ=="
         }
       },
       "is_incremental": true,
@@ -113,11 +164,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Graphs.DataPathEventArgs.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Graphs.DataPathEventArgs.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Graphs.DataPathEventArgs.html",
-          "hash": "IAYKzfpEjlY2mqZ459VlwA=="
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Graphs.DataPathEventArgs.html",
+          "hash": "H3fNiNPXsGDZm9rFm10rgw=="
         }
       },
       "is_incremental": true,
@@ -125,10 +176,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Graphs.ValueListViewModel.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Graphs.ValueListViewModel.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Graphs.ValueListViewModel.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Graphs.ValueListViewModel.html",
           "hash": "25IV+lYSCAHnFHLMfw/MEg=="
         }
       },
@@ -137,11 +188,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Graphs.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Graphs.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Graphs.html",
-          "hash": "xUPqUknOHWrLg+PjYgjHUA=="
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Graphs.html",
+          "hash": "HIAXy8zW/nj74Nh686BkmQ=="
         }
       },
       "is_incremental": true,
@@ -149,10 +200,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Menu.TitleImageCommandBarUserControl.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Menu.TitleImageCommandBarUserControl.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Menu.TitleImageCommandBarUserControl.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Menu.TitleImageCommandBarUserControl.html",
           "hash": "T22G4uP/rViX8CDbOHqtDw=="
         }
       },
@@ -161,10 +212,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Menu.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Menu.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Menu.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Menu.html",
           "hash": "IIRU24bEBkm7STsKyk3MJg=="
         }
       },
@@ -173,10 +224,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.BaseValidatingUserControl.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.BaseValidatingUserControl.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.BaseValidatingUserControl.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.BaseValidatingUserControl.html",
           "hash": "5qkrx26JnK4B5SAwA897mw=="
         }
       },
@@ -185,10 +236,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.Helpers.ValidatingFormHelper.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.Helpers.ValidatingFormHelper.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.Helpers.ValidatingFormHelper.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.Helpers.ValidatingFormHelper.html",
           "hash": "c+zBQvLp2pPUUTdmDaIKNw=="
         }
       },
@@ -197,10 +248,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.Helpers.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.Helpers.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.Helpers.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.Helpers.html",
           "hash": "MB/Vftkln5CSB+d0d6sMeQ=="
         }
       },
@@ -209,10 +260,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.ValidatingButtonControl.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.ValidatingButtonControl.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.ValidatingButtonControl.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.ValidatingButtonControl.html",
           "hash": "4r/YKyCkll/wLCvmZDvdMg=="
         }
       },
@@ -221,10 +272,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.ValidatingComboBoxUserControl.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.ValidatingComboBoxUserControl.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.ValidatingComboBoxUserControl.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.ValidatingComboBoxUserControl.html",
           "hash": "nRWlrEE3D3GEZC2gyIH/kw=="
         }
       },
@@ -233,10 +284,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.ValidatingPasswordBoxUserControl.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.ValidatingPasswordBoxUserControl.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.ValidatingPasswordBoxUserControl.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.ValidatingPasswordBoxUserControl.html",
           "hash": "Hmm/upCt92D1SXc0pVwtGA=="
         }
       },
@@ -245,10 +296,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.ValidatingTextBoxUserControl.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.ValidatingTextBoxUserControl.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.ValidatingTextBoxUserControl.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.ValidatingTextBoxUserControl.html",
           "hash": "aV/T+6+fCZhWlU4JT5Qkmw=="
         }
       },
@@ -257,10 +308,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.yml",
+      "source_relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/UwpCommunity.Uwp.Controls.Validation.html",
+          "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Validation.html",
           "hash": "kqgYRHVWpc6FSGZ1h8ofYw=="
         }
       },
@@ -269,11 +320,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/index.md",
+      "source_relative_path": "metadata/uwp.controls/index.md",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/index.html",
-          "hash": "kW2mVDfi7t4Ng+doJfcDPg=="
+          "relative_path": "metadata/uwp.controls/index.html",
+          "hash": "BDR+VOgVeym4pQleFbMGcw=="
         }
       },
       "is_incremental": true,
@@ -281,10 +332,10 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "metadata/UwpCommunity.Uwp.Controls/toc.yml",
+      "source_relative_path": "metadata/uwp.controls/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "metadata/UwpCommunity.Uwp.Controls/toc.html",
+          "relative_path": "metadata/uwp.controls/toc.html",
           "hash": "Gcb4ILWaty/RshGIQUnK1A=="
         }
       },
@@ -292,42 +343,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "Conceptual",
-      "source_relative_path": "metadata/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "metadata/index.html",
-          "hash": "mwLaAwEuFJjWbDHlhcJuSw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "metadata/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "metadata/toc.html",
-          "hash": "YJcgN5NMyWlXz6fLT/vWSQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "ZSQCZHAWPZ0UToZXBROUFQ=="
+          "hash": "My8VmeC552xxmBXqmgYErw=="
         }
       },
       "is_incremental": false,
@@ -343,12 +364,11 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 5,
+          "skipped_file_count": 5
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
@@ -356,11 +376,12 @@
           "total_file_count": 22,
           "skipped_file_count": 22
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 3
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },

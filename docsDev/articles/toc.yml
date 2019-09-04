@@ -1,7 +1,7 @@
-- name: Introduction
-  href: intro.md
-- name: Example Page
-  href: example.md
+- name: Getting Started
+  href: gettingStarted.md
+- name: Guidelines
+  href: guidelines.md
   items:
-  - name: Inner Example Page
-    href: inner-example.md
+  - name: Coding Standard
+    href: guidelines/codingStandard.md
