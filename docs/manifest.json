@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/gettingStarted.html",
-          "hash": "E+uLSt3MY0d36tcL9iDd3Q=="
+          "hash": "GlfCBe8nBhJNBHBKcL1scQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -96,10 +96,10 @@
       "output": {
         ".html": {
           "relative_path": "metadata/uwp.controls/UwpCommunity.Uwp.Controls.Collections.html",
-          "hash": "6gmc0oKGLUHQUwka0z8dpQ=="
+          "hash": "zq7NQOqmtTYQzuxTCIwAsw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -375,13 +375,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 5,
-          "skipped_file_count": 5
+          "skipped_file_count": 4
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 22,
-          "skipped_file_count": 21
+          "skipped_file_count": 22
         }
       }
     },
