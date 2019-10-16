@@ -15,4 +15,5 @@
             <SolidColorBrush x:Key="myBrush" Color="{StaticResource myColor2}"/>
         </ResourceDictionary>
     </ResourceDictionary.ThemeDictionaries>
+    
 </ResourceDictionary>

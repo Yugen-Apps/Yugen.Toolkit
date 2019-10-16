@@ -133,7 +133,7 @@
     <Compile Include="Graphs\BarGraphUserControl.xaml.cs">
       <DependentUpon>BarGraphUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Graphs\ValueListViewModel.cs" />
+    <Compile Include="Graphs\ElementViewModel.cs" />
     <Compile Include="Menu\TitleImageCommandBarUserControl.xaml.cs">
       <DependentUpon>TitleImageCommandBarUserControl.xaml</DependentUpon>
     </Compile>

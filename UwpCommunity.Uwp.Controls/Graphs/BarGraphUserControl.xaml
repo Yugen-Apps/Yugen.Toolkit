@@ -158,7 +158,7 @@
         </Grid.RowDefinitions>
 
         <ListView x:Name="ListView"
-                  ItemsSource="{x:Bind ValueCollection, Mode=OneWay}"
+                  ItemsSource="{x:Bind ElementCollection, Mode=OneWay}"
                   SelectionMode="None"
                   Height="{x:Bind Height, Mode=OneWay}"
                   Width="{x:Bind Width, Mode=OneWay}"
@@ -176,7 +176,7 @@
             </ListView.ItemsPanel>
 
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="graphs:ValueListViewModel">
+                <DataTemplate x:DataType="graphs:ElementViewModel">
                     <Grid Width="{Binding ColumnWidth, Mode=OneWay, ElementName=BarGraph}">
 
                         <Grid.RowDefinitions>
@@ -190,9 +190,9 @@
 
                         <Rectangle Grid.Row="0"
                                    Style="{StaticResource TrailBarStyle}"
-                                   Height="{x:Bind Percentage, Mode=OneWay}" />
+                                   Height="{x:Bind Value, Mode=OneWay}" />
 
-                        <TextBlock Text="{x:Bind Text, Mode=OneWay}"
+                        <TextBlock Text="{x:Bind Label, Mode=OneWay}"
                                    Style="{StaticResource LabelTextBlockStyle}"
                                    Grid.Row="1" />
 

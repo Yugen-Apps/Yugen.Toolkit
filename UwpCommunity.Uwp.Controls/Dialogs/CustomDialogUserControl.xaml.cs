@@ -158,12 +158,18 @@ namespace UwpCommunity.Uwp.Controls.Dialogs
             typeof(CustomDialogUserControl), 
             new PropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets a value indicating the Text of the left button.
+        /// </summary>
         public string LeftButtonText
         {
             get { return (string)GetValue(LeftButtonTextProperty); }
             set { SetValue(LeftButtonTextProperty, value); }
         }
-   
+
+        /// <summary>
+        /// Identifies the <see cref="LeftButtonText"/> dependency property.
+        /// </summary>
         public static readonly DependencyProperty LeftButtonTextProperty = DependencyProperty.Register(
             nameof(LeftButtonText), 
             typeof(string), 
@@ -188,12 +194,18 @@ namespace UwpCommunity.Uwp.Controls.Dialogs
             typeof(CustomDialogUserControl), 
             new PropertyMetadata(null));
 
+        /// <summary>
+        /// Gets or sets a value indicating the Text of the rigt button.
+        /// </summary>
         public string RightButtonText
         {
             get { return (string)GetValue(RightButtonTextProperty); }
             set { SetValue(RightButtonTextProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="RightButtonText"/> dependency property.
+        /// </summary>
         public static readonly DependencyProperty RightButtonTextProperty = DependencyProperty.Register(
             nameof(RightButtonText), 
             typeof(string), 
@@ -201,7 +213,7 @@ namespace UwpCommunity.Uwp.Controls.Dialogs
             new PropertyMetadata(default(string)));
 
         /// <summary>
-        /// Dialog type 
+        /// Gets or sets a value indicating the type of Dialog.
         /// </summary>
         public CustomDialogTypeEnum Type
         {
@@ -326,12 +338,18 @@ namespace UwpCommunity.Uwp.Controls.Dialogs
             typeof(CustomDialogUserControl), 
             new PropertyMetadata(true));
 
+        /// <summary>
+        /// Gets or sets a value indicating the animation duration
+        /// </summary>
         public TimeSpan Duration
         {
             get { return (TimeSpan)GetValue(DurationProperty); }
             set { SetValue(DurationProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="Duration"/> dependency property.
+        /// </summary>
         public static readonly DependencyProperty DurationProperty = DependencyProperty.Register(
             nameof(Duration),
             typeof(TimeSpan),
