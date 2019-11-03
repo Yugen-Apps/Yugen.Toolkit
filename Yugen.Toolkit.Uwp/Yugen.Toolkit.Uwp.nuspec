@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Yugen.Toolkit.Uwp</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>emiliano84</authors>
     <description>Package Description</description>
     <!--<language>en-US</language>-->
@@ -21,11 +21,11 @@
   <files>
   
     <!-- Dll -->
-    <!-- <file src="bin\Release\Yugen.Toolkit.Uwp.dll" target="lib\uap10.0.17763" /> -->
+     <file src="bin\Release\Yugen.Toolkit.Uwp.dll" target="lib\uap10.0.17763" /> 
 
     <!-- Resources -->
     <file src="bin\Release\Yugen.Toolkit.Uwp.pdb" target="lib\uap10.0.17763" />
-    <!-- <file src="bin\Release\Yugen.Toolkit.Uwp.pri" target="lib\uap10.0.17763" /> --> 
+     <file src="bin\Release\Yugen.Toolkit.Uwp.pri" target="lib\uap10.0.17763" />  
 
     <!-- IntelliSense files -->
     <file src="bin\Release\Yugen.Toolkit.Uwp.XML" target="lib\uap10.0.17763" />
