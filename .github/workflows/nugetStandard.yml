@@ -1,4 +1,4 @@
-name: Standard: Build, Pack and Publish Nuget
+name: Standard, Build, Pack and Publish Nuget
 on:
   push:
     branches:    
