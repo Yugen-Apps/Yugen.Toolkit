@@ -19,11 +19,7 @@ jobs:
 
     - name: MSBuild Build
       run: msbuild Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj /p:Configuration="Release"
-
-    - name: MSBuild Pack
-      run: msbuild Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj /p:Configuration="Release" /t:pack 
-    #-p:PackageVersion=1.0.2 
-
+      
     - name: Setup Nuget.exe
       uses: warrenbuckley/Setup-Nuget@v1
     
@@ -31,8 +27,8 @@ jobs:
     #  run: dir Yugen.Toolkit.Uwp\bin\Release\
     #  continue-on-error: true
       
-    #- name: Nuget Pack
-    #  run: nuget pack Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj
+    - name: Nuget Pack
+      run: nuget pack Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj
     
     - name: Nuget Add Source
       run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/emiliano84/index.json" -UserName emiliano84 -Password ${{ secrets.PERSONAL_TOKEN }}
