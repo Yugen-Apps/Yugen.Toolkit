@@ -1,0 +1,44 @@
+name: Standard: Build, Pack and Publish Nuget
+on:
+  push:
+    branches:    
+      - master   
+
+jobs:   
+  build_pack_publish:
+    runs-on: windows-latest
+    name: Build
+    steps:
+    - uses: actions/checkout@v1   
+    
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+
+    - name: MSBuild Restore
+      run: msbuild Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration="Release" /t:restore     
+
+    - name: MSBuild Build
+      run: msbuild Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration="Release"
+
+    - name: MSBuild Pack
+      run: msbuild Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration="Release" /t:pack 
+    #-p:PackageVersion=1.0.2 
+
+    - name: Setup Nuget.exe
+      uses: warrenbuckley/Setup-Nuget@v1
+    
+    #- name: Dir
+    #  run: dir Yugen.Toolkit.Standard\bin\Release\
+    #  continue-on-error: true
+      
+    #- name: Nuget Pack
+    #  run: nuget pack Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj
+    
+    - name: Nuget Add Source
+      run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/emiliano84/index.json" -UserName emiliano84 -Password ${{ secrets.PERSONAL_TOKEN }}
+
+    - name: Nuget SetAPIKey
+      run: nuget setApiKey ${{ secrets.PERSONAL_TOKEN }} -Source "GitHub"
+
+    - name: Nuget Push
+      run: nuget push Yugen.Toolkit.Standard\bin\Release\*.nupkg -Source "GitHub"
