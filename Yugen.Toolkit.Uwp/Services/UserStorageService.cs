@@ -245,7 +245,7 @@ namespace Yugen.Toolkit.Uwp.Services
 
         public static async Task LoadFile(string oldfile, string fileExtension)
         {
-            var file = await FilePickerHelper.OpenDbFile(fileExtension);
+            var file = await FilePickerHelper.OpenFile(fileExtension);
             if (file == null) return;
 
             var fileContent = await ReadBufferFromFileAsync(file);
@@ -255,11 +255,11 @@ namespace Yugen.Toolkit.Uwp.Services
             await WriteBufferAsync(oldFile, fileContent);
         }
 
-        public static async Task SaveFile(string oldfile, string fileExtension, string fileName)
+        public static async Task SaveFile(string oldfile, string fileName, string fileTypeName, string fileTypeExtension )
         {
             var dbFile = await GetFile(oldfile);
             var fileContent = await ReadBufferFromFileAsync(dbFile);
-            var file = await FilePickerHelper.SaveDbFile(fileExtension, fileName);
+            var file = await FilePickerHelper.SaveFile(fileName, fileTypeName, fileTypeExtension);
             await WriteBufferAsync(file, fileContent);
         }
     }

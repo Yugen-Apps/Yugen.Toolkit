@@ -1,4 +1,4 @@
-﻿//namespace UwpCommunity.Data.Extensions
+﻿//namespace Yugen.Toolkit.Data.Extensions
 //{
 //    public static class DbContextExtension
 //    {

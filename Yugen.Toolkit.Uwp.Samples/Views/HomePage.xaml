@@ -8,17 +8,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
-        <TextBlock Style="{ThemeResource TitleTextBlockStyle}">Welcome To Uwp Toolkit Samples App</TextBlock>
+        <TextBlock Style="{ThemeResource TitleTextBlockStyle}">Welcome To Yugen Toolkit Samples App</TextBlock>
         
         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Get Started</TextBlock>
 
         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">
-            The UupCommunity Toolkit is a collection of helper functions, custom controls, and app services. It helps develop common task for UWP apps.
+            The Yugen Toolkit is a collection of helper functions, custom controls, and app services. It helps develop common task for UWP apps.
         </TextBlock>
 
         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Useful Links</TextBlock>
 
         <HyperlinkButton Content="GitHub Repository"
-                         NavigateUri="https://github.com/UWPCommunity/Toolkit/" />
+                         NavigateUri="https://github.com/emiliano84/Toolkit/" />
     </StackPanel>
 </Page>

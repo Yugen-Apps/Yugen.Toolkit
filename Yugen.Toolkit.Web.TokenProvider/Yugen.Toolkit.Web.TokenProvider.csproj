@@ -1,13 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description></Description>
-    <Authors></Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Yugen.Toolkit.Web.TokenProvider</AssemblyName>
-    <PackageId>UwpCommunity.Web.TokenProvider</PackageId>
-    <PackageTags></PackageTags>
-    <Company>UwpCommunity.Web.TokenProvider</Company>
+    <Version>1.0.5</Version>
+    <PackageProjectUrl>https://github.com/emiliano84/Toolkit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/emiliano84/Toolkit.git</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

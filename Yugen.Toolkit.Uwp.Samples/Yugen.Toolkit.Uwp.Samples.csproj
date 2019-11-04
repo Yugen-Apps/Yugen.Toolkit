@@ -114,6 +114,9 @@
     <Compile Include="Views\Controls\ValidationPage.xaml.cs">
       <DependentUpon>ValidationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Helpers\FilePickerPage.xaml.cs">
+      <DependentUpon>FilePickerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Helpers\FilePickerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -200,7 +207,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj">
       <Project>{f41590ba-11b3-4a1f-8374-a7de83d58dc7}</Project>
-      <Name>Yugen.Toolkit.Uwp.Controls2</Name>
+      <Name>Yugen.Toolkit.Uwp.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj">
       <Project>{e535535b-b033-4f77-bd09-2c6ef2054b5d}</Project>

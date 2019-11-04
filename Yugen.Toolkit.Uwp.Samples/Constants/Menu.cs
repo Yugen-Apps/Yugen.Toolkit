@@ -2,6 +2,7 @@
 using Yugen.Toolkit.Uwp.Samples.Models;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Controls;
+using Yugen.Toolkit.Uwp.Samples.Views.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Views.Navigation;
 
 namespace Yugen.Toolkit.Uwp.Samples.Constants
@@ -12,6 +13,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         {
             HomeMenu,
             ControlsMenu,
+            HelpersMenu,
             NavigationMenu
         };
 
@@ -46,6 +48,20 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
                 {
                     Name = "Notification Banner",
                     Tag = nameof(NotificationBannerPage)
+                }
+            }
+        };
+
+        public static MenuItem HelpersMenu => new MenuItem
+        {
+            Name = "Helpers",
+            IsExpanded = false,
+            Children =
+            {
+                new MenuItem
+                {
+                    Name = "File Picker",
+                    Tag = nameof(FilePickerPage)
                 }
             }
         };
