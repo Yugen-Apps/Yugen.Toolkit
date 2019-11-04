@@ -150,7 +150,7 @@
     <Compile Include="Validation\ValidatingTextBoxUserControl.xaml.cs">
       <DependentUpon>ValidatingTextBoxUserControl.xaml</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Properties\UwpCommunity.Uwp.Controls.rd.xml" />
+    <EmbeddedResource Include="Properties\Yugen.Toolkit.Uwp.Controls.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
