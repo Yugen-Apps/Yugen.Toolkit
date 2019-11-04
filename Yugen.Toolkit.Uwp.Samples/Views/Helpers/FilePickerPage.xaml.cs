@@ -18,10 +18,15 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Helpers
 
         private async void Open_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            await FilePickerHelper.OpenFile(".jpg");
+            await FilePickerHelper.OpenFile();
         }
 
         private async void Open2_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            await FilePickerHelper.OpenFile(".jpg");
+        }
+
+        private async void Open3_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             await FilePickerHelper.OpenFile(new List<string> { ".jpg", ".png" });
         }

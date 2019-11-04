@@ -12,10 +12,13 @@
 
         <Button Content="Open"
                 Click="Open_Click" />
-        
+
         <Button Content="Open 2"
                 Click="Open2_Click" />
-        
+
+        <Button Content="Open 3"
+                Click="Open3_Click" />
+
         <Button Content="Save"
                 Click="Save_Click" />
         

@@ -24,19 +24,52 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// </summary>
         /// <param name="fileTypeExtensionFilters">Extension List eg: .jpg, .png</param>
         /// <returns>StorageFile</returns>
-        public static async Task<StorageFile> OpenFile(IList<string> fileTypeExtensionFilters)
+        public static async Task<StorageFile> OpenFile(IList<string> fileTypeExtensionFilters = null)
+        {
+            FileOpenPicker picker = GeneratePicker(fileTypeExtensionFilters);
+
+            return await picker.PickSingleFileAsync();
+        }
+
+        /// <summary>
+        /// Open files from the picker
+        /// </summary>
+        /// <param name="fileTypeExtensionFilter">Extension eg: .jpg</param>
+        /// <returns>StorageFile</returns>
+        public static async Task<IReadOnlyList<StorageFile>> OpenFiles(string fileTypeExtensionFilter) => await OpenFiles(new List<string> { fileTypeExtensionFilter });
+
+        /// <summary>
+        /// Open files from the picker
+        /// </summary>
+        /// <param name="fileTypeExtensionFilters">Extension List eg: .jpg, .png</param>
+        /// <returns>StorageFile</returns>
+        public static async Task<IReadOnlyList<StorageFile>> OpenFiles(IList<string> fileTypeExtensionFilters = null)
+        {
+            FileOpenPicker picker = GeneratePicker(fileTypeExtensionFilters);
+
+            return await picker.PickMultipleFilesAsync();
+        }
+
+        private static FileOpenPicker GeneratePicker(IList<string> fileTypeExtensionFilters)
         {
             FileOpenPicker picker = new FileOpenPicker
             {
                 SuggestedStartLocation = PickerLocationId.DocumentsLibrary
             };
 
-            foreach (var extension in fileTypeExtensionFilters)
+            if (fileTypeExtensionFilters == null)
             {
-                picker.FileTypeFilter.Add(extension);
+                picker.FileTypeFilter.Add("*");
+            }
+            else
+            {
+                foreach (var extension in fileTypeExtensionFilters)
+                {
+                    picker.FileTypeFilter.Add(extension);
+                }
             }
 
-            return await picker.PickSingleFileAsync();
+            return picker;
         }
 
 
