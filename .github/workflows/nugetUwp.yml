@@ -31,10 +31,10 @@ jobs:
       run: nuget pack Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj -properties Configuration=Release
     
     - name: Nuget Add Source
-      run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/emiliano84/index.json" -UserName emiliano84 -Password ${{ secrets.PERSONAL_TOKEN }}
+      run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/emiliano84/index.json" -UserName emiliano84 -Password ${{ secrets.PACKAGES_TOKEN }}
 
     - name: Nuget SetAPIKey
-      run: nuget setApiKey ${{ secrets.PERSONAL_TOKEN }} -Source "GitHub"
+      run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source "GitHub"
 
     - name: Nuget Push
       run: nuget push *.nupkg -Source "GitHub"
