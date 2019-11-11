@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -13,14 +14,18 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public string Text
         {
             get { return (string) GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            set 
+            {
+                if (IsRealTimeRuleValidationMet(value))
+                    SetValue(TextProperty, value);
+            }
         }
 
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
             nameof(Text),
             typeof(string),
             typeof(ValidatingTextBoxUserControl),
-            new PropertyMetadata(null));
+            new PropertyMetadata(string.Empty));
 
         public bool IsSpellCheckEnabled
         {
@@ -92,18 +97,21 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
             base.Init(ErrorMessage, MyTextBox);
         }
         
-        private bool IsRealTimeRuleValidationMet()
+        private bool IsRealTimeRuleValidationMet(string value)
         {
-            if (ValidationRules == null) return true;
+            if (!IsRealTimeValidationEnabled) 
+                return true;
+            if (ValidationRules == null) 
+                return true;
 
-            bool[] isValid = { true };
+            bool isValid = true;
 
-            foreach (var rule in ValidationRules.Rules.TakeWhile(rule => isValid[0]))
+            foreach (var rule in ValidationRules.Rules.TakeWhile(rule => isValid))
             {
-                isValid[0] = rule.IsValid(MyTextBox.Text);
+                isValid = rule.IsValid(value);
             }
 
-            return isValid[0];
+            return isValid;
         }
 
 
@@ -112,19 +120,6 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         private void MyTextBox_OnTextChanging(TextBox sender, TextBoxTextChangingEventArgs e)
         {
             MyTextBoxOnTextChanging?.Invoke(sender, e);
-
-            Text = MyTextBox.Text;
-            LoggerHelper.WriteLine(GetType(), Text);
-
-            if (string.IsNullOrEmpty(MyTextBox.Text)) return;
-            if (!IsRealTimeValidationEnabled) return;
-            if (IsRealTimeRuleValidationMet()) return;
-
-            var selectionStart = MyTextBox.SelectionStart - 1;
-            MyTextBox.Text = MyTextBox.Text.Remove(selectionStart, 1);
-            Text = MyTextBox.Text;
-            MyTextBox.SelectionStart = selectionStart;
-            LoggerHelper.WriteLine(GetType(), Text);
         }
 
         public event TextChangedEventHandler MyTextBoxOnTextChanged;
@@ -133,6 +128,14 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         {
             base.ResetCustomValidation();
             MyTextBoxOnTextChanged?.Invoke(sender, e);
+
+            if (MyTextBox.Text != Text)
+            {
+                var selectionStart = MyTextBox.SelectionStart - 1;
+                MyTextBox.Text = Text;
+                if (selectionStart > -1)
+                    MyTextBox.SelectionStart = selectionStart;
+            }
         }
 
         public event RoutedEventHandler MyTextBoxOnGotFocus;

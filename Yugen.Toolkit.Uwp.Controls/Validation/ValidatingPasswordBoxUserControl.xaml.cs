@@ -104,8 +104,6 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         private void MyPasswordBox_OnTextChanging(PasswordBox sender, PasswordBoxPasswordChangingEventArgs e)
         {
             MyPasswordBoxOnTextChanging?.Invoke(sender, e);
-
-            Text = MyPasswordBox.Password;
             LoggerHelper.WriteLine(GetType(), Text);
         }
 
