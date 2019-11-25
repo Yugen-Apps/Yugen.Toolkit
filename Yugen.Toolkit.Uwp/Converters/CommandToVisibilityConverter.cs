@@ -7,6 +7,12 @@ namespace Yugen.Toolkit.Uwp.Converters
 {
     public class CommandToVisibilityConverter : IValueConverter
     {
+        /// <summary>
+        /// Converts a command value to a Visibility value.
+        /// </summary>
+        /// <returns>
+        /// Returns Visibility.Visible if is a commandHandler, else Visibility.Collapsed.
+        /// </returns>
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             return value is CommandHandler ? Visibility.Visible : Visibility.Collapsed;

@@ -7,7 +7,7 @@ namespace Yugen.Toolkit.Uwp.Converters
     public class DebugToVisibilityConverter : IValueConverter
     {
         /// <summary>
-        /// Converts a bool value to a Visibility value.
+        /// Converts a DEBUG value to a Visibility value.
         /// </summary>
         /// <returns>
         /// Returns Visibility.Visible if true, else Visibility.Collapsed.

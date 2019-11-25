@@ -7,14 +7,15 @@ namespace Yugen.Toolkit.Uwp.Helpers
 {
     public static class SystemHelper
     {
-        public static string GetAppVersion()
-        {
-            Package package = Package.Current;
-            PackageId packageId = package.Id;
-            PackageVersion version = packageId.Version;
+        /// <summary>
+        /// Get Current App Version
+        /// </summary>
+        public static string AppVersion =>  $"{Package.Current.Id.Version.Major}.{Package.Current.Id.Version.Minor}.{Package.Current.Id.Version.Build}.{Package.Current.Id.Version.Revision}";
 
-            return $"{version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
-        }
+        /// <summary>
+        /// Get Publisher Display Name
+        /// </summary>
+        public static string Publisher => Package.Current.PublisherDisplayName;
 
         /// <summary>
         /// Get computer name.
@@ -23,6 +24,9 @@ namespace Yugen.Toolkit.Uwp.Helpers
                                              .FirstOrDefault(name => name.Type == HostNameType.DomainName)
                                              ?.DisplayName ?? "";
 
+        /// <summary>
+        /// Return true if it's a mobile device
+        /// </summary>
         public static bool IsMobile => Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile";
     }
 }
