@@ -7,7 +7,7 @@
 //using Windows.Storage.Streams;
 //using Windows.UI.Xaml.Media.Imaging;
 
-//namespace Yugen.Mosaic.Uwp.Helpers
+//namespace Yugen.Toolkit.Uwp.Helpers
 //{
 //    public static class WriteableBitmapHelper
 //    {

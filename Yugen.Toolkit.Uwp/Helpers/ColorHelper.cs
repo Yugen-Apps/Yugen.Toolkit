@@ -1,6 +1,6 @@
 ﻿using Windows.UI.Xaml.Media;
 
-namespace Yugen.Mosaic.Uwp.Helpers
+namespace Yugen.Toolkit.Uwp.Helpers
 {
     public static class ColorHelper
     {

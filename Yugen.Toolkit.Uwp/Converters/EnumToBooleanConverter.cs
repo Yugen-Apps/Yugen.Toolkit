@@ -1,7 +1,7 @@
 ﻿using System;
 using Windows.UI.Xaml.Data;
 
-namespace Yugen.Mosaic.Uwp.Helpers
+namespace Yugen.Toolkit.Uwp.Converters
 {
     public class EnumToBooleanConverter : IValueConverter
     {
