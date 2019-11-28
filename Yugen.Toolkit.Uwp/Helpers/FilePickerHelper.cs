@@ -17,17 +17,17 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// </summary>
         /// <param name="fileTypeExtensionFilter">Extension eg: .jpg</param>
         /// <returns>StorageFile</returns>
-        public static async Task<StorageFile> OpenFile(string fileTypeExtensionFilter) => await OpenFile(new List<string> { fileTypeExtensionFilter });
+        public static async Task<StorageFile> OpenFile(string fileTypeExtensionFilter, PickerLocationId pickerLocationId = PickerLocationId.Downloads) => 
+            await OpenFile(new List<string> { fileTypeExtensionFilter });
 
         /// <summary>
         /// Open a file from the picker
         /// </summary>
         /// <param name="fileTypeExtensionFilters">Extension List eg: .jpg, .png</param>
         /// <returns>StorageFile</returns>
-        public static async Task<StorageFile> OpenFile(IList<string> fileTypeExtensionFilters = null)
+        public static async Task<StorageFile> OpenFile(IList<string> fileTypeExtensionFilters = null, PickerLocationId pickerLocationId = PickerLocationId.Downloads)
         {
-            FileOpenPicker picker = GeneratePicker(fileTypeExtensionFilters);
-
+            FileOpenPicker picker = GeneratePicker(fileTypeExtensionFilters, pickerLocationId);
             return await picker.PickSingleFileAsync();
         }
 
@@ -36,25 +36,25 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// </summary>
         /// <param name="fileTypeExtensionFilter">Extension eg: .jpg</param>
         /// <returns>StorageFile</returns>
-        public static async Task<IReadOnlyList<StorageFile>> OpenFiles(string fileTypeExtensionFilter) => await OpenFiles(new List<string> { fileTypeExtensionFilter });
+        public static async Task<IReadOnlyList<StorageFile>> OpenFiles(string fileTypeExtensionFilter, PickerLocationId pickerLocationId = PickerLocationId.Downloads) => 
+            await OpenFiles(new List<string> { fileTypeExtensionFilter });
 
         /// <summary>
         /// Open files from the picker
         /// </summary>
         /// <param name="fileTypeExtensionFilters">Extension List eg: .jpg, .png</param>
         /// <returns>StorageFile</returns>
-        public static async Task<IReadOnlyList<StorageFile>> OpenFiles(IList<string> fileTypeExtensionFilters = null)
+        public static async Task<IReadOnlyList<StorageFile>> OpenFiles(IList<string> fileTypeExtensionFilters = null, PickerLocationId pickerLocationId = PickerLocationId.Downloads)
         {
-            FileOpenPicker picker = GeneratePicker(fileTypeExtensionFilters);
-
+            FileOpenPicker picker = GeneratePicker(fileTypeExtensionFilters, pickerLocationId);
             return await picker.PickMultipleFilesAsync();
         }
 
-        private static FileOpenPicker GeneratePicker(IList<string> fileTypeExtensionFilters)
+        private static FileOpenPicker GeneratePicker(IList<string> fileTypeExtensionFilters, PickerLocationId pickerLocationId)
         {
             FileOpenPicker picker = new FileOpenPicker
             {
-                SuggestedStartLocation = PickerLocationId.DocumentsLibrary
+                SuggestedStartLocation = pickerLocationId
             };
 
             if (fileTypeExtensionFilters == null)
@@ -80,8 +80,8 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <param name="fileTypeName">File type name eg: Image</param>
         /// <param name="fileTypeExtension">Extension eg: .jpg</param>
         /// <returns>StorageFile</returns>
-        public static async Task<StorageFile> SaveFile(string suggestedFileName, string fileTypeName, string fileTypeExtension) =>
-            await SaveFile(suggestedFileName, new Dictionary<string, List<string>>() { { fileTypeName, new List<string>() { fileTypeExtension } } });
+        public static async Task<StorageFile> SaveFile(string suggestedFileName, string fileTypeName, string fileTypeExtension, PickerLocationId pickerLocationId = PickerLocationId.Downloads) =>
+            await SaveFile(suggestedFileName, new Dictionary<string, List<string>>() { { fileTypeName, new List<string>() { fileTypeExtension } } }, pickerLocationId);
 
         /// <summary>
         /// Save a file with the picker
@@ -89,13 +89,13 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <param name="suggestedFileName">Suggested file name</param>
         /// <param name="fileTypeChoices">File type name List eg: Image(.jpg,.png), Text(.txt)</param>
         /// <returns>StorageFile</returns>
-        public static async Task<StorageFile> SaveFile(string suggestedFileName, IDictionary<string, List<string>> fileTypeChoices)
+        public static async Task<StorageFile> SaveFile(string suggestedFileName, IDictionary<string, List<string>> fileTypeChoices, PickerLocationId pickerLocationId = PickerLocationId.Downloads)
         {
             FileSavePicker picker = new FileSavePicker
             {
                 DefaultFileExtension = fileTypeChoices.First().Value.First(),
                 SuggestedFileName = suggestedFileName,
-                SuggestedStartLocation = PickerLocationId.DocumentsLibrary
+                SuggestedStartLocation = pickerLocationId
             };
 
             foreach (var filter in fileTypeChoices)
