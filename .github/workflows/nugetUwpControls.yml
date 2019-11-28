@@ -1,0 +1,36 @@
+name: Uwp Controls, Build, Pack and Publish Nuget
+on:
+  push:
+    branches:    
+      - master   
+
+jobs:   
+  build_pack_publish:
+    runs-on: windows-latest
+    name: Build
+    steps:
+    - uses: actions/checkout@v1   
+    
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+
+    - name: MSBuild Restore
+      run: msbuild Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj /p:Configuration="Release" /t:restore     
+
+    - name: MSBuild Build
+      run: msbuild Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj /p:Configuration="Release"
+      
+    - name: Setup Nuget.exe
+      uses: warrenbuckley/Setup-Nuget@v1
+      
+    - name: Nuget Pack
+      run: nuget pack Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj -properties Configuration=Release
+    
+    - name: Nuget Add Source
+      run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/emiliano84/index.json" -UserName emiliano84 -Password ${{ secrets.PACKAGES_TOKEN }}
+
+    - name: Nuget SetAPIKey
+      run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source "GitHub"
+
+    - name: Nuget Push
+      run: nuget push *.nupkg -Source "GitHub"
