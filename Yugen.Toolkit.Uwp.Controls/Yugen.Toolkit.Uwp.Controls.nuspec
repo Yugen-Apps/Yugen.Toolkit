@@ -17,7 +17,7 @@
   </metadata>
   <files>  
     <!-- Dll -->
-     <file src="bin\Release\Yugen.Toolkit.Uwp.dll" target="lib\uap10.0.17763" /> 
+     <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.dll" target="lib\uap10.0.17763" /> 
 
     <!-- Resources -->
     <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.pdb" target="lib\uap10.0.17763" />
