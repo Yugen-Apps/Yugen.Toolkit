@@ -32,6 +32,20 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
             ShowResult(dependencyObject);
         }
 
+        public void FindDescendantButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dependencyObject = FindControlHelper.FindAncestor<Page>(sender);
+            var dependencyObject2 = FindControlHelper.FindDescendant<Button>(dependencyObject);
+            ShowResult(dependencyObject2);
+        }
+
+        public void FindDescendantByNameButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dependencyObject = FindControlHelper.FindAncestor<Page>(sender);
+            var dependencyObject2 = FindControlHelper.FindDescendant<Button>(dependencyObject, "MyButton");
+            ShowResult(dependencyObject2);
+        }
+
         private async void ShowResult(DependencyObject dependencyObject)
         {
             var type = dependencyObject?.GetType()?.ToString() ?? "Not Found";

@@ -12,10 +12,10 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <summary>
         /// Find the first ancestor of a control by type or by type and name
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="frameworkElement"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">control type</typeparam>
+        /// <param name="frameworkElement">control</param>
+        /// <param name="name">name</param>
+        /// <returns>control</returns>
         public static DependencyObject FindAncestor<T>(FrameworkElement frameworkElement, string name = null)
         {
             var element = frameworkElement.Parent;
@@ -25,9 +25,10 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <summary>
         /// Find the first ancestor of a control by type or by type and name
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="sender"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">control type</typeparam>
+        /// <param name="frameworkElement">control</param>
+        /// <param name="name">name</param>
+        /// <returns>control</returns>
         public static DependencyObject FindAncestor<T>(object sender, string name = null)
         {
             var element = ((FrameworkElement)sender).Parent;
@@ -37,9 +38,10 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <summary>
         /// Find the first ancestor of a control by type or by type and name
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="dependencyObject"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">control type</typeparam>
+        /// <param name="frameworkElement">control</param>
+        /// <param name="name">name</param>
+        /// <returns>control</returns>
         public static DependencyObject FindAncestor<T>(DependencyObject dependencyObject, string name = null)
         {
             var element = VisualTreeHelper.GetParent(dependencyObject);
@@ -71,10 +73,11 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <summary>
         /// Find the first Descendant of a control by type or by type and name
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="dependencyObject"></param>
-        /// <returns></returns>
-        public static DependencyObject FindDescendantControl<T>(DependencyObject control, string name = null)
+        /// <typeparam name="T">control type</typeparam>
+        /// <param name="frameworkElement">control</param>
+        /// <param name="name">name</param>
+        /// <returns>control</returns>
+        public static DependencyObject FindDescendant<T>(DependencyObject control, string name = null)
         {
             var childNumber = VisualTreeHelper.GetChildrenCount(control);
             for (var i = 0; i < childNumber; i++)
@@ -82,7 +85,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
                 DependencyObject child = VisualTreeHelper.GetChild(control, i);
 
                 // Not a framework element or is null
-                if (!(child is FrameworkElement fe))
+                if (!(child is FrameworkElement frameworkElement))
                     return null;
 
                 // Found the control so return
@@ -90,12 +93,12 @@ namespace Yugen.Toolkit.Uwp.Helpers
                 {
                     if (name == null)
                         return child;
-                    else if (fe.Name.Equals(name))
+                    else if (frameworkElement.Name.Equals(name))
                         return child;
                 }
 
                 // Not found it - search children
-                DependencyObject nextLevel = FindDescendantControl<T>(child, name);
+                DependencyObject nextLevel = FindDescendant<T>(child, name);
                 if (nextLevel != null)
                     return nextLevel;
             }
@@ -138,8 +141,6 @@ namespace Yugen.Toolkit.Uwp.Helpers
             }
         }
 
-
-
         public static Control NextControl(object sender)
         {
             var index = ((Control)sender).TabIndex + 1;
@@ -151,25 +152,32 @@ namespace Yugen.Toolkit.Uwp.Helpers
             NextControl(sender)?.Focus(FocusState.Programmatic);
         }
 
-        internal static bool IsButtonEnabled(Button button, KeyRoutedEventArgs e) => !SystemHelper.IsMobile && button.IsEnabled;
 
         /// <summary>
         /// No Mobile Anymore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        /// <param name="createButton"></param>
+        /// <param name="button"></param>
         /// <returns></returns>
-        public static bool GoToNextControlIfMobileOrCheckEnterIfDesktop(object sender, KeyRoutedEventArgs e, Button createButton)
+        public static bool GoToNextControlIfMobileOrCheckEnterIfDesktop(object sender, KeyRoutedEventArgs e, Button button)
         {
             if (!e.Key.Equals(Windows.System.VirtualKey.Enter))
                 return false;
 
             if (!SystemHelper.IsMobile)
-                return IsButtonEnabled(createButton, e);
+                return IsButtonEnabled(button, e);
 
             GoToNextControl(sender);
             return false;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="button"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        private static bool IsButtonEnabled(Button button, KeyRoutedEventArgs e) => !SystemHelper.IsMobile && button.IsEnabled;
     }
 }

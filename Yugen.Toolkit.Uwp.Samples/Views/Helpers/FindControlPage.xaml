@@ -18,12 +18,21 @@
                 Click="{x:Bind ViewModel.FindAncestorStackPanelButton_Click}" />
 
         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Ancestor Page</TextBlock>
-        <Button Content="Find"
+        <Button x:Name="MyButton" 
+                Content="Find"
                 Click="{x:Bind ViewModel.FindAncestorPageButton_Click}" />
         
         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Ancestor Stack Panel By Name</TextBlock>
         <Button Content="Find"
                 Click="{x:Bind ViewModel.FindAncestorStackPanelByNameButton_Click}" />
+
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Ancestor Page and than find Descendant Button</TextBlock>
+        <Button Content="Find"
+                Click="{x:Bind ViewModel.FindDescendantButton_Click}" />
+
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Ancestor Page and than find Descendant Button By Name</TextBlock>
+        <Button Content="Find"
+                Click="{x:Bind ViewModel.FindDescendantByNameButton_Click}" />
 
     </StackPanel>
     
