@@ -34,16 +34,23 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
 
         public void FindDescendantButton_Click(object sender, RoutedEventArgs e)
         {
-            var dependencyObject = FindControlHelper.FindAncestor<Page>(sender);
-            var dependencyObject2 = FindControlHelper.FindDescendant<Button>(dependencyObject);
-            ShowResult(dependencyObject2);
+            var page = FindControlHelper.FindAncestor<Page>(sender);
+            var dependencyObject = FindControlHelper.FindDescendant<Button>(page);
+            ShowResult(dependencyObject);
         }
 
         public void FindDescendantByNameButton_Click(object sender, RoutedEventArgs e)
         {
-            var dependencyObject = FindControlHelper.FindAncestor<Page>(sender);
-            var dependencyObject2 = FindControlHelper.FindDescendant<Button>(dependencyObject, "MyButton");
-            ShowResult(dependencyObject2);
+            var page = FindControlHelper.FindAncestor<Page>(sender);
+            var dependencyObject = FindControlHelper.FindDescendant<Button>(page, "MyButton");
+            ShowResult(dependencyObject);
+        }
+                
+        public async void FindButtons_Click(object sender, RoutedEventArgs e)
+        {
+            var page = FindControlHelper.FindAncestor<Page>(sender);
+            var controlList = FindControlHelper.GetControlList<Button>(page);
+            await MessageDialogHelper.Alert(controlList.Count.ToString());
         }
 
         private async void ShowResult(DependencyObject dependencyObject)

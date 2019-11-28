@@ -34,6 +34,10 @@
         <Button Content="Find"
                 Click="{x:Bind ViewModel.FindDescendantByNameButton_Click}" />
 
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Page Button List</TextBlock>
+        <Button Content="Find"
+                Click="{x:Bind ViewModel.FindButtons_Click}" />
+
     </StackPanel>
     
 </Page>

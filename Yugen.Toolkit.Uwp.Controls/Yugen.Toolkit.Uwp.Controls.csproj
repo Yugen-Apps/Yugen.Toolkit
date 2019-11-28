@@ -139,11 +139,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\BaseValidatingUserControl.cs" />
-    <Compile Include="Validation\Helpers\ValidatingFormHelper.cs" />
     <Compile Include="Validation\ValidatingButtonControl.cs" />
     <Compile Include="Validation\ValidatingComboBoxUserControl.xaml.cs">
       <DependentUpon>ValidatingComboBoxUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Validation\ValidatingFormControl.cs" />
     <Compile Include="Validation\ValidatingPasswordBoxUserControl.xaml.cs">
       <DependentUpon>ValidatingPasswordBoxUserControl.xaml</DependentUpon>
     </Compile>
@@ -196,6 +196,9 @@
       <Project>{e535535b-b033-4f77-bd09-2c6ef2054b5d}</Project>
       <Name>Yugen.Toolkit.Uwp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Yugen.Toolkit.Uwp.Controls.nuspec" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

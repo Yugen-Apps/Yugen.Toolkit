@@ -26,12 +26,12 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// Find the first ancestor of a control by type or by type and name
         /// </summary>
         /// <typeparam name="T">control type</typeparam>
-        /// <param name="frameworkElement">control</param>
+        /// <param name="uiElement">control</param>
         /// <param name="name">name</param>
         /// <returns>control</returns>
-        public static DependencyObject FindAncestor<T>(object sender, string name = null)
+        public static DependencyObject FindAncestor<T>(object uiElement, string name = null)
         {
-            var element = ((FrameworkElement)sender).Parent;
+            var element = ((FrameworkElement)uiElement).Parent;
             return InternalFindAncestor<T>(element, name);
         }
 
@@ -39,7 +39,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// Find the first ancestor of a control by type or by type and name
         /// </summary>
         /// <typeparam name="T">control type</typeparam>
-        /// <param name="frameworkElement">control</param>
+        /// <param name="dependencyObject">control</param>
         /// <param name="name">name</param>
         /// <returns>control</returns>
         public static DependencyObject FindAncestor<T>(DependencyObject dependencyObject, string name = null)
@@ -74,15 +74,15 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// Find the first Descendant of a control by type or by type and name
         /// </summary>
         /// <typeparam name="T">control type</typeparam>
-        /// <param name="frameworkElement">control</param>
+        /// <param name="dependencyObject">control</param>
         /// <param name="name">name</param>
         /// <returns>control</returns>
-        public static DependencyObject FindDescendant<T>(DependencyObject control, string name = null)
+        public static DependencyObject FindDescendant<T>(DependencyObject dependencyObject, string name = null)
         {
-            var childNumber = VisualTreeHelper.GetChildrenCount(control);
+            var childNumber = VisualTreeHelper.GetChildrenCount(dependencyObject);
             for (var i = 0; i < childNumber; i++)
             {
-                DependencyObject child = VisualTreeHelper.GetChild(control, i);
+                DependencyObject child = VisualTreeHelper.GetChild(dependencyObject, i);
 
                 // Not a framework element or is null
                 if (!(child is FrameworkElement frameworkElement))
@@ -106,50 +106,62 @@ namespace Yugen.Toolkit.Uwp.Helpers
             return null;
         }
 
-
-        private static readonly List<Control> ControlList = new List<Control>();
-
-        public static List<Control> GetControlList<T>(object uiElement, bool reset = true)
+        /// <summary>
+        /// Get the list of controls by type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="uiElement"></param>
+        /// <returns></returns>
+        public static List<Control> GetControlList<T>(object uiElement)
         {
-            if (reset)
-                ControlList.Clear();
-
-            FindControl<T>(uiElement);
-            return ControlList;
+            List<Control> controlList = new List<Control>();
+            FindControl<T>(controlList, uiElement);
+            return controlList;
         }
 
-        private static void FindControl<T>(object uiElement)
+        private static void FindControl<T>(List<Control> controlList, object uiElement)
         {
             switch (uiElement)
             {
                 case T _:
-                    ControlList.Add((Control)uiElement);
+                    controlList.Add((Control)uiElement);
                     break;
                 case Panel _:
                     var uiElementAsCollection = (Panel)uiElement;
                     foreach (var element in uiElementAsCollection.Children)
-                        FindControl<T>(element);
+                        FindControl<T>(controlList, element);
                     break;
                 case UserControl _:
                     var uiElementAsUserControl = (UserControl)uiElement;
-                    FindControl<T>(uiElementAsUserControl.Content);
+                    FindControl<T>(controlList, uiElementAsUserControl.Content);
                     break;
                 case ContentControl _:
                     var uiElementAsContentControl = (ContentControl)uiElement;
-                    FindControl<T>(uiElementAsContentControl.Content);
+                    FindControl<T>(controlList, uiElementAsContentControl.Content);
                     break;
             }
         }
 
-        public static Control NextControl(object sender)
+        /// <summary>
+        /// Get the next contol of the list
+        /// </summary>
+        /// <param name="controlList"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
+        public static Control NextControl(List<Control> controlList, object sender)
         {
             var index = ((Control)sender).TabIndex + 1;
-            return ControlList.FirstOrDefault(x => x.TabIndex == index);
+            return controlList.FirstOrDefault(x => x.TabIndex == index);
         }
 
-        public static void GoToNextControl(object sender)
+        /// <summary>
+        /// Focus on Next Control of the list
+        /// </summary>
+        /// <param name="controlList"></param>
+        /// <param name="sender"></param>
+        public static void FocusOnNextControl(List<Control> controlList, object sender)
         {
-            NextControl(sender)?.Focus(FocusState.Programmatic);
+            NextControl(controlList, sender)?.Focus(FocusState.Programmatic);
         }
 
 
@@ -160,7 +172,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <param name="e"></param>
         /// <param name="button"></param>
         /// <returns></returns>
-        public static bool GoToNextControlIfMobileOrCheckEnterIfDesktop(object sender, KeyRoutedEventArgs e, Button button)
+        public static bool GoToNextControlIfMobileOrCheckEnterIfDesktop(List<Control> controlList, object sender, KeyRoutedEventArgs e, Button button)
         {
             if (!e.Key.Equals(Windows.System.VirtualKey.Enter))
                 return false;
@@ -168,7 +180,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
             if (!SystemHelper.IsMobile)
                 return IsButtonEnabled(button, e);
 
-            GoToNextControl(sender);
+            FocusOnNextControl(controlList, sender);
             return false;
         }
 

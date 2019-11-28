@@ -2,8 +2,6 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
-using Yugen.Toolkit.Uwp.Controls.Validation.Helpers;
-using Yugen.Toolkit.Uwp.Helpers;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
@@ -28,19 +26,16 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         #endregion
 
         public new event TappedEventHandler Tapped;
-        private DependencyObject _page;
+        public ValidatingFormControl ValidatingFormControl { get; set; }
 
         public ValidatingButtonControl()
         {
-            base.Tapped += ValidatingButtonControl_Tapped;
             this.Loaded += ValidatingButtonControl_Loaded;
+            base.Tapped += ValidatingButtonControl_Tapped;
         }
 
         private void ValidatingButtonControl_Loaded(object sender, RoutedEventArgs e)
         {
-            _page = FindControlHelper.FindAncestor<Page>(sender);
-            ValidatingFormHelper.Init(_page);
-
             if (!IsEnterEnabled) return;
             var keyboardAccelerator = new KeyboardAccelerator { Key = VirtualKey.Enter };
             keyboardAccelerator.Invoked += KeyboardAccelerator_Invoked;
@@ -49,13 +44,13 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
 
         private void KeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
         {
-            if (ValidatingFormHelper.FormIsValid())
+            if (ValidatingFormControl.FormIsValid())
                 Tapped?.Invoke(args.Element, null);
         }
 
         private void ValidatingButtonControl_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if (ValidatingFormHelper.FormIsValid())
+            if (ValidatingFormControl.FormIsValid())
                 Tapped?.Invoke(sender, e);
         }
     }
