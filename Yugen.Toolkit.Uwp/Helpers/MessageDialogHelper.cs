@@ -18,7 +18,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
             return await messageDialog.ShowAsync();
         }
 
-        public static async Task<IUICommand> Alert(string message, string title = "Error")
+        public static async Task<IUICommand> Alert(string message, string title = "")
         {
             var messageDialog = new MessageDialog(message, title);
             return await messageDialog.ShowAsync();

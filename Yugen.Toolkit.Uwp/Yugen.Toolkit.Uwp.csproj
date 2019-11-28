@@ -121,7 +121,7 @@
     <Compile Include="Helpers\WriteableBitmapHelper.cs" />
     <Compile Include="Helpers\ColorHelper.cs" />
     <Compile Include="Helpers\DebugVisibilityHelper.cs" />
-    <Compile Include="Helpers\ControlHelper.cs" />
+    <Compile Include="Helpers\FindControlHelper.cs" />
     <Compile Include="Hosting\Attributes\DependencyAttribute.cs" />
     <Compile Include="Hosting\Attributes\ViewModelAttribute.cs" />
     <Compile Include="Hosting\Host.cs" />

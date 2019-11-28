@@ -70,7 +70,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         {
             if (!IsConfirmPassword) return;
 
-            var validatingControlsList = ControlHelper.GetControlList<ValidatingPasswordBoxUserControl>(this.Parent);
+            var validatingControlsList = FindControlHelper.GetControlList<ValidatingPasswordBoxUserControl>(this.Parent);
 
             foreach (var control in validatingControlsList)
             {

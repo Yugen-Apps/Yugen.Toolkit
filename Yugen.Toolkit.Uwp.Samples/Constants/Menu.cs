@@ -9,7 +9,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
 {
     public static class Menu
     {
-        public static List<MenuItem> MenuCollection = new List<MenuItem>()
+        public static List<MenuItem> MenuCollection = new List<MenuItem>() 
         {
             HomeMenu,
             ControlsMenu,
@@ -17,38 +17,18 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             NavigationMenu
         };
 
-        public static MenuItem HomeMenu => new MenuItem
-        {
-            Name = "Home",
-            Tag = nameof(HomePage)
-        };
+        public static MenuItem HomeMenu => new MenuItem("Home", nameof(HomePage));
 
         public static MenuItem ControlsMenu => new MenuItem
         {
             Name = "Controls",
             IsExpanded = false,
-            Children =
+            Children = 
             {
-                new MenuItem
-                {
-                    Name = "Validation",
-                    Tag = nameof(ValidationPage)
-                },
-                new MenuItem
-                {
-                    Name = "Graph",
-                    Tag = nameof(GraphPage)
-                },
-                new MenuItem
-                {
-                    Name = "Custom Dialog",
-                    Tag = nameof(CustomDialogPage)
-                },
-                new MenuItem
-                {
-                    Name = "Notification Banner",
-                    Tag = nameof(NotificationBannerPage)
-                }
+                new MenuItem ("Validation", nameof (ValidationPage)),
+                new MenuItem ("Graph", nameof (GraphPage)),
+                new MenuItem ("Custom Dialog", nameof (CustomDialogPage)),
+                new MenuItem ("Notification Banner", nameof (NotificationBannerPage))
             }
         };
 
@@ -56,13 +36,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         {
             Name = "Helpers",
             IsExpanded = false,
-            Children =
+            Children = 
             {
-                new MenuItem
-                {
-                    Name = "File Picker",
-                    Tag = nameof(FilePickerPage)
-                }
+                new MenuItem ("Find Control", nameof (FindControlPage)),
+                new MenuItem ("File Picker", nameof (FilePickerPage))
             }
         };
 
@@ -70,14 +47,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         {
             Name = "Navigation",
             IsExpanded = false,
-            Children =
+            Children = 
             {
-                new MenuItem
-                {
-                    Name = "Basic Navigation",
-                    Tag = nameof(NavigationPage)
-                }
-            }                      
+                new MenuItem ("Basic Navigation", nameof (NavigationPage))
+            }
         };
     }
 }

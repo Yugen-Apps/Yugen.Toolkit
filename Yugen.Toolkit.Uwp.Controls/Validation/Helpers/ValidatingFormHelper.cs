@@ -10,9 +10,9 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation.Helpers
 
         public static void Init(object uiElement)
         {
-            ControlHelper.GetControlList<ValidatingTextBoxUserControl>(uiElement);
-            ControlHelper.GetControlList<ValidatingPasswordBoxUserControl>(uiElement, false);
-            _validatingControlsList = ControlHelper.GetControlList<ValidatingComboBoxUserControl>(uiElement, false);
+            FindControlHelper.GetControlList<ValidatingTextBoxUserControl>(uiElement);
+            FindControlHelper.GetControlList<ValidatingPasswordBoxUserControl>(uiElement, false);
+            _validatingControlsList = FindControlHelper.GetControlList<ValidatingComboBoxUserControl>(uiElement, false);
         }
 
         public static bool FormIsValid()
@@ -21,7 +21,9 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation.Helpers
 
             foreach (var validatingTextBox in _validatingControlsList)
             {
-                if (!(validatingTextBox is BaseValidatingUserControl item)) continue;
+                if (!(validatingTextBox is BaseValidatingUserControl item)) 
+                    continue;
+
                 item.ResetCustomValidation();
 
                 if (!item.IsValid())

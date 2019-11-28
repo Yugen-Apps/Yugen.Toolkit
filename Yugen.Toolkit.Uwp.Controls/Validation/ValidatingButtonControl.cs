@@ -38,7 +38,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
 
         private void ValidatingButtonControl_Loaded(object sender, RoutedEventArgs e)
         {
-            _page = ControlHelper.FindParentControl<Page>(sender);
+            _page = FindControlHelper.FindAncestor<Page>(sender);
             ValidatingFormHelper.Init(_page);
 
             if (!IsEnterEnabled) return;
