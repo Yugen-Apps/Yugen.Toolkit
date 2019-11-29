@@ -6,7 +6,7 @@ using Yugen.Toolkit.Uwp.Extensions;
 
 namespace Yugen.Toolkit.Uwp.Controls.Validation
 {
-    public class BaseValidatingUserControl : UserControl
+    public class BaseValidating : UserControl
     {
         #region DependencyProperties
 
@@ -19,7 +19,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty PlaceholderTextProperty = DependencyProperty.Register(
             nameof(PlaceholderText),
             typeof(string),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata(null));
 
         public string Header
@@ -31,7 +31,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
             nameof(Header),
             typeof(string),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata(string.Empty));
 
         public bool IsValidByDefault
@@ -43,7 +43,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty IsValidByDefaultProperty = DependencyProperty.Register(
             nameof(IsValidByDefault),
             typeof(bool),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata(true));
 
         public bool IsMandatory
@@ -55,7 +55,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty IsMandatoryProperty = DependencyProperty.Register(
             nameof(IsMandatory),
             typeof(bool),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata(false));
 
         public string MandatoryValidationMessage
@@ -67,7 +67,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty MandatoryValidationMessageProperty = DependencyProperty.Register(
             nameof(MandatoryValidationMessage),
             typeof(string),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata("A value is required."));
 
         public bool IsCustomValid
@@ -79,7 +79,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty IsCustomValidProperty = DependencyProperty.Register(
             nameof(IsCustomValid),
             typeof(bool),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata(true, Update));
 
         public ValidationRules ValidationRules
@@ -91,7 +91,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty ValidationRulesProperty = DependencyProperty.Register(
                 nameof(ValidationRules),
                 typeof(ValidationRules),
-                typeof(ValidatingComboBoxUserControl),
+                typeof(ValidatingComboBox),
                 new PropertyMetadata(null));
 
         public string RuleValidationMessage
@@ -103,7 +103,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty RuleValidationMessageProperty = DependencyProperty.Register(
                 nameof(RuleValidationMessage),
                 typeof(string),
-                typeof(ValidatingComboBoxUserControl),
+                typeof(ValidatingComboBox),
                 new PropertyMetadata(null));
 
         public string CustomValidationMessage
@@ -115,7 +115,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty CustomValidationMessageProperty = DependencyProperty.Register(
                 nameof(CustomValidationMessage),
                 typeof(string),
-                typeof(ValidatingComboBoxUserControl),
+                typeof(ValidatingComboBox),
                 new PropertyMetadata("Custom validation failed", UpdateCustomMessage));
 
         #endregion
@@ -125,7 +125,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         private PasswordBox _myPasswordBox;
         private ComboBox _myComboBox;
 
-        public BaseValidatingUserControl()
+        public BaseValidating()
         {
             this.Loaded += BaseValidatingUserControl_Loaded;
         }
@@ -253,13 +253,13 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
 
         public static void UpdateCustomMessage(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = d as BaseValidatingUserControl;
+            var control = d as BaseValidating;
             control?.UpdateCustomMessage();
         }
 
         public static void Update(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = d as BaseValidatingUserControl;
+            var control = d as BaseValidating;
             control?.Update();
         }
     }

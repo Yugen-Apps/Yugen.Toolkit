@@ -4,21 +4,21 @@ using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Controls.Validation
 {
-    public sealed class ValidatingFormControl : ItemsControl
+    public sealed class ValidatingForm : ItemsControl
     {
-        private static List<BaseValidatingUserControl> _validatingControlsList = new List<BaseValidatingUserControl>();
+        private static List<BaseValidating> _validatingControlsList = new List<BaseValidating>();
 
-        public ValidatingFormControl()
+        public ValidatingForm()
         {
             this.Loaded += ValidatingFormControl_Loaded;
         }
 
         private void ValidatingFormControl_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {        
-            var list = FindControlHelper.GetControlList<BaseValidatingUserControl>(this);
+            var list = FindControlHelper.GetControlList<BaseValidating>(this);
             foreach (var item in list)
             {
-                if (item is BaseValidatingUserControl validatingControl)
+                if (item is BaseValidating validatingControl)
                     _validatingControlsList.Add(validatingControl);
             }
         }

@@ -1,4 +1,4 @@
-﻿<validation:BaseValidatingUserControl x:Class="Yugen.Toolkit.Uwp.Controls.Validation.ValidatingComboBoxUserControl"
+﻿<validation:BaseValidating x:Class="Yugen.Toolkit.Uwp.Controls.Validation.ValidatingComboBox"
                                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                       xmlns:validation="using:Yugen.Toolkit.Uwp.Controls.Validation">
@@ -61,4 +61,4 @@
 
     </Grid>
 
-</validation:BaseValidatingUserControl>
+</validation:BaseValidating>

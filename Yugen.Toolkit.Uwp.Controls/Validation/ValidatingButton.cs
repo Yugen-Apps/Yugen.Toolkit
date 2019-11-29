@@ -3,11 +3,9 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 
-// The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
-
 namespace Yugen.Toolkit.Uwp.Controls.Validation
 {
-    public sealed class ValidatingButtonControl : Button
+    public sealed class ValidatingButton : Button
     {
         #region DependencyProperties
 
@@ -20,15 +18,15 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty IsEnterEnabledProperty = DependencyProperty.Register(
             nameof(IsEnterEnabled),
             typeof(bool),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata(false));
 
         #endregion
 
         public new event TappedEventHandler Tapped;
-        public ValidatingFormControl ValidatingFormControl { get; set; }
+        public ValidatingForm ValidatingFormControl { get; set; }
 
-        public ValidatingButtonControl()
+        public ValidatingButton()
         {
             this.Loaded += ValidatingButtonControl_Loaded;
             base.Tapped += ValidatingButtonControl_Tapped;

@@ -3,7 +3,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace Yugen.Toolkit.Uwp.Controls.Validation
 {
-    public partial class ValidatingComboBoxUserControl
+    public partial class ValidatingComboBox
     {
         #region DependencyProperties
 
@@ -16,7 +16,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
             nameof(ItemsSource),
             typeof(object),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata(null));
 
         public object SelectedItem
@@ -28,7 +28,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
             nameof(SelectedItem),
             typeof(object),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata(null));
 
         public DataTemplate ItemTemplate
@@ -40,12 +40,12 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty ItemTemplateProperty = DependencyProperty.Register(
             nameof(ItemTemplate),
             typeof(DataTemplate),
-            typeof(ValidatingComboBoxUserControl),
+            typeof(ValidatingComboBox),
             new PropertyMetadata(null));
 
         #endregion
 
-        public ValidatingComboBoxUserControl()
+        public ValidatingComboBox()
         {
             InitializeComponent();
 

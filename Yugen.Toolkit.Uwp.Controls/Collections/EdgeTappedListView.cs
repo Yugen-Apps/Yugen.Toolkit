@@ -122,11 +122,13 @@ namespace Yugen.Toolkit.Uwp.Controls.Collections
         private void ClearVisual()
         {
             if (_listViewItemHighlighted == null) return;
+
             if (_visualIndicator != null)
             {
                 _visualIndicator.Opacity = 0;
                 ItemLeftEdgeTapped?.Invoke(this, new EdgeTappedListViewEventArgs(_listViewItemHighlighted));
             }
+
             _listViewItemHighlighted = null;
         }
     }

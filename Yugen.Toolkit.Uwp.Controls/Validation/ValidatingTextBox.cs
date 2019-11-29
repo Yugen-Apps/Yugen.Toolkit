@@ -1,13 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Standard.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Controls.Validation
 {
-    public sealed partial class ValidatingTextBoxUserControl
+    public sealed partial class ValidatingTextBox
     {
         #region DependencyProperties
 
@@ -24,7 +22,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
             nameof(Text),
             typeof(string),
-            typeof(ValidatingTextBoxUserControl),
+            typeof(ValidatingTextBox),
             new PropertyMetadata(string.Empty));
 
         public bool IsSpellCheckEnabled
@@ -36,7 +34,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty IsSpellCheckEnabledProperty = DependencyProperty.Register(
             nameof(IsSpellCheckEnabled),
             typeof(bool),
-            typeof(ValidatingTextBoxUserControl),
+            typeof(ValidatingTextBox),
             new PropertyMetadata(true));
 
         public string InputScope
@@ -49,7 +47,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
             DependencyProperty.Register(
                 nameof(InputScope),
                 typeof(string),
-                typeof(ValidatingTextBoxUserControl),
+                typeof(ValidatingTextBox),
                 new PropertyMetadata("Default"));
 
         public bool IsRealTimeValidationEnabled
@@ -61,7 +59,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty IsRealTimeValidationEnabledProperty = DependencyProperty.Register(
             nameof(IsRealTimeValidationEnabled),
             typeof(bool),
-            typeof(ValidatingTextBoxUserControl),
+            typeof(ValidatingTextBox),
             new PropertyMetadata(false));
 
         public bool IsSelectAllOnFocusEnabled
@@ -73,7 +71,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty IsSelectAllOnFocusEnabledProperty = DependencyProperty.Register(
             nameof(IsSelectAllOnFocusEnabled),
             typeof(bool),
-            typeof(ValidatingTextBoxUserControl),
+            typeof(ValidatingTextBox),
             new PropertyMetadata(false));
 
         public Style TextBoxStyle
@@ -85,12 +83,12 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty TextBoxStyleProperty = DependencyProperty.Register(
             nameof(TextBoxStyle), 
             typeof(Style), 
-            typeof(ValidatingTextBoxUserControl),
+            typeof(ValidatingTextBox),
             new PropertyMetadata(default(Style)));
 
         #endregion
 
-        public ValidatingTextBoxUserControl()
+        public ValidatingTextBox()
         {
             InitializeComponent();
 

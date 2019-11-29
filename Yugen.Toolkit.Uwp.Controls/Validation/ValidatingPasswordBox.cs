@@ -2,13 +2,12 @@
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Standard.Helpers;
 using Yugen.Toolkit.Standard.Validation;
 using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Controls.Validation
 {
-    public sealed partial class ValidatingPasswordBoxUserControl
+    public sealed partial class ValidatingPasswordBox
     {
         #region DependencyProperties
 
@@ -21,7 +20,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
             nameof(Text),
             typeof(string),
-            typeof(ValidatingPasswordBoxUserControl),
+            typeof(ValidatingPasswordBox),
             new PropertyMetadata(null));
 
         public string OtherPasswordControl
@@ -33,7 +32,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty OtherPasswordControlProperty = DependencyProperty.Register(
             nameof(OtherPasswordControl),
             typeof(string),
-            typeof(ValidatingPasswordBoxUserControl),
+            typeof(ValidatingPasswordBox),
             new PropertyMetadata(null));
 
         public bool IsConfirmPassword
@@ -45,14 +44,14 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public static readonly DependencyProperty IsConfirmPasswordProperty = DependencyProperty.Register(
             nameof(IsConfirmPassword),
             typeof(bool),
-            typeof(ValidatingPasswordBoxUserControl),
+            typeof(ValidatingPasswordBox),
             new PropertyMetadata(false));
 
         #endregion
         
-        private ValidatingPasswordBoxUserControl OtherPassword { get; set; }
+        private ValidatingPasswordBox OtherPassword { get; set; }
 
-        public ValidatingPasswordBoxUserControl()
+        public ValidatingPasswordBox()
         {
             InitializeComponent();
 
@@ -70,12 +69,12 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         {
             if (!IsConfirmPassword) return;
 
-            var validatingFormControl = FindControlHelper.FindAncestor<ValidatingFormControl>(this);
+            var validatingFormControl = FindControlHelper.FindAncestor<ValidatingForm>(this);
             if (validatingFormControl != null) 
             {
-                foreach (var item in ((ValidatingFormControl)validatingFormControl).Items)
+                foreach (var item in ((ValidatingForm)validatingFormControl).Items)
                 {
-                    if(item is ValidatingPasswordBoxUserControl validatingPasswordBoxUserControl)
+                    if(item is ValidatingPasswordBox validatingPasswordBoxUserControl)
                     {
                         if (validatingPasswordBoxUserControl.IsConfirmPassword == false)
                             OtherPassword = validatingPasswordBoxUserControl;
