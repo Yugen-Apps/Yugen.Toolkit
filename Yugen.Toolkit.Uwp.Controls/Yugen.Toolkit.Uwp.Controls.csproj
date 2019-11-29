@@ -161,6 +161,9 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.2.190917002</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Dialogs\CustomDialogUserControl.xaml">
@@ -170,6 +173,10 @@
     <Page Include="Dialogs\NotificationBannerUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Validation\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Graphs\BarGraphUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>

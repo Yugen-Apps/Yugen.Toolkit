@@ -8,6 +8,7 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
                 <ResourceDictionary Source="Dictionary1.xaml" />
                 <ResourceDictionary Source="Dictionary2.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -30,15 +31,21 @@
                 </validation:ValidationRules.Rules>
             </validation:ValidationRules>
 
-            <validation:ValidationRules x:Key="RegexValidationRule">
+            <validation:ValidationRules x:Key="PhoneRegexValidationRule">
                 <validation:ValidationRules.Rules>
-                    <validation:RegexValidationRule RegexPattern="^\d+([,.]\d{0,2})?$" />
+                    <validation:RegexValidationRule RegexPattern="^\+?\d+$" />
                 </validation:ValidationRules.Rules>
             </validation:ValidationRules>
 
-            <validation:ValidationRules x:Key="RegexDecimalValidationRule">
+            <validation:ValidationRules x:Key="DecimalRegexValidationRule">
                 <validation:ValidationRules.Rules>
                     <validation:RegexValidationRule RegexPattern="^\d+([.]\d{0,2})?$" />
+                </validation:ValidationRules.Rules>
+            </validation:ValidationRules>
+
+            <validation:ValidationRules x:Key="Decimal2RegexValidationRule">
+                <validation:ValidationRules.Rules>
+                    <validation:RegexValidationRule RegexPattern="^\d+([,.]\d{0,2})?$" />
                 </validation:ValidationRules.Rules>
             </validation:ValidationRules>
         </ResourceDictionary>

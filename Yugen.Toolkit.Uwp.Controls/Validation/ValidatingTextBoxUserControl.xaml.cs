@@ -94,7 +94,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         {
             InitializeComponent();
 
-            base.Init(ErrorMessage, MyTextBox);
+            base.Init(ErrorMessageTextBlock, MyTextBox);
         }
         
         private bool IsRealTimeRuleValidationMet(string value)

@@ -20,5 +20,6 @@
 
         <HyperlinkButton Content="GitHub Repository"
                          NavigateUri="https://github.com/emiliano84/Toolkit/" />
+        
     </StackPanel>
 </Page>

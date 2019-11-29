@@ -56,7 +56,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         {
             InitializeComponent();
 
-            base.Init(ErrorMessage, MyPasswordBox);
+            base.Init(ErrorMessageTextBlock, MyPasswordBox);
 
             this.Loaded += ValidatingPasswordBoxUserControl_Loaded;
         }
@@ -70,14 +70,17 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         {
             if (!IsConfirmPassword) return;
 
-            var validatingControlsList = FindControlHelper.GetControlList<ValidatingPasswordBoxUserControl>(this.Parent);
-
-            foreach (var control in validatingControlsList)
+            var validatingFormControl = FindControlHelper.FindAncestor<ValidatingFormControl>(this);
+            if (validatingFormControl != null) 
             {
-                var passwordControl = control as ValidatingPasswordBoxUserControl;
-
-                if (passwordControl?.IsConfirmPassword == false)
-                    OtherPassword = passwordControl;
+                foreach (var item in ((ValidatingFormControl)validatingFormControl).Items)
+                {
+                    if(item is ValidatingPasswordBoxUserControl validatingPasswordBoxUserControl)
+                    {
+                        if (validatingPasswordBoxUserControl.IsConfirmPassword == false)
+                            OtherPassword = validatingPasswordBoxUserControl;
+                    }
+                }
             }
         }
 
@@ -91,7 +94,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
             if (!(ValidationRules?.Rules?.FirstOrDefault() is PasswordValidationRule rule))
                 return isValid;
 
-            ErrorMessage.Text = string.IsNullOrEmpty(RuleValidationMessage)
+            ErrorMessageTextBlock.Text = string.IsNullOrEmpty(RuleValidationMessage)
                 ? rule.ErrorMessage
                 : RuleValidationMessage;
 

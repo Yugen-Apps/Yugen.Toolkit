@@ -49,7 +49,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         {
             InitializeComponent();
 
-            base.Init(ErrorMessage, MyComboBox);
+            base.Init(ErrorMessageTextBlock, MyComboBox);
         }
         
         public event SelectionChangedEventHandler MyComboBoxOnSelectionChanged;

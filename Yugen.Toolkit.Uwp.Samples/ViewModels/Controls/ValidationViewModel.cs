@@ -33,8 +33,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
             set { Set(ref _email, value); }
         }
 
-        private int _mobile;
-        public int Mobile
+        private string _mobile;
+        public string Mobile
         {
             get { return _mobile; }
             set { Set(ref _mobile, value); }
