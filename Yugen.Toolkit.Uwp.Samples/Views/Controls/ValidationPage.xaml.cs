@@ -19,13 +19,13 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
             this.InitializeComponent();
         }
 
-        private void ValidatingButtonError_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Error_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             UsernameControl.CustomValidationMessage = "Username Already Exist";
             UsernameControl.IsCustomValid = false;
         }
 
-        private async void ValidatingButtonSuccess_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void Success_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             await MessageDialogHelper.Alert("Success");
         }

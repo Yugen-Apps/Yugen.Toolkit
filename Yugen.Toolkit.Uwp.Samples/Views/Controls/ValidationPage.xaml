@@ -28,85 +28,85 @@
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field require no validation</TextBlock>
                         <validation:ValidatingTextBox Header="Name"
-                                                                 Text="{x:Bind ViewModel.Name, Mode=OneWay}" />
+                                                      Text="{x:Bind ViewModel.Name, Mode=OneWay}" />
                         <TextBlock />
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsSelectAllOnFocusEnabled attribute enabled, 
                         means that when you focus on it, all the text will be selected</TextBlock>
                         <validation:ValidatingTextBox Header="Surname"
-                                                                 Text="{x:Bind ViewModel.Surname, Mode=OneWay}"
-                                                                 IsSelectAllOnFocusEnabled="True" />
+                                                      Text="{x:Bind ViewModel.Surname, Mode=OneWay}"
+                                                      IsSelectAllOnFocusEnabled="True" />
                         <TextBlock />
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsMandatory attribute enabled, means that is mandatory, 
                         has also ValidationRules="{StaticResource EmailValidation, it means that must be a valid email</TextBlock>
                         <validation:ValidatingTextBox Header="Email"
-                                                                 Text="{x:Bind ViewModel.Email, Mode=OneWay}"
-                                                                 IsMandatory="True"
-                                                                 ValidationRules="{StaticResource EmailValidation}" />
+                                                      Text="{x:Bind ViewModel.Email, Mode=OneWay}"
+                                                      IsMandatory="True"
+                                                      ValidationRules="{StaticResource EmailValidation}" />
                         <TextBlock />
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has ValidationRules="{StaticResource RegexValidationRule}, 
                         it means that needs a regex rul to be satisified, in this case a phone number</TextBlock>
                         <validation:ValidatingTextBox Header="Mobile"
-                                                                 Text="{x:Bind ViewModel.Mobile, Mode=OneWay}"
-                                                                 ValidationRules="{StaticResource PhoneRegexValidationRule}" />
+                                                      Text="{x:Bind ViewModel.Mobile, Mode=OneWay}"
+                                                      ValidationRules="{StaticResource PhoneRegexValidationRule}" />
                         <TextBlock />
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsMandatory attribute enabled, means that is mandatory</TextBlock>
                         <validation:ValidatingComboBox Header="Gender"
-                                                                  ItemsSource="{x:Bind ViewModel.GenderList, Mode=OneWay}"
-                                                                  IsMandatory="True" />
+                                                       ItemsSource="{x:Bind ViewModel.GenderList, Mode=OneWay}"
+                                                       IsMandatory="True" />
                         <TextBlock />
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsMandatory attribute enabled, means that is mandatory, 
                         it will be used also to simulate a custom validation response from the server</TextBlock>
                         <validation:ValidatingTextBox x:Name="UsernameControl"
-                                                                 Header="Username"
-                                                                 Text="{x:Bind ViewModel.Username, Mode=OneWay}"
-                                                                 IsMandatory="True" />
+                                                      Header="Username"
+                                                      Text="{x:Bind ViewModel.Username, Mode=OneWay}"
+                                                      IsMandatory="True" />
                         <TextBlock />
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">Passworda fields has IsMandatory attribute enabled, 
                         they also have OtherPasswordControl attribute with the other password control, to check if the password correspond</TextBlock>
                         <validation:ValidatingPasswordBox Header="Password"
-                                                                     IsMandatory="True"
-                                                                     Text="{x:Bind ViewModel.Password, Mode=OneWay}"
-                                                                     ValidationRules="{StaticResource PasswordValidation}" />
+                                                          IsMandatory="True"
+                                                          Text="{x:Bind ViewModel.Password, Mode=OneWay}"
+                                                          ValidationRules="{StaticResource PasswordValidation}" />
 
                         <validation:ValidatingPasswordBox Header="ConfirmPassword"
-                                                                     OtherPasswordControl="Password"
-                                                                     IsMandatory="True"
-                                                                     IsConfirmPassword="True"
-                                                                     Text="{x:Bind ViewModel.ConfirmPassword, Mode=OneWay}"
-                                                                     ValidationRules="{StaticResource PasswordValidation}" />
+                                                          OtherPasswordControl="Password"
+                                                          IsMandatory="True"
+                                                          IsConfirmPassword="True"
+                                                          Text="{x:Bind ViewModel.ConfirmPassword, Mode=OneWay}"
+                                                          ValidationRules="{StaticResource PasswordValidation}" />
                         <TextBlock />
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsRealTimeValidationEnabled attribute enabled, 
                         and ValidationRules="{StaticResource RegexDecimalValidationRule}, it means the control doesn't permit you to write any character other than numbers</TextBlock>
                         <validation:ValidatingTextBox Header="Price"
-                                                                 IsRealTimeValidationEnabled="True"
-                                                                 ValidationRules="{StaticResource DecimalRegexValidationRule}" />
+                                                      IsRealTimeValidationEnabled="True"
+                                                      ValidationRules="{StaticResource DecimalRegexValidationRule}" />
                         <TextBlock />
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">On click all fields are validated, 
                         We simulate a submission of the form and a username already exist response from the server</TextBlock>
                         <validation:ValidatingButton x:Name="ValidatingButton"
-                                                            Content="Register"
-                                                            IsEnterEnabled="True"
-                                                            Style="{ThemeResource AccentButtonStyle}"
-                                                            Tapped="ValidatingButtonError_Tapped"
-                                                            ValidatingFormControl="{x:Bind ValidatingForm}" />
+                                                     Click="Error_Click"
+                                                     Content="Register"
+                                                     IsEnterEnabled="True"
+                                                     Style="{ThemeResource AccentButtonStyle}"
+                                                     ValidatingForm="{x:Bind ValidatingForm}" />
                         <TextBlock />
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">On click all fields are validated, 
                         We simulate a submission of the form with success</TextBlock>
                         <validation:ValidatingButton x:Name="ValidatingButton2"
-                                                            Content="Register"
-                                                            IsEnterEnabled="True"
-                                                            Style="{ThemeResource AccentButtonStyle}"
-                                                            Tapped="ValidatingButtonSuccess_Tapped"
-                                                            ValidatingFormControl="{x:Bind ValidatingForm}" />
+                                                     Click="Success_Click"
+                                                     Content="Register"
+                                                     IsEnterEnabled="True"
+                                                     Style="{ThemeResource AccentButtonStyle}"
+                                                     ValidatingForm="{x:Bind ValidatingForm}" />
                     </StackPanel>
 
                 </validation:ValidatingForm>

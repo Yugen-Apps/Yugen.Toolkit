@@ -23,7 +23,11 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
             }
         }
 
-        public bool FormIsValid()
+        /// <summary>
+        /// return true if the form is valid
+        /// </summary>
+        /// <returns>boolean</returns>
+        public bool IsValid()
         {
             var isValid = true;
 
