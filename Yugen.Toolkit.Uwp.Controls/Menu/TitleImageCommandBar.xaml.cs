@@ -1,11 +1,9 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-// The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
-
 namespace Yugen.Toolkit.Uwp.Controls.Menu
 {
-    public sealed partial class TitleImageCommandBarUserControl : UserControl
+    public sealed partial class TitleImageCommandBar : UserControl
     {
         #region DependencyProperties
 
@@ -18,7 +16,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Menu
         public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
             nameof(Title), 
             typeof(string), 
-            typeof(TitleImageCommandBarUserControl), 
+            typeof(TitleImageCommandBar), 
             new PropertyMetadata(string.Empty));
 
         public string ImageSource
@@ -30,12 +28,12 @@ namespace Yugen.Toolkit.Uwp.Controls.Menu
         public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register(
             nameof(ImageSource), 
             typeof(string), 
-            typeof(TitleImageCommandBarUserControl), 
+            typeof(TitleImageCommandBar), 
             new PropertyMetadata(string.Empty));
 
         #endregion
 
-        public TitleImageCommandBarUserControl()
+        public TitleImageCommandBar()
         {
             this.InitializeComponent();
         }

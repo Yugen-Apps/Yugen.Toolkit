@@ -4,13 +4,14 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 
 namespace Yugen.Toolkit.Uwp.Controls.Dialogs
 {
     /// <summary>
     /// A dialog
     /// </summary>
-    public sealed partial class CustomDialogUserControl : UserControl
+    public sealed partial class CustomDialog : UserControl
     {
         #region DependencyProperties
 
@@ -29,7 +30,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty DialogTitleProperty = DependencyProperty.Register(
             nameof(DialogTitle), 
             typeof(string), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(string.Empty));
         
         /// <summary>
@@ -47,7 +48,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty CloseGlyphForegroundProperty = DependencyProperty.Register(
             nameof(CloseGlyphForeground), 
             typeof(SolidColorBrush), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(new SolidColorBrush(Colors.Black)));
 
         /// <summary>
@@ -65,7 +66,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty TopBarBackgroundProperty = DependencyProperty.Register(
             nameof(TopBarBackground), 
             typeof(Brush), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(new SolidColorBrush(Colors.WhiteSmoke)));
         
         /// <summary>
@@ -83,7 +84,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty TopBarForegroundProperty = DependencyProperty.Register(
             nameof(TopBarForeground), 
             typeof(SolidColorBrush), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(new SolidColorBrush(Colors.Black)));
     
         /// <summary>
@@ -101,7 +102,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty ContentBackgroundProperty = DependencyProperty.Register(
             nameof(ContentBackground), 
             typeof(Brush), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(new SolidColorBrush(Colors.WhiteSmoke)));
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public new static readonly DependencyProperty ContentProperty = DependencyProperty.Register(
             nameof(ContentProperty), 
             typeof(UIElement), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(null));
     
         /// <summary>
@@ -137,7 +138,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty ButtonAreaBackgroundProperty = DependencyProperty.Register(
             nameof(ButtonAreaBackground), 
             typeof(Brush), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(new SolidColorBrush(Colors.WhiteSmoke)));
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty LeftButtonStyleProperty = DependencyProperty.Register(
             nameof(LeftButtonStyle), 
             typeof(Style), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(null));
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty LeftButtonTextProperty = DependencyProperty.Register(
             nameof(LeftButtonText), 
             typeof(string), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(string.Empty));
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty RightButtonStyleProperty = DependencyProperty.Register(
             nameof(RightButtonStyle), 
             typeof(Style), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(null));
 
         /// <summary>
@@ -209,7 +210,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty RightButtonTextProperty = DependencyProperty.Register(
             nameof(RightButtonText), 
             typeof(string), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(default(string)));
 
         /// <summary>
@@ -263,7 +264,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty TypeProperty = DependencyProperty.Register(
             nameof(Type), 
             typeof(CustomDialogTypeEnum), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(CustomDialogTypeEnum.OnlyTopBar));
 
         /// <summary>
@@ -281,7 +282,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty IsVisibleProperty = DependencyProperty.Register(
             nameof(IsVisible), 
             typeof(bool), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(true));
 
         /// <summary>
@@ -299,7 +300,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty IsTopBarVisibleProperty = DependencyProperty.Register(
             nameof(IsTopBarVisible), 
             typeof(bool), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(true));
 
         /// <summary>
@@ -317,7 +318,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty IsButtonAreaVisibleProperty = DependencyProperty.Register(
             nameof(IsButtonAreaVisible), 
             typeof(bool), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(true));
 
         /// <summary>
@@ -335,7 +336,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty IsButtonLeftVisibleProperty = DependencyProperty.Register(
             nameof(IsButtonLeftVisible), 
             typeof(bool), 
-            typeof(CustomDialogUserControl), 
+            typeof(CustomDialog), 
             new PropertyMetadata(true));
 
         /// <summary>
@@ -353,7 +354,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty DurationProperty = DependencyProperty.Register(
             nameof(Duration),
             typeof(TimeSpan),
-            typeof(NotificationBannerUserControl),
+            typeof(NotificationBanner),
             new PropertyMetadata(null));
 
         #endregion
@@ -389,9 +390,10 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         /// <summary>
         /// Constructor
         /// </summary>
-        public CustomDialogUserControl()
+        public CustomDialog()
         {
             InitializeComponent();
+            Storyboard.SetTarget(FadeStoryboard, this);
             FadeStoryboard.Completed += FadeStoryboard_Completed;
         }
 

@@ -6,7 +6,7 @@
     DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <UserControl.Resources>
-        <ResourceDictionary Source="Styles.xaml" />
+        <ResourceDictionary Source="ms-appx:///Yugen.Toolkit.Uwp.Controls/Validation/Styles.xaml" />
     </UserControl.Resources>
 
     <Grid>

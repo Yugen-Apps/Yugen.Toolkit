@@ -4,7 +4,7 @@
                                       xmlns:validation="using:Yugen.Toolkit.Uwp.Controls.Validation">
 
     <UserControl.Resources>
-        <ResourceDictionary Source="Styles.xaml" />
+        <ResourceDictionary Source="ms-appx:///Yugen.Toolkit.Uwp.Controls/Validation/Styles.xaml" />
     </UserControl.Resources>
 
     <Grid>

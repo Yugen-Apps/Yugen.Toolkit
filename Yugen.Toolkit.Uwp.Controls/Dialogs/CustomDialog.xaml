@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="Yugen.Toolkit.Uwp.Controls.Dialogs.CustomDialogUserControl"
+    x:Class="Yugen.Toolkit.Uwp.Controls.Dialogs.CustomDialog"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,15 +9,13 @@
     d:DesignHeight="300"
     d:DesignWidth="400"
     Background="Gray"
-    Visibility="{x:Bind IsVisible, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
-    x:Name="CustomDialog">
+    Visibility="{x:Bind IsVisible, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}">
 
     <UserControl.Resources>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
         
         <Storyboard x:Name="FadeStoryboard">
-            <DoubleAnimation x:Name="FadeAnimation" 
-                             Storyboard.TargetName="CustomDialog"
+            <DoubleAnimation x:Name="FadeAnimation"
                              Storyboard.TargetProperty="Opacity"
                              From="0.0"
                              To="1.0"

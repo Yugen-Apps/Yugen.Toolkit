@@ -23,12 +23,12 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         {
             Name = "Controls",
             IsExpanded = false,
-            Children = 
+            Children =
             {
-                new MenuItem ("Validation", nameof (ValidationPage)),
-                new MenuItem ("Graph", nameof (GraphPage)),
                 new MenuItem ("Custom Dialog", nameof (CustomDialogPage)),
-                new MenuItem ("Notification Banner", nameof (NotificationBannerPage))
+                new MenuItem ("Graph", nameof (GraphPage)),
+                new MenuItem ("Notification Banner", nameof (NotificationBannerPage)),
+                new MenuItem ("Validation", nameof (ValidationPage))
             }
         };
 
@@ -36,10 +36,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         {
             Name = "Helpers",
             IsExpanded = false,
-            Children = 
+            Children =
             {
-                new MenuItem ("Find Control", nameof (FindControlPage)),
-                new MenuItem ("File Picker", nameof (FilePickerPage))
+                new MenuItem ("File Picker", nameof (FilePickerPage)),
+                new MenuItem ("Find Control", nameof (FindControlPage))
             }
         };
 

@@ -1,13 +1,13 @@
-﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<UserControl x:Class="Yugen.Toolkit.Uwp.Controls.Graphs.BarGraph"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:graphs="using:Yugen.Toolkit.Uwp.Controls.Graphs"
-             x:Class="Yugen.Toolkit.Uwp.Controls.Graphs.BarGraphUserControl"
+             xmlns:graphs="using:Yugen.Toolkit.Uwp.Controls.Graphs"             
              mc:Ignorable="d"
              d:DesignHeight="300"
              d:DesignWidth="400"
-             x:Name="BarGraph">
+             x:Name="SelfBarGraph">
 
     <UserControl.Resources>
 
@@ -177,7 +177,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="graphs:ElementViewModel">
-                    <Grid Width="{Binding ColumnWidth, Mode=OneWay, ElementName=BarGraph}">
+                    <Grid Width="{Binding ColumnWidth, Mode=OneWay, ElementName=SelfBarGraph}">
 
                         <Grid.RowDefinitions>
                             <RowDefinition />
@@ -186,7 +186,7 @@
 
                         <Rectangle Grid.Row="0"
                                    Style="{StaticResource ScaleBarStyle}"
-                                   Height="{Binding ScaleBarValue, Mode=OneWay, ElementName=BarGraph}"/>
+                                   Height="{Binding ScaleBarValue, Mode=OneWay, ElementName=SelfBarGraph}"/>
 
                         <Rectangle Grid.Row="0"
                                    Style="{StaticResource TrailBarStyle}"

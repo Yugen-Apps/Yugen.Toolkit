@@ -1,35 +1,34 @@
-﻿<Page
-    x:Class="Yugen.Toolkit.Uwp.Samples.Views.Controls.CustomDialogPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:dialogs="using:Yugen.Toolkit.Uwp.Controls.Dialogs"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.Controls.CustomDialogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:dialogs="using:Yugen.Toolkit.Uwp.Controls.Dialogs"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        
-        <dialogs:CustomDialogUserControl x:Name="MyDialog"
-                                         Grid.ColumnSpan="2"
-                                         IsVisible="false">
-            <dialogs:CustomDialogUserControl.Content>
-                <TextBlock Foreground="Black" 
-                           Text="Hello World"/>
-            </dialogs:CustomDialogUserControl.Content>
-        </dialogs:CustomDialogUserControl>
 
-        <Button Grid.Row="1" 
-                Content="Open Dialog" 
-                Tapped="Button_Tapped"/>
+        <dialogs:CustomDialog x:Name="MyDialog"
+                              Grid.ColumnSpan="2"
+                              IsVisible="false">
+            <dialogs:CustomDialog.Content>
+                <TextBlock Foreground="Black"
+                           Text="Hello World" />
+            </dialogs:CustomDialog.Content>
+        </dialogs:CustomDialog>
+
+        <Button Grid.Row="1"
+                Content="Open Dialog"
+                Tapped="Button_Tapped" />
     </Grid>
 </Page>

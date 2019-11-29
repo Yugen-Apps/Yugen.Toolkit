@@ -2,13 +2,14 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media.Animation;
 
 namespace Yugen.Toolkit.Uwp.Controls.Dialogs
 {
     /// <summary>
-    /// NotificationBannerUserControl defines a control to show local notification banner in the app.
+    /// NotificationBanner defines a control to show local notification banner in the app.
     /// </summary>
-    public sealed partial class NotificationBannerUserControl : UserControl
+    public sealed partial class NotificationBanner : UserControl
     {
         #region DependencyProperties
 
@@ -27,7 +28,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty MessageProperty =DependencyProperty.Register(
             nameof(Message), 
             typeof(string), 
-            typeof(NotificationBannerUserControl), 
+            typeof(NotificationBanner), 
             new PropertyMetadata(string.Empty));
 
         /// <summary>
@@ -45,7 +46,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty UcStyleProperty = DependencyProperty.Register(
             nameof(UcStyle), 
             typeof(Style), 
-            typeof(NotificationBannerUserControl), 
+            typeof(NotificationBanner), 
             new PropertyMetadata(default(Style)));
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty IsCloseButtonVisibleProperty = DependencyProperty.Register(
             nameof(IsCloseButtonVisible), 
             typeof(bool), 
-            typeof(NotificationBannerUserControl), 
+            typeof(NotificationBanner), 
             new PropertyMetadata(false));
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty AnimationDurationProperty = DependencyProperty.Register(
             nameof(AnimationDuration), 
             typeof(TimeSpan), 
-            typeof(NotificationBannerUserControl), 
+            typeof(NotificationBanner), 
             new PropertyMetadata(null));
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty AutoReverseProperty = DependencyProperty.Register(
             nameof(AutoReverse), 
             typeof(bool), 
-            typeof(NotificationBannerUserControl), 
+            typeof(NotificationBanner), 
             new PropertyMetadata(true));
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public static readonly DependencyProperty SymbolProperty = DependencyProperty.Register(
             nameof(Symbol), 
             typeof(Symbol), 
-            typeof(NotificationBannerUserControl), 
+            typeof(NotificationBanner), 
             new PropertyMetadata(DefaultSuccessSymbol));
 
         #endregion
@@ -153,11 +154,12 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         public string DefaultErrorMessage { get; set; } = "Error";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NotificationBannerUserControl"/> class.
+        /// Initializes a new instance of the <see cref="NotificationBanner"/> class.
         /// </summary>
-        public NotificationBannerUserControl()
+        public NotificationBanner()
         {
             InitializeComponent();
+            Storyboard.SetTarget(FadeStoryboard, this);
         }
         
         private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)

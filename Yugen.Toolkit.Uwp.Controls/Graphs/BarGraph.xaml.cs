@@ -8,7 +8,7 @@ using Yugen.Toolkit.Uwp.Evaluators;
 
 namespace Yugen.Toolkit.Uwp.Controls.Graphs
 {
-    public sealed partial class BarGraphUserControl : UserControl
+    public sealed partial class BarGraph : UserControl
     {
         //https://raw.githubusercontent.com/ailon/UWPQuickCharts/master/UWPCharts/SerialChart.cs
         #region DependencyProperties
@@ -29,7 +29,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty CategoryValueMemberPathProperty = DependencyProperty.Register(
             nameof(CategoryValueMemberPath), 
             typeof(string), 
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(null)
         );
 
@@ -49,13 +49,13 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty ValueMemberPathProperty = DependencyProperty.Register(
             nameof(ValueMemberPath), 
             typeof(string), 
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(null, new PropertyChangedCallback(OnValueMemberPathPropertyChanged))
         );
 
         private static void OnValueMemberPathPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            BarGraphUserControl graph = d as BarGraphUserControl;
+            BarGraph graph = d as BarGraph;
             graph?.ValueMemberPathChanged?.Invoke(graph, new DataPathEventArgs(e.NewValue as string));
         }
         
@@ -81,24 +81,24 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty DataSourceProperty = DependencyProperty.Register(
             nameof(DataSource), 
             typeof(IEnumerable), 
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(null, new PropertyChangedCallback(OnDataSourcePropertyChanged)));
         
         private static void OnDataSourcePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            BarGraphUserControl chart = d as BarGraphUserControl;
+            BarGraph chart = d as BarGraph;
             DetachOldDataSourceCollectionChangedListener(chart, e.OldValue);
             AttachDataSourceCollectionChangedListener(chart, e.NewValue);
             chart?.ProcessData();
         }
 
-        private static void DetachOldDataSourceCollectionChangedListener(BarGraphUserControl chart, object dataSource)
+        private static void DetachOldDataSourceCollectionChangedListener(BarGraph chart, object dataSource)
         {
             if (dataSource is INotifyCollectionChanged changed)
                 changed.CollectionChanged -= chart.OnDataSourceCollectionChanged;
         }
 
-        private static void AttachDataSourceCollectionChangedListener(BarGraphUserControl chart, object dataSource)
+        private static void AttachDataSourceCollectionChangedListener(BarGraph chart, object dataSource)
         {
             if (dataSource is INotifyCollectionChanged changed)
                 changed.CollectionChanged += new NotifyCollectionChangedEventHandler(chart.OnDataSourceCollectionChanged);
@@ -141,7 +141,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty ScaleBarStyleProperty = DependencyProperty.Register(
             nameof(ScaleBarStyle),
             typeof(Style),
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(default(Style)));
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty ScaleBarValueProperty = DependencyProperty.Register(
             nameof(ScaleBarValue),
             typeof(int),
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(100));
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty TrailBarStyleProperty = DependencyProperty.Register(
             nameof(TrailBarStyle),
             typeof(Style),
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(default(Style)));
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty ColumnWidthProperty = DependencyProperty.Register(
             nameof(ColumnWidth),
             typeof(int),
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(40));
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty LabelCountProperty = DependencyProperty.Register(
             nameof(LabelCount),
             typeof(int),
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(1));
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty GoalProperty = DependencyProperty.Register(
             nameof(Goal),
             typeof(int),
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(0));
 
         /// <summary>
@@ -253,7 +253,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public static readonly DependencyProperty BottomContentProperty = DependencyProperty.Register(
             nameof(BottomContent),
             typeof(string),
-            typeof(BarGraphUserControl),
+            typeof(BarGraph),
             new PropertyMetadata(default(string)));
 
         #endregion
@@ -273,7 +273,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         /// <summary>
         /// Constructor
         /// </summary>
-        public BarGraphUserControl()
+        public BarGraph()
         {
             InitializeComponent();
 

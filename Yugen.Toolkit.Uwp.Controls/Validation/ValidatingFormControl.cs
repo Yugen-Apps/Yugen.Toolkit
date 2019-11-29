@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
+using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Controls.Validation
 {
@@ -13,8 +14,9 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         }
 
         private void ValidatingFormControl_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            foreach (var item in Items)
+        {        
+            var list = FindControlHelper.GetControlList<BaseValidatingUserControl>(this);
+            foreach (var item in list)
             {
                 if (item is BaseValidatingUserControl validatingControl)
                     _validatingControlsList.Add(validatingControl);

@@ -139,6 +139,11 @@ namespace Yugen.Toolkit.Uwp.Helpers
                     var uiElementAsContentControl = (ContentControl)uiElement;
                     FindControl<T>(controlList, uiElementAsContentControl.Content);
                     break;
+                case ItemsControl _:
+                    var uiElementAsItemsControl = (ItemsControl)uiElement;
+                    foreach (var element in uiElementAsItemsControl.Items)
+                        FindControl<T>(controlList, element);
+                    break;
             }
         }
 
