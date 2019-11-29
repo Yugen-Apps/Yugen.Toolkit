@@ -106,9 +106,13 @@
     <Compile Include="Views\Controls\CustomDialogPage.xaml.cs">
       <DependentUpon>CustomDialogPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\EdgeTappedListViewPage.xaml.cs">
+      <DependentUpon>EdgeTappedListViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\GraphPage.xaml.cs">
       <DependentUpon>GraphPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\ListViewEdgeTappedEventArgs.cs" />
     <Compile Include="Views\Controls\NotificationBannerPage.xaml.cs">
       <DependentUpon>NotificationBannerPage.xaml</DependentUpon>
     </Compile>
@@ -167,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Controls\CustomDialogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\EdgeTappedListViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -18,12 +18,23 @@ namespace Yugen.Toolkit.Uwp.Controls.Collections
         private ListViewItem _listViewItemHighlighted;
         private Rectangle _visualIndicator;
 
+        /// <summary>
+        /// This is event that will be fired when user releases the pointer after
+        /// pressing on the left edge of the ListViewItem
+        /// </summary>
         public event Action<ListView, EdgeTappedListViewEventArgs> ItemLeftEdgeTapped;
         //public delegate void ListViewEdgeTappedEventHandler(ListView sender, EdgeTappedListViewEventArgs e);
         //public event ListViewEdgeTappedEventHandler ItemLeftEdgeTapped;
 
         public Brush LeftEdgeBrush { get; set; }
-        public bool IsItemLeftEdgeTapEnabled { get; set; }
+
+        /// <summary>
+        /// With this property we enable that the left edge tap visual indicator shows 
+        /// when user press the listviewitem left edge 
+        /// and also the ItemLeftEdgeTapped event will be fired 
+        /// when user releases the pointer
+        /// </summary>
+        public bool IsItemLeftEdgeTapEnabled { get; set; } = true;
 
         public EdgeTappedListView()
         {
@@ -56,7 +67,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Collections
             }
         }
 
-        void OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        private void OnPointerPressed(object sender, PointerRoutedEventArgs e)
         {
             if (!IsItemLeftEdgeTapEnabled) return;
             // This conditional was commented to enable this on non-Mobile devices.
@@ -73,7 +84,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Collections
             ShowVisual();
         }
 
-        void OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        private void OnPointerReleased(object sender, PointerRoutedEventArgs e)
         {
             if (_listViewItemHighlighted != null)
                 ClearVisual();
@@ -84,7 +95,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Collections
             ClearVisual();
         }
 
-        void OnPointerExited(object sender, PointerRoutedEventArgs e)
+        private void OnPointerExited(object sender, PointerRoutedEventArgs e)
         {
             ClearVisual();
         }

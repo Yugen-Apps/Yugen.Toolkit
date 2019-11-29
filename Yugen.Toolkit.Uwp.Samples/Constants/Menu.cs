@@ -26,6 +26,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             Children =
             {
                 new MenuItem ("Custom Dialog", nameof (CustomDialogPage)),
+                new MenuItem ("EdgeTapped ListView", nameof (EdgeTappedListViewPage)),
                 new MenuItem ("Graph", nameof (GraphPage)),
                 new MenuItem ("Notification Banner", nameof (NotificationBannerPage)),
                 new MenuItem ("Validation", nameof (ValidationPage))
