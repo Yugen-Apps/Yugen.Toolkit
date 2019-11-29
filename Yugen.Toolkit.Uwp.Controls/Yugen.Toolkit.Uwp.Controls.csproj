@@ -150,10 +150,10 @@
     </Compile>
     <Compile Include="Validation\ValidatingForm.cs" />
     <Compile Include="Validation\ValidatingPasswordBox.cs">
-      <DependentUpon>ValidatingPasswordBoxUserControl.xaml</DependentUpon>
+      <DependentUpon>ValidatingPasswordBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation\ValidatingTextBox.cs">
-      <DependentUpon>ValidatingTextBoxUserControl.xaml</DependentUpon>
+      <DependentUpon>ValidatingTextBox.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Yugen.Toolkit.Uwp.Controls.rd.xml" />
   </ItemGroup>
@@ -190,11 +190,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Validation\ValidatingPasswordBoxUserControl.xaml">
+    <Page Include="Validation\ValidatingPasswordBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Validation\ValidatingTextBoxUserControl.xaml">
+    <Page Include="Validation\ValidatingTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
