@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="Yugen.Toolkit.Uwp.Samples.Views.Helpers.FindControlPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Helpers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel x:Name="myStackPanel">
+
+        <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
+                   Text="{x:Bind ViewModel.Title}" />
+
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Ancestor Stack Panel</TextBlock>
+        <Button Content="Find"
+                Click="{x:Bind ViewModel.FindAncestorStackPanelButton_Click}" />
+
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Ancestor Page</TextBlock>
+        <Button x:Name="MyButton" 
+                Content="Find"
+                Click="{x:Bind ViewModel.FindAncestorPageButton_Click}" />
+        
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Ancestor Stack Panel By Name</TextBlock>
+        <Button Content="Find"
+                Click="{x:Bind ViewModel.FindAncestorStackPanelByNameButton_Click}" />
+
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Ancestor Page and than find Descendant Button</TextBlock>
+        <Button Content="Find"
+                Click="{x:Bind ViewModel.FindDescendantButton_Click}" />
+
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Ancestor Page and than find Descendant Button By Name</TextBlock>
+        <Button Content="Find"
+                Click="{x:Bind ViewModel.FindDescendantByNameButton_Click}" />
+
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Find Page Button List</TextBlock>
+        <Button Content="Find"
+                Click="{x:Bind ViewModel.FindButtons_Click}" />
+
+    </StackPanel>
+    
+</Page>
