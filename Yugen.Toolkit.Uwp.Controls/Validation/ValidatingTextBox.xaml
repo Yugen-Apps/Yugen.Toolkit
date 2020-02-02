@@ -20,7 +20,7 @@
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Valid">
                     <VisualState.Setters>
-                        <Setter Target="ErrorMessageBorder.(UIElement.Visibility)"
+                        <Setter Target="ErrorMessageTextBlock.(UIElement.Visibility)"
                                 Value="Collapsed" />
                         <Setter Target="MyTextBox.(Control.BorderBrush)"
                                 Value="{StaticResource ValidatingSuccessBrush}" />
@@ -28,7 +28,7 @@
                 </VisualState>
                 <VisualState x:Name="Invalid">
                     <VisualState.Setters>
-                        <Setter Target="ErrorMessageBorder.(UIElement.Visibility)"
+                        <Setter Target="ErrorMessageTextBlock.(UIElement.Visibility)"
                                 Value="Visible" />
                         <Setter Target="MyTextBox.(Control.BorderBrush)"
                                 Value="{StaticResource ValidatingErrorBrush}" />
@@ -36,7 +36,7 @@
                 </VisualState>
                 <VisualState x:Name="Mandatory">
                     <VisualState.Setters>
-                        <Setter Target="ErrorMessageBorder.(UIElement.Visibility)"
+                        <Setter Target="ErrorMessageTextBlock.(UIElement.Visibility)"
                                 Value="Visible" />
                         <Setter Target="MyTextBox.(Control.BorderBrush)"
                                 Value="{StaticResource ValidatingErrorBrush}" />
@@ -59,12 +59,9 @@
                  Style="{x:Bind TextBoxStyle, Mode=OneWay}" 
                  CornerRadius="4"/>
 
-        <Border x:Name="ErrorMessageBorder"
-                Grid.Row="1"
-                Style="{StaticResource ValidatingBorderStyle}">
-            <TextBlock x:Name="ErrorMessageTextBlock"
-                       Style="{StaticResource ValidatingTextBlockStyle}" />
-        </Border>
+        <TextBlock x:Name="ErrorMessageTextBlock"
+                   Grid.Row="1"
+                   Style="{StaticResource ValidatingTextBlockStyle}" />
 
     </Grid>
 
