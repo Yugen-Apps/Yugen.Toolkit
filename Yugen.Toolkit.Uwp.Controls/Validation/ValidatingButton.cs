@@ -48,7 +48,6 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
         public ValidatingButton()
         {
             this.Loaded += ValidatingButtonControl_Loaded;
-            base.Tapped += ValidatingButtonControl_Tapped;
             base.Click += ValidatingButton_Click;
         }
 
@@ -67,12 +66,6 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
                 Tapped?.Invoke(args.Element, null);
                 Click?.Invoke(args.Element, null);
             }
-        }
-
-        private void ValidatingButtonControl_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            if (ValidatingForm.IsValid())
-                Tapped?.Invoke(sender, e);
         }
 
         private void ValidatingButton_Click(object sender, RoutedEventArgs e)
