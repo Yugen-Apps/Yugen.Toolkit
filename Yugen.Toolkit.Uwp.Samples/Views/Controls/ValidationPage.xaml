@@ -69,13 +69,14 @@
 
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">Passworda fields has IsMandatory attribute enabled, 
                         they also have OtherPasswordControl attribute with the other password control, to check if the password correspond</TextBlock>
-                        <validation:ValidatingPasswordBox Header="Password"
+                        <validation:ValidatingPasswordBox x:Name="Password"
+                                                          Header="Password"
                                                           IsMandatory="True"
                                                           Text="{x:Bind ViewModel.Password, Mode=OneWay}"
                                                           ValidationRules="{StaticResource PasswordValidation}" />
 
                         <validation:ValidatingPasswordBox Header="ConfirmPassword"
-                                                          OtherPasswordControl="Password"
+                                                          OtherPassword="{x:Bind Password}"
                                                           IsMandatory="True"
                                                           IsConfirmPassword="True"
                                                           Text="{x:Bind ViewModel.ConfirmPassword, Mode=OneWay}"
