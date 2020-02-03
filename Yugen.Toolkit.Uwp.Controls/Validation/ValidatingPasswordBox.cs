@@ -23,18 +23,6 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
             typeof(ValidatingPasswordBox),
             new PropertyMetadata(null));
 
-        public string OtherPasswordControl
-        {
-            get { return (string)GetValue(OtherPasswordControlProperty); }
-            set { SetValue(OtherPasswordControlProperty, value); }
-        }
-
-        public static readonly DependencyProperty OtherPasswordControlProperty = DependencyProperty.Register(
-            nameof(OtherPasswordControl),
-            typeof(string),
-            typeof(ValidatingPasswordBox),
-            new PropertyMetadata(null));
-
         public bool IsConfirmPassword
         {
             get { return (bool)GetValue(IsConfirmPasswordProperty); }
@@ -49,38 +37,13 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
 
         #endregion
         
-        private ValidatingPasswordBox OtherPassword { get; set; }
+        public ValidatingPasswordBox OtherPassword { get; set; }
 
         public ValidatingPasswordBox()
         {
             InitializeComponent();
 
             base.Init(ErrorMessageTextBlock, MyPasswordBox);
-
-            this.Loaded += ValidatingPasswordBoxUserControl_Loaded;
-        }
-
-        private void ValidatingPasswordBoxUserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            InitOtherPasswordProperties();
-        }
-
-        private void InitOtherPasswordProperties()
-        {
-            if (!IsConfirmPassword) return;
-
-            var validatingFormControl = FindControlHelper.FindAncestor<ValidatingForm>(this);
-            if (validatingFormControl != null) 
-            {
-                foreach (var item in ((ValidatingForm)validatingFormControl).Items)
-                {
-                    if(item is ValidatingPasswordBox validatingPasswordBoxUserControl)
-                    {
-                        if (validatingPasswordBoxUserControl.IsConfirmPassword == false)
-                            OtherPassword = validatingPasswordBoxUserControl;
-                    }
-                }
-            }
         }
 
         public override bool IsValid()
