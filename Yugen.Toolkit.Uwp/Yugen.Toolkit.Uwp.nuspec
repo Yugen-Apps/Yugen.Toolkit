@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Yugen.Toolkit.Uwp</id>
-    <version>1.0.15</version>
+    <version>1.0.16</version>
     <authors>emiliano84</authors>
     <description>Yugen.Toolkit.Uwp</description>
     <repository type="git" url="https://github.com/emiliano84/Toolkit.git" /> 
