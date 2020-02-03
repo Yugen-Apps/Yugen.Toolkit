@@ -27,7 +27,7 @@
     <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.XML" target="lib\uap10.0.17763" />
 
     <!-- XAML control -->
-    <file src="bin\Release\Yugen.Toolkit.Uwp.Yugen.Toolkit.Uwp.Controls\Controls.xr.xml" target="lib\uap10.0.17763\Yugen.Toolkit.Uwp.Controls" />
+    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.xr.xml" target="lib\uap10.0.17763\Yugen.Toolkit.Uwp.Controls" />
     
     <file src="bin\Release\Dialogs\CustomDialog.xbf" target="lib\uap10.0.17763\Dialogs" />
     <file src="bin\Release\Dialogs\NotificationBanner.xbf" target="lib\uap10.0.17763\Dialogs" />
