@@ -27,8 +27,8 @@
     <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.XML" target="lib\uap10.0.17763" />
 
     <!-- XAML control -->
-    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.xr.xml" target="lib\uap10.0.17763\Yugen.Toolkit.Uwp.Controls" />
-    
+    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.xr.xml" target="lib\uap10.0.17763\Yugen.Toolkit.Uwp.Controls" />
+
     <file src="bin\Release\Dialogs\CustomDialog.xbf" target="lib\uap10.0.17763\Dialogs" />
     <file src="bin\Release\Dialogs\NotificationBanner.xbf" target="lib\uap10.0.17763\Dialogs" />
     <file src="bin\Release\Graphs\BarGraph.xbf" target="lib\uap10.0.17763\Graphs" />
@@ -36,7 +36,8 @@
     <file src="bin\Release\Validation\ValidatingComboBox.xbf" target="lib\uap10.0.17763\Validation" />
     <file src="bin\Release\Validation\ValidatingPasswordBox.xbf" target="lib\uap10.0.17763\Validation" />
     <file src="bin\Release\Validation\ValidatingTextBox.xbf" target="lib\uap10.0.17763\Validation" />
-    <!--<file src="bin\Release\Validation\**\*.*" target="lib\netcore50\Yugen.Toolkit.Uwp.Controls\Validation" />-->
-    <!--<file src="bin\Release\Validation\**\*.*" target="lib\uap10\Yugen.Toolkit.Uwp.Controls\Validation" />-->
+    <!--<file src="bin\Release\Yugen.Toolkit.Uwp.Controls\**\*.*" target="lib\netcore50\Yugen.Toolkit.Uwp.Controls" />-->
+    <!--<file src="bin\Release\Yugen.Toolkit.Uwp.Controls\**\*.*" target="lib\uap10\Yugen.Toolkit.Uwp.Controls" />-->
+    <!--<file src="bin\Release\Yugen.Toolkit.Uwp.Controls\**\*.*" target="lib\uap10.0.17763\Yugen.Toolkit.Uwp.Controls" />-->
   </files>
 </package>
