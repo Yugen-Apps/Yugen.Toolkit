@@ -158,16 +158,16 @@
         </Grid.RowDefinitions>
 
         <ListView x:Name="ListView"
-                  ItemsSource="{x:Bind ElementCollection, Mode=OneWay}"
-                  SelectionMode="None"
                   Height="{x:Bind Height, Mode=OneWay}"
-                  Width="{x:Bind Width, Mode=OneWay}"
+                  ItemContainerStyle="{StaticResource StatisticListViewItem}"
+                  ItemsSource="{x:Bind ElementCollection, Mode=OneWay}"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
                   ScrollViewer.HorizontalScrollMode="Enabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
                   ScrollViewer.VerticalScrollMode="Disabled"
                   ScrollViewer.ZoomMode="Disabled"
-                  ItemContainerStyle="{StaticResource StatisticListViewItem}">
+                  SelectionMode="None"
+                  Width="{x:Bind Width, Mode=OneWay}">
 
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -184,17 +184,15 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <Rectangle Grid.Row="0"
-                                   Style="{StaticResource ScaleBarStyle}"
-                                   Height="{Binding ScaleBarValue, Mode=OneWay, ElementName=SelfBarGraph}"/>
+                        <Rectangle Height="{Binding ScaleBarValue, Mode=OneWay, ElementName=SelfBarGraph}"
+                                   Style="{StaticResource ScaleBarStyle}"/>
 
-                        <Rectangle Grid.Row="0"
-                                   Style="{StaticResource TrailBarStyle}"
-                                   Height="{x:Bind Value, Mode=OneWay}" />
+                        <Rectangle Height="{x:Bind Value, Mode=OneWay}"
+                                   Style="{StaticResource TrailBarStyle}" />
 
-                        <TextBlock Text="{x:Bind Label, Mode=OneWay}"
+                        <TextBlock Grid.Row="1"
                                    Style="{StaticResource LabelTextBlockStyle}"
-                                   Grid.Row="1" />
+                                   Text="{x:Bind Label, Mode=OneWay}" />
 
                     </Grid>
                 </DataTemplate>
@@ -203,18 +201,18 @@
         </ListView>
 
         <Rectangle Style="{StaticResource GoalLineStyle}"
-                   Width="{x:Bind Width, Mode=OneWay}"
-                   VerticalAlignment="Bottom">
+                   VerticalAlignment="Bottom"
+                   Width="{x:Bind Width, Mode=OneWay}">
             <Rectangle.RenderTransform>
                 <CompositeTransform TranslateY="{x:Bind RealGoal, Mode=OneWay}" />
             </Rectangle.RenderTransform>
         </Rectangle>
 
         <ContentPresenter Grid.Row="1"
-                          VerticalAlignment="{x:Bind VerticalContentAlignment, Mode=OneWay}"
+                          Content="{x:Bind BottomContent, Mode=OneWay}"
                           HorizontalAlignment="{x:Bind HorizontalContentAlignment, Mode=OneWay}"
                           Margin="{x:Bind Padding, Mode=OneWay}"
-                          Content="{x:Bind BottomContent, Mode=OneWay}"/>
+                          VerticalAlignment="{x:Bind VerticalContentAlignment, Mode=OneWay}"/>
 
     </Grid>
 </UserControl>

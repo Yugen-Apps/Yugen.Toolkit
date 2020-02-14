@@ -13,14 +13,14 @@
 
     <UserControl.Resources>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-        
+
         <Storyboard x:Name="FadeStoryboard">
             <DoubleAnimation x:Name="FadeAnimation"
-                             Storyboard.TargetProperty="Opacity"
+                             Duration="{x:Bind Duration, Mode=OneWay}"
                              From="0.0"
                              To="1.0"
-                             Duration="{x:Bind Duration, Mode=OneWay}"
-                             RepeatBehavior="1x" />
+                             RepeatBehavior="1x"
+                             Storyboard.TargetProperty="Opacity" />
         </Storyboard>
     </UserControl.Resources>
 
@@ -32,40 +32,43 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <Grid Visibility="{x:Bind IsTopBarVisible,Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
-              Background="{x:Bind TopBarBackground,Mode=OneWay}">
+        <Grid Background="{x:Bind TopBarBackground,Mode=OneWay}"
+              Visibility="{x:Bind IsTopBarVisible,Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="{x:Bind DialogTitle,Mode=OneWay}"
+            <TextBlock FontSize="18"
                        Foreground="{x:Bind TopBarForeground, Mode=OneWay}"
-                       VerticalAlignment="Center"
                        HorizontalAlignment="Center"
-                       FontSize="18" />
+                       Text="{x:Bind DialogTitle,Mode=OneWay}"
+                       VerticalAlignment="Center" />
 
-            <Grid Grid.Column="0"
-                  Width="30" 
-                  Height="30" 
-                  HorizontalAlignment="Right" 
-                  Tapped="Close_Tapped" 
+            <Grid x:Name="CloseButton"
                   Background="Transparent"
-                  x:Name="CloseButton">
+                  Height="30" 
+                  Width="30" 
+                  HorizontalAlignment="Right" 
+                  Tapped="Close_Tapped">
 
                 <Grid.Resources>
                     <Storyboard x:Name="CloseButtonStoryboard">
                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="CloseButton"
                                                       Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)">
-                            <LinearColorKeyFrame KeyTime="0:0:0" Value="Transparent" />
-                            <LinearColorKeyFrame KeyTime="0:0:0.2" Value="Black" />
-                            <LinearColorKeyFrame KeyTime="0:0:0.4" Value="Transparent" />
+                            <LinearColorKeyFrame KeyTime="0:0:0" 
+                                                 Value="Transparent" />
+                            <LinearColorKeyFrame KeyTime="0:0:0.2" 
+                                                 Value="Black" />
+                            <LinearColorKeyFrame KeyTime="0:0:0.4" 
+                                                 Value="Transparent" />
                         </ColorAnimationUsingKeyFrames>
                     </Storyboard>
                 </Grid.Resources>
 
-                <FontIcon Glyph="&#xE106;" Foreground="{x:Bind CloseGlyphForeground, Mode=OneWay}" />
+                <FontIcon Foreground="{x:Bind CloseGlyphForeground, Mode=OneWay}"
+                          Glyph="&#xE106;" />
 
             </Grid>
 
@@ -74,37 +77,36 @@
         <Grid Grid.Row="1">
 
             <ContentControl Content="{x:Bind Content, Mode=OneWay}"
-                            VerticalContentAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch"
                             Padding="8"/>
 
         </Grid>
 
         <Grid Grid.Row="2"
-              Visibility="{x:Bind IsButtonAreaVisible,Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
-              Background="{x:Bind ButtonAreaBackground, Mode=OneWay}">
+              Background="{x:Bind ButtonAreaBackground, Mode=OneWay}"
+              Visibility="{x:Bind IsButtonAreaVisible,Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" 
-                    x:Name="LeftButton" 
-                    Tapped="LeftButton_Tapped"
-                    Style="{x:Bind LeftButtonStyle, Mode=OneWay}"
-                    Visibility="{x:Bind IsButtonLeftVisible, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
+            <Button x:Name="LeftButton" 
                     Content="{x:Bind LeftButtonText, Mode=OneWay}"
+                    HorizontalAlignment="Center"
+                    Style="{x:Bind LeftButtonStyle, Mode=OneWay}"
+                    Tapped="LeftButton_Tapped"
                     VerticalAlignment="Center" 
-                    HorizontalAlignment="Center" />
+                    Visibility="{x:Bind IsButtonLeftVisible, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}" />
 
-            <Button Grid.Column="1" 
-                    x:Name="RightButton" 
-                    Tapped="RightButton_Tapped"
-                    Style="{x:Bind RightButtonStyle, Mode=OneWay}"
+            <Button x:Name="RightButton" 
+                    Grid.Column="1" 
                     Content="{x:Bind RightButtonText, Mode=OneWay}"
-                    VerticalAlignment="Center" 
-                    HorizontalAlignment="Center" />
+                    HorizontalAlignment="Center"
+                    Style="{x:Bind RightButtonStyle, Mode=OneWay}"
+                    Tapped="RightButton_Tapped"
+                    VerticalAlignment="Center"  />
 
         </Grid>
 

@@ -46,18 +46,17 @@
         </VisualStateManager.VisualStateGroups>
 
         <TextBox x:Name="MyTextBox"
-                 TextWrapping="Wrap"
-                 TextChanging="MyTextBox_OnTextChanging"
-                 TextChanged="MyTextBox_OnTextChanged"
+                 CornerRadius="4"
                  GotFocus="MyTextBox_OnGotFocus"
-                 Grid.Row="0"
                  Header="{x:Bind Header, Mode=OneWay}"
-                 PlaceholderText="{x:Bind PlaceholderText, Mode=OneWay}"
-                 Text="{x:Bind Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                 IsSpellCheckEnabled="{x:Bind IsSpellCheckEnabled, Mode=OneWay}"
                  InputScope="{x:Bind InputScope, Mode=OneWay}"
+                 IsSpellCheckEnabled="{x:Bind IsSpellCheckEnabled, Mode=OneWay}"
+                 PlaceholderText="{x:Bind PlaceholderText, Mode=OneWay}"
                  Style="{x:Bind TextBoxStyle, Mode=OneWay}" 
-                 CornerRadius="4"/>
+                 TextWrapping="Wrap"
+                 Text="{x:Bind Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 TextChanging="MyTextBox_OnTextChanging"
+                 TextChanged="MyTextBox_OnTextChanged"/>
 
         <TextBlock x:Name="ErrorMessageTextBlock"
                    Grid.Row="1"
