@@ -6,7 +6,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Validation
 {
     public sealed class ValidatingForm : ItemsControl
     {
-        private static List<BaseValidating> _validatingControlsList = new List<BaseValidating>();
+        private static readonly List<BaseValidating> _validatingControlsList = new List<BaseValidating>();
 
         public ValidatingForm()
         {

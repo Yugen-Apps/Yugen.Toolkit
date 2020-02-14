@@ -17,10 +17,10 @@ namespace Yugen.Toolkit.Uwp.Samples
 
         public AppShell()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
-        private void MenuTree_ItemInvoked(TreeView sender, TreeViewItemInvokedEventArgs args)
+        private void MenuTree_ItemInvoked(TreeView _, TreeViewItemInvokedEventArgs args)
         {
             if (args.InvokedItem is MenuItem item)
                 NavigationService.NavigateToPage(item.Tag);

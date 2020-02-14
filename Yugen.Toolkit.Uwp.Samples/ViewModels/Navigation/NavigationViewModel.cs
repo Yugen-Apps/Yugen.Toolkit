@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
     {
         public string ButtonContent { get; set; } = "Click Me";
 
-        public void Button_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        public void Button_Tapped(object _1, Windows.UI.Xaml.Input.TappedRoutedEventArgs _2)
         {
             NavigationService.NavigateToPage(typeof(NavigationParameterPage), "Bello");
         }

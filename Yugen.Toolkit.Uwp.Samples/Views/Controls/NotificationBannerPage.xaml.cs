@@ -12,20 +12,20 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
     {
         public NotificationBannerPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
-        private void SuccessButton_Tapped(object sender, TappedRoutedEventArgs e)
+        private void SuccessButton_Tapped(object _1, TappedRoutedEventArgs _2)
         {
             MyBanner.ShowSuccess();
         }
 
-        private void WarningButton_Tapped(object sender, TappedRoutedEventArgs e)
+        private void WarningButton_Tapped(object _1, TappedRoutedEventArgs _2)
         {
             MyBanner.ShowWarning();
         }
 
-        private void ErrorButton_Tapped(object sender, TappedRoutedEventArgs e)
+        private void ErrorButton_Tapped(object _1, TappedRoutedEventArgs _2)
         {
             MyBanner.ShowError();
         }

@@ -33,7 +33,6 @@ namespace Yugen.Toolkit.Standard.Printer.UsbPos
         public void Print(List<string> bodyList)
         {
             byte[] document = GetDocument(bodyList);
-            IntPtr printerHandle;
 
             var documentInfo = new NativeMethods.DOC_INFO_1
             {
@@ -41,9 +40,7 @@ namespace Yugen.Toolkit.Standard.Printer.UsbPos
                 pDocName = "Receipt"
             };
 
-            printerHandle = new IntPtr(0);
-
-            if (NativeMethods.OpenPrinter(_printerHostName.Normalize(), out printerHandle, IntPtr.Zero))
+            if (NativeMethods.OpenPrinter(_printerHostName.Normalize(), out IntPtr printerHandle, IntPtr.Zero))
             {
                 if (NativeMethods.StartDocPrinter(printerHandle, 1, documentInfo))
                 {
@@ -58,7 +55,8 @@ namespace Yugen.Toolkit.Standard.Printer.UsbPos
                             printerHandle,
                             unmanagedData,
                             managedData.Length,
-                            out int bytesWritten);
+                            out int _);
+
                         NativeMethods.EndPagePrinter(printerHandle);
                     }
                     else

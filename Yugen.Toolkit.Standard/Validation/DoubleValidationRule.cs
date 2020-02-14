@@ -29,7 +29,7 @@
                 return true;
             }
 
-            return double.TryParse(val, out double dblVal);
+            return double.TryParse(val, out _);
         }
     }
 }
