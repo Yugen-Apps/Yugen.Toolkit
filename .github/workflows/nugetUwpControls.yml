@@ -25,21 +25,19 @@ jobs:
       
     - name: Nuget Pack
       run: nuget pack Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj -properties Configuration=Release
-    
+        
+    - name: Nuget SetAPIKey
+      run: nuget setApiKey ${{ secrets.NUGET_KEY }}
+
+    - name: Nuget Push
+      run: nuget push *.nupkg
+
     - name: Nuget Add Source
       run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/emiliano84/index.json" -UserName emiliano84 -Password ${{ secrets.PACKAGES_TOKEN }}
       
-    - name: Nuget Add Source
-      run: nuget source Add -Name "MyNuget" -Source "https://api.nuget.org/v3/index.json"
-      
     - name: Nuget SetAPIKey
       run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source "GitHub"      
-      
-    - name: Nuget SetAPIKey
-      run: nuget setApiKey ${{ secrets.NUGET_KEY }} -Source "MyNuget"
-
+    
     - name: Nuget Push
       run: nuget push *.nupkg -Source "GitHub"
       
-    - name: Nuget Push
-      run: nuget push *.nupkg -Source "MyNuget"
