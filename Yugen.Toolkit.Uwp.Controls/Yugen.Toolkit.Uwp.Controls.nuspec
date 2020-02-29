@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Yugen.Toolkit.Uwp.Controls</id>
-    <version>1.0.19</version>
+    <version>1.0.20</version>
     <title>Yugen Toolkit Uwp Controls</title>
     <authors>emiliano84</authors>
     <owners>emiliano84</owners>
-    <license>https://github.com/emiliano84/Toolkit/blob/master/LICENSE</license>
+    <license type="expression">GPL-3.0-or-later</license>
     <projectUrl>https://github.com/emiliano84/Toolkit</projectUrl>
-    <icon>https://raw.githubusercontent.com/emiliano84/Toolkit/master/logo.png</icon>
+    <icon>..\icon.png</icon>
     <description>
       This library provides XAML templated controls. It is part of the Yugen Toolkit.
 
@@ -24,8 +24,8 @@
     <repository type="git" url="https://github.com/emiliano84/Toolkit.git" /> 
     <dependencies>
       <group targetFramework="uap10.0.17763">
-        <dependency id="Yugen.Toolkit.Standard" version="1.0.19" exclude="Build,Analyzers" />
-        <dependency id="Yugen.Toolkit.Uwp" version="1.0.19" exclude="Build,Analyzers" />
+        <dependency id="Yugen.Toolkit.Standard" version="1.0.20" exclude="Build,Analyzers" />
+        <dependency id="Yugen.Toolkit.Uwp" version="1.0.20" exclude="Build,Analyzers" />
         <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.2.9" exclude="Build,Analyzers" />
       </group>
     </dependencies>
@@ -43,5 +43,7 @@
 
     <!-- XAML control -->
     <file src="bin\Release\Yugen.Toolkit.Uwp.Controls\**\*.*" target="lib\uap10.0.17763\Yugen.Toolkit.Uwp.Controls" />
+
+    <file src="..\icon.png" target="" />
   </files>
 </package>
