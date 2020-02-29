@@ -19,7 +19,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yugen.Toolkit.Uwp.Printer",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yugen.Toolkit.Uwp.Controls", "Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj", "{F41590BA-11B3-4A1F-8374-A7DE83D58DC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yugen.Toolkit.Standard.Security", "Yugen.Toolkit.Standard.Security\Yugen.Toolkit.Standard.Security.csproj", "{B7CE6823-4B61-4215-9382-F229822847E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yugen.Toolkit.Standard.Security", "Yugen.Toolkit.Standard.Security\Yugen.Toolkit.Standard.Security.csproj", "{B7CE6823-4B61-4215-9382-F229822847E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{FBFFFB30-2C0E-4868-A203-D71F8918CD59}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\nugetStandard.yml = .github\workflows\nugetStandard.yml
+		.github\workflows\nugetUwp.yml = .github\workflows\nugetUwp.yml
+		.github\workflows\nugetUwpControls.yml = .github\workflows\nugetUwpControls.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
