@@ -3,10 +3,19 @@
   <metadata>
     <id>Yugen.Toolkit.Uwp</id>
     <version>1.0.20</version>
+    <title>Yugen Toolkit Uwp</title>
     <authors>emiliano84</authors>
-    <description>Yugen.Toolkit.Uwp</description>
-    <repository type="git" url="https://github.com/emiliano84/Toolkit.git" /> 
+    <owners>emiliano84</owners>
+    <license type="expression">GPL-3.0-or-later</license>
     <projectUrl>https://github.com/emiliano84/Toolkit</projectUrl>
+    <icon>images\icon.png</icon>
+    <description>
+      This package includes code only Uwp helpers. It is part of the Yugen Toolkit.
+    </description>
+    <releaseNotes></releaseNotes>
+    <copyright></copyright>
+    <tags>Yugen Toolkit Uwp Helpers</tags>
+    <repository type="git" url="https://github.com/emiliano84/Toolkit.git" />
     <dependencies>
       <group targetFramework="uap10.0.17763">
         <dependency id="Yugen.Toolkit.Standard" version="1.0.20" exclude="Build,Analyzers" />
@@ -24,5 +33,8 @@
 
     <!-- IntelliSense -->
     <file src="bin\Release\Yugen.Toolkit.Uwp.XML" target="lib\uap10.0.17763" />
+
+    <!-- Icon -->
+    <file src="..\icon.png" target="images\" />
   </files>
 </package>
