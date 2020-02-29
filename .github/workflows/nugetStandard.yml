@@ -31,7 +31,7 @@ jobs:
       run: nuget setApiKey ${{ secrets.NUGET_KEY }}
 
     - name: Nuget Push
-      run: nuget push *.nupkg -Source https://api.nuget.org/v3/index.json
+      run: nuget push Yugen.Toolkit.Standard\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json
       continue-on-error: true
     
     - name: Nuget Add Source
