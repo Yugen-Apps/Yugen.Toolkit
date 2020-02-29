@@ -8,7 +8,7 @@
     <owners>emiliano84</owners>
     <license type="expression">GPL-3.0-or-later</license>
     <projectUrl>https://github.com/emiliano84/Toolkit</projectUrl>
-    <icon>..\icon.png</icon>
+    <icon>icon.png</icon>
     <description>
       This library provides XAML templated controls. It is part of the Yugen Toolkit.
 
@@ -44,6 +44,6 @@
     <!-- XAML control -->
     <file src="bin\Release\Yugen.Toolkit.Uwp.Controls\**\*.*" target="lib\uap10.0.17763\Yugen.Toolkit.Uwp.Controls" />
 
-    <file src="..\icon.png" target="" />
+    <file src="icon.png" target="" />
   </files>
 </package>
