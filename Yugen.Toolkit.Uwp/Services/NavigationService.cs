@@ -64,10 +64,12 @@ namespace Yugen.Toolkit.Uwp.Services
         public static void BackRequested(ref bool handled)
         {
             // Get a hold of the current frame so that we can inspect the app back stack.
-            if (_rootFrame == null) return;
+            if (_rootFrame == null) 
+                return;
 
             // Check to see if this is the top-most page on the app back stack.
-            if (!_rootFrame.CanGoBack || handled) return;
+            if (!_rootFrame.CanGoBack || handled) 
+                return;
 
             // If not, set the event to handled and go back to the previous page in the app.
             handled = true;
@@ -76,7 +78,8 @@ namespace Yugen.Toolkit.Uwp.Services
 
         public static void GoBack()
         {
-            if (_rootFrame == null) return;
+            if (_rootFrame == null) 
+                return;
 
             if (_rootFrame.CanGoBack)
                 _rootFrame.GoBack();
@@ -85,7 +88,8 @@ namespace Yugen.Toolkit.Uwp.Services
         public static void NavigateToPage(string page, object parameter = null, bool force = false)
         {
             var targetPage = _appAssembly.DefinedTypes.FirstOrDefault(t => t.Name == page);
-            if (targetPage == null) return;
+            if (targetPage == null) 
+                return;
 
             NavigateToPage(targetPage.AsType(), parameter, force);
         }
@@ -97,10 +101,20 @@ namespace Yugen.Toolkit.Uwp.Services
 
         public static void NavigateToPage(Type page, object parameter, NavigationTransitionInfo navigationTransitionInfo, bool force = false)
         {
-            if (page == null) return;
+            if (page == null) 
+                return;
 
             if (!IsSamePage(page) || force)
-                _rootFrame.Navigate(page, parameter);
+            {
+                if (navigationTransitionInfo == null)
+                {
+                    _rootFrame.Navigate(page, parameter);
+                }
+                else
+                {
+                    _rootFrame.Navigate(page, parameter, navigationTransitionInfo);
+                }
+            }
         }
 
         public static void NavigateToPageAndClearStack(Type page, object parameter = null, bool force = false)
@@ -119,7 +133,8 @@ namespace Yugen.Toolkit.Uwp.Services
 
         private static void ClearBackStackTillLevel(int level)
         {
-            if (_rootFrame.BackStackDepth <= level) return;
+            if (_rootFrame.BackStackDepth <= level) 
+                return;
 
             for (int i = _rootFrame.BackStackDepth; i > level; i--)
                 _rootFrame.BackStack.RemoveAt(i - 1);
@@ -136,12 +151,10 @@ namespace Yugen.Toolkit.Uwp.Services
 
         public static void NavigateTo(NavigationMode mode, object parameter)
         {
-            var page = _rootFrame.Content as Page;
-            if (page != null)
+            if (_rootFrame.Content is Page page)
             {
                 // call viewmodel
-                var dataContext = page.DataContext as INavigable;
-                if (dataContext != null)
+                if (page.DataContext is INavigable dataContext)
                 {
                     dataContext.OnNavigatedTo(parameter, mode, null);
                 }
@@ -151,12 +164,10 @@ namespace Yugen.Toolkit.Uwp.Services
         // after navigate
         public static async Task NavigateFromAsync(bool suspending)
         {
-            var page = _rootFrame.Content as Page;
-            if (page != null)
+            if (_rootFrame.Content is Page page)
             {
                 // call viewmodel
-                var dataContext = page.DataContext as INavigable;
-                if (dataContext != null)
+                if (page.DataContext is INavigable dataContext)
                 {
                     //var pageState = _rootFrame.CurrentSourcePageType.GetType();
                     await dataContext.OnNavigatedFromAsync(null, suspending);

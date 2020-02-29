@@ -18,6 +18,7 @@ namespace Yugen.Toolkit.Standard.Commands
         {
             return true;
         }
+
         public void Execute(object parameter)
         {
             _execute?.Invoke((T)parameter);
@@ -26,7 +27,7 @@ namespace Yugen.Toolkit.Standard.Commands
 
     public class RelayCommand : ICommand
     {
-        private Action _execute = null;
+        private readonly Action _execute = null;
 
         public event EventHandler CanExecuteChanged;
 

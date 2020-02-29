@@ -26,7 +26,7 @@ namespace Yugen.Toolkit.Uwp.Services
                 MemoryCache[fileName] = json;
             }
 
-            if (string.IsNullOrEmpty(json)) return default(T);
+            if (string.IsNullOrEmpty(json)) return default;
 
             try
             {
@@ -37,7 +37,7 @@ namespace Yugen.Toolkit.Uwp.Services
             {
                 LoggerHelper.WriteLine(typeof(CacheService), exception);
             }
-            return default(T);
+            return default;
         }
 
         public static async Task<List<T>> GetItemsByPrefixAsync<T>(string prefix)

@@ -61,7 +61,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
         }
 
 
-        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void OnSelectionChanged(object _1, SelectionChangedEventArgs _2)
         {
             UpdateSelectionUI();
         }

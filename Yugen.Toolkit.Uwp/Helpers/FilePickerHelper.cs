@@ -18,7 +18,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <param name="fileTypeExtensionFilter">Extension eg: .jpg</param>
         /// <returns>StorageFile</returns>
         public static async Task<StorageFile> OpenFile(string fileTypeExtensionFilter, PickerLocationId pickerLocationId = PickerLocationId.Downloads) => 
-            await OpenFile(new List<string> { fileTypeExtensionFilter });
+            await OpenFile(new List<string> { fileTypeExtensionFilter }, pickerLocationId);
 
         /// <summary>
         /// Open a file from the picker
@@ -37,7 +37,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <param name="fileTypeExtensionFilter">Extension eg: .jpg</param>
         /// <returns>StorageFile</returns>
         public static async Task<IReadOnlyList<StorageFile>> OpenFiles(string fileTypeExtensionFilter, PickerLocationId pickerLocationId = PickerLocationId.Downloads) => 
-            await OpenFiles(new List<string> { fileTypeExtensionFilter });
+            await OpenFiles(new List<string> { fileTypeExtensionFilter }, pickerLocationId);
 
         /// <summary>
         /// Open files from the picker

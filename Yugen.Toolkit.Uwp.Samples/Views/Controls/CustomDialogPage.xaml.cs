@@ -12,10 +12,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
     {
         public CustomDialogPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
-        private void Button_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Button_Tapped(object _1, TappedRoutedEventArgs _2)
         {
             MyDialog.ShowDialog();
         }

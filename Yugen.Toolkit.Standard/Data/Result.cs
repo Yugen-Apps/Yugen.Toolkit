@@ -19,7 +19,7 @@
 
         public static Result Fail(string message) => new Result(false, message);
 
-        public static Result<T> Fail<T>(string message) => new Result<T>(default(T), false, message);
+        public static Result<T> Fail<T>(string message) => new Result<T>(default, false, message);
 
         public static Result Ok() => new Result(true, string.Empty);
 

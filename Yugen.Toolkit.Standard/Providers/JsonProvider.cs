@@ -8,7 +8,7 @@ namespace Yugen.Toolkit.Standard.Providers
         public static async Task<T> ToObjectAsync<T>(string value)
         {
             if (string.IsNullOrEmpty(value))
-                return default(T);
+                return default;
 
             return await Task.Run(() => JsonConvert.DeserializeObject<T>(value));
         }

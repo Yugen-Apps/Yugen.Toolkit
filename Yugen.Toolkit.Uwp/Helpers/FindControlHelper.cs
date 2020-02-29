@@ -195,6 +195,6 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <param name="button"></param>
         /// <param name="e"></param>
         /// <returns></returns>
-        private static bool IsButtonEnabled(Button button, KeyRoutedEventArgs e) => !SystemHelper.IsMobile && button.IsEnabled;
+        private static bool IsButtonEnabled(Button button, KeyRoutedEventArgs _) => !SystemHelper.IsMobile && button.IsEnabled;
     }
 }

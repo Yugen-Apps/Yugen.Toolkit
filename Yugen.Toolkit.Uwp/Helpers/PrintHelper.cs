@@ -64,21 +64,21 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// A list of UIElements used to store the print preview pages.  This gives easy access
         /// to any desired preview page.
         /// </summary>
-        private List<FrameworkElement> _printPreviewPages;
+        private readonly List<FrameworkElement> _printPreviewPages;
 
         /// <summary>
         ///  A hidden canvas used to hold pages we wish to print
         /// </summary>
         private Canvas _printCanvas;
-        private Panel _canvasContainer;
+        private readonly Panel _canvasContainer;
         private string _printTaskName;
-        private Dictionary<FrameworkElement, PrintHelperStateBag> _stateBags = new Dictionary<FrameworkElement, PrintHelperStateBag>();
+        private readonly Dictionary<FrameworkElement, PrintHelperStateBag> _stateBags = new Dictionary<FrameworkElement, PrintHelperStateBag>();
         private bool _directPrint;
 
         /// <summary>
         /// Gets the list of Framework element to print
         /// </summary>
-        private List<FrameworkElement> _elementsToPrint;
+        private readonly List<FrameworkElement> _elementsToPrint;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PrintHelper"/> class.
@@ -357,14 +357,14 @@ namespace Yugen.Toolkit.Uwp.Helpers
             {
                 var newWidth = page.Width - marginWidth;
 
-                element.Height = element.Height * (newWidth / element.Width);
+                element.Height *= newWidth / element.Width;
                 element.Width = newWidth;
             }
             else
             {
                 var newHeight = page.Height - marginHeight;
 
-                element.Width = element.Width * (newHeight / element.Height);
+                element.Width *= newHeight / element.Height;
                 element.Height = newHeight;
             }
 

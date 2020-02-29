@@ -13,14 +13,14 @@
 
     <UserControl.Resources>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-        
+
         <Storyboard x:Name="FadeStoryboard">
-            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+            <DoubleAnimation AutoReverse="{x:Bind AutoReverse, Mode=OneWay}"
+                             Duration="{x:Bind AnimationDuration, Mode=OneWay}"
                              From="0.0"
                              To="1.0"
-                             Duration="{x:Bind AnimationDuration, Mode=OneWay}"
-                             AutoReverse="{x:Bind AutoReverse, Mode=OneWay}"
-                             RepeatBehavior="1x" />
+                             RepeatBehavior="1x"
+                             Storyboard.TargetProperty="Opacity" />
         </Storyboard>
 
         <Style x:Key="NotificationBannerError" TargetType="Grid">
@@ -37,35 +37,41 @@
     </UserControl.Resources>
 
     <Grid Style="{x:Bind UcStyle, Mode=OneWay}">
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <SymbolIcon Symbol="{x:Bind Symbol, Mode=OneWay}"
+
+        <SymbolIcon Grid.RowSpan="2" 
                     Margin="10"
-                    Grid.Column="0"
-                    Grid.RowSpan="2" />
-        <TextBlock Text="{x:Bind Message, Mode=OneWay}"
-                   Margin="10"
-                   Grid.Column="1"
-                   Grid.Row="0"
+                    Symbol="{x:Bind Symbol, Mode=OneWay}"/>
+
+        <TextBlock Grid.Column="1"
                    Grid.RowSpan="2"
-                   VerticalAlignment="Center"
-                   Tapped="TextBlock_Tapped" />
-        <StackPanel Orientation="Horizontal"
-                    Grid.Column="2"
-                    Grid.Row="0"
-                    HorizontalAlignment="Stretch">
+                   Margin="10"
+                   Tapped="TextBlock_Tapped"
+                   Text="{x:Bind Message, Mode=OneWay}"
+                   VerticalAlignment="Center" />
+
+        <StackPanel Grid.Column="2"
+                    HorizontalAlignment="Stretch"
+                    Orientation="Horizontal">
+
             <Button Background="WhiteSmoke"
-                    Visibility="{x:Bind IsCloseButtonVisible, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
-                    Tapped="ClearButton_Tapped">
+                    Tapped="ClearButton_Tapped"
+                    Visibility="{x:Bind IsCloseButtonVisible, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
                 <SymbolIcon Symbol="Clear" />
             </Button>
+
         </StackPanel>
+
     </Grid>
+
 </UserControl>

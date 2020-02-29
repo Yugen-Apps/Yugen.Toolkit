@@ -30,7 +30,7 @@ namespace Yugen.Toolkit.Standard.Validation
                 return true;
             }
 
-            return int.TryParse(val, out int intVal);
+            return int.TryParse(val, out _);
         }
     }
 }
