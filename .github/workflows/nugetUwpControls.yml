@@ -31,6 +31,7 @@ jobs:
 
     - name: Nuget Push
       run: nuget push *.nupkg -Source https://api.nuget.org/v3/index.json
+      continue-on-error: true
 
     - name: Nuget Add Source
       run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/emiliano84/index.json" -UserName emiliano84 -Password ${{ secrets.PACKAGES_TOKEN }}
