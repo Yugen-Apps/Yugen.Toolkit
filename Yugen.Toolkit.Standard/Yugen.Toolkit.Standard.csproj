@@ -2,13 +2,31 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Yugen.Toolkit.Standard</PackageId>
     <Version>1.0.20</Version>
+    <Product>Yugen Toolkit Standard</Product>
+    <Authors>emiliano84</Authors>
+    <Company>emiliano84</Company>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/emiliano84/Toolkit</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <Description>This package includes code only Uwp helpers. It is part of the Yugen Toolkit.</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright></Copyright>
+    <PackageTags>Yugen Toolkit Helpers</PackageTags>
     <RepositoryUrl>https://github.com/emiliano84/Toolkit.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

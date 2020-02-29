@@ -44,6 +44,7 @@
     <!-- XAML control -->
     <file src="bin\Release\Yugen.Toolkit.Uwp.Controls\**\*.*" target="lib\uap10.0.17763\Yugen.Toolkit.Uwp.Controls" />
 
+    <!-- Icon -->
     <file src="..\icon.png" target="images\" />
   </files>
 </package>
