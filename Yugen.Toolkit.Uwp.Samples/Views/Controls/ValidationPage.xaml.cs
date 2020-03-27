@@ -1,5 +1,5 @@
-﻿using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Input;
+﻿using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Helpers;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
 
@@ -19,13 +19,13 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
             this.InitializeComponent();
         }
 
-        private void Error_Click(object _1, Windows.UI.Xaml.RoutedEventArgs _2)
+        private void Error_Click(object _1, RoutedEventArgs _2)
         {
             UsernameControl.CustomValidationMessage = "Username Already Exist";
             UsernameControl.IsCustomValid = false;
         }
 
-        private async void Success_Click(object _1, Windows.UI.Xaml.RoutedEventArgs _2)
+        private async void Success_Click(object _1, RoutedEventArgs _2)
         {
             await MessageDialogHelper.Alert("Success");
         }
