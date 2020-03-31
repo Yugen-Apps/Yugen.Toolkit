@@ -5,7 +5,10 @@ namespace Yugen.Toolkit.Standard.Collections
 {
     public class MultiDictionary<T, TK> : Dictionary<T, List<TK>>
     {
-        //checks if the key is already present
+        /// <summary>
+        /// Checks if the key is already present
+        /// </summary>
+        /// <param name="key"></param>
         private void EnsureKey(T key)
         {
             if (!ContainsKey(key))

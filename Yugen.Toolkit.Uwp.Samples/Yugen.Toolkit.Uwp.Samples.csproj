@@ -112,7 +112,6 @@
     <Compile Include="Views\Controls\GraphPage.xaml.cs">
       <DependentUpon>GraphPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\ListViewEdgeTappedEventArgs.cs" />
     <Compile Include="Views\Controls\NotificationBannerPage.xaml.cs">
       <DependentUpon>NotificationBannerPage.xaml</DependentUpon>
     </Compile>
@@ -124,6 +123,9 @@
     </Compile>
     <Compile Include="Views\Helpers\FilePickerPage.xaml.cs">
       <DependentUpon>FilePickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Helpers\GroupedCollectionPage.xaml.cs">
+      <DependentUpon>GroupedCollectionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -239,6 +241,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Helpers\FilePickerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Helpers\GroupedCollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
