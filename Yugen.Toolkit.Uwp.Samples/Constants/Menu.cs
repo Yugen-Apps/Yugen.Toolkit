@@ -40,7 +40,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             Children =
             {
                 new MenuItem ("File Picker", nameof (FilePickerPage)),
-                new MenuItem ("Find Control", nameof (FindControlPage))
+                new MenuItem ("Find Control", nameof (FindControlPage)),
+                new MenuItem ("Grouped Collection", nameof (GroupedCollectionPage))
             }
         };
 

@@ -1,0 +1,133 @@
+﻿<Page
+    x:Class="Yugen.Toolkit.Uwp.Samples.Views.Helpers.GroupedCollectionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Helpers"
+    xmlns:models="using:Yugen.Toolkit.Uwp.Samples.Models"
+    xmlns:models1="using:Yugen.Toolkit.Standard.Collections"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+
+        <!-- Use a collection view source for content that presents itself as a list of items that can be grouped or sorted.  Otherwise, you can use x:Bind
+        directly on the GridView's item source to for further optimization. Please see the AppUIBasics sample for an example of how to do this.  -->
+        <CollectionViewSource x:Name="GroupedCollectionCvs"
+                              IsSourceGrouped="True"
+                              Source="{x:Bind ViewModel.GroupedCollection}" />
+
+    </Page.Resources>
+
+    <StackPanel>
+
+        <GridView ItemsSource="{x:Bind GroupedCollectionCvs.View}">
+
+            <GridView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate x:DataType="models1:GroupInfoList">
+                            <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
+                                       Text="{x:Bind Key}" />
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </GridView.GroupStyle>
+
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="models:Graph">
+                    <TextBlock Text="{x:Bind Title, Mode=OneWay}" />
+                </DataTemplate>
+            </GridView.ItemTemplate>
+
+        </GridView>
+
+
+        <ListView ItemsSource="{x:Bind GroupedCollectionCvs.View}">
+
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate x:DataType="models1:GroupInfoList">
+                            <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
+                                       Text="{x:Bind Key}" />
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:Graph">
+                    <TextBlock Text="{x:Bind Value, Mode=OneWay}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <!--<ListView x:Name="SaleProductListView"
+                  ItemsSource="{x:Bind ViewModel.SaleProductCollection}"
+                  SelectionMode="None"
+                  Grid.Column="1"
+                  Grid.Row="0"
+                  Margin="0,0,0,4">
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment"
+                            Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                   x:Uid="Home_Name"
+                                   Text="_Name"
+                                   Grid.Column="0" />
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                   x:Uid="Home_AttributeSetString"
+                                   Text="_AttributeSetString"
+                                   Grid.Column="1" />
+
+                    </Grid>
+                </DataTemplate>
+
+            </ListView.HeaderTemplate>
+
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="domain:SaleProductViewModel">
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Style="{x:Bind Style, Mode=OneWay}"
+                                   Text="{x:Bind PrintName, Mode=OneWay}"
+                                   Grid.Column="0" />
+                        <TextBlock Style="{x:Bind Style, Mode=OneWay}"
+                                   Text="{x:Bind AttributeSetString, Mode=OneWay}"
+                                   Grid.Column="1" />
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>-->
+    </StackPanel>
+</Page>

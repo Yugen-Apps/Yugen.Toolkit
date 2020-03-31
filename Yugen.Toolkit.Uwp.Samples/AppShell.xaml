@@ -11,7 +11,8 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <NavigationView OpenPaneLength="200"
-                        IsBackButtonVisible="Collapsed">
+                        IsBackButtonVisible="Collapsed"
+                        IsPaneToggleButtonVisible="False">
 
             <NavigationView.PaneCustomContent>
                 <TreeView Name="MenuTree"
