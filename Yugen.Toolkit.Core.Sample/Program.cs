@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using Yugen.Toolkit.Standard.Data.Extensions;
 using Yugen.Toolkit.Standard.Data.Sample;
 
 /// <summary>
@@ -19,70 +18,51 @@ namespace Yugen.Toolkit.Core.Sample
 {
     class Program
     {
-        private static BloggingContext context;
-
+        /// <summary>
+        /// Option 1: simple and fast approach just to generate migrations
+        /// </summary>
         private static void Main(string[] args)
         {
-            context = new BloggingContextFactory().CreateDbContext(null);
+            new BloggingContextFactory().CreateDbContext(null);
         }
 
         public class BloggingContextFactory : IDesignTimeDbContextFactory<BloggingContext>
         {
-            public BloggingContext CreateDbContext(string[] args)
-            {
-                var optionsBuilder = new DbContextOptionsBuilder<BloggingContext>();
-                optionsBuilder.UseSqlite("Data Source=blog.db");
-
-                return new BloggingContext(optionsBuilder.Options);
-            }
+            public BloggingContext CreateDbContext(string[] args) => 
+                new BloggingContext(new DbContextOptionsBuilder<BloggingContext>()
+                    .UseSqlite("Data Source=blog.db").Options);
         }
+
+
+        /// <summary>
+        /// Option 2: Dependency Injection
+        /// </summary>
+        //private static void Main(string[] args)
+        //{
+        //    var serviceProvider = CreateServiceProvider();
+        //    // serviceProvider.GetService<BloggingContext>().Database.EnsureCreated();
+        //}
+
+        //private static IServiceProvider CreateServiceProvider()
+        //{
+        //    // create service collection
+        //    var serviceCollection = new ServiceCollection();
+        //    ConfigureServices(serviceCollection);
+
+        //    // create service provider
+        //    return serviceCollection.BuildServiceProvider();
+        //}
+
+        //private static void ConfigureServices(IServiceCollection serviceCollection)
+        //{
+        //    serviceCollection.AddDbContext<BloggingContext>(options => 
+        //        options.UseSqlite("Data Source=MyDatabase.db"));
+        //}
+
+        //private class Factory : IDesignTimeDbContextFactory<BloggingContext>
+        //{
+        //    public BloggingContext CreateDbContext(string[] args)
+        //        => CreateServiceProvider().CreateScope().ServiceProvider.GetService<BloggingContext>();
+        //}
     }
-
-    //class Program
-    //{
-    //    // this connection string must be retrieved from a secure file.
-    //    private static readonly string _connectionString = "Data Source=MyDatabase.db";
-
-    //    private static void ConfigureServices(IServiceCollection isc)
-    //    {
-    //        isc.AddDbContext<BloggingContext>(options => options.UseSqlite(_connectionString));
-    //        //isc.AddSingleton<TheApp>();
-    //    }
-
-    //    private static IServiceProvider CreateServiceProvider()
-    //    {
-    //        // create service collection
-    //        IServiceCollection isc = new ServiceCollection();
-    //        ConfigureServices(isc);
-
-    //        // create service provider
-    //        return isc.BuildServiceProvider();
-    //    }
-
-    //    private static void Main(string[] args)
-    //    {
-    //        using (var scope = CreateServiceProvider().CreateScope())
-    //        {
-    //            //scope.ServiceProvider.GetService<TheApp>().Run();
-    //        }
-    //    }
-
-    //    private class Factory : IDesignTimeDbContextFactory<BloggingContext>
-    //    {
-    //        public BloggingContext CreateDbContext(string[] args)
-    //            => CreateServiceProvider().CreateScope().ServiceProvider.GetService<BloggingContext>();
-    //    }
-    //}
-
-    //public class TheApp
-    //{
-    //    private readonly BloggingContext _bloggingContext;
-
-    //    public TheApp(BloggingContext bloggingContext) => _bloggingContext = bloggingContext;
-
-    //    public void Run()
-    //    {
-    //        // Do something on _theContext            
-    //    }
-    //}
 }
