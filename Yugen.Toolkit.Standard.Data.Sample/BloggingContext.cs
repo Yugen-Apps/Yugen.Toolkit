@@ -14,11 +14,6 @@ namespace Yugen.Toolkit.Standard.Data.Sample
 
         public BloggingContext() { }
         public BloggingContext(DbContextOptions<BloggingContext> options) : base(options) { }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlite("Data Source=blog.db");
-        //}
     }
 
     public class Post

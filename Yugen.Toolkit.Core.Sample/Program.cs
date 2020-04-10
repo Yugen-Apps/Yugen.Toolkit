@@ -19,37 +19,70 @@ namespace Yugen.Toolkit.Core.Sample
 {
     class Program
     {
-        // this connection string must be retrieved from a secure file.
-        private static readonly string _connectionString = "Data Source=MyDatabase.db";
-
-        private static void ConfigureServices(IServiceCollection isc)
-        {
-            isc.AddDbContext<BloggingContext>(options => options.UseSqlite(_connectionString));
-            //isc.AddSingleton<TheApp>();
-        }
-
-        private static IServiceProvider CreateServiceProvider()
-        {
-            // create service collection
-            IServiceCollection isc = new ServiceCollection();
-            ConfigureServices(isc);
-
-            // create service provider
-            return isc.BuildServiceProvider();
-        }
+        private static BloggingContext context;
 
         private static void Main(string[] args)
         {
-            using (var scope = CreateServiceProvider().CreateScope())
-            {
-                //scope.ServiceProvider.GetService<TheApp>().Run();
-            }
+            context = new BloggingContextFactory().CreateDbContext(null);
         }
 
-        private class Factory : IDesignTimeDbContextFactory<BloggingContext>
+        public class BloggingContextFactory : IDesignTimeDbContextFactory<BloggingContext>
         {
             public BloggingContext CreateDbContext(string[] args)
-                => CreateServiceProvider().CreateScope().ServiceProvider.GetService<BloggingContext>();
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<BloggingContext>();
+                optionsBuilder.UseSqlite("Data Source=blog.db");
+
+                return new BloggingContext(optionsBuilder.Options);
+            }
         }
     }
+
+    //class Program
+    //{
+    //    // this connection string must be retrieved from a secure file.
+    //    private static readonly string _connectionString = "Data Source=MyDatabase.db";
+
+    //    private static void ConfigureServices(IServiceCollection isc)
+    //    {
+    //        isc.AddDbContext<BloggingContext>(options => options.UseSqlite(_connectionString));
+    //        //isc.AddSingleton<TheApp>();
+    //    }
+
+    //    private static IServiceProvider CreateServiceProvider()
+    //    {
+    //        // create service collection
+    //        IServiceCollection isc = new ServiceCollection();
+    //        ConfigureServices(isc);
+
+    //        // create service provider
+    //        return isc.BuildServiceProvider();
+    //    }
+
+    //    private static void Main(string[] args)
+    //    {
+    //        using (var scope = CreateServiceProvider().CreateScope())
+    //        {
+    //            //scope.ServiceProvider.GetService<TheApp>().Run();
+    //        }
+    //    }
+
+    //    private class Factory : IDesignTimeDbContextFactory<BloggingContext>
+    //    {
+    //        public BloggingContext CreateDbContext(string[] args)
+    //            => CreateServiceProvider().CreateScope().ServiceProvider.GetService<BloggingContext>();
+    //    }
+    //}
+
+    //public class TheApp
+    //{
+    //    private readonly BloggingContext _bloggingContext;
+
+    //    public TheApp(BloggingContext bloggingContext) => _bloggingContext = bloggingContext;
+
+    //    public void Run()
+    //    {
+    //        // Do something on _theContext            
+    //    }
+    //}
 }
