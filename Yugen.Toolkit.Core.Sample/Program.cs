@@ -66,3 +66,7 @@ namespace Yugen.Toolkit.Core.Sample
         //}
     }
 }
+
+//https://devblogs.microsoft.com/premier-developer/demystifying-the-new-net-core-3-worker-service/
+//https://stackoverflow.com/questions/58183920/how-to-setup-app-settings-in-a-net-core-3-worker-service
+//https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.1
