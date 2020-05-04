@@ -12,7 +12,7 @@ namespace Yugen.Toolkit.Standard.Validation
         /// </summary>
         public ValidationRules()
         {
-            this.Rules = new List<BaseValidationRule>();
+            Rules = new List<BaseValidationRule>();
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace Yugen.Toolkit.Standard.Validation
         /// </param>
         public ValidationRules(List<BaseValidationRule> rules)
         {
-            this.Rules = rules;
+            Rules = rules;
         }
 
         /// <summary>

@@ -4,7 +4,7 @@
     {
         public DecimalValidationRule()
         {
-            this.RegexPattern = @"^[0-9,.]";
+            RegexPattern = @"^[0-9,.]";
         }
 
         /// <summary>

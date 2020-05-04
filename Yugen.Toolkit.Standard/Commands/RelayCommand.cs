@@ -14,15 +14,9 @@ namespace Yugen.Toolkit.Standard.Commands
             _execute = execute ?? throw new ArgumentNullException("execute");
         }
 
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
+        public bool CanExecute(object parameter) => true;
 
-        public void Execute(object parameter)
-        {
-            _execute?.Invoke((T)parameter);
-        }
+        public void Execute(object parameter) => _execute?.Invoke((T)parameter);
     }
 
     public class RelayCommand : ICommand
@@ -36,14 +30,8 @@ namespace Yugen.Toolkit.Standard.Commands
             _execute = execute ?? throw new ArgumentNullException("execute");
         }
 
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
+        public bool CanExecute(object parameter) => true;
 
-        public void Execute(object parameter)
-        {
-            _execute?.Invoke();
-        }
+        public void Execute(object parameter) => _execute?.Invoke();
     }
 }

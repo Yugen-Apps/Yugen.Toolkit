@@ -18,10 +18,12 @@ namespace Yugen.Toolkit.Standard.Collections
             else
             {
                 if (this[key] == null)
+                {
                     this[key] = new List<TK>(1);
+                }
             }
         }
-        
+
         /// <summary>
         /// Adds a new value in the Values collection
         /// </summary>
@@ -55,12 +57,16 @@ namespace Yugen.Toolkit.Standard.Collections
         public bool RemoveValue(T key, TK value)
         {
             if (!ContainsKey(key))
+            {
                 return false;
+            }
 
             this[key].Remove(value);
 
             if (this[key].Count == 0)
+            {
                 Remove(key);
+            }
 
             return true;
         }
@@ -75,12 +81,16 @@ namespace Yugen.Toolkit.Standard.Collections
         public bool RemoveAllValue(T key, Predicate<TK> match)
         {
             if (!ContainsKey(key))
+            {
                 return false;
+            }
 
             this[key].RemoveAll(match);
 
             if (this[key].Count == 0)
+            {
                 Remove(key);
+            }
 
             return true;
         }

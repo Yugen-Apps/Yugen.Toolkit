@@ -16,7 +16,7 @@
         /// Gets the error message to display for the rule.
         /// </summary>
         public override string ErrorMessage => "Passwords do not match";
-    
+
         /// <summary>
         /// Validates an object value with this rule.
         /// </summary>
@@ -28,9 +28,6 @@
         /// </returns>
         public bool IsValid(string password, string otherPassword) => password != null && password.Equals(otherPassword);
 
-        public override bool IsValid(object value)
-        {
-            return true;
-        }
+        public override bool IsValid(object value) => true;
     }
 }

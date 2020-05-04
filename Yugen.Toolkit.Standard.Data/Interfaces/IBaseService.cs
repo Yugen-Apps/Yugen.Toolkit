@@ -39,22 +39,22 @@ namespace Yugen.Toolkit.Standard.Data.Interfaces
 
         Result Delete(T entity);
         Result Delete(Guid id);
-        Result Delete(List<T> itemList);
+        Result Delete(IEnumerable<T> itemList);
 
         Result<T> SoftDelete(T entity);
         Result<T> SoftDelete(Guid id);
 
         Result<T> AddOrUpdate(T entity);
-        Result<T> AddOrUpdate(List<T> itemList);
+        Result<T> AddOrUpdate(IEnumerable<T> itemList);
 
-        Result<T> AddOrUpdateWithoutEntity(T entity, bool updateModified = true);
-        Result<T> AddOrUpdateWithoutEntity(List<T> itemList, bool updateModified = true);
+        Result<T> AddOrUpdateDetachedEntity(T entity, bool updateModified = true);
+        Result<T> AddOrUpdateDetachedEntity(IEnumerable<T> itemList, bool updateModified = true);
 
         Result<int> Count();
         bool IsEmpty();
         int LastIndex();
 
-        Result<T> PushSync(List<T> entityList);
-        Result<T> PullSync(List<T> entityList);
+        Result<T> PushSync(IEnumerable<T> entityList);
+        Result<T> PullSync(IEnumerable<T> entityList);
     }
 }

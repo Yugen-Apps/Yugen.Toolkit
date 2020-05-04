@@ -4,7 +4,7 @@
     {
         public NameValidationRule()
         {
-            this.RegexPattern = @"^[\p{L} \.'\-]+$"; 
+            RegexPattern = @"^[\p{L} \.'\-]+$";
         }
 
         /// <summary>

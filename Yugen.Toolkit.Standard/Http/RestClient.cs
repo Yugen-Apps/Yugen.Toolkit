@@ -13,11 +13,21 @@ namespace Yugen.Toolkit.Standard.Http
     {
         private readonly HttpClient _httpClient = new HttpClient();
 
-        public async Task<Result<T>> ExecuteRequest<T>(string uri, HttpMethod httpMethod, object parameters, BodyTypeEnum bodyTypeEnum, string accessToken = null)
+        /// <summary>
+        /// Executes a request asynchronously, authenticating if needed
+        /// </summary>
+        /// <typeparam name="T">Target deserialization type</typeparam>
+        /// <param name="uri">url</param>
+        /// <param name="httpMethod">http method</param>
+        /// <param name="body">body</param>
+        /// <param name="bodyContentType">body Content Type</param>
+        /// <param name="bearerToken">bearer Token</param>
+        /// <returns>Deserialized T object wrapped in Result</returns>
+        public async Task<Result<T>> ExecuteRequest<T>(string uri, HttpMethod httpMethod, object body, BodyContentType bodyContentType, string bearerToken = null)
         {
             try
             {
-                var response = await ExecuteRequest(uri, httpMethod, parameters, bodyTypeEnum, accessToken);
+                Result<string> response = await ExecuteRequest(uri, httpMethod, body, bodyContentType, bearerToken);
                 return Result.IsOk(await JsonProvider.ToObjectAsync<T>(response.Value), response.Success, "");
             }
             catch (Exception exception)
@@ -27,34 +37,48 @@ namespace Yugen.Toolkit.Standard.Http
             }
         }
 
-        public async Task<Result<string>> ExecuteRequest(string uri, HttpMethod httpMethod, object parameters, BodyTypeEnum bodyTypeEnum, string accessToken = null)
+        /// <summary>
+        /// Executes a request asynchronously, authenticating if needed
+        /// </summary>
+        /// <typeparam name="T">Target deserialization type</typeparam>
+        /// <param name="uri">url</param>
+        /// <param name="httpMethod">http method</param>
+        /// <param name="body">body</param>
+        /// <param name="bodyContentType">body Content Type</param>
+        /// <param name="bearerToken">bearer Token</param>
+        /// <returns>string wrapped in Result</returns>
+        public async Task<Result<string>> ExecuteRequest(string uri, HttpMethod httpMethod, object body, BodyContentType bodyContentType, string bearerToken = null)
         {
             try
             {
-                HttpRequestMessage httpRequestMessage = new HttpRequestMessage(httpMethod, new Uri(uri));
+                var httpRequestMessage = new HttpRequestMessage(httpMethod, new Uri(uri));
 
-                if (!string.IsNullOrEmpty(accessToken))
-                    httpRequestMessage.Headers.Add("Authorization", $"Bearer {accessToken}");
-
-                if (parameters != null)
+                if (!string.IsNullOrEmpty(bearerToken))
                 {
-                    switch (bodyTypeEnum)
+                    httpRequestMessage.Headers.Add("Authorization", $"Bearer {bearerToken}");
+                }
+
+                if (body != null)
+                {
+                    switch (bodyContentType)
                     {
-                        case BodyTypeEnum.Json:
-                            httpRequestMessage.Content = await BuildContent(parameters);
+                        case BodyContentType.Json:
+                            httpRequestMessage.Content = await BuildJsonContent(body);
                             break;
-                        case BodyTypeEnum.MultipartFormData:
-                            httpRequestMessage.Content = BuildFormUrlEncodedContent(parameters as Dictionary<string, string>);
+                        case BodyContentType.MultipartFormData:
+                            httpRequestMessage.Content = BuildFormUrlEncodedContent(body as Dictionary<string, string>);
                             break;
-                        case BodyTypeEnum.UrlEncodedFormData:
+                        case BodyContentType.WwwFormUrlEncoded:
+                            httpRequestMessage.Content = await BuildWwwFormUrlEncodedContent(body);
                             break;
                     }
                 }
 
-                var response = await _httpClient.SendAsync(httpRequestMessage);
-
+                HttpResponseMessage response = await _httpClient.SendAsync(httpRequestMessage);
                 if (response.IsSuccessStatusCode)
+                {
                     return Result.Ok(await response.Content.ReadAsStringAsync());
+                }
 
                 LoggerHelper.WriteLine(typeof(RestClient), $"response failed: {response}");
                 return Result.Fail<string>("");
@@ -66,14 +90,23 @@ namespace Yugen.Toolkit.Standard.Http
             }
         }
 
-        private async Task<StringContent> BuildContent(object parameters)
+        private async Task<StringContent> BuildJsonContent(object body)
         {
-            var jsonp = await JsonProvider.StringifyAsync(parameters);
-            var content = new StringContent(jsonp);
+            var json = await JsonProvider.StringifyAsync(body);
+            var content = new StringContent(json);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             return content;
         }
 
-        private FormUrlEncodedContent BuildFormUrlEncodedContent(Dictionary<string, string> parameters) => new FormUrlEncodedContent(parameters);
+        private async Task<StringContent> BuildWwwFormUrlEncodedContent(object body)
+        {
+            var json = await JsonProvider.StringifyAsync(body);
+            var content = new StringContent(json);
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
+            return content;
+        }
+
+        private FormUrlEncodedContent BuildFormUrlEncodedContent(Dictionary<string, string> body) =>
+            new FormUrlEncodedContent(body);
     }
 }
