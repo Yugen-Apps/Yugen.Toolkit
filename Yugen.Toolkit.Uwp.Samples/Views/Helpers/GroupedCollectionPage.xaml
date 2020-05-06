@@ -37,7 +37,7 @@
 
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="models:Graph">
-                    <TextBlock Text="{x:Bind Title, Mode=OneWay}" />
+                    <TextBlock Text="{x:Bind Title}" />
                 </DataTemplate>
             </GridView.ItemTemplate>
 
@@ -65,7 +65,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="models:Graph">
-                    <TextBlock Text="{x:Bind Value, Mode=OneWay}" />
+                    <TextBlock Text="{x:Bind Value}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
 

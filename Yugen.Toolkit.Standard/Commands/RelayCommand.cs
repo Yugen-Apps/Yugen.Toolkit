@@ -6,8 +6,7 @@ namespace Yugen.Toolkit.Standard.Commands
     public class RelayCommand<T> : ICommand
     {
         private readonly Action<T> _execute = null;
-
-        private bool _canExecute;
+        private readonly bool _canExecute;
 
         public event EventHandler CanExecuteChanged;
 
@@ -25,8 +24,7 @@ namespace Yugen.Toolkit.Standard.Commands
     public class RelayCommand : ICommand
     {
         private readonly Action _execute = null;
-
-        private bool _canExecute;
+        private readonly bool _canExecute;
 
         public event EventHandler CanExecuteChanged;
 

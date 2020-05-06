@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -108,5 +109,12 @@ namespace Yugen.Toolkit.Standard.Http
 
         private FormUrlEncodedContent BuildFormUrlEncodedContent(Dictionary<string, string> body) =>
             new FormUrlEncodedContent(body);
+
+
+        private static string ToQueryString(Dictionary<string, string> pairs)
+        {
+            var list = pairs.Select(pair => $"{pair.Key}={pair.Value}").ToList();
+            return "?" + string.Join("&", list);
+        }
     }
 }
