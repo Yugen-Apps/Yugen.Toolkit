@@ -6,14 +6,14 @@ namespace Yugen.Toolkit.Standard.Commands
 {
     public class AsyncRelayCommand<T> : ICommand
     {
-        private readonly Func<Task<T>> _execute = null;
+        private readonly Func<T, Task> _execute = null;
+        private readonly bool _canExecute;
 
-        private bool _canExecute;
         private bool _isRunning;
 
         public event EventHandler CanExecuteChanged;
 
-        public AsyncRelayCommand(Func<Task<T>> execute, bool canExecute = true)
+        public AsyncRelayCommand(Func<T, Task> execute, bool canExecute = true)
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
@@ -25,7 +25,7 @@ namespace Yugen.Toolkit.Standard.Commands
         {
             try
             {
-                var task = _execute();
+                var task = _execute((T)parameter);
                 if (task == null)
                 {
                     return;
@@ -44,8 +44,8 @@ namespace Yugen.Toolkit.Standard.Commands
     public class AsyncRelayCommand : ICommand
     {
         private readonly Func<Task> _execute = null;
+        private readonly bool _canExecute;
 
-        private bool _canExecute;
         private bool _isRunning;
 
         public event EventHandler CanExecuteChanged;
