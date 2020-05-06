@@ -21,7 +21,10 @@ namespace Yugen.Toolkit.Standard.Validation
         /// <returns>Is valid</returns>
         public override bool IsValid(object value)
         {
-            if (value == null) return false;
+            if (value == null)
+            {
+                return false;
+            }
 
             var val = value.ToString();
             if (string.IsNullOrWhiteSpace(val))
@@ -29,7 +32,7 @@ namespace Yugen.Toolkit.Standard.Validation
                 return true;
             }
 
-            var reg = new Regex(this.RegexPattern, RegexOptions.IgnoreCase);
+            var reg = new Regex(RegexPattern, RegexOptions.IgnoreCase);
             return reg.IsMatch(val);
         }
     }

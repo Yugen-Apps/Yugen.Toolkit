@@ -5,9 +5,12 @@ namespace Yugen.Toolkit.Standard.Data.Models
 {
     public class BaseEntity : IBaseEntity
     {
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        //[Key]
-        //public int Id { get; set; }
+        /// <summary>
+        /// We're going to add a primary key of type Guid in each model 
+        /// manually, because as best practice is better to have a proper 
+        /// naming like {ModelName}Id instead of just Id
+        /// </summary>
+        // public Guid Id { get; set; }
 
         public int Index { get; set; }
 

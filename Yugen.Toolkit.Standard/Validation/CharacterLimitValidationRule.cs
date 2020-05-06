@@ -23,14 +23,14 @@
         /// </param>
         public CharacterLimitValidationRule(int minLength, int maxLength)
         {
-            this.MinLength = minLength;
-            this.MaxLength = maxLength;
+            MinLength = minLength;
+            MaxLength = maxLength;
         }
 
         /// <summary>
         /// Gets the error message to display for the rule.
         /// </summary>
-        public override string ErrorMessage => $"The value must be between {this.MinLength} and {this.MaxLength} characters.";
+        public override string ErrorMessage => $"The value must be between {MinLength} and {MaxLength} characters.";
 
         /// <summary>
         /// Gets or sets the min length.
@@ -64,7 +64,7 @@
                 return true;
             }
 
-            return (val.Length <= this.MaxLength || this.MaxLength == 0) && val.Length >= this.MinLength;
+            return (val.Length <= MaxLength || MaxLength == 0) && val.Length >= MinLength;
         }
     }
 }

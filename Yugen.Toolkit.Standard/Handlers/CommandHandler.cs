@@ -16,16 +16,10 @@ namespace Yugen.Toolkit.Standard.Handlers
 
         public bool CanExecute(object parameter) => _canExecute;
 
-        public void Execute(object parameter)
-        {
-            _action();
-        }
+        public void Execute(object parameter) => _action();
 
         public event EventHandler CanExecuteChanged;
 
-        public virtual void OnCanExecuteChanged()
-        {
-            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
-        }
+        public virtual void OnCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
     }
 }

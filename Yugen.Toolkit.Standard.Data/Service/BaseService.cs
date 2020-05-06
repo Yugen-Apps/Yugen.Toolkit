@@ -10,6 +10,10 @@ using Yugen.Toolkit.Standard.Helpers;
 // https://github.com/threenine/swcApi
 namespace Yugen.Toolkit.Standard.Data.Service
 {
+    /// <summary>
+    /// CRUD (create, read, update, delete) 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BaseService<T> : IBaseService<T> where T : BaseEntity
     {
         protected readonly IUnitOfWork UnitOfWork;
@@ -331,7 +335,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
             return Delete(entity.Value);
         }
 
-        public Result Delete(List<T> entityList)
+        public Result Delete(IEnumerable<T> entityList)
         {
             try
             {
@@ -364,14 +368,19 @@ namespace Yugen.Toolkit.Standard.Data.Service
 
 
         /// <summary>
-        /// AddOrUpdateWithEntity
+        /// AddOrUpdateAttachedEntity
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
         public Result<T> AddOrUpdate(T entity) =>
             Single(entity).Failure ? Add(entity) : Update(entity);
 
-        public Result<T> AddOrUpdate(List<T> entityList)
+        /// <summary>
+        /// AddOrUpdateAttachedEntity
+        /// </summary>
+        /// <param name="entityList"></param>
+        /// <returns></returns>
+        public Result<T> AddOrUpdate(IEnumerable<T> entityList)
         {
             try
             {
@@ -394,12 +403,12 @@ namespace Yugen.Toolkit.Standard.Data.Service
         }
 
         /// <summary>
-        /// AddOrUpdateWithoutEntity
+        /// AddOrUpdateDetachedEntity
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="updateModified"></param>
         /// <returns></returns>
-        public Result<T> AddOrUpdateWithoutEntity(T entity, bool updateModified = true)
+        public Result<T> AddOrUpdateDetachedEntity(T entity, bool updateModified = true)
         {
             if (Single(entity).Failure)
                 return Add(entity, updateModified);
@@ -408,7 +417,13 @@ namespace Yugen.Toolkit.Standard.Data.Service
             return Update(entity, key, updateModified);
         }
 
-        public Result<T> AddOrUpdateWithoutEntity(List<T> entityList, bool updateModified = true)
+        /// <summary>
+        /// AddOrUpdateDetachedEntity
+        /// </summary>
+        /// <param name="entityList"></param>
+        /// <param name="updateModified"></param>
+        /// <returns></returns>
+        public Result<T> AddOrUpdateDetachedEntity(IEnumerable<T> entityList, bool updateModified = true)
         {
             try
             {
@@ -455,7 +470,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         public int LastIndex() => UnitOfWork.GetRepository<T>().LastIndex();
 
 
-        public Result<T> PushSync(List<T> entityList)
+        public Result<T> PushSync(IEnumerable<T> entityList)
         {
             try
             {
@@ -499,7 +514,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
             }
         }
 
-        public Result<T> PullSync(List<T> entityList)
+        public Result<T> PullSync(IEnumerable<T> entityList)
         {
             try
             {

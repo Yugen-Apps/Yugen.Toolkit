@@ -6,15 +6,15 @@ namespace Yugen.Toolkit.Standard.Helpers
 {
     public static class CollectionHelper
     {
-        public static List<GroupInfoList> GroupCollectionAscending<T>(IEnumerable<IGrouping<string, T>> query) => 
+        public static List<GroupInfoList> GroupCollectionAscending<T>(IEnumerable<IGrouping<string, T>> query) =>
             Group(query);
 
-        public static List<GroupInfoList> GroupCollectionDescending<T>(IEnumerable<IGrouping<string, T>> query) => 
+        public static List<GroupInfoList> GroupCollectionDescending<T>(IEnumerable<IGrouping<string, T>> query) =>
             Group(query, true);
 
-        private static List<GroupInfoList> Group<T>(IEnumerable<IGrouping<string, T>> query, bool isDescending =  false)
+        private static List<GroupInfoList> Group<T>(IEnumerable<IGrouping<string, T>> query, bool isDescending = false)
         {
-            var enumerable = query as IList<IGrouping<string, T>> ?? query.ToList();
+            IList<IGrouping<string, T>> enumerable = query as IList<IGrouping<string, T>> ?? query.ToList();
 
             var result = isDescending ?
                          enumerable.OrderByDescending(g => g.Key).Select(g => new { GroupName = g.Key, Items = g }) :
@@ -23,7 +23,7 @@ namespace Yugen.Toolkit.Standard.Helpers
             var list = new List<GroupInfoList>();
             foreach (var g in result)
             {
-                GroupInfoList info = new GroupInfoList { Key = g.GroupName };
+                var info = new GroupInfoList { Key = g.GroupName };
                 info.AddRange((IEnumerable<object>)g.Items);
                 list.Add(info);
             }

@@ -34,7 +34,9 @@
             foreach (Result result in results)
             {
                 if (result.Failure)
+                {
                     return result;
+                }
             }
 
             return Ok();

@@ -8,7 +8,9 @@ namespace Yugen.Toolkit.Standard.Extensions
         public static Result OnSuccess(this Result result, Func<Result> func)
         {
             if (result.Failure)
+            {
                 return result;
+            }
 
             return func();
         }
@@ -16,8 +18,9 @@ namespace Yugen.Toolkit.Standard.Extensions
         public static Result OnSuccess(this Result result, Action action)
         {
             if (result.Failure)
+            {
                 return result;
-
+            }
 
             action();
 
@@ -27,7 +30,9 @@ namespace Yugen.Toolkit.Standard.Extensions
         public static Result OnSuccess<T>(this Result<T> result, Action<T> action)
         {
             if (result.Failure)
+            {
                 return result;
+            }
 
             action(result.Value);
 
@@ -37,7 +42,9 @@ namespace Yugen.Toolkit.Standard.Extensions
         public static Result<T> OnSuccess<T>(this Result result, Func<T> func)
         {
             if (result.Failure)
+            {
                 return Result.Fail<T>(result.Error);
+            }
 
             return Result.Ok(func());
         }
@@ -45,7 +52,9 @@ namespace Yugen.Toolkit.Standard.Extensions
         public static Result<T> OnSuccess<T>(this Result result, Func<Result<T>> func)
         {
             if (result.Failure)
+            {
                 return Result.Fail<T>(result.Error);
+            }
 
             return func();
         }
@@ -53,7 +62,9 @@ namespace Yugen.Toolkit.Standard.Extensions
         public static Result OnSuccess<T>(this Result<T> result, Func<T, Result> func)
         {
             if (result.Failure)
+            {
                 return result;
+            }
 
             return func(result.Value);
         }
@@ -75,9 +86,6 @@ namespace Yugen.Toolkit.Standard.Extensions
             return result;
         }
 
-        public static T OnBoth<T>(this Result result, Func<Result, T> func)
-        {
-            return func(result);
-        }
+        public static T OnBoth<T>(this Result result, Func<Result, T> func) => func(result);
     }
 }

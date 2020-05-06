@@ -24,7 +24,7 @@ namespace Yugen.Toolkit.Standard.Extensions
             }
 
             collection.Clear();
-            foreach (var item in itemsToAdd)
+            foreach (T item in itemsToAdd)
             {
                 collection.Add(item);
             }
@@ -49,7 +49,7 @@ namespace Yugen.Toolkit.Standard.Extensions
                 return;
             }
 
-            foreach (var item in itemsToAdd)
+            foreach (T item in itemsToAdd)
             {
                 collection.Add(item);
             }
@@ -72,12 +72,18 @@ namespace Yugen.Toolkit.Standard.Extensions
         /// </typeparam>
         public static void SortBy<T, TKey>(this ObservableCollection<T> collection, Func<T, TKey> keySelector)
         {
-            if (collection == null || collection.Count <= 1) return;
+            if (collection == null || collection.Count <= 1)
+            {
+                return;
+            }
 
             var newIndex = 0;
             foreach (var oldIndex in collection.OrderBy(keySelector).Select(collection.IndexOf))
             {
-                if (oldIndex != newIndex) collection.Move(oldIndex, newIndex);
+                if (oldIndex != newIndex)
+                {
+                    collection.Move(oldIndex, newIndex);
+                }
 
                 newIndex++;
             }
