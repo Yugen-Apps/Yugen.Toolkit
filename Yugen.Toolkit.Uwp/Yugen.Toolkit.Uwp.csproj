@@ -118,6 +118,8 @@
     <Compile Include="Evaluators\BindingEvaluator.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="Handlers\BarcodeHandler.cs" />
+    <Compile Include="Helpers\ResourceHelper.cs" />
+    <Compile Include="Helpers\SettingsHelper.cs" />
     <Compile Include="Helpers\WriteableBitmapHelper.cs" />
     <Compile Include="Helpers\ColorHelper.cs" />
     <Compile Include="Helpers\DebugVisibilityHelper.cs" />
