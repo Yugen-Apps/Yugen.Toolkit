@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Windows.Foundation.Collections;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Standard.Collections;
+using Windows.UI.Xaml.Data;
 using Yugen.Toolkit.Standard.Extensions;
 using Yugen.Toolkit.Standard.Helpers;
+using Yugen.Toolkit.Uwp.Collections;
 using Yugen.Toolkit.Uwp.Samples.Models;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -26,29 +28,31 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Helpers
 
     public class GroupedCollectionViewModel
     {
-        public ObservableCollection<GroupInfoList> GroupedCollection { get; set; } = new ObservableCollection<GroupInfoList>();
-
         public GroupedCollectionViewModel()
         {
-            GroupedCollection.Refresh(GetProductListGroupedByCategoryName());
-        }
-
-        public List<GroupInfoList> GetProductListGroupedByCategoryName()
-        {
-            var list = new List<Graph>()
+            var contacts = new[]
             {
-                new Graph(){Title = "Alpha", Value = 10},
-                new Graph(){Title = "Alpha", Value = 20},
-                new Graph(){Title = "Bravo", Value = 30},
-                new Graph(){Title = "Bravo", Value = 40},
+                new Person { Name = "Staff" },
+                new Person { Name = "Swan" },
+                new Person { Name = "Orchid" },
+                new Person { Name = "Flame" },
+                new Person { Name = "Arrow" },
+                new Person { Name = "Tempest" },
+                new Person { Name = "Pearl" },
+                new Person { Name = "Hydra" },
+                new Person { Name = "Lamp Post" },
+                new Person { Name = "Looking Glass" },
             };
-            return GroupProductViewModelCollection(list);
+
+            var grouped = contacts.GroupBy(GetGroupName).OrderBy(g => g.Key);
+
+            GroupedCollection = new ObservableGroupedCollection<string, Person>(grouped);
+            Contacts = new ReadOnlyObservableGroupedCollection<string, Person>(GroupedCollection);
         }
 
-        public List<GroupInfoList> GroupProductViewModelCollection(List<Graph> productList)
-        {
-            var query = productList.GroupBy(item => item.Title);
-            return CollectionHelper.GroupCollectionAscending(query).ToList();
-        }
+        public ObservableGroupedCollection<string, Person> GroupedCollection { get; }
+        public ReadOnlyObservableGroupedCollection<string, Person> Contacts { get; }
+
+        private static string GetGroupName(Person person) => person.Name.First().ToString().ToUpper();
     }
 }

@@ -110,6 +110,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Collections\ObservableGroupedCollection.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Converters\NullableToBoolConverter.cs" />
     <Compile Include="Converters\DebugToVisibilityConverter.cs" />

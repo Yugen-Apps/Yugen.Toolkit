@@ -127,6 +127,7 @@
     <Compile Include="Views\Helpers\GroupedCollectionPage.xaml.cs">
       <DependentUpon>GroupedCollectionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Helpers\Person.cs" />
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
