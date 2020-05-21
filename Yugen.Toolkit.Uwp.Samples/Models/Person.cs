@@ -1,4 +1,4 @@
-﻿namespace Yugen.Toolkit.Uwp.Samples.Views.Helpers
+﻿namespace Yugen.Toolkit.Uwp.Samples.Models
 {
     public class Person
     {

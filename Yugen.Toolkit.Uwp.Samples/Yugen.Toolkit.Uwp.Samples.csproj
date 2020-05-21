@@ -124,10 +124,10 @@
     <Compile Include="Views\Helpers\FilePickerPage.xaml.cs">
       <DependentUpon>FilePickerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Helpers\GroupedCollectionPage.xaml.cs">
+    <Compile Include="Views\Collections\GroupedCollectionPage.xaml.cs">
       <DependentUpon>GroupedCollectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Helpers\Person.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -248,7 +248,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Helpers\GroupedCollectionPage.xaml">
+    <Page Include="Views\Collections\GroupedCollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -274,7 +274,7 @@
       <Version>6.2.10</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.4.0</Version>
+      <Version>2.4.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

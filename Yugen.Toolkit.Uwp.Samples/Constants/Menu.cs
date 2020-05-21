@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Models;
 using Yugen.Toolkit.Uwp.Samples.Views;
+using Yugen.Toolkit.Uwp.Samples.Views.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Views.Navigation;
@@ -9,19 +10,18 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
 {
     public static class Menu
     {
-        public static List<MenuItem> MenuCollection = new List<MenuItem>() 
+        public static List<MenuItem> MenuCollection = new List<MenuItem>()
         {
-            HomeMenu,
-            ControlsMenu,
-            HelpersMenu,
-            NavigationMenu
+            Home,
+            Collections,
+            Controls,
+            Helpers,
+            Navigation
         };
 
-        public static MenuItem HomeMenu => new MenuItem("Home", nameof(HomePage));
-
-        public static MenuItem ControlsMenu => new MenuItem
+        public static MenuItem Controls => new MenuItem
         {
-            Name = "Controls",
+            Name = nameof(Controls),
             IsExpanded = false,
             Children =
             {
@@ -33,23 +33,34 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             }
         };
 
-        public static MenuItem HelpersMenu => new MenuItem
+        public static MenuItem Collections => new MenuItem
         {
-            Name = "Helpers",
+            Name = nameof(Collections),
             IsExpanded = false,
             Children =
             {
-                new MenuItem ("File Picker", nameof (FilePickerPage)),
-                new MenuItem ("Find Control", nameof (FindControlPage)),
                 new MenuItem ("Grouped Collection", nameof (GroupedCollectionPage))
             }
         };
 
-        public static MenuItem NavigationMenu => new MenuItem
+        public static MenuItem Helpers => new MenuItem
         {
-            Name = "Navigation",
+            Name = nameof(Helpers),
             IsExpanded = false,
-            Children = 
+            Children =
+            {
+                new MenuItem ("File Picker", nameof (FilePickerPage)),
+                new MenuItem ("Find Control", nameof (FindControlPage))
+            }
+        };
+
+        public static MenuItem Home => new MenuItem(nameof(Home), nameof(HomePage));
+
+        public static MenuItem Navigation => new MenuItem
+        {
+            Name = nameof(Navigation),
+            IsExpanded = false,
+            Children =
             {
                 new MenuItem ("Basic Navigation", nameof (NavigationPage))
             }
