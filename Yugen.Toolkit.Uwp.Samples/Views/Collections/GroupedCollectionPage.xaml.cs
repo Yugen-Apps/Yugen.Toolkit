@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Collections;
 using Yugen.Toolkit.Uwp.Samples.Models;
@@ -33,15 +36,16 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
                 new Person { Name = "Arrow" },
                 new Person { Name = "Tempest" },
                 new Person { Name = "Pearl" },
-                new Person { Name = "Hydra" },
+                new Person { Name = "Pearl" },
                 new Person { Name = "Lamp Post" },
                 new Person { Name = "Looking Glass" },
             };
 
-            //var grouped = contacts.GroupBy(item => item.Name);
-            var grouped = contacts
-                            .GroupBy(item => item.Name.First().ToString().ToUpper())
-                            .OrderBy(g => g.Key);
+            //var grouped = contacts
+            //                .GroupBy(item => item.Name.First().ToString().ToUpper())
+            //               .OrderBy(g => g.Key);
+
+            var grouped = contacts.GroupAscending(item => item.Name);
 
             GroupedCollection = new ObservableGroupedCollection<string, Person>(grouped);
         }
@@ -49,9 +53,16 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
         public ObservableGroupedCollection<string, Person> GroupedCollection { get; }
     }
 
-    //var query = productList.GroupBy(item => item.Title);
-    //        return CollectionHelper.GroupCollectionAscending(query).ToList();
+    public static class GroupedCollectionExtension
+    {
+        public static IOrderedEnumerable<IGrouping<TKey, TSource>> GroupAscending<TSource, TKey>(
+            this IEnumerable<TSource> source, Func<TSource, TKey> keySelector) =>
+                source.GroupBy(keySelector).OrderBy(g => g.Key);
+    }
 
+
+    //    var query = productList.GroupBy(item => item.Title);
+    //    return CollectionHelper.GroupCollectionAscending(query).ToList();
 
     //    public static class GroupedCollectionHelper
     //    {
