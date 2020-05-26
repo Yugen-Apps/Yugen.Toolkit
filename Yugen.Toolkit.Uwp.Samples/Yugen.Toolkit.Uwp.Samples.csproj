@@ -100,9 +100,14 @@
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="ViewModels\Collections\CollectionViewModel.cs" />
     <Compile Include="ViewModels\Helpers\FindControlViewModel.cs" />
     <Compile Include="ViewModels\Controls\GraphViewModel.cs" />
     <Compile Include="ViewModels\Navigation\NavigationParameterViewModel.cs" />
+    <Compile Include="ViewModels\Collections\GroupedCollectionViewModel.cs" />
+    <Compile Include="Views\Collections\CollectionPage.xaml.cs">
+      <DependentUpon>CollectionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\CustomDialogPage.xaml.cs">
       <DependentUpon>CustomDialogPage.xaml</DependentUpon>
     </Compile>
@@ -124,9 +129,10 @@
     <Compile Include="Views\Helpers\FilePickerPage.xaml.cs">
       <DependentUpon>FilePickerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Helpers\GroupedCollectionPage.xaml.cs">
+    <Compile Include="Views\Collections\GroupedCollectionPage.xaml.cs">
       <DependentUpon>GroupedCollectionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -219,6 +225,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Collections\CollectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Controls\CustomDialogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -247,7 +257,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Helpers\GroupedCollectionPage.xaml">
+    <Page Include="Views\Collections\GroupedCollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -273,7 +283,7 @@
       <Version>6.2.10</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.4.0</Version>
+      <Version>2.4.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -290,6 +300,7 @@
       <Name>Yugen.Toolkit.Uwp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

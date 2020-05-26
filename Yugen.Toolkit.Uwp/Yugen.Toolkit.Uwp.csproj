@@ -110,6 +110,10 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Collections\IReadOnlyObservableGroup.cs" />
+    <Compile Include="Collections\ObservableGroup.cs" />
+    <Compile Include="Collections\ObservableGroupedCollection.cs" />
+    <Compile Include="Collections\ObservableGroupedCollectionExtensions.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Converters\NullableToBoolConverter.cs" />
     <Compile Include="Converters\DebugToVisibilityConverter.cs" />
@@ -117,6 +121,7 @@
     <Compile Include="Converters\ParameterConverter.cs" />
     <Compile Include="Evaluators\BindingEvaluator.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
+    <Compile Include="Extensions\GroupedCollectionExtension.cs" />
     <Compile Include="Handlers\BarcodeHandler.cs" />
     <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\SettingsHelper.cs" />
