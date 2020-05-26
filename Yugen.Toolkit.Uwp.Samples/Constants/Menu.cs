@@ -40,7 +40,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             Children =
             {
                 new MenuItem ("Grouped Collection", nameof (GroupedCollectionPage)),
-                new MenuItem ("Collection Stretched Header", nameof (CollectionPage))
+                new MenuItem ("Stretched Listview Item", nameof (CollectionPage))
             }
         };
 
