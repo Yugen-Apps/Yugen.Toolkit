@@ -1,0 +1,75 @@
+﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.Collections.CollectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:collections="using:Yugen.Toolkit.Uwp.Collections"
+      xmlns:models="using:Yugen.Toolkit.Uwp.Samples.Models"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+
+        <StackPanel>
+
+            <TextBlock Text="Collection Stretched Header"
+                       Style="{ThemeResource TitleTextBlockStyle}" />
+            <ListView ItemsSource="{x:Bind ViewModel.Collection}"
+                      HorizontalAlignment="Left"
+                      Width="400">
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment"
+                                Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                       Text="Name"
+                                       Grid.Column="0" />
+                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                       Text="Surname"
+                                       Grid.Column="1" />
+
+                        </Grid>
+                    </DataTemplate>
+
+                </ListView.HeaderTemplate>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Person">
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                       Text="{x:Bind Name, Mode=OneWay}"
+                                       Grid.Column="0" />
+                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                       Text="{x:Bind Surname, Mode=OneWay}"
+                                       Grid.Column="1" />
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</Page>

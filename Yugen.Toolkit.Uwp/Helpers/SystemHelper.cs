@@ -28,5 +28,10 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// Return true if it's a mobile device
         /// </summary>
         public static bool IsMobile => Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile";
+
+        /// <summary>
+        /// Get RateAndReview store Url
+        /// </summary>
+        public static string RateAndReviewUri => $"ms-windows-store:REVIEW?PFN={Package.Current.Id.FamilyName}";
     }
 }

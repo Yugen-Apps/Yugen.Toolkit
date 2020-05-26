@@ -143,6 +143,7 @@
       <DependentUpon>TitleImageCommandBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\AlignmentGrid.cs" />
     <Compile Include="Validation\BaseValidating.cs" />
     <Compile Include="Validation\ValidatingButton.cs" />
     <Compile Include="Validation\ValidatingComboBox.xaml.cs">
@@ -162,7 +163,7 @@
       <Version>6.2.10</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.3.200213001</Version>
+      <Version>2.4.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
