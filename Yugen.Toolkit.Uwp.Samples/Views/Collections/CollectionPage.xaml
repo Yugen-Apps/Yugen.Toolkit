@@ -12,7 +12,7 @@
 
         <StackPanel>
 
-            <TextBlock Text="Collection Stretched Header"
+            <TextBlock Text="Stretched Listview Item"
                        Style="{ThemeResource TitleTextBlockStyle}" />
             <ListView ItemsSource="{x:Bind ViewModel.Collection}"
                       HorizontalAlignment="Left"
