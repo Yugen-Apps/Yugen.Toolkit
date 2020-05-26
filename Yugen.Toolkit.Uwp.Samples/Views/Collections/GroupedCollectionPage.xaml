@@ -15,134 +15,90 @@
                               Source="{x:Bind ViewModel.Contacts}" />
     </Page.Resources>-->
 
-    <StackPanel>
+    <ScrollViewer>
 
-        <ListView x:Name="ContactsListView"
-                  Grid.Row="1"
-                  ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView}"
-                  Height="400">
-            <ListView.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate x:DataType="collections:IReadOnlyObservableGroup">
-                            <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
-                                       Text="{x:Bind Key}" />
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </ListView.GroupStyle>
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="models:Person">
-                    <TextBlock Text="{x:Bind Name}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackPanel>
 
-        <!--<GridView ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView}">
+            <TextBlock Text="Grouped Style1"
+                       Style="{ThemeResource TitleTextBlockStyle}" />
+            <ListView ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView}"
+                      Height="400">
 
-            <GridView.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate x:DataType="helpers:GroupInfoList">
-                            <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
-                                       Text="{x:Bind Key}" />
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </GridView.GroupStyle>
+                <ListView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate x:DataType="collections:IReadOnlyObservableGroup">
+                                <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
+                                           Text="{x:Bind Key}" />
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </ListView.GroupStyle>
 
-            <GridView.ItemTemplate>
-                <DataTemplate x:DataType="models:Graph">
-                    <TextBlock Text="{x:Bind Title}" />
-                </DataTemplate>
-            </GridView.ItemTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Person">
+                        <TextBlock Text="{x:Bind Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
 
-        </GridView>-->
+            </ListView>
 
-        <!--<ListView ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView}">
+            <TextBlock Text="Grouped Style2"
+                       Style="{ThemeResource TitleTextBlockStyle}" />
+            <GridView ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView}"
+                      Height="400">
 
-            <ListView.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate x:DataType="helpers:GroupInfoList">
-                            <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
-                                       Text="{x:Bind Key}" />
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </ListView.GroupStyle>
+                <GridView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate x:DataType="collections:IReadOnlyObservableGroup">
+                                <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
+                                           Text="{x:Bind Key}" />
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </GridView.GroupStyle>
 
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <ItemsWrapGrid />
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Person">
+                        <TextBlock Text="{x:Bind Name}" />
+                    </DataTemplate>
+                </GridView.ItemTemplate>
 
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="models:Graph">
-                    <TextBlock Text="{x:Bind Value}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
+            </GridView>
 
-        </ListView>-->
+            <TextBlock Text="Grouped Style3"
+                       Style="{ThemeResource TitleTextBlockStyle}" />
+            <ListView ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView}"
+                      Height="400">
 
-        <!--<ListView x:Name="SaleProductListView"
-                  ItemsSource="{x:Bind ViewModel.SaleProductCollection}"
-                  SelectionMode="None"
-                  Grid.Column="1"
-                  Grid.Row="0"
-                  Margin="0,0,0,4">
+                <ListView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate x:DataType="collections:IReadOnlyObservableGroup">
+                                <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
+                                           Text="{x:Bind Key}" />
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </ListView.GroupStyle>
 
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment"
-                            Value="Stretch" />
-                </Style>
-            </ListView.ItemContainerStyle>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
 
-            <ListView.HeaderTemplate>
-                <DataTemplate>
-                    <Grid>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Person">
+                        <TextBlock Text="{x:Bind Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
+            </ListView>
 
-                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
-                                   x:Uid="Home_Name"
-                                   Text="_Name"
-                                   Grid.Column="0" />
-                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
-                                   x:Uid="Home_AttributeSetString"
-                                   Text="_AttributeSetString"
-                                   Grid.Column="1" />
+        </StackPanel>
 
-                    </Grid>
-                </DataTemplate>
+    </ScrollViewer>
 
-            </ListView.HeaderTemplate>
-
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="domain:SaleProductViewModel">
-                    <Grid>
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-
-                        <TextBlock Style="{x:Bind Style, Mode=OneWay}"
-                                   Text="{x:Bind PrintName, Mode=OneWay}"
-                                   Grid.Column="0" />
-                        <TextBlock Style="{x:Bind Style, Mode=OneWay}"
-                                   Text="{x:Bind AttributeSetString, Mode=OneWay}"
-                                   Grid.Column="1" />
-
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>-->
-    </StackPanel>
 </Page>

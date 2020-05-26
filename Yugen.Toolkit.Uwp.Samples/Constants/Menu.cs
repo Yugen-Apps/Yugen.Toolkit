@@ -39,7 +39,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             IsExpanded = false,
             Children =
             {
-                new MenuItem ("Grouped Collection", nameof (GroupedCollectionPage))
+                new MenuItem ("Grouped Collection", nameof (GroupedCollectionPage)),
+                new MenuItem ("Collection Stretched Header", nameof (CollectionPage))
             }
         };
 

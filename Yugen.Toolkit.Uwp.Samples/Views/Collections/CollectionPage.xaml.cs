@@ -7,13 +7,13 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class GroupedCollectionPage : Page
+    public sealed partial class CollectionPage : Page
     {
-        public GroupedCollectionPage()
+        public CollectionPage()
         {
             this.InitializeComponent();
         }
 
-        public GroupedCollectionViewModel ViewModel { get; set; } = new GroupedCollectionViewModel();
+        public CollectionViewModel ViewModel { get; set; } = new CollectionViewModel();
     }
 }

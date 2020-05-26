@@ -100,9 +100,14 @@
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="ViewModels\Collections\CollectionViewModel.cs" />
     <Compile Include="ViewModels\Helpers\FindControlViewModel.cs" />
     <Compile Include="ViewModels\Controls\GraphViewModel.cs" />
     <Compile Include="ViewModels\Navigation\NavigationParameterViewModel.cs" />
+    <Compile Include="ViewModels\Collections\GroupedCollectionViewModel.cs" />
+    <Compile Include="Views\Collections\CollectionPage.xaml.cs">
+      <DependentUpon>CollectionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\CustomDialogPage.xaml.cs">
       <DependentUpon>CustomDialogPage.xaml</DependentUpon>
     </Compile>
@@ -220,6 +225,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Collections\CollectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Controls\CustomDialogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -291,6 +300,7 @@
       <Name>Yugen.Toolkit.Uwp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -121,6 +121,7 @@
     <Compile Include="Converters\ParameterConverter.cs" />
     <Compile Include="Evaluators\BindingEvaluator.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
+    <Compile Include="Extensions\GroupedCollectionExtension.cs" />
     <Compile Include="Handlers\BarcodeHandler.cs" />
     <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\SettingsHelper.cs" />
