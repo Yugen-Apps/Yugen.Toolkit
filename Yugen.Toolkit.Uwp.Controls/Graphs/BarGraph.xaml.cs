@@ -122,7 +122,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
             {
                 var text = categoryEval.Eval(dataItem).ToString();
                 var percentage = (int)valueEval.Eval(dataItem);
-                ElementCollection.Add(new ElementViewModel { Value = percentage, Label = text });
+                ElementCollection.Add(new ElementObservableObject { Value = percentage, Label = text });
             }
         }
 
@@ -268,7 +268,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         /// <summary>
         /// Gets or sets a value indicating the list of elements
         /// </summary>
-        public ObservableCollection<ElementViewModel> ElementCollection { get; set; } = new ObservableCollection<ElementViewModel>();
+        public ObservableCollection<ElementObservableObject> ElementCollection { get; set; } = new ObservableCollection<ElementObservableObject>();
              
         /// <summary>
         /// Constructor

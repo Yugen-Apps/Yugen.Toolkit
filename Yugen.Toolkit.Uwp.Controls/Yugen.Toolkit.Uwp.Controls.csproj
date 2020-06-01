@@ -138,7 +138,7 @@
     <Compile Include="Graphs\BarGraph.xaml.cs">
       <DependentUpon>BarGraph.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Graphs\ElementViewModel.cs" />
+    <Compile Include="Graphs\ElementObservableObject.cs" />
     <Compile Include="Menu\TitleImageCommandBar.xaml.cs">
       <DependentUpon>TitleImageCommandBar.xaml</DependentUpon>
     </Compile>

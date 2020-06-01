@@ -1,7 +1,7 @@
 ﻿using System;
 using Yugen.Toolkit.Standard.Collections;
 
-namespace Yugen.Toolkit.Standard.Services
+namespace Yugen.Toolkit.Standard.Mvvm.Mediator
 {
     /// <summary>
     /// in viewmodel constructor register to the mediator for the UserWroteSomething message, 

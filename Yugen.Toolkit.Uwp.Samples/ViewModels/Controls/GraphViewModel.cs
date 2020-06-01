@@ -1,10 +1,10 @@
 ﻿using System.Collections.ObjectModel;
+using Yugen.Toolkit.Uwp.Mvvm.ComponentModel;
 using Yugen.Toolkit.Uwp.Samples.Models;
-using Yugen.Toolkit.Uwp.ViewModels;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
 {
-    public class GraphViewModel : BaseViewModel
+    public class GraphViewModel : ViewModelBase
     {
         public ObservableCollection<Graph> StatisticsCollection { get; set; } = new ObservableCollection<Graph>()
         {

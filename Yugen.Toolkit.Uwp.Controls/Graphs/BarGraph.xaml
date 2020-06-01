@@ -176,7 +176,7 @@
             </ListView.ItemsPanel>
 
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="graphs:ElementViewModel">
+                <DataTemplate x:DataType="graphs:ElementObservableObject">
                     <Grid Width="{Binding ColumnWidth, Mode=OneWay, ElementName=SelfBarGraph}">
 
                         <Grid.RowDefinitions>

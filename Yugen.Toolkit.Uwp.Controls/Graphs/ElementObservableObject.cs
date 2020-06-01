@@ -1,8 +1,8 @@
-﻿using Yugen.Toolkit.Uwp.ViewModels;
+﻿using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
 
 namespace Yugen.Toolkit.Uwp.Controls.Graphs
 {
-    public class ElementViewModel : BaseViewModel
+    public class ElementObservableObject : ObservableObject
     {
         private string _label;
         /// <summary>

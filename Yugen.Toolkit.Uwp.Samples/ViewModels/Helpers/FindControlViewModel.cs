@@ -1,11 +1,11 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Helpers;
-using Yugen.Toolkit.Uwp.ViewModels;
+using Yugen.Toolkit.Uwp.Mvvm.ComponentModel;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
 {
-    public class FindControlViewModel : BaseViewModel
+    public class FindControlViewModel : ViewModelBase
     {
         private string _title = "Find Control Page";
         public string Title

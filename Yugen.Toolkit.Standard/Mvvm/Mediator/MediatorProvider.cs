@@ -1,8 +1,7 @@
 ﻿using System;
 using Yugen.Toolkit.Standard.Helpers;
-using Yugen.Toolkit.Standard.Services;
 
-namespace Yugen.Toolkit.Standard.Providers
+namespace Yugen.Toolkit.Standard.Mvvm.Mediator
 {
     /// <summary>
     /// MediatorProvider.UpdateContent(title, MediatorPropertiesEnum.AppShellTitle.ToString());

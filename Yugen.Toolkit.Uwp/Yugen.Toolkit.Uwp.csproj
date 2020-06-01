@@ -129,11 +129,12 @@
     <Compile Include="Helpers\ColorHelper.cs" />
     <Compile Include="Helpers\DebugVisibilityHelper.cs" />
     <Compile Include="Helpers\FindControlHelper.cs" />
-    <Compile Include="Hosting\Attributes\DependencyAttribute.cs" />
-    <Compile Include="Hosting\Attributes\ViewModelAttribute.cs" />
-    <Compile Include="Hosting\Host.cs" />
-    <Compile Include="Hosting\IoCFrame.cs" />
+    <Compile Include="Mvvm\DependencyInjection\Attributes\DependencyAttribute.cs" />
+    <Compile Include="Mvvm\DependencyInjection\Attributes\ViewModelAttribute.cs" />
+    <Compile Include="Mvvm\DependencyInjection\Host.cs" />
+    <Compile Include="Mvvm\DependencyInjection\IoCFrame.cs" />
     <Compile Include="Listeners\DependencyPropertyListener.cs" />
+    <Compile Include="Mvvm\ComponentModel\ViewModelBase.cs" />
     <Compile Include="Services\CacheService.cs" />
     <Compile Include="Converters\ComboBoxConverter.cs" />
     <Compile Include="Converters\CommandToVisibilityConverter.cs" />
@@ -141,7 +142,7 @@
     <Compile Include="Helpers\FilePickerHelper.cs" />
     <Compile Include="Extensions\FocusExtension.cs" />
     <Compile Include="Providers\ImageProvider.cs" />
-    <Compile Include="Interfaces\INavigable.cs" />
+    <Compile Include="Mvvm\ComponentModel\Interfaces\INavigable.cs" />
     <Compile Include="Services\LocalizationService.cs" />
     <Compile Include="Helpers\MessageDialogHelper.cs" />
     <Compile Include="Services\NavigationService.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Helpers\SystemHelper.cs" />
     <Compile Include="Services\UserStorageService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="Mvvm\ComponentModel\ViewModelBaseT.cs" />
     <EmbeddedResource Include="Properties\Yugen.Toolkit.Uwp.rd.xml" />
   </ItemGroup>
   <ItemGroup>

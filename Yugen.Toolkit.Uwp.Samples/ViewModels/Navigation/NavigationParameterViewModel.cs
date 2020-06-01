@@ -1,12 +1,10 @@
-﻿// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Windows.UI.Xaml.Navigation;
-using Yugen.Toolkit.Uwp.ViewModels;
+using Yugen.Toolkit.Uwp.Mvvm.ComponentModel;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
 {
-    public class NavigationParameterViewModel : BaseViewModel
+    public class NavigationParameterViewModel : ViewModelBase
     {
         //private string _parameter;
 

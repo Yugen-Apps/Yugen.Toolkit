@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Windows.Storage;
-using Yugen.Toolkit.Standard.Providers;
+using Yugen.Toolkit.Standard.Json;
 
 namespace Yugen.Toolkit.Uwp.Helpers
 {
