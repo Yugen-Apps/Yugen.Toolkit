@@ -134,8 +134,8 @@ namespace Yugen.Toolkit.Standard.Mvvm.ComponentModel
                 return false;
             }
 
-            var parent = parentPropertyInfo.GetValue(instance);
-            var oldValue = (T)targetPropertyInfo.GetValue(parent);
+            object parent = parentPropertyInfo.GetValue(instance);
+            T oldValue = (T)targetPropertyInfo.GetValue(parent);
 
             if (EqualityComparer<T>.Default.Equals(oldValue, newValue))
             {
@@ -159,5 +159,30 @@ namespace Yugen.Toolkit.Standard.Mvvm.ComponentModel
         {
             throw new ArgumentException("The given expression must be in the form () => MyModel.MyProperty");
         }
+
+        /// <summary>
+        /// SetField(()=> somewhere.Name = value; somewhere.Name, value)
+        /// Advanced case where you rely on another property
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="currentValue"></param>
+        /// <param name="newValue"></param>
+        /// <param name="propertyAction"></param>
+        /// <param name="propertyName"></param>
+        protected void Set<T>(T currentValue, T newValue, Action propertyAction, [CallerMemberName] string propertyName = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(currentValue, newValue))
+            {
+                return;
+            }
+
+            OnPropertyChanging(propertyName);
+
+            propertyAction.Invoke();
+
+            OnPropertyChanged(propertyName);
+        }
     }
 }
+
+

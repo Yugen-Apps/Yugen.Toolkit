@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Yugen.Toolkit.Uwp.Mvvm.ComponentModel;
+using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
 {

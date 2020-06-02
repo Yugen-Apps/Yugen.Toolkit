@@ -6,7 +6,7 @@ using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
-using Yugen.Toolkit.Uwp.Mvvm.ComponentModel.Interfaces;
+using Yugen.Toolkit.Standard.Mvvm.ComponentModel.Interfaces;
 
 namespace Yugen.Toolkit.Uwp.Services
 {
@@ -34,9 +34,10 @@ namespace Yugen.Toolkit.Uwp.Services
                     await NavigateFromAsync(false);
                 }
             };
+
             _rootFrame.Navigated += (s, e) =>
             {
-                NavigateTo(e.NavigationMode, e.Parameter);
+                NavigateTo(e.Parameter);
             };
 
             AddBackButton();
@@ -149,14 +150,14 @@ namespace Yugen.Toolkit.Uwp.Services
         }
 
 
-        public static void NavigateTo(NavigationMode mode, object parameter)
+        public static void NavigateTo(object parameter)
         {
             if (_rootFrame.Content is Page page)
             {
                 // call viewmodel
                 if (page.DataContext is INavigable dataContext)
                 {
-                    dataContext.OnNavigatedTo(parameter, mode, null);
+                    dataContext.OnNavigatedTo(parameter, null);
                 }
             }
         }

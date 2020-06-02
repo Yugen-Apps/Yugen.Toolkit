@@ -1,7 +1,7 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Helpers;
-using Yugen.Toolkit.Uwp.Mvvm.ComponentModel;
+using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
 {

@@ -1,6 +1,6 @@
 ﻿// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-using Yugen.Toolkit.Uwp.Mvvm.ComponentModel;
+using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
 using Yugen.Toolkit.Uwp.Samples.Views.Navigation;
 using Yugen.Toolkit.Uwp.Services;
 
