@@ -5,7 +5,7 @@
     /// </summary>
     public abstract class ObservableObject<T> : ObservableObject where T : class, new()
     {
-        public T Model;
+        public T Model { get; }
 
         public ObservableObject(T model = null)
         {

@@ -133,4 +133,21 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Others
     //            return string.Concat(name, FileExtension);
     //        }
     //    }
+
+
+
+    //public static class MyTextConverter
+    //{
+    //    public static string Convert(int x) => x switch
+    //    {
+    //        0 => "Zero",
+    //        1 => "Foo",
+    //        2 => "Bar",
+    //        _ => throw new ArgumentOutOfRangeException()
+    //    };
+    //}
+
+    //<TextBlock
+    //xmlns:converters="using:MyApp.Converters"
+    //Text="{x:Bind converters:MyTextConverter.Convert(ViewModel.MyValue), Mode=OneWay}"/>
 }

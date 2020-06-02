@@ -15,8 +15,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
         }
 
 
-        private CategoryObservableObject _category = new CategoryObservableObject();
-        public CategoryObservableObject Category
+        private PersonObservableObject _category = new PersonObservableObject();
+        public PersonObservableObject Category
         {
             get { return _category; }
             set { Set(ref _category, value); }
@@ -39,35 +39,4 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
             Text = "aaa";
         }
     }
-
-    public class Category
-    {
-        public string Name { get; set; }
-    }
-
-    public class CategoryObservableObject : ObservableObject<Category>
-    {
-        public CategoryObservableObject(Category model = null) : base(model) { }
-
-        public string Name
-        {
-            get { return Model.Name; }
-            set { Set(Model, value); }
-            //set { Set(Model.Name, value, () => Model.Name = value); }
-        }
-    }
-
-    //public class CategoryObservableObject : ObservableObject
-    //{
-    //    private readonly Category _category;
-
-    //    public CategoryObservableObject(Category category)
-    //        => _category = category;
-
-    //    public string Name
-    //    {
-    //        get { return _category.Name; }
-    //        set => Set(() => _category.Name, value);
-    //    }
-    //}
 }

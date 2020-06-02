@@ -169,19 +169,19 @@ namespace Yugen.Toolkit.Standard.Mvvm.ComponentModel
         /// <param name="newValue"></param>
         /// <param name="propertyAction"></param>
         /// <param name="propertyName"></param>
-        protected void Set<T>(T currentValue, T newValue, Action propertyAction, [CallerMemberName] string propertyName = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(currentValue, newValue))
-            {
-                return;
-            }
+        //protected void Set<T>(T currentValue, T newValue, Action propertyAction, [CallerMemberName] string propertyName = null)
+        //{
+        //    if (EqualityComparer<T>.Default.Equals(currentValue, newValue))
+        //    {
+        //        return;
+        //    }
 
-            OnPropertyChanging(propertyName);
+        //    OnPropertyChanging(propertyName);
 
-            propertyAction.Invoke();
+        //    propertyAction.Invoke();
 
-            OnPropertyChanged(propertyName);
-        }
+        //    OnPropertyChanged(propertyName);
+        //}
 
         protected void Set<T>(object objectName, T newValue, [CallerMemberName] string propertyName = null)
         {
