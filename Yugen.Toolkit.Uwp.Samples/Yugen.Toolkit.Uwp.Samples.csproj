@@ -17,6 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -103,6 +104,7 @@
     <Compile Include="ViewModels\Collections\CollectionViewModel.cs" />
     <Compile Include="ViewModels\Helpers\FindControlViewModel.cs" />
     <Compile Include="ViewModels\Controls\GraphViewModel.cs" />
+    <Compile Include="ObservableObjects\PersonObservableObject.cs" />
     <Compile Include="ViewModels\Navigation\NavigationParameterViewModel.cs" />
     <Compile Include="ViewModels\Collections\GroupedCollectionViewModel.cs" />
     <Compile Include="Views\Collections\CollectionPage.xaml.cs">

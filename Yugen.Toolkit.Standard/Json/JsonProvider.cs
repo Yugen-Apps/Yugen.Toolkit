@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Threading.Tasks;
 
-namespace Yugen.Toolkit.Standard.Providers
+namespace Yugen.Toolkit.Standard.Json
 {
     public static class JsonProvider
     {
