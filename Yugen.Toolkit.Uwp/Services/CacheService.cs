@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Yugen.Toolkit.Standard.Helpers;
-using Yugen.Toolkit.Standard.Providers;
+using Yugen.Toolkit.Standard.Json;
 
 namespace Yugen.Toolkit.Uwp.Services
 {

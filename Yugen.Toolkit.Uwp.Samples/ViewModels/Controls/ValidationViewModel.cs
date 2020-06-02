@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Yugen.Toolkit.Uwp.ViewModels;
+using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
 {
-    public class ValidationViewModel : BaseViewModel
+    public class ValidationViewModel : ViewModelBase
     {
         private string _title = "ValidationPage";
         public string Title

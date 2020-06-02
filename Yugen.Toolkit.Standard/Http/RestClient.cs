@@ -6,7 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Yugen.Toolkit.Standard.Data;
 using Yugen.Toolkit.Standard.Helpers;
-using Yugen.Toolkit.Standard.Providers;
+using Yugen.Toolkit.Standard.Json;
 
 namespace Yugen.Toolkit.Standard.Http
 {

@@ -1,12 +1,12 @@
 ﻿// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
+using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
 using Yugen.Toolkit.Uwp.Samples.Views.Navigation;
 using Yugen.Toolkit.Uwp.Services;
-using Yugen.Toolkit.Uwp.ViewModels;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
 {
-    public class NavigationViewModel : BaseViewModel
+    public class NavigationViewModel : ViewModelBase
     {
         public string ButtonContent { get; set; } = "Click Me";
 
