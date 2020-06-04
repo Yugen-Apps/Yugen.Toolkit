@@ -4,17 +4,16 @@ using Yugen.Toolkit.Standard.Collections;
 namespace Yugen.Toolkit.Standard.Mvvm.Mediator
 {
     /// <summary>
-    /// in viewmodel constructor register to the mediator for the UserWroteSomething message,
-    /// Callback delegate, when message is seen MediatorService.Instance.Register(o => { CommandBarViewModel.Title = (string) o; },
+    /// In a viewmodel constructor register to the mediator to listen for a message and invoke a callback
     /// </summary>
-    public sealed class MediatorService
+    public sealed class Mediator
     {
-        private static MediatorService _instance;
+        private static Mediator _instance;
 
         private readonly MultiDictionary<string, Action<object>> _internalList =
                     new MultiDictionary<string, Action<object>>();
 
-        public static MediatorService Instance => _instance ?? (_instance = new MediatorService());
+        public static Mediator Instance => _instance ?? (_instance = new Mediator());
 
         /// <summary>
         /// Registers a Colleague to a specific message
@@ -23,6 +22,9 @@ namespace Yugen.Toolkit.Standard.Mvvm.Mediator
         /// <param name="callback">The callback to use when the message it seen</param>
         public void Register(string message, Action<object> callback) =>
             _internalList.AddValue(message, callback);
+
+        //public void Unregister(string message, Action<object> callback) =>
+        //    _internalList.RemoveValue(message, null);
 
         /// <summary>
         /// Notify all colleagues that are registed to the specific message
@@ -42,3 +44,5 @@ namespace Yugen.Toolkit.Standard.Mvvm.Mediator
         }
     }
 }
+
+// https://codewithshadman.com/mediator-pattern-csharp/
