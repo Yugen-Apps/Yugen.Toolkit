@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
 {
     public class NavigationParameterViewModel : ViewModelBase
     {
+        public string ButtonContent { get; set; } = "Update the text";
         //private string _parameter;
 
         private string _text;
@@ -36,7 +38,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
 
         public void Button_Tapped(object _1, Windows.UI.Xaml.Input.TappedRoutedEventArgs _2)
         {
-            Text = "aaa";
+            Text = "I'm the new text";
         }
     }
 }

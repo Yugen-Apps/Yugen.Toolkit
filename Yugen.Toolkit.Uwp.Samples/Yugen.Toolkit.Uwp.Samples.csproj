@@ -105,7 +105,7 @@
     <Compile Include="ViewModels\Helpers\FindControlViewModel.cs" />
     <Compile Include="ViewModels\Controls\GraphViewModel.cs" />
     <Compile Include="ObservableObjects\PersonObservableObject.cs" />
-    <Compile Include="ViewModels\Navigation\NavigationParameterViewModel.cs" />
+    <Compile Include="ViewModels\Mvvm\NavigationParameterViewModel.cs" />
     <Compile Include="ViewModels\Collections\GroupedCollectionViewModel.cs" />
     <Compile Include="Views\Collections\CollectionPage.xaml.cs">
       <DependentUpon>CollectionPage.xaml</DependentUpon>
@@ -140,13 +140,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Controls\ValidationViewModel.cs" />
-    <Compile Include="Views\Navigation\NavigationParameterPage.xaml.cs">
+    <Compile Include="Views\Mvvm\NavigationParameterPage.xaml.cs">
       <DependentUpon>NavigationParameterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Navigation\NavigationPage.xaml.cs">
+    <Compile Include="Views\Mvvm\NavigationPage.xaml.cs">
       <DependentUpon>NavigationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Navigation\NavigationViewModel.cs" />
+    <Compile Include="ViewModels\Mvvm\NavigationViewModel.cs" />
     <Compile Include="Views\Others\SamplesPage.xaml.cs">
       <DependentUpon>SamplesPage.xaml</DependentUpon>
     </Compile>
@@ -267,11 +267,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Navigation\NavigationParameterPage.xaml">
+    <Page Include="Views\Mvvm\NavigationParameterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Navigation\NavigationPage.xaml">
+    <Page Include="Views\Mvvm\NavigationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

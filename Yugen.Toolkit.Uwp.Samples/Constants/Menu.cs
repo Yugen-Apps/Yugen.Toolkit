@@ -4,7 +4,7 @@ using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Helpers;
-using Yugen.Toolkit.Uwp.Samples.Views.Navigation;
+using Yugen.Toolkit.Uwp.Samples.Views.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.Constants
 {
@@ -16,7 +16,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             Collections,
             Controls,
             Helpers,
-            Navigation
+            Mvvm
         };
 
         public static MenuItem Controls => new MenuItem
@@ -57,9 +57,9 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
 
         public static MenuItem Home => new MenuItem(nameof(Home), nameof(HomePage));
 
-        public static MenuItem Navigation => new MenuItem
+        public static MenuItem Mvvm => new MenuItem
         {
-            Name = nameof(Navigation),
+            Name = nameof(Mvvm),
             IsExpanded = false,
             Children =
             {
