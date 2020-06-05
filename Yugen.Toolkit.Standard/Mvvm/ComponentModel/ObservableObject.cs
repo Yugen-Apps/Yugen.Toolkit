@@ -183,22 +183,22 @@ namespace Yugen.Toolkit.Standard.Mvvm.ComponentModel
         //    OnPropertyChanged(propertyName);
         //}
 
-        protected void Set<T>(object objectName, T newValue, [CallerMemberName] string propertyName = null)
-        {
-            var property = objectName.GetType().GetProperty(propertyName);
-            var currentValue = (T)property.GetValue(objectName);
+        //protected void Set<T>(object objectName, T newValue, [CallerMemberName] string propertyName = null)
+        //{
+        //    var property = objectName.GetType().GetProperty(propertyName);
+        //    var currentValue = (T)property.GetValue(objectName);
 
-            if (EqualityComparer<T>.Default.Equals(currentValue, newValue))
-            {
-                return;
-            }
+        //    if (EqualityComparer<T>.Default.Equals(currentValue, newValue))
+        //    {
+        //        return;
+        //    }
 
-            OnPropertyChanging(propertyName);
+        //    OnPropertyChanging(propertyName);
 
-            property.SetValue(objectName, newValue, null);
+        //    property.SetValue(objectName, newValue, null);
 
-            OnPropertyChanged(propertyName);
-        }
+        //    OnPropertyChanged(propertyName);
+        //}
     }
 }
 

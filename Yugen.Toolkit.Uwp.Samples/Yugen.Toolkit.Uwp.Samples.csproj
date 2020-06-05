@@ -109,6 +109,7 @@
     <Compile Include="ViewModels\Mvvm\MediatorViewModel.cs" />
     <Compile Include="ViewModels\Mvvm\NavigationParameterViewModel.cs" />
     <Compile Include="ViewModels\Collections\GroupedCollectionViewModel.cs" />
+    <Compile Include="ViewModels\Mvvm\ObservableObjectViewModel.cs" />
     <Compile Include="Views\Collections\CollectionPage.xaml.cs">
       <DependentUpon>CollectionPage.xaml</DependentUpon>
     </Compile>
@@ -155,6 +156,9 @@
       <DependentUpon>NavigationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Mvvm\NavigationViewModel.cs" />
+    <Compile Include="Views\Mvvm\ObservableObjectPage.xaml.cs">
+      <DependentUpon>ObservableObjectPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Others\SamplesPage.xaml.cs">
       <DependentUpon>SamplesPage.xaml</DependentUpon>
     </Compile>
@@ -288,6 +292,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Mvvm\NavigationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Mvvm\ObservableObjectPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

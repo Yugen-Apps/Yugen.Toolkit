@@ -63,9 +63,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             IsExpanded = false,
             Children =
             {
-                new MenuItem ("Navigation Parameters", nameof (NavigationPage)),
                 new MenuItem ("Command", nameof (CommandPage)),
-                new MenuItem ("Mediator ", nameof (MediatorPage))
+                new MenuItem ("Mediator ", nameof (MediatorPage)),
+                new MenuItem ("Navigation Parameters", nameof (NavigationPage)),
+                new MenuItem ("Observabl eObject ", nameof (ObservableObjectPage))
             }
         };
     }
