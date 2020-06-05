@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
-using Yugen.Toolkit.Standard.Handlers;
 
 namespace Yugen.Toolkit.Uwp.Converters
 {
@@ -15,7 +15,7 @@ namespace Yugen.Toolkit.Uwp.Converters
         /// </returns>
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            return value is CommandHandler ? Visibility.Visible : Visibility.Collapsed;
+            return value is ICommand ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
