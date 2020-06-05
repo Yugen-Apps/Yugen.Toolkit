@@ -1,3 +1,5 @@
+![logo](/Yugen.Toolkit.Uwp.Samples/Assets/StoreLogo.scale-400.png)
+
 # Yugen Toolkit
 
 ## The Toolkit is a collection of helper functions, custom controls, and app services. It helps develop common task for UWP apps. 
