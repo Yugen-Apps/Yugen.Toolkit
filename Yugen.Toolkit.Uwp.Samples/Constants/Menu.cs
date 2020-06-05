@@ -64,6 +64,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             Children =
             {
                 new MenuItem ("Navigation Parameters", nameof (NavigationPage)),
+                new MenuItem ("Command", nameof (CommandPage)),
                 new MenuItem ("Mediator ", nameof (MediatorPage))
             }
         };

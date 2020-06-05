@@ -3,21 +3,47 @@ using System.Windows.Input;
 
 namespace Yugen.Toolkit.Standard.Mvvm.Input
 {
+    /// <summary>
+    /// A command whose sole purpose is to relay its functionality to other
+    /// objects by invoking delegates. The default return value for the <see cref="CanExecute"/>
+    /// method is <see langword="true"/>. This type does not allow you to accept command parameters
+    /// in the <see cref="Execute"/> and <see cref="CanExecute"/> callback methods.
+    /// </summary>
     public class RelayCommand : ICommand
     {
-        private readonly Action _execute = null;
-        private readonly bool _canExecute;
+        /// <summary>
+        /// The <see cref="Action"/> to invoke when <see cref="Execute"/> is used.
+        /// </summary>
+        private readonly Action _execute;
 
-        public event EventHandler CanExecuteChanged;
+        /// <summary>
+        /// The optional action to invoke when <see cref="CanExecute"/> is used.
+        /// </summary>
+        private readonly Func<bool> _canExecute;
 
-        public RelayCommand(Action execute, bool canExecute = true)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RelayCommand"/> class.
+        /// </summary>
+        /// <param name="execute">The execution logic.</param>
+        /// <param name="canExecute">The execution status logic.</param>
+        public RelayCommand(Action execute, Func<bool> canExecute = null)
         {
-            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
+            _execute = execute;
             _canExecute = canExecute;
         }
 
-        public bool CanExecute(object parameter) => _canExecute;
+        public event EventHandler CanExecuteChanged;
 
-        public void Execute(object parameter) => _execute?.Invoke();
+        public void NotifyCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+
+        public bool CanExecute(object parameter) => _canExecute?.Invoke() != false;
+
+        public void Execute(object parameter)
+        {
+            if (CanExecute(parameter))
+            {
+                _execute?.Invoke();
+            }
+        }
     }
 }

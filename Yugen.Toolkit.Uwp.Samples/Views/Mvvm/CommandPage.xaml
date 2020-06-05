@@ -1,6 +1,7 @@
-﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.Mvvm.NavigationParameterPage"
+﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.Mvvm.CommandPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Mvvm"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:viewmodel="using:Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm"
@@ -8,13 +9,16 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.DataContext>
-        <viewmodel:NavigationParameterViewModel x:Name="ViewModel" />
+        <viewmodel:CommandViewModel x:Name="ViewModel" />
     </Page.DataContext>
 
-    <Grid>
+    <StackPanel>
         <TextBlock Text="{x:Bind ViewModel.Text, Mode=OneWay}" />
 
-        <Button Click="{x:Bind ViewModel.Button_Click}"
-                Content="Update the text" />
-    </Grid>
+        <Button Command="{x:Bind ViewModel.ButtonCommand}"
+                Content="Show Text" />
+
+        <Button Command="{x:Bind ViewModel.ButtonAsyncCommand}"
+                Content="Show Dialog" />
+    </StackPanel>
 </Page>
