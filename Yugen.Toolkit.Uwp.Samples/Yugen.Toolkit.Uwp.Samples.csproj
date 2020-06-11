@@ -110,8 +110,8 @@
     <Compile Include="ViewModels\Mvvm\NavigationParameterViewModel.cs" />
     <Compile Include="ViewModels\Collections\GroupedCollectionViewModel.cs" />
     <Compile Include="ViewModels\Mvvm\ObservableObjectViewModel.cs" />
-    <Compile Include="Views\Collections\CollectionPage.xaml.cs">
-      <DependentUpon>CollectionPage.xaml</DependentUpon>
+    <Compile Include="Views\Collections\StretchedCollectionPage.cs">
+      <DependentUpon>StretchedCollectionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\CustomDialogPage.xaml.cs">
       <DependentUpon>CustomDialogPage.xaml</DependentUpon>
@@ -125,6 +125,13 @@
     <Compile Include="Views\Controls\NotificationBannerPage.xaml.cs">
       <DependentUpon>NotificationBannerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\SampleInAppControl.cs">
+      <DependentUpon>SampleInAppControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\SampleInAppControlPage.cs">
+      <DependentUpon>SampleInAppControlPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Controls\SampleInAppControlViewModel.cs" />
     <Compile Include="Views\Controls\ValidationPage.xaml.cs">
       <DependentUpon>ValidationPage.xaml</DependentUpon>
     </Compile>
@@ -239,7 +246,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Collections\CollectionPage.xaml">
+    <Page Include="Views\Collections\StretchedCollectionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -256,6 +263,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Controls\NotificationBannerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\SampleInAppControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\SampleInAppControlPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

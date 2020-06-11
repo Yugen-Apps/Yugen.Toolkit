@@ -29,7 +29,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
                 new MenuItem ("EdgeTapped ListView", nameof (EdgeTappedListViewPage)),
                 new MenuItem ("Graph", nameof (GraphPage)),
                 new MenuItem ("Notification Banner", nameof (NotificationBannerPage)),
-                new MenuItem ("Validation", nameof (ValidationPage))
+                new MenuItem ("Validation", nameof (ValidationPage)),
+                new MenuItem ("Sample In App Control", nameof (SampleInAppControlPage)),
             }
         };
 
@@ -40,7 +41,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             Children =
             {
                 new MenuItem ("Grouped Collection", nameof (GroupedCollectionPage)),
-                new MenuItem ("Stretched Listview Item", nameof (CollectionPage))
+                new MenuItem ("Stretched Listview Item", nameof (StretchedCollectionPage))
             }
         };
 
