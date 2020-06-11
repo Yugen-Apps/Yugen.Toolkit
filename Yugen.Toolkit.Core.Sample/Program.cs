@@ -2,7 +2,12 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using Yugen.Toolkit.Standard.Data.Extensions;
 using Yugen.Toolkit.Standard.Data.Sample;
+using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
+using Yugen.Toolkit.Standard.Data.Sample.Models;
+using Yugen.Toolkit.Standard.Data.Sample.Repository;
+using Yugen.Toolkit.Standard.Data.Sample.Services;
 
 /// <summary>
 /// Add a reference to Yugen.Toolkit.Standard.Data.Sample
@@ -21,49 +26,56 @@ namespace Yugen.Toolkit.Core.Sample
         /// <summary>
         /// Option 1: simple and fast approach just to generate migrations
         /// </summary>
-        private static void Main(string[] args)
-        {
-            new BloggingContextFactory().CreateDbContext(null);
-        }
+        //private static void Main(string[] args)
+        //{
+        //    new BloggingContextFactory().CreateDbContext(null);
+        //}
 
-        public class BloggingContextFactory : IDesignTimeDbContextFactory<BloggingContext>
-        {
-            public BloggingContext CreateDbContext(string[] args) => 
-                new BloggingContext(new DbContextOptionsBuilder<BloggingContext>()
-                    .UseSqlite("Data Source=blog.db").Options);
-        }
+        //public class BloggingContextFactory : IDesignTimeDbContextFactory<BloggingContext>
+        //{
+        //    public BloggingContext CreateDbContext(string[] args) => 
+        //        new BloggingContext(new DbContextOptionsBuilder<BloggingContext>()
+        //            .UseSqlite("Data Source=MyDatabase.db").Options);
+        //}
 
 
         /// <summary>
         /// Option 2: Dependency Injection
         /// </summary>
-        //private static void Main(string[] args)
-        //{
-        //    var serviceProvider = CreateServiceProvider();
-        //    // serviceProvider.GetService<BloggingContext>().Database.EnsureCreated();
-        //}
+        private static void Main(string[] args)
+        {
+            var serviceProvider = CreateServiceProvider();
+            var isCreated = serviceProvider.GetService<BloggingContext>().Database.EnsureCreated();
+            var blogRepository = serviceProvider.GetService<BlogService>();
+            blogRepository.Add(new Blog { Url = "aaa" });
+            var list = blogRepository.Get();
+        }
 
-        //private static IServiceProvider CreateServiceProvider()
-        //{
-        //    // create service collection
-        //    var serviceCollection = new ServiceCollection();
-        //    ConfigureServices(serviceCollection);
+        private static IServiceProvider CreateServiceProvider()
+        {
+            // create service collection
+            var serviceCollection = new ServiceCollection();
+            ConfigureServices(serviceCollection);
 
-        //    // create service provider
-        //    return serviceCollection.BuildServiceProvider();
-        //}
+            // create service provider
+            return serviceCollection.BuildServiceProvider();
+        }
 
-        //private static void ConfigureServices(IServiceCollection serviceCollection)
-        //{
-        //    serviceCollection.AddDbContext<BloggingContext>(options => 
-        //        options.UseSqlite("Data Source=MyDatabase.db"));
-        //}
+        private static void ConfigureServices(IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddDbContext<BloggingContext>(options =>
+                options.UseSqlite("Data Source=MyDatabase.db"))
+                    .AddUnitOfWork<BloggingContext>();
+            serviceCollection.AddTransient<IBlogRepository, BlogRepository>();
+            serviceCollection.AddSingleton<BlogService>();
 
-        //private class Factory : IDesignTimeDbContextFactory<BloggingContext>
-        //{
-        //    public BloggingContext CreateDbContext(string[] args)
-        //        => CreateServiceProvider().CreateScope().ServiceProvider.GetService<BloggingContext>();
-        //}
+        }
+
+        private class Factory : IDesignTimeDbContextFactory<BloggingContext>
+        {
+            public BloggingContext CreateDbContext(string[] args)
+                => CreateServiceProvider().CreateScope().ServiceProvider.GetService<BloggingContext>();
+        }
     }
 }
 

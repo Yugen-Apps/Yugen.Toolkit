@@ -1,6 +1,4 @@
-﻿using Yugen.Toolkit.Standard.Data.Models;
-
-namespace Yugen.Toolkit.Standard.Data.Interfaces
+﻿namespace Yugen.Toolkit.Standard.Data.Interfaces
 {
     public interface IRepositoryFactory
     {

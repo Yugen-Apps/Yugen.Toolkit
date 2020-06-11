@@ -4,36 +4,35 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Yugen.Toolkit.Standard.Data.Interfaces;
-using Yugen.Toolkit.Standard.Data.Models;
 
 // https://github.com/threenine/Threenine.Data
 // https://github.com/threenine/Threenine.Map
-namespace Yugen.Toolkit.Standard.Data.Repository
+namespace Yugen.Toolkit.Standard.Data
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
-        protected readonly DbContext DbContext;
-        protected readonly DbSet<T> DbSet;
+        protected readonly DbContext _bbContext;
+        protected readonly DbSet<T> _dbSet;
 
         public BaseRepository(DbContext context)
         {
-            DbContext = context;
-            DbSet = DbContext.Set<T>();
+            _bbContext = context;
+            _dbSet = _bbContext.Set<T>();
         }
 
 
-        public void Add(T entity) => DbSet.Add(entity);
+        public void Add(T entity) => _dbSet.Add(entity);
 
-        public void Add(IEnumerable<T> entities) => DbSet.AddRange(entities);
+        public void Add(IEnumerable<T> entities) => _dbSet.AddRange(entities);
 
 
-        public IQueryable<T> Get() => DbSet;
+        public IQueryable<T> Get() => _dbSet;
 
-        public IQueryable<T> Get(Expression<Func<T, bool>> predicate) => DbSet.Where(predicate);
+        public IQueryable<T> Get(Expression<Func<T, bool>> predicate) => _dbSet.Where(predicate);
 
         public IQueryable<T> Get(params Expression<Func<T, object>>[] includeProperties)
         {
-            IQueryable<T> query = DbSet;
+            IQueryable<T> query = _dbSet;
             foreach (var property in includeProperties)
             {
                 query = query.Include(property);
@@ -44,7 +43,7 @@ namespace Yugen.Toolkit.Standard.Data.Repository
         public IQueryable<T> Get(Expression<Func<T, bool>> predicate,
             params Expression<Func<T, object>>[] includeProperties)
         {
-            IQueryable<T> query = DbSet;
+            IQueryable<T> query = _dbSet;
             foreach (var property in includeProperties)
             {
                 query = query.Include(property);
@@ -53,16 +52,16 @@ namespace Yugen.Toolkit.Standard.Data.Repository
         }
 
         public IQueryable<T> Get(Expression<Func<T, bool>> predicate,
-            Func<IQueryable<T>, IQueryable<T>> func) => func(DbSet).Where(predicate);
+            Func<IQueryable<T>, IQueryable<T>> func) => func(_dbSet).Where(predicate);
 
 
-        public T Single(Guid id) => DbSet.Find(id);
+        public T Single(Guid id) => _dbSet.Find(id);
 
-        public T Single(Expression<Func<T, bool>> predicate) => DbSet.Single(predicate);
+        public T Single(Expression<Func<T, bool>> predicate) => _dbSet.Single(predicate);
 
         public T Single(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)
         {
-            IQueryable<T> query = DbSet;
+            IQueryable<T> query = _dbSet;
             foreach (var property in includeProperties)
             {
                 query = query.Include(property);
@@ -77,38 +76,38 @@ namespace Yugen.Toolkit.Standard.Data.Repository
         /// <param name="func"></param>
         /// <returns></returns>
         public T Single(Expression<Func<T, bool>> predicate,
-            Func<IQueryable<T>, IQueryable<T>> func) => func(DbSet).Single(predicate);
+            Func<IQueryable<T>, IQueryable<T>> func) => func(_dbSet).Single(predicate);
 
 
-        public T First(Expression<Func<T, DateTime>> predicate) => DbSet.OrderBy(predicate).First();
+        public T First(Expression<Func<T, DateTime>> predicate) => _dbSet.OrderBy(predicate).First();
 
-        public T Last(Expression<Func<T, DateTime>> predicate) => DbSet.OrderByDescending(predicate).First();
-
-
-        public T First(Expression<Func<T, int>> predicate) => DbSet.OrderBy(predicate).First();
-
-        public T Last(Expression<Func<T, int>> predicate) => DbSet.OrderByDescending(predicate).First();
+        public T Last(Expression<Func<T, DateTime>> predicate) => _dbSet.OrderByDescending(predicate).First();
 
 
-        public void Update(T entity) => DbSet.Update(entity);
+        public T First(Expression<Func<T, int>> predicate) => _dbSet.OrderBy(predicate).First();
+
+        public T Last(Expression<Func<T, int>> predicate) => _dbSet.OrderByDescending(predicate).First();
+
+
+        public void Update(T entity) => _dbSet.Update(entity);
 
         public void Update(T entity, Guid id)
         {
-            var originalEntity = DbSet.Find(id);
-            DbContext.Entry(originalEntity).CurrentValues.SetValues(entity);
+            var originalEntity = _dbSet.Find(id);
+            _bbContext.Entry(originalEntity).CurrentValues.SetValues(entity);
         }
 
-        public void Update(params T[] entities) => DbSet.UpdateRange(entities);
+        public void Update(params T[] entities) => _dbSet.UpdateRange(entities);
 
-        public void Update(IEnumerable<T> entities) => DbSet.UpdateRange(entities);
+        public void Update(IEnumerable<T> entities) => _dbSet.UpdateRange(entities);
 
 
-        public void Delete(T entity) => DbSet.Remove(entity);
+        public void Delete(T entity) => _dbSet.Remove(entity);
 
 
         public Guid GetKey(T entity)
         {
-            var keyName = DbContext.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties
+            var keyName = _bbContext.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties
                 .Select(x => x.Name).Single();
 
             var value = entity?.GetType().GetProperty(keyName)?.GetValue(entity, null)?.ToString();
@@ -117,11 +116,11 @@ namespace Yugen.Toolkit.Standard.Data.Repository
         }
 
 
-        public int Count() => DbSet.Count();
+        public int Count() => _dbSet.Count();
 
-        public bool IsEmpty() => !DbSet.Any();
+        public bool IsEmpty() => !_dbSet.Any();
 
-        public int LastIndex() => DbSet.Any() ? DbSet.OrderByDescending(x => x.Index).First().Index : 0;
+        public int LastIndex() => _dbSet.Any() ? _dbSet.OrderByDescending(x => x.Index).First().Index : 0;
     }
 }
 

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Yugen.Toolkit.Standard.Data.Interfaces;
-using Yugen.Toolkit.Standard.Data.Models;
 using Yugen.Toolkit.Standard.Helpers;
 
 // https://github.com/threenine/swcApi
-namespace Yugen.Toolkit.Standard.Data.Service
+namespace Yugen.Toolkit.Standard.Data
 {
     /// <summary>
     /// CRUD (create, read, update, delete) 
@@ -16,19 +15,19 @@ namespace Yugen.Toolkit.Standard.Data.Service
     /// <typeparam name="T"></typeparam>
     public class BaseService<T> : IBaseService<T> where T : BaseEntity
     {
-        protected readonly IUnitOfWork UnitOfWork;
+        protected readonly IUnitOfWork _unitOfWork;
 
         public BaseService(IUnitOfWork unitOfWork)
         {
-            UnitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
         }
 
         public Result<T> Add(T entity, bool updateModified = true)
         {
             try
             {
-                UnitOfWork.GetRepository<T>().Add(entity);
-                UnitOfWork.SaveChanges<T>(updateModified);
+                _unitOfWork.GetRepository<T>().Add(entity);
+                _unitOfWork.SaveChanges<T>(updateModified);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -43,7 +42,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Get().AsEnumerable();
+                var entity = _unitOfWork.GetRepository<T>().Get().AsEnumerable();
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -57,7 +56,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Get(predicate).AsEnumerable();
+                var entity = _unitOfWork.GetRepository<T>().Get(predicate).AsEnumerable();
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -71,7 +70,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Get(includeProperties).AsEnumerable();
+                var entity = _unitOfWork.GetRepository<T>().Get(includeProperties).AsEnumerable();
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -86,7 +85,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Get(predicate, includeProperties).AsEnumerable();
+                var entity = _unitOfWork.GetRepository<T>().Get(predicate, includeProperties).AsEnumerable();
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -101,7 +100,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Get(predicate, func).AsEnumerable();
+                var entity = _unitOfWork.GetRepository<T>().Get(predicate, func).AsEnumerable();
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -116,7 +115,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>()
+                var entity = _unitOfWork.GetRepository<T>()
                     .Get(x => x.LastUpdated >= lastSync)
                     .IgnoreQueryFilters()
                     .AsEnumerable();
@@ -135,7 +134,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>()
+                var entity = _unitOfWork.GetRepository<T>()
                     .Get(x => x.LastUpdated >= lastSync, func)
                     .IgnoreQueryFilters()
                     .AsEnumerable();
@@ -155,7 +154,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Single(id);
+                var entity = _unitOfWork.GetRepository<T>().Single(id);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -169,7 +168,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var key = UnitOfWork.GetRepository<T>().GetKey(entity);
+                var key = _unitOfWork.GetRepository<T>().GetKey(entity);
                 var result = Single(key);
                 return Result.IsOk(result.Value, result.Value != null, "");
             }
@@ -184,7 +183,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Single(predicate);
+                var entity = _unitOfWork.GetRepository<T>().Single(predicate);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -199,7 +198,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Single(predicate, includeProperties);
+                var entity = _unitOfWork.GetRepository<T>().Single(predicate, includeProperties);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -214,7 +213,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Single(predicate, func);
+                var entity = _unitOfWork.GetRepository<T>().Single(predicate, func);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -229,7 +228,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().First(predicate);
+                var entity = _unitOfWork.GetRepository<T>().First(predicate);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -243,7 +242,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Last(predicate);
+                var entity = _unitOfWork.GetRepository<T>().Last(predicate);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -258,7 +257,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().First(predicate);
+                var entity = _unitOfWork.GetRepository<T>().First(predicate);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -272,7 +271,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var entity = UnitOfWork.GetRepository<T>().Last(predicate);
+                var entity = _unitOfWork.GetRepository<T>().Last(predicate);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -287,8 +286,8 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                UnitOfWork.GetRepository<T>().Update(entity);
-                UnitOfWork.SaveChanges<T>();
+                _unitOfWork.GetRepository<T>().Update(entity);
+                _unitOfWork.SaveChanges<T>();
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -302,8 +301,8 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                UnitOfWork.GetRepository<T>().Update(entity, id);
-                UnitOfWork.SaveChanges<T>(updateModified);
+                _unitOfWork.GetRepository<T>().Update(entity, id);
+                _unitOfWork.SaveChanges<T>(updateModified);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -318,8 +317,8 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                UnitOfWork.GetRepository<T>().Delete(entity);
-                UnitOfWork.SaveChanges<T>();
+                _unitOfWork.GetRepository<T>().Delete(entity);
+                _unitOfWork.SaveChanges<T>();
                 return Result.Ok();
             }
             catch (Exception exception)
@@ -340,9 +339,9 @@ namespace Yugen.Toolkit.Standard.Data.Service
             try
             {
                 foreach (var entity in entityList)
-                    UnitOfWork.GetRepository<T>().Delete(entity);
+                    _unitOfWork.GetRepository<T>().Delete(entity);
 
-                UnitOfWork.SaveChanges<T>();
+                _unitOfWork.SaveChanges<T>();
                 return Result.Ok();
             }
             catch (Exception exception)
@@ -387,12 +386,12 @@ namespace Yugen.Toolkit.Standard.Data.Service
                 foreach (var entity in entityList)
                 {
                     if (Single(entity).Failure)
-                        UnitOfWork.GetRepository<T>().Add(entity);
+                        _unitOfWork.GetRepository<T>().Add(entity);
                     else
-                        UnitOfWork.GetRepository<T>().Update(entity);
+                        _unitOfWork.GetRepository<T>().Update(entity);
                 }
 
-                UnitOfWork.SaveChanges<T>();
+                _unitOfWork.SaveChanges<T>();
                 return Result.Ok(default(T));
             }
             catch (Exception exception)
@@ -413,7 +412,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
             if (Single(entity).Failure)
                 return Add(entity, updateModified);
 
-            var key = UnitOfWork.GetRepository<T>().GetKey(entity);
+            var key = _unitOfWork.GetRepository<T>().GetKey(entity);
             return Update(entity, key, updateModified);
         }
 
@@ -431,16 +430,16 @@ namespace Yugen.Toolkit.Standard.Data.Service
                 {
                     if (Single(entity).Failure)
                     {
-                        UnitOfWork.GetRepository<T>().Add(entity);
+                        _unitOfWork.GetRepository<T>().Add(entity);
                     }
                     else
                     {
-                        var key = UnitOfWork.GetRepository<T>().GetKey(entity);
-                        UnitOfWork.GetRepository<T>().Update(entity, key);
+                        var key = _unitOfWork.GetRepository<T>().GetKey(entity);
+                        _unitOfWork.GetRepository<T>().Update(entity, key);
                     }
                 }
 
-                UnitOfWork.SaveChanges<T>(updateModified);
+                _unitOfWork.SaveChanges<T>(updateModified);
                 return Result.Ok(default(T));
             }
             catch (Exception exception)
@@ -455,7 +454,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
         {
             try
             {
-                var count = UnitOfWork.GetRepository<T>().Count();
+                var count = _unitOfWork.GetRepository<T>().Count();
                 return Result.Ok(count);
             }
             catch (Exception exception)
@@ -465,9 +464,9 @@ namespace Yugen.Toolkit.Standard.Data.Service
             }
         }
 
-        public bool IsEmpty() => UnitOfWork.GetRepository<T>().IsEmpty();
+        public bool IsEmpty() => _unitOfWork.GetRepository<T>().IsEmpty();
 
-        public int LastIndex() => UnitOfWork.GetRepository<T>().LastIndex();
+        public int LastIndex() => _unitOfWork.GetRepository<T>().LastIndex();
 
 
         public Result<T> PushSync(IEnumerable<T> entityList)
@@ -479,7 +478,7 @@ namespace Yugen.Toolkit.Standard.Data.Service
                     var dbEntity = Single(entity);
                     if (dbEntity.Failure)
                     {
-                        UnitOfWork.GetRepository<T>().Add(entity);
+                        _unitOfWork.GetRepository<T>().Add(entity);
                     }
                     else
                     {
@@ -491,20 +490,20 @@ namespace Yugen.Toolkit.Standard.Data.Service
                             // e.g. Server - wins - Ignore changes and just update time. 
                             dbEntity.Value.LastUpdated = DateTimeOffset.Now;
                             dbEntity.Value.ClientLastUpdated = entity.LastUpdated;
-                            UnitOfWork.GetRepository<T>().Update(dbEntity.Value);
+                            _unitOfWork.GetRepository<T>().Update(dbEntity.Value);
                         }
                         else
                         {
                             // Client is newer than server
                             entity.LastUpdated = DateTimeOffset.Now;
                             entity.ClientLastUpdated = entity.LastUpdated;
-                            var key = UnitOfWork.GetRepository<T>().GetKey(entity);
-                            UnitOfWork.GetRepository<T>().Update(entity, key);
+                            var key = _unitOfWork.GetRepository<T>().GetKey(entity);
+                            _unitOfWork.GetRepository<T>().Update(entity, key);
                         }
                     }
                 }
 
-                UnitOfWork.SaveChanges<T>();
+                _unitOfWork.SaveChanges<T>();
                 return Result.Ok(default(T));
             }
             catch (Exception exception)
@@ -523,17 +522,17 @@ namespace Yugen.Toolkit.Standard.Data.Service
                     var dbEntity = Single(entity);
                     if (dbEntity.Failure)
                     {
-                        UnitOfWork.GetRepository<T>().Add(entity);
+                        _unitOfWork.GetRepository<T>().Add(entity);
                     }
                     else
                     {
                         entity.LastUpdated = DateTimeOffset.Now;
-                        var key = UnitOfWork.GetRepository<T>().GetKey(entity);
-                        UnitOfWork.GetRepository<T>().Update(entity, key);
+                        var key = _unitOfWork.GetRepository<T>().GetKey(entity);
+                        _unitOfWork.GetRepository<T>().Update(entity, key);
                     }
                 }
 
-                UnitOfWork.SaveChanges<T>();
+                _unitOfWork.SaveChanges<T>();
                 return Result.Ok(default(T));
             }
             catch (Exception exception)

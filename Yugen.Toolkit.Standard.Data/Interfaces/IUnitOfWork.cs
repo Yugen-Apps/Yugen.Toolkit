@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Yugen.Toolkit.Standard.Data.Models;
 
 namespace Yugen.Toolkit.Standard.Data.Interfaces
 {

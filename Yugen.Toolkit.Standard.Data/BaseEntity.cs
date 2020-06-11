@@ -1,7 +1,7 @@
 using System;
 using Yugen.Toolkit.Standard.Data.Interfaces;
 
-namespace Yugen.Toolkit.Standard.Data.Models
+namespace Yugen.Toolkit.Standard.Data
 {
     public class BaseEntity : IBaseEntity
     {

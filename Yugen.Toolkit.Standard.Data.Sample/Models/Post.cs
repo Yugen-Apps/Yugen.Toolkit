@@ -1,8 +1,10 @@
-﻿namespace Yugen.Toolkit.Standard.Data.Sample.Models
+﻿using System;
+
+namespace Yugen.Toolkit.Standard.Data.Sample.Models
 {
-    public class Post
+    public class Post : BaseEntity
     {
-        public int PostId { get; set; }
+        public Guid PostId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
 

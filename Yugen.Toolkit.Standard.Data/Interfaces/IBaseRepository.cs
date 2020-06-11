@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Yugen.Toolkit.Standard.Data.Models;
 
 namespace Yugen.Toolkit.Standard.Data.Interfaces
 {
