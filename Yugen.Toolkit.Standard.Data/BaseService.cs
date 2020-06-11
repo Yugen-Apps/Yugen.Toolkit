@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Microsoft.EntityFrameworkCore;
 using Yugen.Toolkit.Standard.Data.Interfaces;
 using Yugen.Toolkit.Standard.Helpers;
 
@@ -224,7 +224,7 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
-        protected Result<T> First(Expression<Func<T, DateTime>> predicate)
+        public Result<T> First(Expression<Func<T, DateTime>> predicate)
         {
             try
             {
@@ -238,7 +238,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
-        protected Result<T> Last(Expression<Func<T, DateTime>> predicate)
+        public Result<T> Last(Expression<Func<T, DateTime>> predicate)
         {
             try
             {
@@ -253,7 +253,7 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
-        protected Result<T> First(Expression<Func<T, int>> predicate)
+        public Result<T> First(Expression<Func<T, int>> predicate)
         {
             try
             {
@@ -267,7 +267,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
-        protected Result<T> Last(Expression<Func<T, int>> predicate)
+        public Result<T> Last(Expression<Func<T, int>> predicate)
         {
             try
             {

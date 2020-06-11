@@ -1,20 +1,21 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Yugen.Toolkit.Standard.Data.Interfaces;
 
 namespace Yugen.Toolkit.Standard.Data
 {
     public class UnitOfWork<TContext> : IRepositoryFactory, IUnitOfWork<TContext> where TContext : DbContext
     {
-        public TContext Context { get; }
         private Dictionary<Type, object> _repositories;
 
         public UnitOfWork(TContext context)
         {
             Context = context ?? throw new ArgumentNullException(nameof(context));
         }
+
+        public TContext Context { get; }
 
         public IBaseRepository<TEntity> GetRepository<TEntity>() where TEntity : BaseEntity
         {
@@ -38,6 +39,11 @@ namespace Yugen.Toolkit.Standard.Data
             return Context.SaveChanges();
         }
 
+        public void Dispose()
+        {
+            Context?.Dispose();
+        }
+
         private void Audit<TEntity>(bool updateModified = true) where TEntity : BaseEntity
         {
             var entries = Context.ChangeTracker.Entries().Where(x => x.State == EntityState.Added || x.State == EntityState.Modified);
@@ -55,11 +61,6 @@ namespace Yugen.Toolkit.Standard.Data
                 if (updateModified)
                     ((BaseEntity)entry.Entity).LastUpdated = DateTimeOffset.Now;
             }
-        }
-
-        public void Dispose()
-        {
-            Context?.Dispose();
         }
     }
 }
