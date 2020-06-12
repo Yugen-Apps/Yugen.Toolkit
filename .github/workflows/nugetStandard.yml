@@ -1,4 +1,4 @@
-name: Yugen.Toolkit.Standard: Build, Pack and Publish Nuget
+name: Yugen.Toolkit.Standard/Build, Pack and Publish Nuget
 on:
   push:
     branches:    
