@@ -24,6 +24,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{FBFFFB30-2C0E-4868-A203-D71F8918CD59}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\nugetStandard.yml = .github\workflows\nugetStandard.yml
+		.github\workflows\nugetStandardData.yml = .github\workflows\nugetStandardData.yml
 		.github\workflows\nugetUwp.yml = .github\workflows\nugetUwp.yml
 		.github\workflows\nugetUwpControls.yml = .github\workflows\nugetUwpControls.yml
 	EndProjectSection
@@ -32,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yugen.Toolkit.Core.Sample",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yugen.Toolkit.Standard.Data.Sample", "Yugen.Toolkit.Standard.Data.Sample\Yugen.Toolkit.Standard.Data.Sample.csproj", "{48DB5037-A032-45A9-B30F-761C7D3AA5C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yugen.Toolkit.Web.Sample", "Yugen.Toolkit.Web.Sample\Yugen.Toolkit.Web.Sample.csproj", "{A5A1D563-983E-4237-80FC-725266EC0DF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yugen.Toolkit.Web.Sample", "Yugen.Toolkit.Web.Sample\Yugen.Toolkit.Web.Sample.csproj", "{A5A1D563-983E-4237-80FC-725266EC0DF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

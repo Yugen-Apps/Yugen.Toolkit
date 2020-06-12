@@ -4,9 +4,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using Yugen.Toolkit.Standard.Data;
 using Yugen.Toolkit.Standard.Helpers;
 using Yugen.Toolkit.Standard.Json;
+using Yugen.Toolkit.Standard.Models;
 
 namespace Yugen.Toolkit.Standard.Http
 {

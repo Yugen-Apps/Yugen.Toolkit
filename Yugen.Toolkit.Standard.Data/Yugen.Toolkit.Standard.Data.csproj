@@ -2,6 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Yugen.Toolkit.Standard.Data</PackageId>
+    <Version>1.0.28</Version>
+    <Product>Yugen Toolkit Standard Data</Product>
+    <Authors>emiliano84</Authors>
+    <Company>emiliano84</Company>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/emiliano84/Yugen.Toolkit</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <Description>
+      This package includes code .Net Standard EF core data repository and service
+      It is part of the Yugen Toolkit.
+    </Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright></Copyright>
+    <PackageTags>Yugen Toolkit Data</PackageTags>
+    <RepositoryUrl>https://github.com/emiliano84/Yugen.Toolkit.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>

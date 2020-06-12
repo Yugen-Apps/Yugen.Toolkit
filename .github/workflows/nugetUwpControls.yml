@@ -1,4 +1,4 @@
-name: Uwp Controls, Build, Pack and Publish Nuget
+name: Yugen.Toolkit.Uwp.Controls: Build, Pack and Publish Nuget
 on:
   push:
     branches:    

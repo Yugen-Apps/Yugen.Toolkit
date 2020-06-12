@@ -35,7 +35,7 @@ namespace Yugen.Toolkit.Core.Sample
         //{
         //    public BloggingContext CreateDbContext(string[] args) => 
         //        new BloggingContext(new DbContextOptionsBuilder<BloggingContext>()
-        //            .UseSqlite("Data Source=MyDatabase.db").Options);
+        //            .UseSqlite("Data Source=Yugen.db").Options);
         //}
 
 
@@ -46,9 +46,9 @@ namespace Yugen.Toolkit.Core.Sample
         {
             var serviceProvider = CreateServiceProvider();
             var isCreated = serviceProvider.GetService<BloggingContext>().Database.EnsureCreated();
-            var blogRepository = serviceProvider.GetService<BlogService>();
-            blogRepository.Add(new Blog { Url = "aaa" });
-            var list = blogRepository.Get();
+            var blogService = serviceProvider.GetService<IBlogService>();
+            blogService.Add(new Blog { Url = "aaa" });
+            var list = blogService.Get();
         }
 
         private static IServiceProvider CreateServiceProvider()
@@ -64,10 +64,10 @@ namespace Yugen.Toolkit.Core.Sample
         private static void ConfigureServices(IServiceCollection serviceCollection)
         {
             serviceCollection.AddDbContext<BloggingContext>(options =>
-                options.UseSqlite("Data Source=MyDatabase.db"))
+                options.UseSqlite("Data Source=Yugen.db"))
                     .AddUnitOfWork<BloggingContext>();
             serviceCollection.AddTransient<IBlogRepository, BlogRepository>();
-            serviceCollection.AddSingleton<BlogService>();
+            serviceCollection.AddSingleton<IBlogService, BlogService>();
 
         }
 

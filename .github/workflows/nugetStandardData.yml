@@ -1,4 +1,4 @@
-name: Yugen.Toolkit.Standard: Build, Pack and Publish Nuget
+name: Yugen.Toolkit.Standard.Data: Build, Pack and Publish Nuget
 on:
   push:
     branches:    
@@ -15,13 +15,13 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: MSBuild Restore
-      run: msbuild Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration="Release" /t:restore     
+      run: msbuild Yugen.Toolkit.Standard.Data\Yugen.Toolkit.Standard.Data.csproj /p:Configuration="Release" /t:restore     
 
     - name: MSBuild Build
-      run: msbuild Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration="Release"
+      run: msbuild Yugen.Toolkit.Standard.Data\Yugen.Toolkit.Standard.Data.csproj /p:Configuration="Release"
 
     - name: MSBuild Pack
-      run: msbuild Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration="Release" /t:pack 
+      run: msbuild Yugen.Toolkit.Standard.Data\Yugen.Toolkit.Standard.Data.csproj /p:Configuration="Release" /t:pack 
     #-p:PackageVersion=1.0.2 
 
     - name: Setup Nuget.exe
@@ -31,7 +31,7 @@ jobs:
       run: nuget setApiKey ${{ secrets.NUGET_KEY }}
 
     - name: Nuget Push
-      run: nuget push Yugen.Toolkit.Standard\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json
+      run: nuget push Yugen.Toolkit.Standard.Data\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json
       continue-on-error: true
     
     - name: Nuget Add Source
@@ -41,4 +41,4 @@ jobs:
       run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source "GitHub"
 
     - name: Nuget Push
-      run: nuget push Yugen.Toolkit.Standard\bin\Release\*.nupkg -Source "GitHub"
+      run: nuget push Yugen.Toolkit.Standard.Data\bin\Release\*.nupkg -Source "GitHub"

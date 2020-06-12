@@ -1,5 +1,5 @@
 ﻿using System;
-using Yugen.Toolkit.Standard.Data;
+using Yugen.Toolkit.Standard.Models;
 
 namespace Yugen.Toolkit.Standard.Extensions
 {

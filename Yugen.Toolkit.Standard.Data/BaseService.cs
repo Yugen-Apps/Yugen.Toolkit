@@ -5,8 +5,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using Yugen.Toolkit.Standard.Data.Interfaces;
 using Yugen.Toolkit.Standard.Helpers;
+using Yugen.Toolkit.Standard.Models;
 
-// https://github.com/threenine/swcApi
 namespace Yugen.Toolkit.Standard.Data
 {
     /// <summary>

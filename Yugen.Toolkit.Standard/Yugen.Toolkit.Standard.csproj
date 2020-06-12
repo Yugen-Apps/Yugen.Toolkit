@@ -3,17 +3,20 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Yugen.Toolkit.Standard</PackageId>
-    <Version>1.0.27</Version>
+    <Version>1.0.28</Version>
     <Product>Yugen Toolkit Standard</Product>
     <Authors>emiliano84</Authors>
     <Company>emiliano84</Company>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/emiliano84/Yugen.Toolkit</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
-    <Description>This package includes code only Uwp helpers. It is part of the Yugen Toolkit.</Description>
+    <Description>
+      This package includes .Net Standard converters, extension, helpers... 
+      It is part of the Yugen Toolkit.
+    </Description>
     <PackageReleaseNotes></PackageReleaseNotes>
     <Copyright></Copyright>
-    <PackageTags>Yugen Toolkit Helpers</PackageTags>
+    <PackageTags>Yugen Toolkit Converters Extension Helpers</PackageTags>
     <RepositoryUrl>https://github.com/emiliano84/Yugen.Toolkit.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>

@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Yugen.Toolkit.Standard.Data.Interfaces;
+using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
 using Yugen.Toolkit.Standard.Data.Sample.Models;
 
 namespace Yugen.Toolkit.Standard.Data.Sample.Services
 {
-    public class BlogService
+    public class BlogService : IBlogService
     {
         private readonly IUnitOfWork _uow;
 

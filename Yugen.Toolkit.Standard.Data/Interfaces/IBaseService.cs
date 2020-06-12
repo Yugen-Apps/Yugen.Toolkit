@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Yugen.Toolkit.Standard.Models;
 
 namespace Yugen.Toolkit.Standard.Data.Interfaces
 {
