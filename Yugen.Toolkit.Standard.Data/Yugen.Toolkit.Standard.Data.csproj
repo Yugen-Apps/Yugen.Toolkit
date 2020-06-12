@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj" />
+    <ProjectReference Include="..\Yugen.Toolkit.Standard.Data\Yugen.Toolkit.Standard.Data.csproj" />
   </ItemGroup>
 
 </Project>
