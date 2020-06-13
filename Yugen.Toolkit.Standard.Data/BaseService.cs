@@ -226,6 +226,21 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
         /// <inheritdoc/>
+        public Result<T> Single(int index)
+        {
+            try
+            {
+                var entity = _unitOfWork.GetRepository<T>().Single(x => x.Index.Equals(index));
+                return Result.Ok(entity);
+            }
+            catch (Exception exception)
+            {
+                LoggerHelper.WriteLine(GetType(), exception);
+                return Result.Fail<T>($"{GetType()} {exception}");
+            }
+        }
+
+        /// <inheritdoc/>
         public Result<T> Single(T entity)
         {
             try
@@ -435,17 +450,12 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
-        /// <summary>
-        /// Update a detached entity with the given values and id to the database
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="id"></param>
-        /// <param name="updateModified"></param>
-        public Result<T> Update(T entity, Guid id, bool updateModified = true)
+        /// <inheritdoc/>
+        public Result<T> UpdateDetachedEntity(T entity, Guid id, bool updateModified = true)
         {
             try
             {
-                _unitOfWork.GetRepository<T>().Update(entity, id);
+                _unitOfWork.GetRepository<T>().UpdateDetachedEntity(entity, id);
                 _unitOfWork.SaveChanges<T>(updateModified);
                 return Result.Ok(entity);
             }
@@ -554,7 +564,7 @@ namespace Yugen.Toolkit.Standard.Data
                 return Add(entity, updateModified);
 
             var key = _unitOfWork.GetRepository<T>().GetKey(entity);
-            return Update(entity, key, updateModified);
+            return UpdateDetachedEntity(entity, key, updateModified);
         }
 
         /// <summary>
@@ -576,7 +586,7 @@ namespace Yugen.Toolkit.Standard.Data
                     else
                     {
                         var key = _unitOfWork.GetRepository<T>().GetKey(entity);
-                        _unitOfWork.GetRepository<T>().Update(entity, key);
+                        _unitOfWork.GetRepository<T>().UpdateDetachedEntity(entity, key);
                     }
                 }
 
@@ -643,7 +653,7 @@ namespace Yugen.Toolkit.Standard.Data
                             entity.LastUpdated = DateTimeOffset.Now;
                             entity.ClientLastUpdated = entity.LastUpdated;
                             var key = _unitOfWork.GetRepository<T>().GetKey(entity);
-                            _unitOfWork.GetRepository<T>().Update(entity, key);
+                            _unitOfWork.GetRepository<T>().UpdateDetachedEntity(entity, key);
                         }
                     }
                 }
@@ -674,7 +684,7 @@ namespace Yugen.Toolkit.Standard.Data
                     {
                         entity.LastUpdated = DateTimeOffset.Now;
                         var key = _unitOfWork.GetRepository<T>().GetKey(entity);
-                        _unitOfWork.GetRepository<T>().Update(entity, key);
+                        _unitOfWork.GetRepository<T>().UpdateDetachedEntity(entity, key);
                     }
                 }
 

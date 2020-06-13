@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Yugen.Toolkit.Standard.Data</PackageId>
-    <Version>1.0.29</Version>
+    <Version>1.0.33</Version>
     <Product>Yugen Toolkit Standard Data</Product>
     <Authors>emiliano84</Authors>
     <Company>emiliano84</Company>
@@ -19,6 +19,7 @@
     <PackageTags>Yugen Toolkit Data</PackageTags>
     <RepositoryUrl>https://github.com/emiliano84/Yugen.Toolkit.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -188,7 +188,7 @@ namespace Yugen.Toolkit.Standard.Data.Interfaces
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="id"></param>
-        void Update(T entity, Guid id);
+        void UpdateDetachedEntity(T entity, Guid id);
 
         /// <summary>
         /// Update the given entities with the given values to the database

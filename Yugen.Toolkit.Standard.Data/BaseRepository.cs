@@ -117,7 +117,7 @@ namespace Yugen.Toolkit.Standard.Data
         public void Update(T entity) => _dbSet.Update(entity);
 
         /// <inheritdoc/>
-        public void Update(T entity, Guid id)
+        public void UpdateDetachedEntity(T entity, Guid id)
         {
             var originalEntity = _dbSet.Find(id);
             _dbContext.Entry(originalEntity).CurrentValues.SetValues(entity);

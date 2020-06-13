@@ -44,6 +44,12 @@ namespace Yugen.Toolkit.Standard.Data.Interfaces
         /// <returns></returns>
         Result<T> Single(Guid id);
         /// <summary>
+        /// Finds an entity with the given index values. 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        Result<T> Single(int index);
+        /// <summary>
         /// Finds an entity with the given enitity values. 
         /// </summary>
         /// <param name="entity"></param>
@@ -55,6 +61,13 @@ namespace Yugen.Toolkit.Standard.Data.Interfaces
         /// </summary>
         /// <param name="entity"></param>
         Result<T> Update(T entity);
+        /// <summary>
+        /// Update a detached entity with the given values and id to the database
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="id"></param>
+        /// <param name="updateModified"></param>
+        Result<T> UpdateDetachedEntity(T entity, Guid id, bool updateModified = true);
 
         /// <summary>
         /// Delete the given entity
