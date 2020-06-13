@@ -46,9 +46,12 @@ namespace Yugen.Toolkit.Core.Sample
         {
             var serviceProvider = CreateServiceProvider();
             var isCreated = serviceProvider.GetService<BloggingContext>().Database.EnsureCreated();
+            Console.WriteLine($"isCreated: {isCreated}");
             var blogService = serviceProvider.GetService<IBlogService>();
             blogService.Add(new Blog { Url = "aaa" });
+            Console.WriteLine("added");
             var list = blogService.Get();
+            Console.WriteLine($"list: {list.Count}");
         }
 
         private static IServiceProvider CreateServiceProvider()

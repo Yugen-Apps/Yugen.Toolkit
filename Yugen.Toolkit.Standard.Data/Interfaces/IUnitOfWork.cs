@@ -8,9 +8,4 @@ namespace Yugen.Toolkit.Standard.Data.Interfaces
         IBaseRepository<TEntity> GetRepository<TEntity>() where TEntity : BaseEntity;
         int SaveChanges<TEntity>(bool updateModified = true) where TEntity : BaseEntity;
     }
-
-    public interface IUnitOfWork<TContext> : IUnitOfWork where TContext : DbContext
-    {
-        TContext Context { get; }
-    }
 }

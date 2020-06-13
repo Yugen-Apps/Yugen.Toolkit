@@ -1,0 +1,601 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yugen.Toolkit.Standard.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Yugen.Toolkit.Standard.Data.BaseEntity">
+            <summary>
+            We're going to add a primary key of type Guid in each model 
+            manually, because as best practice is better to have a proper 
+            naming like {ModelName}Id instead of just Id
+            <code>
+            public Guid Id { get; set; }
+            </code>
+            </summary>
+        </member>
+        <member name="P:Yugen.Toolkit.Standard.Data.BaseEntity.Index">
+            <summary>
+            Index
+            </summary>
+        </member>
+        <member name="P:Yugen.Toolkit.Standard.Data.BaseEntity.IsDeleted">
+            <summary>
+            IsDeleted
+            </summary>
+        </member>
+        <member name="P:Yugen.Toolkit.Standard.Data.BaseEntity.Created">
+            <summary>
+            Created
+            </summary>
+        </member>
+        <member name="P:Yugen.Toolkit.Standard.Data.BaseEntity.LastUpdated">
+            <summary>
+            LastUpdated
+            </summary>
+        </member>
+        <member name="P:Yugen.Toolkit.Standard.Data.BaseEntity.ClientLastUpdated">
+            <summary>
+            ClientLastUpdated
+            </summary>
+        </member>
+        <member name="T:Yugen.Toolkit.Standard.Data.BaseRepository`1">
+            <inheritdoc/>
+        </member>
+        <member name="F:Yugen.Toolkit.Standard.Data.BaseRepository`1._dbContext">
+            <summary>
+            _dbContext
+            </summary>
+        </member>
+        <member name="F:Yugen.Toolkit.Standard.Data.BaseRepository`1._dbSet">
+            <summary>
+            _dbSet
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            BaseRepository
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Add(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Add(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Get">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Single(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Last(System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Last(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Update(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Update(`0,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Update(`0[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Update(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Delete(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.GetKey(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.Count">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.IsEmpty">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseRepository`1.LastIndex">
+            <inheritdoc/>
+        </member>
+        <member name="T:Yugen.Toolkit.Standard.Data.BaseService`1">
+            <inheritdoc/>
+        </member>
+        <member name="F:Yugen.Toolkit.Standard.Data.BaseService`1._unitOfWork">
+            <summary>
+            _unitOfWork
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.#ctor(Yugen.Toolkit.Standard.Data.Interfaces.IUnitOfWork)">
+            <summary>
+            BaseService
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Add(`0,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Get">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.GetLastSyncChanges(System.DateTimeOffset)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.GetLastSyncChanges(System.DateTimeOffset,System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})">
+            <summary>
+            Returns a sequence of all entities changed after the DateTimeOffset
+            </summary>
+            <param name="lastSync"></param>
+            <param name="includeMultiLevelProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Single(System.Nullable{System.Guid})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Single(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Single(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Update(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Delete(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Delete(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Delete(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.SoftDelete(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.SoftDelete(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.AddOrUpdate(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.AddOrUpdate(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.AddOrUpdateDetachedEntity(`0,System.Boolean)">
+            <summary>
+            AddOrUpdate the given detached entity
+            </summary>
+            <param name="entity"></param>
+            <param name="updateModified"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.AddOrUpdateDetachedEntity(System.Collections.Generic.IEnumerable{`0},System.Boolean)">
+            <summary>
+            AddOrUpdate the given detached entities
+            </summary>
+            <param name="entityList"></param>
+            <param name="updateModified"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.Count">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.IsEmpty">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.LastIndex">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.PushSync(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.BaseService`1.PullSync(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1">
+            <summary>
+            BaseRepository with CRUD operations
+            (create, read, update, delete) 
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Add(`0)">
+            <summary>
+            Add an entity with the given values to the database
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Add(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add the given entities with the given values to the database
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Get">
+            <summary>
+            Returns a sequence of all the entities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Returns a sequence of entities that satisfies a specified condition
+                <code>
+                Get(x => x.AttributeSetId.Equals(attributeSetId));
+                </code>
+            </summary>
+            <example>
+                <code>
+                Get(x => x.AttributeSetId.Equals(attributeSetId));
+                </code>
+            </example>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Returns a sequence of all the entities and
+            specify related data to be included in query results
+                <code>
+                Get(x => x.Image, x => x.AttributeType);
+                </code>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Returns a sequence of entities that satisfies a specified condition and
+            specify related data to be included in query results
+                <code>
+                Get(x => x.AttributeSetId.Equals(attributeSetId), 
+                    x => x.Image, x => x.AttributeType);
+                </code>
+            </summary>
+            <param name="predicate"></param>
+            <param name="includeProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})">
+            <summary>
+            Returns a sequence of entities that satisfies a specified condition and
+            specify multiple level related data to be included in query results
+                <code>
+                Get(x => x.ProductId.Equals(productId), x => x
+                 .Include(attributeSet => attributeSet.Image)
+                 .Include(attributeSet => attributeSet.AttributeSetAttributeList)
+                    .ThenInclude(attributeSetAttribute => attributeSetAttribute.Attribute)
+                        .ThenInclude(attribute => attribute.AttributeType));
+                </code>
+            </summary>
+            <param name="predicate"></param>
+            <param name="includeMultiLevelProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Single(System.Guid)">
+            <summary>
+            Finds an entity with the given primary key values. 
+            If no entity is found, then null is returned.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Returns the only element of a sequence that satisfies a specified condition
+            and throws an exception if more than one such element exists.
+                <code>
+                Single(x => x.AttributeSetId.Equals(attributeSetId));
+                </code>
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Returns the only element of a sequence,
+            specify related data to be included in query results
+            and throws an exception if more than one such element exists.
+                <code>
+                Single(x => x.Image, x => x.AttributeType);
+                </code>
+            </summary>
+            <param name="includeProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Returns the only element of a sequence that satisfies a specified condition,
+            specify related data to be included in query results
+            and throws an exception if more than one such element exists.
+                <code>
+                Single(x => x.Image, x => x.AttributeType);
+                </code>
+            </summary>
+            <param name="predicate"></param>
+            <param name="includeProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})">
+            <summary>
+            Returns the only element of a sequence that satisfies a specified condition,
+            specify multiple level related data to be included in query results
+            and throws an exception if more than one such element exists.
+                <code>
+                Single(x => x.ProductId.Equals(productId), x => x
+                 .Include(attributeSet => attributeSet.Image)
+                 .Include(attributeSet => attributeSet.AttributeSetAttributeList)
+                    .ThenInclude(attributeSetAttribute => attributeSetAttribute.Attribute)
+                        .ThenInclude(attribute => attribute.AttributeType));
+                </code>
+            </summary>
+            <param name="predicate"></param>
+            <param name="includeMultiLevelProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})">
+            <summary>
+            Returns the first element of a sequence ordered by DateTime
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Last(System.Linq.Expressions.Expression{System.Func{`0,System.DateTime}})">
+            <summary>
+            Returns the last element of a sequence ordered by DateTime
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+            <summary>
+            Returns the first element of a sequence ordered by int
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Last(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+            <summary>
+            Returns the last element of a sequence ordered by int
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Update(`0)">
+            <summary>
+            Update an entity with the given values to the database
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Update(`0,System.Guid)">
+            <summary>
+            Update a detached entity with the given values and id to the database
+            </summary>
+            <param name="entity"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Update(`0[])">
+            <summary>
+            Update the given entities with the given values to the database
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Update(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Update the given entities with the given values to the database
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Delete(`0)">
+            <summary>
+            Delete the given entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.GetKey(`0)">
+            <summary>
+            Return the primary key of the given entity
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.Count">
+            <summary>
+            Returns the number of entities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.IsEmpty">
+            <summary>
+            Return true if it contains at least one entity; otherwise, false.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseRepository`1.LastIndex">
+            <summary>
+            Return the index of the last entity.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1">
+            <summary>
+            BaseService with CRUD operations
+            (create, read, update, delete) 
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Add(`0,System.Boolean)">
+            <summary>
+            Add an entity with the given values to the database
+            </summary>
+            <param name="entity"></param>
+            <param name="updateModified"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Get">
+            <summary>
+            Returns a sequence of all the entities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.GetLastSyncChanges(System.DateTimeOffset)">
+            <summary>
+            Returns a sequence of all entities changed after the DateTimeOffset
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Single(System.Nullable{System.Guid})">
+            <summary>
+            Finds an entity with the given primary key values. 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Single(System.Guid)">
+            <summary>
+            Finds an entity with the given primary key values. 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Single(`0)">
+            <summary>
+            Finds an entity with the given enitity values. 
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Update(`0)">
+            <summary>
+            Update an entity with the given values to the database
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Delete(`0)">
+            <summary>
+            Delete the given entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Delete(System.Guid)">
+            <summary>
+            Delete the given entity
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Delete(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Delete the given entities
+            </summary>
+            <param name="itemList"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.SoftDelete(`0)">
+            <summary>
+            SoftDelete the given entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.SoftDelete(System.Guid)">
+            <summary>
+            SoftDelete the given entity
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.AddOrUpdate(`0)">
+            <summary>
+            AddOrUpdate the given entity
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.AddOrUpdate(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            AddOrUpdate the given entities
+            </summary>
+            <param name="itemList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.AddOrUpdateDetachedEntity(`0,System.Boolean)">
+            <summary>
+            AddOrUpdate the given detached entity
+            </summary>
+            <param name="entity"></param>
+            <param name="updateModified"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.AddOrUpdateDetachedEntity(System.Collections.Generic.IEnumerable{`0},System.Boolean)">
+            <summary>
+            AddOrUpdate the given detached entities
+            </summary>
+            <param name="itemList"></param>
+            <param name="updateModified"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.Count">
+            <summary>
+            Returns the number of entities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.IsEmpty">
+            <summary>
+            Return true if it contains at least one entity; otherwise, false.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.LastIndex">
+            <summary>
+            Return the index of the last entity.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.PushSync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Push and sync the entities changes
+            </summary>
+            <param name="entityList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yugen.Toolkit.Standard.Data.Interfaces.IBaseService`1.PullSync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Pull and sync the entities changes
+            </summary>
+            <param name="entityList"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

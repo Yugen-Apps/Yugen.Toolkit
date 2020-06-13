@@ -9,19 +9,24 @@ using Yugen.Toolkit.Standard.Models;
 
 namespace Yugen.Toolkit.Standard.Data
 {
-    /// <summary>
-    /// CRUD (create, read, update, delete) 
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <inheritdoc/>
     public class BaseService<T> : IBaseService<T> where T : BaseEntity
     {
+        /// <summary>
+        /// _unitOfWork
+        /// </summary>
         protected readonly IUnitOfWork _unitOfWork;
 
+        /// <summary>
+        /// BaseService
+        /// </summary>
+        /// <param name="unitOfWork"></param>
         public BaseService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
+        /// <inheritdoc/>
         public Result<T> Add(T entity, bool updateModified = true)
         {
             try
@@ -38,6 +43,7 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
+        /// <inheritdoc/>
         public Result<IEnumerable<T>> Get()
         {
             try
@@ -52,6 +58,19 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns a sequence of entities that satisfies a specified condition
+        ///     <code>
+        ///     Get(x => x.AttributeSetId.Equals(attributeSetId));
+        ///     </code>
+        /// </summary>
+        /// <example>
+        ///     <code>
+        ///     Get(x => x.AttributeSetId.Equals(attributeSetId));
+        ///     </code>
+        /// </example>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public Result<IEnumerable<T>> Get(Expression<Func<T, bool>> predicate)
         {
             try
@@ -66,6 +85,14 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns a sequence of all the entities and
+        /// specify related data to be included in query results
+        ///     <code>
+        ///     Get(x => x.Image, x => x.AttributeType);
+        ///     </code>
+        /// </summary>
+        /// <returns></returns>
         public Result<IEnumerable<T>> Get(params Expression<Func<T, object>>[] includeProperties)
         {
             try
@@ -80,6 +107,17 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns a sequence of entities that satisfies a specified condition and
+        /// specify related data to be included in query results
+        ///     <code>
+        ///     Get(x => x.AttributeSetId.Equals(attributeSetId), 
+        ///         x => x.Image, x => x.AttributeType);
+        ///     </code>
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="includeProperties"></param>
+        /// <returns></returns>
         public Result<IEnumerable<T>> Get(Expression<Func<T, bool>> predicate,
             params Expression<Func<T, object>>[] includeProperties)
         {
@@ -95,12 +133,26 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns a sequence of entities that satisfies a specified condition and
+        /// specify multiple level related data to be included in query results
+        ///     <code>
+        ///     Get(x => x.ProductId.Equals(productId), x => x
+        ///      .Include(attributeSet => attributeSet.Image)
+        ///      .Include(attributeSet => attributeSet.AttributeSetAttributeList)
+        ///         .ThenInclude(attributeSetAttribute => attributeSetAttribute.Attribute)
+        ///             .ThenInclude(attribute => attribute.AttributeType));
+        ///     </code>
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="includeMultiLevelProperties"></param>
+        /// <returns></returns>
         public Result<IEnumerable<T>> Get(Expression<Func<T, bool>> predicate,
-            Func<IQueryable<T>, IQueryable<T>> func)
+            Func<IQueryable<T>, IQueryable<T>> includeMultiLevelProperties)
         {
             try
             {
-                var entity = _unitOfWork.GetRepository<T>().Get(predicate, func).AsEnumerable();
+                var entity = _unitOfWork.GetRepository<T>().Get(predicate, includeMultiLevelProperties).AsEnumerable();
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -111,6 +163,7 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
+        /// <inheritdoc/>
         public Result<IEnumerable<T>> GetLastSyncChanges(DateTimeOffset lastSync)
         {
             try
@@ -129,13 +182,19 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns a sequence of all entities changed after the DateTimeOffset
+        /// </summary>
+        /// <param name="lastSync"></param>
+        /// <param name="includeMultiLevelProperties"></param>
+        /// <returns></returns>
         public Result<IEnumerable<T>> GetLastSyncChanges(DateTimeOffset lastSync,
-            Func<IQueryable<T>, IQueryable<T>> func)
+            Func<IQueryable<T>, IQueryable<T>> includeMultiLevelProperties)
         {
             try
             {
                 var entity = _unitOfWork.GetRepository<T>()
-                    .Get(x => x.LastUpdated >= lastSync, func)
+                    .Get(x => x.LastUpdated >= lastSync, includeMultiLevelProperties)
                     .IgnoreQueryFilters()
                     .AsEnumerable();
                 return Result.Ok(entity);
@@ -148,8 +207,10 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
+        /// <inheritdoc/>
         public Result<T> Single(Guid? id) => Single(id ?? Guid.Empty);
 
+        /// <inheritdoc/>
         public Result<T> Single(Guid id)
         {
             try
@@ -164,6 +225,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <inheritdoc/>
         public Result<T> Single(T entity)
         {
             try
@@ -179,6 +241,14 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns the only element of a sequence that satisfies a specified condition.
+        ///     <code>
+        ///     Single(x => x.AttributeSetId.Equals(attributeSetId));
+        ///     </code>
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public Result<T> Single(Expression<Func<T, bool>> predicate)
         {
             try
@@ -193,6 +263,39 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns the only element of a sequence,
+        /// specify related data to be included in query results.
+        ///     <code>
+        ///     Single(x => x.Image, x => x.AttributeType);
+        ///     </code>
+        /// </summary>
+        /// <param name="includeProperties"></param>
+        /// <returns></returns>
+        public Result<T> Single(params Expression<Func<T, object>>[] includeProperties)
+        {
+            try
+            {
+                var entity = _unitOfWork.GetRepository<T>().Single(includeProperties);
+                return Result.Ok(entity);
+            }
+            catch (Exception exception)
+            {
+                LoggerHelper.WriteLine(GetType(), exception);
+                return Result.Fail<T>($"{GetType()} {exception}");
+            }
+        }
+
+        /// <summary>
+        /// Returns the only element of a sequence that satisfies a specified condition,
+        /// specify related data to be included in query results.
+        ///     <code>
+        ///     Single(x => x.Image, x => x.AttributeType);
+        ///     </code>
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="includeProperties"></param>
+        /// <returns></returns>
         public Result<T> Single(Expression<Func<T, bool>> predicate,
             params Expression<Func<T, object>>[] includeProperties)
         {
@@ -208,12 +311,26 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns the only element of a sequence that satisfies a specified condition,
+        /// specify multiple level related data to be included in query results.
+        ///     <code>
+        ///     Single(x => x.ProductId.Equals(productId), x => x
+        ///      .Include(attributeSet => attributeSet.Image)
+        ///      .Include(attributeSet => attributeSet.AttributeSetAttributeList)
+        ///         .ThenInclude(attributeSetAttribute => attributeSetAttribute.Attribute)
+        ///             .ThenInclude(attribute => attribute.AttributeType));
+        ///     </code>
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="includeMultiLevelProperties"></param>
+        /// <returns></returns>
         public Result<T> Single(Expression<Func<T, bool>> predicate,
-            Func<IQueryable<T>, IQueryable<T>> func)
+            Func<IQueryable<T>, IQueryable<T>> includeMultiLevelProperties)
         {
             try
             {
-                var entity = _unitOfWork.GetRepository<T>().Single(predicate, func);
+                var entity = _unitOfWork.GetRepository<T>().Single(predicate, includeMultiLevelProperties);
                 return Result.Ok(entity);
             }
             catch (Exception exception)
@@ -224,6 +341,11 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
+        /// <summary>
+        /// Returns the first element of a sequence ordered by DateTime
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public Result<T> First(Expression<Func<T, DateTime>> predicate)
         {
             try
@@ -238,6 +360,11 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns the last element of a sequence ordered by DateTime
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public Result<T> Last(Expression<Func<T, DateTime>> predicate)
         {
             try
@@ -253,6 +380,11 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
+        /// <summary>
+        /// Returns the first element of a sequence ordered by int
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public Result<T> First(Expression<Func<T, int>> predicate)
         {
             try
@@ -267,6 +399,11 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Returns the last element of a sequence ordered by int
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public Result<T> Last(Expression<Func<T, int>> predicate)
         {
             try
@@ -282,6 +419,7 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
+        /// <inheritdoc/>
         public Result<T> Update(T entity)
         {
             try
@@ -297,6 +435,12 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <summary>
+        /// Update a detached entity with the given values and id to the database
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="id"></param>
+        /// <param name="updateModified"></param>
         public Result<T> Update(T entity, Guid id, bool updateModified = true)
         {
             try
@@ -313,6 +457,7 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
+        /// <inheritdoc/>
         public Result Delete(T entity)
         {
             try
@@ -328,12 +473,14 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <inheritdoc/>
         public Result Delete(Guid id)
         {
             var entity = Single(id);
             return Delete(entity.Value);
         }
 
+        /// <inheritdoc/>
         public Result Delete(IEnumerable<T> entityList)
         {
             try
@@ -352,12 +499,14 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
+        /// <inheritdoc/>
         public Result<T> SoftDelete(T entity)
         {
             entity.IsDeleted = true;
             return Update(entity);
         }
 
+        /// <inheritdoc/>
         public Result<T> SoftDelete(Guid id)
         {
             var entity = Single(id);
@@ -366,19 +515,11 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
-        /// <summary>
-        /// AddOrUpdateAttachedEntity
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
+        /// <inheritdoc/>
         public Result<T> AddOrUpdate(T entity) =>
             Single(entity).Failure ? Add(entity) : Update(entity);
 
-        /// <summary>
-        /// AddOrUpdateAttachedEntity
-        /// </summary>
-        /// <param name="entityList"></param>
-        /// <returns></returns>
+        /// <inheritdoc/>
         public Result<T> AddOrUpdate(IEnumerable<T> entityList)
         {
             try
@@ -402,7 +543,7 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
         /// <summary>
-        /// AddOrUpdateDetachedEntity
+        /// AddOrUpdate the given detached entity
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="updateModified"></param>
@@ -417,7 +558,7 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
         /// <summary>
-        /// AddOrUpdateDetachedEntity
+        /// AddOrUpdate the given detached entities
         /// </summary>
         /// <param name="entityList"></param>
         /// <param name="updateModified"></param>
@@ -450,6 +591,7 @@ namespace Yugen.Toolkit.Standard.Data
         }
 
 
+        /// <inheritdoc/>
         public Result<int> Count()
         {
             try
@@ -464,11 +606,14 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <inheritdoc/>
         public bool IsEmpty() => _unitOfWork.GetRepository<T>().IsEmpty();
 
+        /// <inheritdoc/>
         public int LastIndex() => _unitOfWork.GetRepository<T>().LastIndex();
 
 
+        /// <inheritdoc/>
         public Result<T> PushSync(IEnumerable<T> entityList)
         {
             try
@@ -513,6 +658,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
         }
 
+        /// <inheritdoc/>
         public Result<T> PullSync(IEnumerable<T> entityList)
         {
             try
