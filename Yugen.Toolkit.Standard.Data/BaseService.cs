@@ -216,7 +216,7 @@ namespace Yugen.Toolkit.Standard.Data
             try
             {
                 var entity = _unitOfWork.GetRepository<T>().Single(id);
-                return Result.Ok(entity);
+                return entity == null ? Result.Fail<T>("No entity found") : Result.Ok(entity);
             }
             catch (Exception exception)
             {
