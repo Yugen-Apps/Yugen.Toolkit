@@ -21,10 +21,7 @@ namespace Yugen.Toolkit.Web.TokenProvider
         private readonly ILogger _logger;
         private readonly JsonSerializerSettings _serializerSettings;
 
-        public Middleware(
-            RequestDelegate next,
-            IOptions<Options> options,
-            ILoggerFactory loggerFactory)
+        public Middleware(RequestDelegate next, IOptions<Options> options, ILoggerFactory loggerFactory)
         {
             _next = next;
             _logger = loggerFactory.CreateLogger<Middleware>();

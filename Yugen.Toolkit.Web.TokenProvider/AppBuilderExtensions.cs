@@ -11,10 +11,11 @@ namespace Yugen.Toolkit.Web.TokenProvider
     public static class AppBuilderExtensions
     {
         /// <summary>
-        /// Adds the <see cref="Middleware"/> middleware to the specified <see cref="IApplicationBuilder"/>, which enables token generation capabilities.
+        /// Adds the <see cref="Middleware"/> middleware to the specified 
+        /// <see cref="IApplicationBuilder"/>, which enables token generation capabilities.
         /// </summary>
         /// <param name="app">The <see cref="IApplicationBuilder"/> to add the middleware to.</param>
-        /// <param name="options">A  <see cref="Options"/> that specifies options for the middleware.</param>
+        /// <param name="options">A <see cref="Options"/> that specifies options for the middleware.</param>
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public static IApplicationBuilder UseSimpleTokenProvider(this IApplicationBuilder app, Options options)
         {

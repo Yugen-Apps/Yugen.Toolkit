@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Yugen.Toolkit.Standard.Core.Helpers;
+using Yugen.Toolkit.Standard.Core.Models;
 using Yugen.Toolkit.Standard.Data.Interfaces;
-using Yugen.Toolkit.Standard.Helpers;
-using Yugen.Toolkit.Standard.Models;
 
 namespace Yugen.Toolkit.Standard.Data
 {
@@ -247,7 +247,7 @@ namespace Yugen.Toolkit.Standard.Data
             {
                 var key = _unitOfWork.GetRepository<T>().GetKey(entity);
                 var result = Single(key);
-                return Result.IsOk(result.Value, result.Value != null, "");
+                return Result.IsOk(result.Value != null, result.Value, "");
             }
             catch (Exception exception)
             {
@@ -527,7 +527,7 @@ namespace Yugen.Toolkit.Standard.Data
 
         /// <inheritdoc/>
         public Result<T> AddOrUpdate(T entity) =>
-            Single(entity).Failure ? Add(entity) : Update(entity);
+            Single(entity).IsFailure ? Add(entity) : Update(entity);
 
         /// <inheritdoc/>
         public Result<T> AddOrUpdate(IEnumerable<T> entityList)
@@ -536,7 +536,7 @@ namespace Yugen.Toolkit.Standard.Data
             {
                 foreach (var entity in entityList)
                 {
-                    if (Single(entity).Failure)
+                    if (Single(entity).IsFailure)
                         _unitOfWork.GetRepository<T>().Add(entity);
                     else
                         _unitOfWork.GetRepository<T>().Update(entity);
@@ -560,7 +560,7 @@ namespace Yugen.Toolkit.Standard.Data
         /// <returns></returns>
         public Result<T> AddOrUpdateDetachedEntity(T entity, bool updateModified = true)
         {
-            if (Single(entity).Failure)
+            if (Single(entity).IsFailure)
                 return Add(entity, updateModified);
 
             var key = _unitOfWork.GetRepository<T>().GetKey(entity);
@@ -579,7 +579,7 @@ namespace Yugen.Toolkit.Standard.Data
             {
                 foreach (var entity in entityList)
                 {
-                    if (Single(entity).Failure)
+                    if (Single(entity).IsFailure)
                     {
                         _unitOfWork.GetRepository<T>().Add(entity);
                     }
@@ -631,7 +631,7 @@ namespace Yugen.Toolkit.Standard.Data
                 foreach (var entity in entityList)
                 {
                     var dbEntity = Single(entity);
-                    if (dbEntity.Failure)
+                    if (dbEntity.IsFailure)
                     {
                         _unitOfWork.GetRepository<T>().Add(entity);
                     }
@@ -676,7 +676,7 @@ namespace Yugen.Toolkit.Standard.Data
                 foreach (var entity in entityList)
                 {
                     var dbEntity = Single(entity);
-                    if (dbEntity.Failure)
+                    if (dbEntity.IsFailure)
                     {
                         _unitOfWork.GetRepository<T>().Add(entity);
                     }

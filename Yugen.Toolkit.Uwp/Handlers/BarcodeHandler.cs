@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Text;
 using Windows.System;
+using Yugen.Toolkit.Standard.Core.Helpers;
 using Yugen.Toolkit.Standard.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Handlers

@@ -1,6 +1,6 @@
 using System;
 using Windows.Storage;
-using Yugen.Toolkit.Standard.Helpers;
+using Yugen.Toolkit.Standard.Core.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Services
 {

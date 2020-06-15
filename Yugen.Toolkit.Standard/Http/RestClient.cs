@@ -4,12 +4,15 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using Yugen.Toolkit.Standard.Helpers;
+using Yugen.Toolkit.Standard.Core.Helpers;
+using Yugen.Toolkit.Standard.Core.Models;
 using Yugen.Toolkit.Standard.Json;
-using Yugen.Toolkit.Standard.Models;
 
 namespace Yugen.Toolkit.Standard.Http
 {
+    /// <summary>
+    /// RestClient
+    /// </summary>
     public class RestClient
     {
         private readonly HttpClient _httpClient = new HttpClient();
@@ -29,7 +32,7 @@ namespace Yugen.Toolkit.Standard.Http
             try
             {
                 Result<string> response = await ExecuteRequest(uri, httpMethod, body, bodyContentType, bearerToken);
-                return Result.IsOk(await JsonProvider.ToObjectAsync<T>(response.Value), response.Success, "");
+                return Result.IsOk(response.IsSuccess, await JsonProvider.ToObjectAsync<T>(response.Value), "");
             }
             catch (Exception exception)
             {
@@ -41,7 +44,6 @@ namespace Yugen.Toolkit.Standard.Http
         /// <summary>
         /// Executes a request asynchronously, authenticating if needed
         /// </summary>
-        /// <typeparam name="T">Target deserialization type</typeparam>
         /// <param name="uri">url</param>
         /// <param name="httpMethod">http method</param>
         /// <param name="body">body</param>

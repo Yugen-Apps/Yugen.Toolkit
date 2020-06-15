@@ -1,40 +1,25 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>Yugen.Toolkit.Standard</PackageId>
+    <PackageId>Yugen.Toolkit.Standard.Core</PackageId>
     <Version>1.0.35</Version>
-    <Product>Yugen Toolkit Standard</Product>
+    <Product>Yugen Toolkit Standard Core</Product>
     <Authors>emiliano84</Authors>
     <Company>emiliano84</Company>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/emiliano84/Yugen.Toolkit</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <Description>
-      This package includes .Net Standard converters, extension, helpers... 
+      This package includes .Net Standard Toolkit Core Classes...
       It is part of the Yugen Toolkit.
     </Description>
     <PackageReleaseNotes></PackageReleaseNotes>
     <Copyright></Copyright>
-    <PackageTags>Yugen Toolkit Converters Extension Helpers</PackageTags>
+    <PackageTags>Yugen Toolkit Core</PackageTags>
     <RepositoryUrl>https://github.com/emiliano84/Yugen.Toolkit.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Yugen.Toolkit.Standard.Core\Yugen.Toolkit.Standard.Core.csproj" />
-  </ItemGroup>
 
 </Project>

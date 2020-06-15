@@ -159,6 +159,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Yugen.Toolkit.Standard.Core\Yugen.Toolkit.Standard.Core.csproj">
+      <Project>{242A1316-1F16-4EEC-A56A-B18C2CEEB695}</Project>
+      <Name>Yugen.Toolkit.Standard.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj">
       <Project>{01B7D7DF-9C32-425D-9B53-737519345032}</Project>
       <Name>Yugen.Toolkit.Standard</Name>

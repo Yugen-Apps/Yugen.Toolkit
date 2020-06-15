@@ -7,7 +7,7 @@ using Windows.Storage;
 using Windows.Storage.Provider;
 using Windows.Storage.Search;
 using Windows.Storage.Streams;
-using Yugen.Toolkit.Standard.Helpers;
+using Yugen.Toolkit.Standard.Core.Helpers;
 using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Services

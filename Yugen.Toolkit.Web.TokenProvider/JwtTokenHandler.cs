@@ -22,7 +22,8 @@ namespace Yugen.Toolkit.Web.TokenProvider
             TokenIssuer = tokenIssuer;
         }
 
-        private static SymmetricSecurityKey CreateSymmetricSecurityKey(string secret) => new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
+        private static SymmetricSecurityKey CreateSymmetricSecurityKey(string secret) => 
+            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
 
         public static ClaimsPrincipal ClaimsPrincipal(string name) => new ClaimsPrincipal(new[]
         {
