@@ -143,7 +143,7 @@
     <Compile Include="Extensions\FocusExtension.cs" />
     <Compile Include="Providers\ImageProvider.cs" />
     <Compile Include="Services\LocalizationService.cs" />
-    <Compile Include="Helpers\MessageDialogHelper.cs" />
+    <Compile Include="Helpers\ContentDialogHelper.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Helpers\PrintHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

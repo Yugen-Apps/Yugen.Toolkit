@@ -135,6 +135,9 @@
     <Compile Include="Views\Controls\ValidationPage.xaml.cs">
       <DependentUpon>ValidationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Helpers\ContentDialogPage.xaml.cs">
+      <DependentUpon>ContentDialogPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Helpers\FindControlPage.xaml.cs">
       <DependentUpon>FindControlPage.xaml</DependentUpon>
     </Compile>
@@ -277,6 +280,10 @@
     <Page Include="Views\Controls\ValidationPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Helpers\ContentDialogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Helpers\FindControlPage.xaml">
       <SubType>Designer</SubType>

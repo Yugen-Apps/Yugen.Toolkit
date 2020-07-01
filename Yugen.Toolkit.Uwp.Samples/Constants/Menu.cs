@@ -51,6 +51,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             IsExpanded = false,
             Children =
             {
+                new MenuItem ("Content Dialog", nameof (ContentDialogPage)),
                 new MenuItem ("File Picker", nameof (FilePickerPage)),
                 new MenuItem ("Find Control", nameof (FindControlPage))
             }
