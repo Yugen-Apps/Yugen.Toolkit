@@ -17,26 +17,26 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Helpers
             this.InitializeComponent();
         }
 
-        private void Command()
+        private void Command(string text)
         {
-            System.Diagnostics.Debug.WriteLine("aaa");
+            System.Diagnostics.Debug.WriteLine(text);
         }
 
         private async void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            await ContentDialogHelper.Confirm("content", "title", new RelayCommand(() => Command()));
+            await ContentDialogHelper.Confirm("content", "title", "Close", new RelayCommand(() => Command("Yes")), "Yes");
         }
 
         private async void ConfirmDeleteButton_Click(object sender, RoutedEventArgs e)
         {
 
-            await ContentDialogHelper.ConfirmDelete("content", "title", new RelayCommand(() => Command()), new RelayCommand(() => Command()));
+            await ContentDialogHelper.ConfirmDelete("content", "title", "Close", new RelayCommand(() => Command("Yes")), "Yes", new RelayCommand(() => Command("No")), "No");
         }
 
         private async void AlertButton_Click(object sender, RoutedEventArgs e)
         {
 
-            await ContentDialogHelper.Alert("content");
+            await ContentDialogHelper.Alert("content", "", "Close");
         }
     }
 }

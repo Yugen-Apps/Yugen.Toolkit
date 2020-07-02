@@ -27,7 +27,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
 
         private async void Success_Click(object _1, RoutedEventArgs _2)
         {
-            await ContentDialogHelper.Alert("Success");
+            await ContentDialogHelper.Alert("Success", "", "Close");
         }
     }
 }

@@ -50,13 +50,13 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
         {
             var page = FindControlHelper.FindAncestor<Page>(sender);
             var controlList = FindControlHelper.GetControlList<Button>(page);
-            await ContentDialogHelper.Alert(controlList.Count.ToString());
+            await ContentDialogHelper.Alert(controlList.Count.ToString(), "", "Close");
         }
 
         private async void ShowResult(DependencyObject dependencyObject)
         {
             var type = dependencyObject?.GetType()?.ToString() ?? "Not Found";
-            await ContentDialogHelper.Alert(type);
+            await ContentDialogHelper.Alert(type, "", "Close");
         }
     }
 }
