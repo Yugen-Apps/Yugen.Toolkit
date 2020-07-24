@@ -19,12 +19,15 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
             set { Set(ref _text, value); }
         }
 
-        public ICommand ButtonCommand => _buttonCommand ?? (_buttonCommand = new RelayCommand(ButtonCommandBehavior));
+        public ICommand ButtonCommand => _buttonCommand 
+            ?? (_buttonCommand = new RelayCommand(ButtonCommandBehavior));
 
-        public ICommand ButtonAsyncCommand => _buttonAsyncCommand ?? (_buttonAsyncCommand = new AsyncRelayCommand(ButtonAyncCommandBehavior));
+        public ICommand ButtonAsyncCommand => _buttonAsyncCommand 
+            ?? (_buttonAsyncCommand = new AsyncRelayCommand(ButtonAyncCommandBehavior));
 
         private void ButtonCommandBehavior() => Text = "Ciao";
 
-        private async Task ButtonAyncCommandBehavior() => await new ContentDialog { Title = "Ciao", CloseButtonText = "Close" }.ShowAsync();
+        private async Task ButtonAyncCommandBehavior() =>
+            await new ContentDialog { Title = "Ciao", CloseButtonText = "Close" }.ShowAsync();
     }
 }

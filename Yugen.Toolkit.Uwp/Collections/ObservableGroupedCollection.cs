@@ -56,7 +56,7 @@ namespace Yugen.Toolkit.Uwp.Collections
             switch (e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-                    Items.Insert(e.NewStartingIndex, new ObservableGroup<TKey, TValue>(newItem));
+                    //Items.Insert(e.NewStartingIndex, new ObservableGroup<TKey, TValue>(newItem));
                     break;
                 case NotifyCollectionChangedAction.Move:
                     // Our inner Items list is our own ObservableCollection<ReadOnlyObservableGroup<TKey, TValue>> so we can safely cast Items to its concrete type here.
@@ -75,6 +75,25 @@ namespace Yugen.Toolkit.Uwp.Collections
                     Debug.Fail("unsupported value");
                     break;
             }
+
+            Refresh();
+        }
+
+        public void Replace(ObservableGroup<TKey, TValue> targetGroup, TValue newItem)
+        {
+            Items.Remove(targetGroup);
+            targetGroup.Add(newItem);
+            Items.Add(targetGroup);
+            Refresh();
+        }
+
+        public void Refresh()
+        {
+            Source = new CollectionViewSource
+            {
+                IsSourceGrouped = true,
+                Source = Items
+            };
         }
 
         public CollectionViewSource Source { get; set; }
