@@ -1,0 +1,63 @@
+﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.Mvvm.XamlUICommandPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Mvvm"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:mvvm="using:Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm"
+      xmlns:models="using:Yugen.Toolkit.Uwp.Samples.Models"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <mvvm:XamlUICommandViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <XamlUICommand x:Name="DeleteXamlUICommand"
+                       ExecuteRequested="{x:Bind ViewModel.DeleteExecuteRequested}" />
+
+        <XamlUICommand x:Name="CopyXamlUICommand"
+                       Command="{x:Bind ViewModel.CopyCommand}" />
+    </Page.Resources>
+
+    <Grid>
+
+        <ListView ItemsSource="{x:Bind ViewModel.List, Mode=OneWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:Person">
+                    <SwipeControl>
+
+                        <SwipeControl.LeftItems>
+                            <SwipeItems Mode="Reveal">
+                                <SwipeItem Command="{StaticResource CopyXamlUICommand}"
+                                           CommandParameter="{x:Bind}"
+                                           Text="Copy">
+                                    <!--<interactivity:Interaction.Behaviors>
+                                        <core:EventTriggerBehavior EventName="Invoked">
+                                            <core:InvokeCommandAction Command="{StaticResource CustomXamlUICommand}"
+                                                                      CommandParameter="{x:Bind}"/>
+                                        </core:EventTriggerBehavior>
+                                    </interactivity:Interaction.Behaviors>-->
+                                </SwipeItem>
+                            </SwipeItems>
+                        </SwipeControl.LeftItems>
+
+                        <SwipeControl.RightItems>
+                            <SwipeItems Mode="Reveal">
+                                <SwipeItem Command="{StaticResource DeleteXamlUICommand}"
+                                           CommandParameter="{x:Bind}"
+                                           Text="Delete">
+                                </SwipeItem>
+                            </SwipeItems>
+                        </SwipeControl.RightItems>
+
+                        <TextBlock Text="{x:Bind Name}" />
+
+                    </SwipeControl>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>

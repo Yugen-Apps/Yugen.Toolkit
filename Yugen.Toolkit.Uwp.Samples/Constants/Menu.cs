@@ -68,7 +68,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
                 new MenuItem ("Command", nameof (CommandPage)),
                 new MenuItem ("Mediator ", nameof (MediatorPage)),
                 new MenuItem ("Navigation Parameters", nameof (NavigationPage)),
-                new MenuItem ("Observabl eObject ", nameof (ObservableObjectPage))
+                new MenuItem ("Observable Object ", nameof (ObservableObjectPage)),
+                new MenuItem ("XamlUICommandPage", nameof (XamlUICommandPage))
             }
         };
     }

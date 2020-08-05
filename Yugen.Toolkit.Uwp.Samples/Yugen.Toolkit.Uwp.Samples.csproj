@@ -98,6 +98,7 @@
     <Compile Include="AppShell.xaml.cs">
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Constants\Data.cs" />
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
@@ -169,6 +170,10 @@
     <Compile Include="Views\Mvvm\ObservableObjectPage.xaml.cs">
       <DependentUpon>ObservableObjectPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Mvvm\XamlUICommandPage.xaml.cs">
+      <DependentUpon>XamlUICommandPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Mvvm\XamlUICommandViewModel.cs" />
     <Compile Include="Views\Others\SamplesPage.xaml.cs">
       <DependentUpon>SamplesPage.xaml</DependentUpon>
     </Compile>
@@ -321,6 +326,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Mvvm\XamlUICommandPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Others\SamplesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -332,6 +341,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.4.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
