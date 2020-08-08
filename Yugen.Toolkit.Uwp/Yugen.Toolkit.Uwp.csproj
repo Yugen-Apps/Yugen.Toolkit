@@ -150,6 +150,7 @@
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Converters\StringFormatterConverter.cs" />
     <Compile Include="Helpers\SystemHelper.cs" />
+    <Compile Include="Services\ThemeSelectorService.cs" />
     <Compile Include="Services\UserStorageService.cs" />
     <EmbeddedResource Include="Properties\Yugen.Toolkit.Uwp.rd.xml" />
   </ItemGroup>

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Yugen.Toolkit.Standard</PackageId>
-    <Version>1.0.37</Version>
+    <Version>1.0.38</Version>
     <Product>Yugen Toolkit Standard</Product>
     <Authors>emiliano84</Authors>
     <Company>emiliano84</Company>
@@ -23,6 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.6" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 

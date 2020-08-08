@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Yugen.Toolkit.Standard.Core</PackageId>
-    <Version>1.0.37</Version>
+    <Version>1.0.38</Version>
     <Product>Yugen Toolkit Standard Core</Product>
     <Authors>emiliano84</Authors>
     <Company>emiliano84</Company>
