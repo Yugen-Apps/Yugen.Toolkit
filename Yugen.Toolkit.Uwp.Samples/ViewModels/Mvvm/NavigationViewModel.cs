@@ -1,4 +1,4 @@
-﻿using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+﻿using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Mvvm;
 using Yugen.Toolkit.Uwp.Services;
 

@@ -1,4 +1,4 @@
-﻿using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace Yugen.Toolkit.Uwp.Controls.Graphs
 {
@@ -11,7 +11,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public string Label
         {
             get { return _label; }
-            set { Set(ref _label, value); }
+            set { SetProperty(ref _label, value); }
         }
 
         private int _value;
@@ -21,7 +21,7 @@ namespace Yugen.Toolkit.Uwp.Controls.Graphs
         public int Value
         {
             get { return _value; }
-            set { Set(ref _value, value); }
+            set { SetProperty(ref _value, value); }
         }
     }
 }

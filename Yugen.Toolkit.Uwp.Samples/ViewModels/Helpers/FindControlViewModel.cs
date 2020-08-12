@@ -1,7 +1,7 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Helpers;
-using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+using Yugen.Toolkit.Standard.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
 {
@@ -11,7 +11,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
         public string Title
         {
             get { return _title; }
-            set { Set(ref _title, value); }
+            set { SetProperty(ref _title, value); }
         }
 
         public void FindAncestorStackPanelButton_Click(object sender, RoutedEventArgs _)

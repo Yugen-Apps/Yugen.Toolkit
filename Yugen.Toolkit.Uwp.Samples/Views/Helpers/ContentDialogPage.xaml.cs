@@ -1,6 +1,6 @@
-﻿using Windows.UI.Xaml;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Standard.Mvvm.Input;
 using Yugen.Toolkit.Uwp.Helpers;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-using Yugen.Toolkit.Standard.Mvvm.Input;
 using Yugen.Toolkit.Uwp.Collections;
 using Yugen.Toolkit.Uwp.Extensions;
 using Yugen.Toolkit.Uwp.Samples.Constants;

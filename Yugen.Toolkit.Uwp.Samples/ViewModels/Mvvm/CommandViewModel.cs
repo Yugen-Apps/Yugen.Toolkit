@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
-using Yugen.Toolkit.Standard.Mvvm.Input;
+using Yugen.Toolkit.Standard.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
 {
@@ -16,7 +16,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
         public string Text
         {
             get { return _text; }
-            set { Set(ref _text, value); }
+            set { SetProperty(ref _text, value); }
         }
 
         public ICommand ButtonCommand => _buttonCommand 

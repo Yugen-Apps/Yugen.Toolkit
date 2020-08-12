@@ -1,4 +1,6 @@
-﻿namespace Yugen.Toolkit.Standard.Mvvm.ComponentModel
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+
+namespace Yugen.Toolkit.Standard.Mvvm.ComponentModel
 {
     /// <summary>
     /// A base class for Generic objects of which the properties must be observable.
@@ -23,6 +25,7 @@
         /// Creates a T object from observableObject. 
         /// </summary>
         /// <param name="observableObject">the observableObject</param>
-        public static implicit operator T(ObservableObject<T> observableObject) => observableObject.Model;
+        public static implicit operator T(ObservableObject<T> observableObject) => 
+            observableObject.Model;
     }
 }

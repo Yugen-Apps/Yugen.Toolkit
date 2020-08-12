@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Yugen.Toolkit.Standard.Mvvm.ComponentModel.Interfaces;
+using Yugen.Toolkit.Standard.Mvvm.Interfaces;
 
-namespace Yugen.Toolkit.Standard.Mvvm.ComponentModel
+namespace Yugen.Toolkit.Standard.Mvvm
 {
     /// <summary>
     /// A base class for viewmodels.
@@ -24,6 +25,6 @@ namespace Yugen.Toolkit.Standard.Mvvm.ComponentModel
         /// <returns></returns>
         public virtual async Task OnNavigatedFromAsync(IDictionary<string, object> state, bool suspending) { await Task.Yield(); }
 
-        // public virtual void OnNavigatingFrom(NavigatingEventArgs args) { /* nothing by default */ }
+        //public virtual void OnNavigatingFrom(NavigatingEventArgs args) { /* nothing by default */ }
     }
 }

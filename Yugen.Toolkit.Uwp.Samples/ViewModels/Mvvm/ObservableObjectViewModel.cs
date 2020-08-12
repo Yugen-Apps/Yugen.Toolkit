@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Models;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation;
 
@@ -11,7 +11,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
         public PersonObservableObject Person
         {
             get { return _person; }
-            set { Set(ref _person, value); }
+            set { SetProperty(ref _person, value); }
         }
 
         public override void OnNavigatedTo(object parameter, IDictionary<string, object> state)

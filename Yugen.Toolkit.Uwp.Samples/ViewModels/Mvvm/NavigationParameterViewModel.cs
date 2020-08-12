@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+using Yugen.Toolkit.Standard.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
 {
@@ -11,7 +11,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
         public string Text
         {
             get { return _text; }
-            set { Set(ref _text, value); }
+            set { SetProperty(ref _text, value); }
         }
 
         public override void OnNavigatedTo(object parameter, IDictionary<string, object> state)

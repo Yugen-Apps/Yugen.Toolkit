@@ -1,5 +1,5 @@
 ﻿using Windows.UI.Xaml;
-using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Standard.Mvvm.Mediator;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
@@ -11,7 +11,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
         public string Text
         {
             get { return _text; }
-            set { Set(ref _text, value); }
+            set { SetProperty(ref _text, value); }
         }
 
         public void Page_Loaded(object sender, RoutedEventArgs e)

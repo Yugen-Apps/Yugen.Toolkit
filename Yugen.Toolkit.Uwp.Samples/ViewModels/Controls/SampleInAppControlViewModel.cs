@@ -1,4 +1,4 @@
-﻿using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+﻿using Yugen.Toolkit.Standard.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
 {
@@ -9,7 +9,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
         public string Text
         {
             get { return _text; }
-            set { Set(ref _text, value); }
+            set { SetProperty(ref _text, value); }
         }
 
         public SampleInAppControlViewModel() { }

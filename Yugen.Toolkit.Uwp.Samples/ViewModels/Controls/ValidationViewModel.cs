@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+using Yugen.Toolkit.Standard.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
 {
@@ -9,35 +9,35 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
         public string Title
         {
             get { return _title; }
-            set { Set(ref _title, value); }
+            set { SetProperty(ref _title, value); }
         }
 
         private string _name;
         public string Name
         {
             get { return _name; }
-            set { Set(ref _name, value); }
+            set { SetProperty(ref _name, value); }
         }
 
         private string _surname;
         public string Surname
         {
             get { return _surname; }
-            set { Set(ref _surname, value); }
+            set { SetProperty(ref _surname, value); }
         }
 
         private string _email;
         public string Email
         {
             get { return _email; }
-            set { Set(ref _email, value); }
+            set { SetProperty(ref _email, value); }
         }
 
         private string _mobile;
         public string Mobile
         {
             get { return _mobile; }
-            set { Set(ref _mobile, value); }
+            set { SetProperty(ref _mobile, value); }
         }
 
         public List<string> GenderList = new List<string> { "Male", "Female" };
@@ -46,21 +46,21 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
         public string Username
         {
             get { return _username; }
-            set { Set(ref _username, value); }
+            set { SetProperty(ref _username, value); }
         }
 
         private string _password;
         public string Password
         {
             get { return _password; }
-            set { Set(ref _password, value); }
+            set { SetProperty(ref _password, value); }
         }
 
         private string _confirmPassword;
         public string ConfirmPassword
         {
             get { return _confirmPassword; }
-            set { Set(ref _confirmPassword, value); }
+            set { SetProperty(ref _confirmPassword, value); }
         }
     }
 }

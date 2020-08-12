@@ -6,7 +6,7 @@ using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
-using Yugen.Toolkit.Standard.Mvvm.ComponentModel.Interfaces;
+using Yugen.Toolkit.Standard.Mvvm.Interfaces;
 
 namespace Yugen.Toolkit.Uwp.Services
 {
