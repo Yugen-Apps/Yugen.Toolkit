@@ -103,6 +103,7 @@
     <Compile Include="Constants\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="ViewModels\Collections\CollectionViewModel.cs" />
+    <Compile Include="ViewModels\AppShellViewModel.cs" />
     <Compile Include="ViewModels\Helpers\FindControlViewModel.cs" />
     <Compile Include="ViewModels\Controls\GraphViewModel.cs" />
     <Compile Include="ObservableObjects\PersonObservableObject.cs" />

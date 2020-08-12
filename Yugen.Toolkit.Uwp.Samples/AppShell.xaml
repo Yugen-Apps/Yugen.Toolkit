@@ -5,8 +5,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:models="using:Yugen.Toolkit.Uwp.Samples.Models"
       xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+      xmlns:viewmodel="using:Yugen.Toolkit.Uwp.Samples.ViewModels"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <viewmodel:AppShellViewModel x:Name="ViewModel" />
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -14,8 +21,7 @@
                              IsBackButtonVisible="Collapsed"
                              IsPaneToggleButtonVisible="False"
                              IsSettingsVisible="False"
-                             ItemInvoked="MenuTree_ItemInvoked"
-                             MenuItemsSource="{x:Bind MenuCollection, Mode=OneWay}">
+                             MenuItemsSource="{x:Bind ViewModel.MenuCollection, Mode=OneWay}">
             <muxc:NavigationView.MenuItemTemplate>
                 <DataTemplate x:DataType="models:MenuItem">
                     <muxc:NavigationViewItem Content="{x:Bind Name}"
@@ -29,6 +35,11 @@
                     </muxc:NavigationViewItem>
                 </DataTemplate>
             </muxc:NavigationView.MenuItemTemplate>
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="ItemInvoked">
+                    <core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationViewOnItemInvokedCommand}" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
 
             <ScrollViewer>
                 <Frame x:Name="MainFrame"
