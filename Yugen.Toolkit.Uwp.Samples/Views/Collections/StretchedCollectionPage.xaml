@@ -8,68 +8,64 @@
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <ScrollViewer>
+    <StackPanel>
 
-        <StackPanel>
+        <TextBlock Text="Stretched Listview Item"
+                   Style="{ThemeResource TitleTextBlockStyle}" />
+        <ListView ItemsSource="{x:Bind ViewModel.Collection}"
+                  HorizontalAlignment="Left"
+                  Width="400">
 
-            <TextBlock Text="Stretched Listview Item"
-                       Style="{ThemeResource TitleTextBlockStyle}" />
-            <ListView ItemsSource="{x:Bind ViewModel.Collection}"
-                      HorizontalAlignment="Left"
-                      Width="400">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment"
+                            Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
 
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment"
-                                Value="Stretch" />
-                    </Style>
-                </ListView.ItemContainerStyle>
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid>
 
-                <ListView.HeaderTemplate>
-                    <DataTemplate>
-                        <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                   Text="Name"
+                                   Grid.Column="0" />
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                   Text="Surname"
+                                   Grid.Column="1" />
 
-                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
-                                       Text="Name"
-                                       Grid.Column="0" />
-                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
-                                       Text="Surname"
-                                       Grid.Column="1" />
+                    </Grid>
+                </DataTemplate>
 
-                        </Grid>
-                    </DataTemplate>
+            </ListView.HeaderTemplate>
 
-                </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:Person">
+                    <Grid>
 
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Person">
-                        <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                   Text="{x:Bind Name}"
+                                   Grid.Column="0" />
+                        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                                   Text="{x:Bind Surname}"
+                                   Grid.Column="1" />
 
-                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
-                                       Text="{x:Bind Name}"
-                                       Grid.Column="0" />
-                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
-                                       Text="{x:Bind Surname}"
-                                       Grid.Column="1" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+        </ListView>
 
-            </ListView>
-
-        </StackPanel>
-
-    </ScrollViewer>
+    </StackPanel>
 
 </Page>

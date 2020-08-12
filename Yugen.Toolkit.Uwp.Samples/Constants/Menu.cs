@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Yugen.Toolkit.Uwp.Samples.Models;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Collections;
@@ -10,7 +11,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
 {
     public static class Menu
     {
-        public static List<MenuItem> MenuCollection = new List<MenuItem>()
+        public static List<MenuItem> MenuList = new List<MenuItem>()
         {
             Home,
             Collections,
@@ -23,7 +24,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         {
             Name = nameof(Controls),
             IsExpanded = false,
-            Children =
+            IsLeaf = false,
+            Children = new ObservableCollection<MenuItem>
             {
                 new MenuItem ("Custom Dialog", nameof (CustomDialogPage)),
                 new MenuItem ("EdgeTapped ListView", nameof (EdgeTappedListViewPage)),
@@ -38,7 +40,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         {
             Name = nameof(Collections),
             IsExpanded = false,
-            Children =
+            IsLeaf = false,
+            Children = new ObservableCollection<MenuItem>
             {
                 new MenuItem ("Grouped Collection", nameof (GroupedCollectionPage)),
                 new MenuItem ("Stretched Listview Item", nameof (StretchedCollectionPage))
@@ -49,7 +52,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         {
             Name = nameof(Helpers),
             IsExpanded = false,
-            Children =
+            IsLeaf = false,
+            Children = new ObservableCollection<MenuItem>
             {
                 new MenuItem ("Content Dialog", nameof (ContentDialogPage)),
                 new MenuItem ("File Picker", nameof (FilePickerPage)),
@@ -63,7 +67,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         {
             Name = nameof(Mvvm),
             IsExpanded = false,
-            Children =
+            IsLeaf = false,
+            Children = new ObservableCollection<MenuItem>
             {
                 new MenuItem ("Command", nameof (CommandPage)),
                 new MenuItem ("Mediator ", nameof (MediatorPage)),
