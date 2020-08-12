@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Yugen.Toolkit.Uwp.Samples.Models;
+﻿using Microsoft.UI.Xaml.Controls;
+using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Controls;
@@ -11,71 +10,88 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
 {
     public static class Menu
     {
-        public static List<MenuItem> MenuList = new List<MenuItem>()
+        public static List<NavigationViewItemBase> MenuList = new List<NavigationViewItemBase>
         {
             Home,
+            new NavigationViewItemHeader { Content = "Yugen Toolkit" },
             Collections,
             Controls,
             Helpers,
-            Mvvm
+            new NavigationViewItemHeader { Content = "Microsoft Toolkit" },
+            Mvvm,
+            new NavigationViewItemHeader { Content = "Snippets" }
         };
 
-        public static MenuItem Controls => new MenuItem
+        public static NavigationViewItem Home => NewNavigationViewItem(nameof(Home), nameof(HomePage));
+
+        public static NavigationViewItem Collections => new NavigationViewItem
         {
-            Name = nameof(Controls),
+            Content = nameof(Collections),
+            Icon = new Windows.UI.Xaml.Controls.FontIcon { Glyph = "\uEA37" },
             IsExpanded = false,
-            IsLeaf = false,
-            Children = new ObservableCollection<MenuItem>
+            SelectsOnInvoked = false,
+            MenuItemsSource = new List<NavigationViewItem>
             {
-                new MenuItem ("Custom Dialog", nameof (CustomDialogPage)),
-                new MenuItem ("EdgeTapped ListView", nameof (EdgeTappedListViewPage)),
-                new MenuItem ("Graph", nameof (GraphPage)),
-                new MenuItem ("Notification Banner", nameof (NotificationBannerPage)),
-                new MenuItem ("Validation", nameof (ValidationPage)),
-                new MenuItem ("Sample In App Control", nameof (SampleInAppControlPage)),
+                NewNavigationViewItem ("Grouped Collection", nameof (GroupedCollectionPage)),
+                NewNavigationViewItem ("Stretched Listview Item", nameof (StretchedCollectionPage))
             }
         };
 
-        public static MenuItem Collections => new MenuItem
+        public static NavigationViewItem Controls => new NavigationViewItem
         {
-            Name = nameof(Collections),
+            Content = nameof(Controls),
+            Icon = new Windows.UI.Xaml.Controls.FontIcon { Glyph = "\uEA37" },
             IsExpanded = false,
-            IsLeaf = false,
-            Children = new ObservableCollection<MenuItem>
+            SelectsOnInvoked = false,
+            MenuItemsSource = new List<NavigationViewItem>
             {
-                new MenuItem ("Grouped Collection", nameof (GroupedCollectionPage)),
-                new MenuItem ("Stretched Listview Item", nameof (StretchedCollectionPage))
+                NewNavigationViewItem ("Custom Dialog", nameof (CustomDialogPage)),
+                NewNavigationViewItem ("EdgeTapped ListView", nameof (EdgeTappedListViewPage)),
+                NewNavigationViewItem ("Graph", nameof (GraphPage)),
+                NewNavigationViewItem ("Notification Banner", nameof (NotificationBannerPage)),
+                NewNavigationViewItem ("Validation", nameof (ValidationPage)),
+                NewNavigationViewItem ("Sample In App Control", nameof (SampleInAppControlPage)),
             }
         };
 
-        public static MenuItem Helpers => new MenuItem
+        public static NavigationViewItem Helpers => new NavigationViewItem
         {
-            Name = nameof(Helpers),
+            Content = nameof(Helpers),
+            Icon = new Windows.UI.Xaml.Controls.FontIcon { Glyph = "\uEA37" },
             IsExpanded = false,
-            IsLeaf = false,
-            Children = new ObservableCollection<MenuItem>
+            SelectsOnInvoked = false,
+            MenuItemsSource = new List<NavigationViewItem>
             {
-                new MenuItem ("Content Dialog", nameof (ContentDialogPage)),
-                new MenuItem ("File Picker", nameof (FilePickerPage)),
-                new MenuItem ("Find Control", nameof (FindControlPage))
+                NewNavigationViewItem ("Content Dialog", nameof (ContentDialogPage)),
+                NewNavigationViewItem ("File Picker", nameof (FilePickerPage)),
+                NewNavigationViewItem ("Find Control", nameof (FindControlPage))
             }
         };
 
-        public static MenuItem Home => new MenuItem(nameof(Home), nameof(HomePage));
-
-        public static MenuItem Mvvm => new MenuItem
+        public static NavigationViewItem Mvvm => new NavigationViewItem
         {
-            Name = nameof(Mvvm),
+            Content = nameof(Mvvm),
+            Icon = new Windows.UI.Xaml.Controls.FontIcon { Glyph = "\uEA37" },
             IsExpanded = false,
-            IsLeaf = false,
-            Children = new ObservableCollection<MenuItem>
+            SelectsOnInvoked = false,
+            MenuItemsSource = new List<NavigationViewItem>
             {
-                new MenuItem ("Command", nameof (CommandPage)),
-                new MenuItem ("Mediator ", nameof (MediatorPage)),
-                new MenuItem ("Navigation Parameters", nameof (NavigationPage)),
-                new MenuItem ("Observable Object ", nameof (ObservableObjectPage)),
-                new MenuItem ("XamlUICommandPage", nameof (XamlUICommandPage))
+                NewNavigationViewItem ("Command", nameof (CommandPage)),
+                NewNavigationViewItem ("Mediator ", nameof (MediatorPage)),
+                NewNavigationViewItem ("Navigation Parameters", nameof (NavigationPage)),
+                NewNavigationViewItem ("Observable Object ", nameof (ObservableObjectPage)),
+                NewNavigationViewItem ("XamlUICommandPage", nameof (XamlUICommandPage))
             }
         };
+
+        public static NavigationViewItem NewNavigationViewItem(string content, string tag) => 
+            new NavigationViewItem
+            {
+                Content = content,
+                Tag = tag,
+                Icon = new Windows.UI.Xaml.Controls.FontIcon { Glyph = "\uE80F" },
+                IsExpanded = true,
+                SelectsOnInvoked = true
+            };
     }
 }

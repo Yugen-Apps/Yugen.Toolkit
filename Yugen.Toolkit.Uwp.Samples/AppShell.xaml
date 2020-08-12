@@ -21,20 +21,7 @@
                              IsBackButtonVisible="Collapsed"
                              IsPaneToggleButtonVisible="False"
                              IsSettingsVisible="False"
-                             MenuItemsSource="{x:Bind ViewModel.MenuCollection, Mode=OneWay}">
-            <muxc:NavigationView.MenuItemTemplate>
-                <DataTemplate x:DataType="models:MenuItem">
-                    <muxc:NavigationViewItem Content="{x:Bind Name}"
-                                             MenuItemsSource="{x:Bind Children}"
-                                             IsExpanded="{x:Bind IsExpanded}"
-                                             SelectsOnInvoked="{x:Bind IsLeaf}"
-                                             Tag="{x:Bind Tag}">
-                        <muxc:NavigationViewItem.Icon>
-                            <FontIcon Glyph="{x:Bind Glyph}" />
-                        </muxc:NavigationViewItem.Icon>
-                    </muxc:NavigationViewItem>
-                </DataTemplate>
-            </muxc:NavigationView.MenuItemTemplate>
+                             MenuItemsSource="{x:Bind ViewModel.NavItems, Mode=OneWay}">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="ItemInvoked">
                     <core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationViewOnItemInvokedCommand}" />
@@ -46,7 +33,6 @@
                        x:FieldModifier="public"
                        Margin="24" />
             </ScrollViewer>
-
         </muxc:NavigationView>
     </Grid>
 </Page>

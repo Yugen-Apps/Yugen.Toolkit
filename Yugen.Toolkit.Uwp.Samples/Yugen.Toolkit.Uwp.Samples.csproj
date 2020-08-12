@@ -101,7 +101,6 @@
     <Compile Include="Constants\Data.cs" />
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu.cs" />
-    <Compile Include="Models\MenuItem.cs" />
     <Compile Include="ViewModels\Collections\CollectionViewModel.cs" />
     <Compile Include="ViewModels\AppShellViewModel.cs" />
     <Compile Include="ViewModels\Helpers\FindControlViewModel.cs" />
@@ -341,7 +340,7 @@
       <Version>6.2.10</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.4.2</Version>
+      <Version>2.4.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
       <Version>2.0.1</Version>
