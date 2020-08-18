@@ -10,12 +10,12 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels
 {
     public class AppShellViewModel : ViewModelBase
     {
-        public IEnumerable<NavigationViewItemBase> NavItems => Menu.MenuList;
-
         public AppShellViewModel()
         {
-            NavigationViewOnItemInvokedCommand = new RelayCommand<Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs>(NavigationViewOnItemInvokedCommandBehavior);
+            NavigationViewOnItemInvokedCommand = new RelayCommand<NavigationViewItemInvokedEventArgs>(NavigationViewOnItemInvokedCommandBehavior);
         }
+
+        public IEnumerable<NavigationViewItemBase> NavItems => Menu.MenuList;
 
         public ICommand NavigationViewOnItemInvokedCommand { get; }
 

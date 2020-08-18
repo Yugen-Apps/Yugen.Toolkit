@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Toolkit.Mvvm.DependencyInjection;
+using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Globalization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using Yugen.Toolkit.Uwp.Samples.ViewModels;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Services;
 
@@ -23,6 +27,14 @@ namespace Yugen.Toolkit.Uwp.Samples
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            // Register services
+            Ioc.Default.ConfigureServices(services =>
+            {
+                //services.AddSingleton<IProgressService, ProgressService>();
+                services.AddSingleton<AppShellViewModel>();
+                services.AddTransient<CommandViewModel>();
+            });
         }
 
         /// <summary>

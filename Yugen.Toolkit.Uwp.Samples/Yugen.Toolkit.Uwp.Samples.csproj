@@ -99,53 +99,60 @@
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constants\Data.cs" />
+    <Compile Include="Constants\MicrosoftSubMenu.cs" />
+    <Compile Include="Constants\SnippetsSubMenu.cs" />
+    <Compile Include="Constants\YugenSubMenu.cs" />
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu.cs" />
-    <Compile Include="ViewModels\Collections\CollectionViewModel.cs" />
+    <Compile Include="ViewModels\Snippets\Mvvm\CommandViewModel.cs" />
+    <Compile Include="ViewModels\Yugen\Collections\CollectionViewModel.cs" />
     <Compile Include="ViewModels\AppShellViewModel.cs" />
-    <Compile Include="ViewModels\Helpers\FindControlViewModel.cs" />
-    <Compile Include="ViewModels\Controls\GraphViewModel.cs" />
+    <Compile Include="ViewModels\Yugen\Helpers\FindControlViewModel.cs" />
+    <Compile Include="ViewModels\Yugen\Controls\GraphViewModel.cs" />
     <Compile Include="ObservableObjects\PersonObservableObject.cs" />
-    <Compile Include="ViewModels\Mvvm\CommandViewModel.cs" />
-    <Compile Include="ViewModels\Mvvm\MediatorViewModel.cs" />
-    <Compile Include="ViewModels\Mvvm\NavigationParameterViewModel.cs" />
-    <Compile Include="ViewModels\Collections\GroupedCollectionViewModel.cs" />
-    <Compile Include="ViewModels\Mvvm\ObservableObjectViewModel.cs" />
-    <Compile Include="Views\Collections\StretchedCollectionPage.cs">
+    <Compile Include="ViewModels\Microsoft\Mvvm\CommandViewModel.cs" />
+    <Compile Include="ViewModels\Microsoft\Mvvm\MediatorViewModel.cs" />
+    <Compile Include="ViewModels\Microsoft\Mvvm\NavigationParameterViewModel.cs" />
+    <Compile Include="ViewModels\Yugen\Collections\GroupedCollectionViewModel.cs" />
+    <Compile Include="ViewModels\Microsoft\Mvvm\ObservableObjectViewModel.cs" />
+    <Compile Include="Views\Snippets\Mvvm\XamlViewModelPage.xaml.cs">
+      <DependentUpon>XamlViewModelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Yugen\Collections\StretchedCollectionPage.cs">
       <DependentUpon>StretchedCollectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\CustomDialogPage.xaml.cs">
+    <Compile Include="Views\Yugen\Controls\CustomDialogPage.xaml.cs">
       <DependentUpon>CustomDialogPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\EdgeTappedListViewPage.xaml.cs">
+    <Compile Include="Views\Yugen\Controls\EdgeTappedListViewPage.xaml.cs">
       <DependentUpon>EdgeTappedListViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\GraphPage.xaml.cs">
+    <Compile Include="Views\Yugen\Controls\GraphPage.xaml.cs">
       <DependentUpon>GraphPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\NotificationBannerPage.xaml.cs">
+    <Compile Include="Views\Yugen\Controls\NotificationBannerPage.xaml.cs">
       <DependentUpon>NotificationBannerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\SampleInAppControl.cs">
+    <Compile Include="Views\Yugen\Controls\SampleInAppControl.cs">
       <DependentUpon>SampleInAppControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\SampleInAppControlPage.cs">
+    <Compile Include="Views\Yugen\Controls\SampleInAppControlPage.cs">
       <DependentUpon>SampleInAppControlPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Controls\SampleInAppControlViewModel.cs" />
-    <Compile Include="Views\Controls\ValidationPage.xaml.cs">
+    <Compile Include="ViewModels\Yugen\Controls\SampleInAppControlViewModel.cs" />
+    <Compile Include="Views\Yugen\Controls\ValidationPage.xaml.cs">
       <DependentUpon>ValidationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Helpers\ContentDialogPage.xaml.cs">
+    <Compile Include="Views\Yugen\Helpers\ContentDialogPage.xaml.cs">
       <DependentUpon>ContentDialogPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Helpers\FindControlPage.xaml.cs">
+    <Compile Include="Views\Yugen\Helpers\FindControlPage.xaml.cs">
       <DependentUpon>FindControlPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Helpers\FilePickerPage.xaml.cs">
+    <Compile Include="Views\Yugen\Helpers\FilePickerPage.xaml.cs">
       <DependentUpon>FilePickerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Collections\GroupedCollectionPage.xaml.cs">
+    <Compile Include="Views\Yugen\Collections\GroupedCollectionPage.xaml.cs">
       <DependentUpon>GroupedCollectionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Person.cs" />
@@ -153,27 +160,27 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\Controls\ValidationViewModel.cs" />
-    <Compile Include="Views\Mvvm\CommandPage.xaml.cs">
+    <Compile Include="ViewModels\Yugen\Controls\ValidationViewModel.cs" />
+    <Compile Include="Views\Microsoft\Mvvm\CommandPage.xaml.cs">
       <DependentUpon>CommandPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Mvvm\MediatorPage.xaml.cs">
+    <Compile Include="Views\Microsoft\Mvvm\MediatorPage.xaml.cs">
       <DependentUpon>MediatorPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Mvvm\NavigationParameterPage.xaml.cs">
+    <Compile Include="Views\Microsoft\Mvvm\NavigationParameterPage.xaml.cs">
       <DependentUpon>NavigationParameterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Mvvm\NavigationPage.xaml.cs">
+    <Compile Include="Views\Microsoft\Mvvm\NavigationPage.xaml.cs">
       <DependentUpon>NavigationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Mvvm\NavigationViewModel.cs" />
-    <Compile Include="Views\Mvvm\ObservableObjectPage.xaml.cs">
+    <Compile Include="ViewModels\Microsoft\Mvvm\NavigationViewModel.cs" />
+    <Compile Include="Views\Microsoft\Mvvm\ObservableObjectPage.xaml.cs">
       <DependentUpon>ObservableObjectPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Mvvm\XamlUICommandPage.xaml.cs">
+    <Compile Include="Views\Microsoft\Mvvm\XamlUICommandPage.xaml.cs">
       <DependentUpon>XamlUICommandPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Mvvm\XamlUICommandViewModel.cs" />
+    <Compile Include="ViewModels\Microsoft\Mvvm\XamlUICommandViewModel.cs" />
     <Compile Include="Views\Others\SamplesPage.xaml.cs">
       <DependentUpon>SamplesPage.xaml</DependentUpon>
     </Compile>
@@ -254,51 +261,55 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Collections\StretchedCollectionPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Controls\CustomDialogPage.xaml">
+    <Page Include="Views\Snippets\Mvvm\XamlViewModelPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Controls\EdgeTappedListViewPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Controls\GraphPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Controls\NotificationBannerPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Controls\SampleInAppControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Controls\SampleInAppControlPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Controls\ValidationPage.xaml">
+    <Page Include="Views\Yugen\Collections\StretchedCollectionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Helpers\ContentDialogPage.xaml">
+    <Page Include="Views\Yugen\Controls\CustomDialogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Helpers\FindControlPage.xaml">
+    <Page Include="Views\Yugen\Controls\EdgeTappedListViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Helpers\FilePickerPage.xaml">
+    <Page Include="Views\Yugen\Controls\GraphPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Collections\GroupedCollectionPage.xaml">
+    <Page Include="Views\Yugen\Controls\NotificationBannerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Yugen\Controls\SampleInAppControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Yugen\Controls\SampleInAppControlPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Yugen\Controls\ValidationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Yugen\Helpers\ContentDialogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Yugen\Helpers\FindControlPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Yugen\Helpers\FilePickerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Yugen\Collections\GroupedCollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -306,27 +317,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Mvvm\CommandPage.xaml">
+    <Page Include="Views\Microsoft\Mvvm\CommandPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Mvvm\MediatorPage.xaml">
+    <Page Include="Views\Microsoft\Mvvm\MediatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Mvvm\NavigationParameterPage.xaml">
+    <Page Include="Views\Microsoft\Mvvm\NavigationParameterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Mvvm\NavigationPage.xaml">
+    <Page Include="Views\Microsoft\Mvvm\NavigationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Mvvm\ObservableObjectPage.xaml">
+    <Page Include="Views\Microsoft\Mvvm\ObservableObjectPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Mvvm\XamlUICommandPage.xaml">
+    <Page Include="Views\Microsoft\Mvvm\XamlUICommandPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

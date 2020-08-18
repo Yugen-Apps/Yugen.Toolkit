@@ -1,4 +1,7 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Toolkit.Mvvm.DependencyInjection;
+using Windows.UI.Xaml.Controls;
+using Yugen.Toolkit.Uwp.Samples.ViewModels;
 
 namespace Yugen.Toolkit.Uwp.Samples
 {
@@ -8,5 +11,7 @@ namespace Yugen.Toolkit.Uwp.Samples
         {
             InitializeComponent();
         }
+
+        private AppShellViewModel ViewModel { get; } = Ioc.Default.GetService<AppShellViewModel>();
     }
 }
