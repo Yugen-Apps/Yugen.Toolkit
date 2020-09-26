@@ -4,13 +4,8 @@
       xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Mvvm"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:viewmodel="using:Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Page.DataContext>
-        <viewmodel:ObservableObjectViewModel x:Name="ViewModel" />
-    </Page.DataContext>
 
     <Grid>
         <TextBlock Text="{x:Bind ViewModel.Person.Name, Mode=OneWay}" />

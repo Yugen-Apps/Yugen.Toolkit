@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples
@@ -15,6 +16,11 @@ namespace Yugen.Toolkit.Uwp.Samples
                 //.AddSingleton<IProgressService, ProgressService>()
                 .AddSingleton<AppShellViewModel>()
                 .AddTransient<CommandViewModel>()
+                .AddTransient<MediatorViewModel>()
+                .AddTransient<NavigationParameterViewModel>()
+                .AddTransient<ObservableObjectViewModel>()
+                .AddTransient<SampleInAppControlViewModel>()
+                .AddTransient<XamlUICommandViewModel>()
                 .BuildServiceProvider();
         }
 

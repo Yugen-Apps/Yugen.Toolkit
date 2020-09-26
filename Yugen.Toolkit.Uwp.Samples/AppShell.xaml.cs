@@ -9,8 +9,10 @@ namespace Yugen.Toolkit.Uwp.Samples
         public AppShell()
         {
             InitializeComponent();
+
+            DataContext = AppContainer.Services.GetService<AppShellViewModel>();
         }
 
-        private AppShellViewModel ViewModel { get; } = AppContainer.Services.GetService<AppShellViewModel>();
+        private AppShellViewModel ViewModel => (AppShellViewModel)DataContext;
     }
 }

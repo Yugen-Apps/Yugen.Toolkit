@@ -1,4 +1,6 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Windows.UI.Xaml.Controls;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.Views.Mvvm
 {
@@ -7,6 +9,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Mvvm
         public XamlUICommandPage()
         {
             this.InitializeComponent();
+
+            DataContext = AppContainer.Services.GetService<XamlUICommandViewModel>();
         }
+
+        private XamlUICommandViewModel ViewModel => (XamlUICommandViewModel)DataContext;
     }
 }

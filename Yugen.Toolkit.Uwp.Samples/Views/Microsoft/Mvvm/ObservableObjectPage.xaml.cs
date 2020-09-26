@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,6 +14,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Mvvm
         public ObservableObjectPage()
         {
             this.InitializeComponent();
+
+            DataContext = AppContainer.Services.GetService<ObservableObjectViewModel>();
         }
+
+        private ObservableObjectViewModel ViewModel => (ObservableObjectViewModel)DataContext;
     }
 }

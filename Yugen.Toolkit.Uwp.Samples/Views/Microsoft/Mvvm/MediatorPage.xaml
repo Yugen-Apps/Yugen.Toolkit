@@ -4,14 +4,9 @@
       xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Mvvm"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:viewmodel="using:Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
       Loaded="{x:Bind ViewModel.Page_Loaded}">
-
-    <Page.DataContext>
-        <viewmodel:MediatorViewModel x:Name="ViewModel" />
-    </Page.DataContext>
 
     <StackPanel>
         <TextBlock Text="{x:Bind ViewModel.Text, Mode=OneWay}" />

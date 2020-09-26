@@ -9,8 +9,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Mvvm
         public CommandPage()
         {
             this.InitializeComponent();
+
+            DataContext = AppContainer.Services.GetService<CommandViewModel>();
         }
 
-        private CommandViewModel ViewModel { get; } = AppContainer.Services.GetService<CommandViewModel>();
+        private CommandViewModel ViewModel => (CommandViewModel)DataContext;
     }
 }
