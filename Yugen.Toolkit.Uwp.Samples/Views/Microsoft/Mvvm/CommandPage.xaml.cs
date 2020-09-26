@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
 
@@ -12,6 +11,6 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Mvvm
             this.InitializeComponent();
         }
 
-        private CommandViewModel ViewModel { get; } = Ioc.Default.GetService<CommandViewModel>();
+        private CommandViewModel ViewModel { get; } = AppContainer.Services.GetService<CommandViewModel>();
     }
 }

@@ -136,22 +136,6 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Others
 
 
 
-    //public static class MyTextConverter
-    //{
-    //    public static string Convert(int x) => x switch
-    //    {
-    //        0 => "Zero",
-    //        1 => "Foo",
-    //        2 => "Bar",
-    //        _ => throw new ArgumentOutOfRangeException()
-    //    };
-    //}
-
-    //<TextBlock
-    //xmlns:converters="using:MyApp.Converters"
-    //Text="{x:Bind converters:MyTextConverter.Convert(ViewModel.MyValue), Mode=OneWay}"/>
-
-
     //_ = System.Convert.ToDecimal("1.2345"); //new CultureInfo("en-US") //where the number separator is "."
     //        _ = System.Convert.ToDecimal("1.2345", new CultureInfo("it-IT")); //where the number separator is ","
     //        _ = System.Convert.ToDecimal("1.2345", CultureInfo.CurrentUICulture); //The above line returns my culture

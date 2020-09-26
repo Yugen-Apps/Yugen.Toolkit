@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -29,12 +28,14 @@ namespace Yugen.Toolkit.Uwp.Samples
             this.Suspending += OnSuspending;
 
             // Register services
-            Ioc.Default.ConfigureServices(services =>
-            {
-                //services.AddSingleton<IProgressService, ProgressService>();
-                services.AddSingleton<AppShellViewModel>();
-                services.AddTransient<CommandViewModel>();
-            });
+            AppContainer.ConfigureServices();
+
+            //AppContainer.ConfigureServices(services =>
+            //{
+            //    //services.AddSingleton<IProgressService, ProgressService>();
+            //    services.AddSingleton<AppShellViewModel>();
+            //    services.AddTransient<CommandViewModel>();
+            //});
         }
 
         /// <summary>
