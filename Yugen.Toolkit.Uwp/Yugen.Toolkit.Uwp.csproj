@@ -116,7 +116,7 @@
     <Compile Include="Collections\ObservableGroupedCollectionExtensions.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Converters\NullableToBoolConverter.cs" />
-    <Compile Include="Converters\DebugToVisibilityConverter.cs" />
+    <Compile Include="Adapters\DebugToVisibilityAdapter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\ParameterConverter.cs" />
     <Compile Include="Evaluators\BindingEvaluator.cs" />
