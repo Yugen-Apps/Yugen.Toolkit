@@ -10,8 +10,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
         private string _text;
         public string Text
         {
-            get { return _text; }
-            set { SetProperty(ref _text, value); }
+            get => _text;
+            set => SetProperty(ref _text, value);
         }
 
         public override void OnNavigatedTo(object parameter, IDictionary<string, object> state)

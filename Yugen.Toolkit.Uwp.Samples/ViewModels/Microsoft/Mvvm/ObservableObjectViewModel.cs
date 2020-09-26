@@ -10,8 +10,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
         private PersonObservableObject _person = new PersonObservableObject();
         public PersonObservableObject Person
         {
-            get { return _person; }
-            set { SetProperty(ref _person, value); }
+            get => _person;
+            set => SetProperty(ref _person, value);
         }
 
         public override void OnNavigatedTo(object parameter, IDictionary<string, object> state)

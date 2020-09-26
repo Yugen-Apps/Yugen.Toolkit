@@ -10,8 +10,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
         private string _title = "Find Control Page";
         public string Title
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            get => _title;
+            set => SetProperty(ref _title, value);
         }
 
         public void FindAncestorStackPanelButton_Click(object sender, RoutedEventArgs _)

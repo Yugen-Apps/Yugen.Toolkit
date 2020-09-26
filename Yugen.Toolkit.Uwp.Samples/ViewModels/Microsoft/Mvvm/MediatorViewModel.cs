@@ -10,8 +10,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
 
         public string Text
         {
-            get { return _text; }
-            set { SetProperty(ref _text, value); }
+            get => _text;
+            set => SetProperty(ref _text, value);
         }
 
         public void Page_Loaded(object sender, RoutedEventArgs e)
