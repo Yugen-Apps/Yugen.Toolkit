@@ -114,6 +114,7 @@
     <Compile Include="Collections\ObservableGroup.cs" />
     <Compile Include="Collections\ObservableGroupedCollection.cs" />
     <Compile Include="Collections\ObservableGroupedCollectionExtensions.cs" />
+    <Compile Include="Constants\UwpConstants.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Converters\NullableToBoolConverter.cs" />
     <Compile Include="Adapters\DebugToVisibilityAdapter.cs" />

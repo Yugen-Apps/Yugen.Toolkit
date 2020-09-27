@@ -1,17 +1,18 @@
 ﻿using Windows.UI.Xaml.Controls;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+using Yugen.Toolkit.Uwp.Samples.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Samples.Views
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// HomePage 
     /// </summary>
     public sealed partial class HomePage : Page
     {
         public HomePage()
         {
             this.InitializeComponent();
+
+            var summary = DocHelper.ReadSummary("HomePage");
         }
     }
 }

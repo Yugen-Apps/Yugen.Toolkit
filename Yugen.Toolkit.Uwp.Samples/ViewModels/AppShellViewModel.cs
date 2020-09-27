@@ -8,6 +8,9 @@ using Yugen.Toolkit.Uwp.Services;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels
 {
+    /// <summary>
+    /// AppShellViewModel
+    /// </summary>
     public class AppShellViewModel : ViewModelBase
     {
         public AppShellViewModel()
