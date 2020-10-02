@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Views.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Helpers;
+using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.Constants
 {
@@ -49,6 +50,18 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
                 Menu.NewNavigationViewItem ("Content Dialog", nameof (ContentDialogPage)),
                 Menu.NewNavigationViewItem ("File Picker", nameof (FilePickerPage)),
                 Menu.NewNavigationViewItem ("Find Control", nameof (FindControlPage))
+            }
+        };
+
+        public static NavigationViewItem Mvvm => new NavigationViewItem
+        {
+            Content = nameof(Mvvm),
+            Icon = new Windows.UI.Xaml.Controls.FontIcon { Glyph = "\uEA37" },
+            IsExpanded = false,
+            SelectsOnInvoked = false,
+            MenuItemsSource = new List<NavigationViewItem>
+            {
+                Menu.NewNavigationViewItem ("Settings", nameof (SettingsPage))
             }
         };
     }
