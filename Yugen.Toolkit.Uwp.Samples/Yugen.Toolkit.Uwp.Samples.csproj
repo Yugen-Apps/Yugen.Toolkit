@@ -111,6 +111,7 @@
     <Compile Include="Constants\YugenSubMenu.cs" />
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Mvvm\CommandViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Collections\CollectionViewModel.cs" />
     <Compile Include="ViewModels\AppShellViewModel.cs" />
@@ -125,6 +126,9 @@
     <Compile Include="ViewModels\Microsoft\Mvvm\ObservableObjectViewModel.cs" />
     <Compile Include="Helpers\DocHelper.cs" />
     <Compile Include="ObservableObjects\Settings.cs" />
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Snippets\Mvvm\XamlViewModelPage.xaml.cs">
       <DependentUpon>XamlViewModelPage.xaml</DependentUpon>
     </Compile>
@@ -274,6 +278,10 @@
     <Page Include="Dictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Snippets\Mvvm\XamlViewModelPage.xaml">
       <SubType>Designer</SubType>

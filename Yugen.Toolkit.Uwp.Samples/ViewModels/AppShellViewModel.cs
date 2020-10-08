@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Constants;
+using Yugen.Toolkit.Uwp.Samples.Views.Yugen;
 using Yugen.Toolkit.Uwp.Services;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels
@@ -25,8 +26,15 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels
         private void NavigationViewOnItemInvokedCommandBehavior(NavigationViewItemInvokedEventArgs args)
         {
             var tag = args.InvokedItemContainer.Tag?.ToString();
-            if (tag != null)
+
+            if (tag == "Settings")
+            {
+                NavigationService.NavigateToPage(nameof(SettingsPage));
+            }
+            else
+            {
                 NavigationService.NavigateToPage(tag);
+            }
         }
     }
 }

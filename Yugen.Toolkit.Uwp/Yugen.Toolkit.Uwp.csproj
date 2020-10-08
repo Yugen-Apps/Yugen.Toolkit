@@ -127,6 +127,7 @@
     <Compile Include="Helpers\PrintHelperStateBag.cs" />
     <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\SettingsHelper.cs" />
+    <Compile Include="Helpers\TitleBarHelper.cs" />
     <Compile Include="Helpers\WriteableBitmapHelper.cs" />
     <Compile Include="Helpers\ColorHelper.cs" />
     <Compile Include="Helpers\DebugVisibilityHelper.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Mvvm\DependencyInjection\Host.cs" />
     <Compile Include="Mvvm\DependencyInjection\IoCFrame.cs" />
     <Compile Include="Listeners\DependencyPropertyListener.cs" />
+    <Compile Include="Services\IThemeSelectorService.cs" />
     <Compile Include="Services\TestService.cs" />
     <Compile Include="Services\CacheService.cs" />
     <Compile Include="Converters\ComboBoxConverter.cs" />

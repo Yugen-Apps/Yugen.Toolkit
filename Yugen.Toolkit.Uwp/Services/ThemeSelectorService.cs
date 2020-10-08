@@ -9,20 +9,21 @@ using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Services
 {
-    public static class ThemeSelectorService
+    public class ThemeSelectorService : IThemeSelectorService
     {
         private const string DarkThemeBackground = "#FF000000";
         private const string LightThemeBackground = "#FFFFFFFF";
         private const string SettingsKey = "AppBackgroundRequestedTheme";
-        public static ElementTheme Theme { get; set; } = ElementTheme.Default;
 
-        public static async Task InitializeAsync()
+        public ElementTheme Theme { get; set; } = ElementTheme.Default;
+
+        public async Task InitializeAsync()
         {
             ElementTheme theme = LoadThemeFromSettingsAsync();
             await SetThemeAsync(theme);
         }
 
-        public static async Task SetThemeAsync(ElementTheme theme)
+        public async Task SetThemeAsync(ElementTheme theme)
         {
             Theme = theme;
 
@@ -31,7 +32,7 @@ namespace Yugen.Toolkit.Uwp.Services
             SetTitleBarTheme(Theme);
         }
 
-        public static async Task SetRequestedThemeAsync()
+        public async Task SetRequestedThemeAsync()
         {
             foreach (CoreApplicationView view in CoreApplication.Views)
             {
@@ -45,7 +46,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
         }
 
-        private static void SetTitleBarTheme(ElementTheme theme)
+        private void SetTitleBarTheme(ElementTheme theme)
         {
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
 
@@ -63,7 +64,7 @@ namespace Yugen.Toolkit.Uwp.Services
 
         }
 
-        private static T GetThemeResource<T>(ElementTheme theme, string resKey)
+        private T GetThemeResource<T>(ElementTheme theme, string resKey)
         {
             var isLightTheme = (theme == ElementTheme.Default)
                 ? IsSystemThemeLight()
@@ -74,14 +75,14 @@ namespace Yugen.Toolkit.Uwp.Services
             return (T)themeDictionary[resKey];
         }
 
-        private static bool IsSystemThemeLight()
+        private bool IsSystemThemeLight()
         {
             var defaultTheme = new UISettings();
             var uiTheme = defaultTheme.GetColorValue(UIColorType.Background).ToString();
             return uiTheme == LightThemeBackground;
         }
 
-        private static ElementTheme LoadThemeFromSettingsAsync()
+        private ElementTheme LoadThemeFromSettingsAsync()
         {
             ElementTheme cacheTheme = ElementTheme.Default;
             var themeName = SettingsHelper.Read<string>(SettingsKey);
@@ -94,7 +95,7 @@ namespace Yugen.Toolkit.Uwp.Services
             return cacheTheme;
         }
 
-        private static void SaveThemeInSettingsAsync(ElementTheme theme) =>
+        private void SaveThemeInSettingsAsync(ElementTheme theme) =>
             SettingsHelper.Write(SettingsKey, theme.ToString());
     }
 }

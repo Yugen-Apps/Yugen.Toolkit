@@ -86,8 +86,12 @@ namespace Yugen.Toolkit.Uwp.Services
                 _rootFrame.GoBack();
         }
 
+
         public static void NavigateToPage(string page, object parameter = null, bool force = false)
         {
+            if (string.IsNullOrEmpty(page))
+                return;
+
             var targetPage = _appAssembly.DefinedTypes.FirstOrDefault(t => t.Name == page);
             if (targetPage == null) 
                 return;
@@ -117,6 +121,7 @@ namespace Yugen.Toolkit.Uwp.Services
                 }
             }
         }
+
 
         public static void NavigateToPageAndClearStack(Type page, object parameter = null, bool force = false)
         {

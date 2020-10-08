@@ -4,15 +4,15 @@ using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm
 {
-    public sealed partial class SettingsPage : Page
+    public sealed partial class ObservableSettingsPage : Page
     {
-        public SettingsPage()
+        public ObservableSettingsPage()
         {
             this.InitializeComponent();
 
-            DataContext = AppContainer.Services.GetService<SettingsViewModel>();
+            DataContext = AppContainer.Services.GetService<ObservableSettingsViewModel>();
         }
 
-        private SettingsViewModel ViewModel => (SettingsViewModel)DataContext;
+        private ObservableSettingsViewModel ViewModel => (ObservableSettingsViewModel)DataContext;
     }
 }

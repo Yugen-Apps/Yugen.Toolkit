@@ -14,7 +14,7 @@
         <muxc:NavigationView OpenPaneLength="200"
                              IsBackButtonVisible="Collapsed"
                              IsPaneToggleButtonVisible="False"
-                             IsSettingsVisible="False"
+                             IsSettingsVisible="True"
                              MenuItemsSource="{x:Bind ViewModel.NavItems, Mode=OneWay}">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="ItemInvoked">

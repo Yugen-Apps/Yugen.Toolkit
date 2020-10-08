@@ -61,7 +61,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             SelectsOnInvoked = false,
             MenuItemsSource = new List<NavigationViewItem>
             {
-                Menu.NewNavigationViewItem ("Settings", nameof (SettingsPage))
+                Menu.NewNavigationViewItem ("Observable Settings", nameof (ObservableSettingsPage))
             }
         };
     }

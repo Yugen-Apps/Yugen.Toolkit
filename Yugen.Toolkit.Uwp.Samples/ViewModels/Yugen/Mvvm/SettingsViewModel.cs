@@ -1,17 +1,16 @@
 ﻿using Microsoft.Extensions.Logging;
-using Windows.ApplicationModel.Resources.Core;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.ObservableObjects;
 using Yugen.Toolkit.Uwp.Services;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm
 {
-    public class SettingsViewModel : ViewModelBase
+    public class ObservableSettingsViewModel : ViewModelBase
     {
         private readonly ITestService _testService;
-        private readonly ILogger<SettingsViewModel> _logger;
+        private readonly ILogger<ObservableSettingsViewModel> _logger;
 
-        public SettingsViewModel(ITestService testService, ILogger<SettingsViewModel> logger)
+        public ObservableSettingsViewModel(ITestService testService, ILogger<ObservableSettingsViewModel> logger)
         {
             _testService = testService;
             _logger = logger;

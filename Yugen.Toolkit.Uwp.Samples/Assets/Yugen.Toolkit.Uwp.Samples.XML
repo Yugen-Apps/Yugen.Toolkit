@@ -118,6 +118,36 @@
             GetBindingConnector(int connectionId, object target)
             </summary>
         </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.SettingsPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.SettingsPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.SettingsPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm.ObservableSettingsPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm.ObservableSettingsPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm.ObservableSettingsPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
         <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm.XamlViewModelPage.InitializeComponent">
             <summary>
             InitializeComponent()
@@ -459,21 +489,6 @@
             </summary>
         </member>
         <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Others.SamplesPage.GetBindingConnector(System.Int32,System.Object)">
-            <summary>
-            GetBindingConnector(int connectionId, object target)
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm.SettingsPage.InitializeComponent">
-            <summary>
-            InitializeComponent()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm.SettingsPage.Connect(System.Int32,System.Object)">
-            <summary>
-            Connect()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm.SettingsPage.GetBindingConnector(System.Int32,System.Object)">
             <summary>
             GetBindingConnector(int connectionId, object target)
             </summary>

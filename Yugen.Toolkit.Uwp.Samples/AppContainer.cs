@@ -7,6 +7,7 @@ using Windows.Storage;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
 using Yugen.Toolkit.Uwp.Services;
 
@@ -43,11 +44,13 @@ namespace Yugen.Toolkit.Uwp.Samples
 
             Services = new ServiceCollection()
                 .AddSingleton<ITestService, TestService>()
+                .AddSingleton<IThemeSelectorService, ThemeSelectorService>()
                 .AddSingleton<AppShellViewModel>()
                 .AddTransient<CommandViewModel>()
                 .AddTransient<MediatorViewModel>()
                 .AddTransient<NavigationParameterViewModel>()
                 .AddTransient<ObservableObjectViewModel>()
+                .AddTransient<ObservableSettingsViewModel>()
                 .AddTransient<SampleInAppControlViewModel>()
                 .AddTransient<SettingsViewModel>()
                 .AddTransient<XamlUICommandViewModel>()
