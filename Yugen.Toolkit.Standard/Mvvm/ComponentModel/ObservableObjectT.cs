@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Standard.Mvvm.ComponentModel
         /// <summary>
         /// A model wrapped in every ObservableObject(T) object
         /// </summary>
-        public T Model { get; }
+        protected T Model { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ObservableObject"/> class.

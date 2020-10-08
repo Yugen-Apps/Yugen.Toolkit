@@ -10,9 +10,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
         public string Name
         {
             get => Model.Name;
-            set => SetProperty(() => Model.Name, value);
-            //set => SetProperty(Model.Name, value, () => Model.Name = value);
-            //set => SetProperty(ref _name, value);
+            //set => SetProperty(Model.Name, value, Model, (m, v) => m.Name = v);
+            set => SetProperty(Model.Name, value, (v) => Model.Name = value);
         }
     }
 }
