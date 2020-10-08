@@ -3,41 +3,26 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:xaml="using:Windows.UI.Xaml"
-      xmlns:converters="using:Yugen.Toolkit.Uwp.Converters"
+      xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+      xmlns:yugen="using:Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Page.Resources>
-        <converters:EnumToBooleanConverter x:Key="EnumToBooleanConverter"
-                                           EnumType="ElementTheme" />
-    </Page.Resources>
 
     <StackPanel Spacing="4"
                 Padding="16,0">
 
-        <TextBlock Text="Them" />
-        <RadioButton Content="Light"
-                     Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                     IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}">
-            <RadioButton.CommandParameter>
-                <xaml:ElementTheme>Light</xaml:ElementTheme>
-            </RadioButton.CommandParameter>
-        </RadioButton>
-        <RadioButton Content="Dark"
-                     Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                     IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}">
-            <RadioButton.CommandParameter>
-                <xaml:ElementTheme>Dark</xaml:ElementTheme>
-            </RadioButton.CommandParameter>
-        </RadioButton>
-        <RadioButton Content="Default"
-                     Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                     IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}">
-            <RadioButton.CommandParameter>
-                <xaml:ElementTheme>Default</xaml:ElementTheme>
-            </RadioButton.CommandParameter>
-        </RadioButton>
-        
+        <muxc:RadioButtons Header="Background"
+                           ItemsSource="{x:Bind ViewModel.ElementThemeList}"
+                           SelectedItem="{x:Bind ViewModel.ElementThemeOption, Mode=TwoWay}"/>
+
+        <!--<ComboBox ItemsSource="{x:Bind ViewModel.ElementThemeList}"
+                  DisplayMemberPath="ElementTheme"/>
+
+        <ListView ItemsSource="{x:Bind ViewModel.ElementThemeList}">
+            <DataTemplate x:DataType="yugen:ElementThemeOption">
+                <TextBlock Text="{x:Bind ElementTheme}" />
+            </DataTemplate>
+        </ListView>-->
+
     </StackPanel>
 </Page>

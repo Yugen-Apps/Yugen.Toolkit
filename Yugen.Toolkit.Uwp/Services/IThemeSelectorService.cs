@@ -7,8 +7,8 @@ namespace Yugen.Toolkit.Uwp.Services
     {
         ElementTheme Theme { get; set; }
 
-        Task InitializeAsync();
+        Task InitializeAsync(bool setTransparentTitleBar);
         Task SetRequestedThemeAsync();
-        Task SetThemeAsync(ElementTheme theme);
+        Task SetThemeAsync(ElementTheme theme, bool setTransparentTitleBar);
     }
 }

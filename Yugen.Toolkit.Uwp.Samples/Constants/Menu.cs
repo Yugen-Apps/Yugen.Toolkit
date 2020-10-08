@@ -17,6 +17,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             new NavigationViewItemHeader { Content = "Microsoft Toolkit" },
             MicrosoftSubMenu.Mvvm,
             new NavigationViewItemHeader { Content = "Snippets" },
+            SnippetsSubMenu.Converters,
             SnippetsSubMenu.Mvvm
         };
 

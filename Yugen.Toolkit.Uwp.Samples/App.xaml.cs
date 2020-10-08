@@ -6,8 +6,7 @@ using Windows.Globalization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
-using Yugen.Toolkit.Uwp.Samples.ViewModels;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
+using Yugen.Toolkit.Standard.Extensions;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Services;
 
@@ -45,6 +44,9 @@ namespace Yugen.Toolkit.Uwp.Samples
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            var themeSelectorService = AppContainer.Services.GetService<IThemeSelectorService>();
+            themeSelectorService.InitializeAsync(false).FireAndForgetSafeAsync();
+
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (!(Window.Current.Content is AppShell shell))

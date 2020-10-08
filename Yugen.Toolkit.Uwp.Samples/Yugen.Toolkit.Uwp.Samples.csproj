@@ -112,9 +112,11 @@
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Snippets\Converters\EnumToBooleanConverterViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Mvvm\CommandViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Collections\CollectionViewModel.cs" />
     <Compile Include="ViewModels\AppShellViewModel.cs" />
+    <Compile Include="Models\ElementThemeOption.cs" />
     <Compile Include="ViewModels\Yugen\Mvvm\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Helpers\FindControlViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Controls\GraphViewModel.cs" />
@@ -128,6 +130,9 @@
     <Compile Include="ObservableObjects\Settings.cs" />
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Snippets\Converters\EnumToBooleanConverterPage.xaml.cs">
+      <DependentUpon>EnumToBooleanConverterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Snippets\Mvvm\XamlViewModelPage.xaml.cs">
       <DependentUpon>XamlViewModelPage.xaml</DependentUpon>
@@ -282,6 +287,10 @@
     <Page Include="Views\SettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Snippets\Converters\EnumToBooleanConverterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Snippets\Mvvm\XamlViewModelPage.xaml">
       <SubType>Designer</SubType>

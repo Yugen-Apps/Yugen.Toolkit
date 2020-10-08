@@ -7,6 +7,7 @@ using Windows.Storage;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
 using Yugen.Toolkit.Uwp.Services;
@@ -47,6 +48,7 @@ namespace Yugen.Toolkit.Uwp.Samples
                 .AddSingleton<IThemeSelectorService, ThemeSelectorService>()
                 .AddSingleton<AppShellViewModel>()
                 .AddTransient<CommandViewModel>()
+                .AddTransient<EnumToBooleanConverterViewModel>()
                 .AddTransient<MediatorViewModel>()
                 .AddTransient<NavigationParameterViewModel>()
                 .AddTransient<ObservableObjectViewModel>()

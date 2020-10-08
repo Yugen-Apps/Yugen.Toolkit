@@ -17,19 +17,23 @@ namespace Yugen.Toolkit.Uwp.Services
 
         public ElementTheme Theme { get; set; } = ElementTheme.Default;
 
-        public async Task InitializeAsync()
+        public async Task InitializeAsync(bool setTransparentTitleBar)
         {
             ElementTheme theme = LoadThemeFromSettingsAsync();
-            await SetThemeAsync(theme);
+            await SetThemeAsync(theme, setTransparentTitleBar);
         }
 
-        public async Task SetThemeAsync(ElementTheme theme)
+        public async Task SetThemeAsync(ElementTheme theme, bool setTransparentTitleBar)
         {
             Theme = theme;
 
             await SetRequestedThemeAsync();
             SaveThemeInSettingsAsync(Theme);
-            SetTitleBarTheme(Theme);
+            
+            if (setTransparentTitleBar)
+            {
+                SetTitleBarTheme(Theme);
+            }
         }
 
         public async Task SetRequestedThemeAsync()
