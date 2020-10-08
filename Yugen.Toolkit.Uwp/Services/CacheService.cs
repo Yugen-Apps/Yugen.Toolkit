@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Yugen.Toolkit.Standard.Core.Helpers;
-using Yugen.Toolkit.Standard.Json;
+using System.Text.Json;
 
 namespace Yugen.Toolkit.Uwp.Services
 {
@@ -30,7 +30,7 @@ namespace Yugen.Toolkit.Uwp.Services
 
             try
             {
-                var data = await JsonProvider.ToObjectAsync<T>(json);
+                var data = JsonSerializer.Deserialize<T>(json);
                 return data;
             }
             catch (Exception exception)
@@ -83,7 +83,7 @@ namespace Yugen.Toolkit.Uwp.Services
         {
             try
             {
-                var json = await JsonProvider.StringifyAsync(data);
+                var json = JsonSerializer.Serialize(data);
 
                 if (useStorageCache)
                 {

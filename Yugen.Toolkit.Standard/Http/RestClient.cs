@@ -6,7 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Yugen.Toolkit.Standard.Core.Helpers;
 using Yugen.Toolkit.Standard.Core.Models;
-using Yugen.Toolkit.Standard.Json;
+using System.Text.Json;
 
 namespace Yugen.Toolkit.Standard.Http
 {
@@ -32,7 +32,7 @@ namespace Yugen.Toolkit.Standard.Http
             try
             {
                 Result<string> response = await ExecuteRequest(uri, httpMethod, body, bodyContentType, bearerToken);
-                return Result.IsOk(response.IsSuccess, await JsonProvider.ToObjectAsync<T>(response.Value), "");
+                return Result.IsOk(response.IsSuccess, JsonSerializer.Deserialize<T>(response.Value), "");
             }
             catch (Exception exception)
             {
@@ -66,13 +66,13 @@ namespace Yugen.Toolkit.Standard.Http
                     switch (bodyContentType)
                     {
                         case BodyContentType.Json:
-                            httpRequestMessage.Content = await BuildJsonContent(body);
+                            httpRequestMessage.Content = BuildJsonContent(body);
                             break;
                         case BodyContentType.MultipartFormData:
                             httpRequestMessage.Content = BuildFormUrlEncodedContent(body as Dictionary<string, string>);
                             break;
                         case BodyContentType.WwwFormUrlEncoded:
-                            httpRequestMessage.Content = await BuildWwwFormUrlEncodedContent(body);
+                            httpRequestMessage.Content = BuildWwwFormUrlEncodedContent(body);
                             break;
                     }
                 }
@@ -93,17 +93,17 @@ namespace Yugen.Toolkit.Standard.Http
             }
         }
 
-        private async Task<StringContent> BuildJsonContent(object body)
+        private StringContent BuildJsonContent(object body)
         {
-            var json = await JsonProvider.StringifyAsync(body);
+            var json = JsonSerializer.Serialize(body);
             var content = new StringContent(json);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             return content;
         }
 
-        private async Task<StringContent> BuildWwwFormUrlEncodedContent(object body)
+        private StringContent BuildWwwFormUrlEncodedContent(object body)
         {
-            var json = await JsonProvider.StringifyAsync(body);
+            var json = JsonSerializer.Serialize(body);
             var content = new StringContent(json);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
             return content;

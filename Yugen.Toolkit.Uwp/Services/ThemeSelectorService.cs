@@ -18,7 +18,7 @@ namespace Yugen.Toolkit.Uwp.Services
 
         public static async Task InitializeAsync()
         {
-            ElementTheme theme = await LoadThemeFromSettingsAsync();
+            ElementTheme theme = LoadThemeFromSettingsAsync();
             await SetThemeAsync(theme);
         }
 
@@ -27,7 +27,7 @@ namespace Yugen.Toolkit.Uwp.Services
             Theme = theme;
 
             await SetRequestedThemeAsync();
-            await SaveThemeInSettingsAsync(Theme);
+            SaveThemeInSettingsAsync(Theme);
             SetTitleBarTheme(Theme);
         }
 
@@ -81,10 +81,10 @@ namespace Yugen.Toolkit.Uwp.Services
             return uiTheme == LightThemeBackground;
         }
 
-        private static async Task<ElementTheme> LoadThemeFromSettingsAsync()
+        private static ElementTheme LoadThemeFromSettingsAsync()
         {
             ElementTheme cacheTheme = ElementTheme.Default;
-            var themeName = await SettingsHelper.ReadAsync<string>(SettingsKey);
+            var themeName = SettingsHelper.Read<string>(SettingsKey);
 
             if (!string.IsNullOrEmpty(themeName))
             {
@@ -94,7 +94,7 @@ namespace Yugen.Toolkit.Uwp.Services
             return cacheTheme;
         }
 
-        private static async Task SaveThemeInSettingsAsync(ElementTheme theme) =>
-            await SettingsHelper.WriteAsync(SettingsKey, theme.ToString());
+        private static void SaveThemeInSettingsAsync(ElementTheme theme) =>
+            SettingsHelper.Write(SettingsKey, theme.ToString());
     }
 }

@@ -36,7 +36,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yugen.Toolkit.Standard.Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yugen.Toolkit.Web.Sample", "Yugen.Toolkit.Web.Sample\Yugen.Toolkit.Web.Sample.csproj", "{A5A1D563-983E-4237-80FC-725266EC0DF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yugen.Toolkit.Standard.Core", "Yugen.Toolkit.Standard.Core\Yugen.Toolkit.Standard.Core.csproj", "{242A1316-1F16-4EEC-A56A-B18C2CEEB695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yugen.Toolkit.Standard.Core", "Yugen.Toolkit.Standard.Core\Yugen.Toolkit.Standard.Core.csproj", "{242A1316-1F16-4EEC-A56A-B18C2CEEB695}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8592C5F2-33C7-4073-AA3F-2EC2F01FE8A8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

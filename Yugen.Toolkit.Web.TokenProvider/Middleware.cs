@@ -1,9 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
+using System;
+using System.Text.Json;
+using System.Threading.Tasks;
 using Options = Yugen.Toolkit.Web.TokenProvider.Models.Options;
 
 namespace Yugen.Toolkit.Web.TokenProvider
@@ -19,7 +19,6 @@ namespace Yugen.Toolkit.Web.TokenProvider
         private readonly RequestDelegate _next;
         private readonly Options _options;
         private readonly ILogger _logger;
-        private readonly JsonSerializerSettings _serializerSettings;
 
         public Middleware(RequestDelegate next, IOptions<Options> options, ILoggerFactory loggerFactory)
         {
@@ -28,11 +27,6 @@ namespace Yugen.Toolkit.Web.TokenProvider
 
             _options = options.Value;
             ThrowIfInvalidOptions(_options);
-
-            _serializerSettings = new JsonSerializerSettings
-            {
-                Formatting = Formatting.Indented
-            };
         }
 
         public Task Invoke(HttpContext context)
@@ -70,7 +64,7 @@ namespace Yugen.Toolkit.Web.TokenProvider
 
             // Serialize and return the response
             context.Response.ContentType = "application/json";
-            await context.Response.WriteAsync(JsonConvert.SerializeObject(token, _serializerSettings));
+            await context.Response.WriteAsync(JsonSerializer.Serialize(token));
         }
 
         private static void ThrowIfInvalidOptions(Options options)
