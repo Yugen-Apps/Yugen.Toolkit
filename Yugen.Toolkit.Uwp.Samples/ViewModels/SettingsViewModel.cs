@@ -11,31 +11,31 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen
     {
         private readonly IThemeSelectorService _themeSelectorService;
 
-        private ElementThemeOption _elementThemeOption;
+        private RadioOption<ElementTheme> _elementThemeOption;
 
         public SettingsViewModel(IThemeSelectorService themeSelectorService)
         {
             _themeSelectorService = themeSelectorService;
 
-            ElementThemeOption = ElementThemeList.FirstOrDefault(x => x.ElementTheme.Equals(_themeSelectorService.Theme));
+            ElementThemeOption = ElementThemeList.FirstOrDefault(x => x.Element.Equals(_themeSelectorService.Theme));
         }
 
         // Enum.GetValues(typeof(ElementTheme)).Cast<ElementTheme>().ToList();
-        public List<ElementThemeOption> ElementThemeList { get; } = new List<ElementThemeOption>
+        public List<RadioOption<ElementTheme>> ElementThemeList { get; } = new List<RadioOption<ElementTheme>>
         {
-            new ElementThemeOption(ElementTheme.Default),
-            new ElementThemeOption(ElementTheme.Dark),
-            new ElementThemeOption(ElementTheme.Light)
+            new RadioOption<ElementTheme>(ElementTheme.Default),
+            new RadioOption<ElementTheme>(ElementTheme.Dark),
+            new RadioOption<ElementTheme>(ElementTheme.Light)
         };
 
-        public ElementThemeOption ElementThemeOption
+        public RadioOption<ElementTheme> ElementThemeOption
         {
             get => _elementThemeOption;
             set
             {
                 if (value != null && SetProperty(ref _elementThemeOption, value))
                 {
-                    _themeSelectorService.SetThemeAsync(_elementThemeOption.ElementTheme, false);
+                    _themeSelectorService.SetThemeAsync(_elementThemeOption.Element, false);
                 }
             }
         }

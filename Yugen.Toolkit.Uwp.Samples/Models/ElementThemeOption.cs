@@ -1,13 +1,11 @@
-﻿using Windows.UI.Xaml;
-
-namespace Yugen.Toolkit.Uwp.Samples.Models
+﻿namespace Yugen.Toolkit.Uwp.Samples.Models
 {
-    public class ElementThemeOption
+    public class RadioOption<T>
     {
-        public ElementThemeOption(ElementTheme elementTheme) => ElementTheme = elementTheme;
+        public RadioOption(T element) => Element = element;
 
-        public ElementTheme ElementTheme { get; set; }
+        public T Element { get; set; }
 
-        public override string ToString() => ElementTheme.ToString();
+        public override string ToString() => Element.ToString();
     }
 }

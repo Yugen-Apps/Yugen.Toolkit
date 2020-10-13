@@ -138,6 +138,8 @@
     <Compile Include="Mvvm\DependencyInjection\IoCFrame.cs" />
     <Compile Include="Listeners\DependencyPropertyListener.cs" />
     <Compile Include="Services\IThemeSelectorService.cs" />
+    <Compile Include="Services\SettingsService.cs" />
+    <Compile Include="Helpers\StorageHelper.cs" />
     <Compile Include="Services\TestService.cs" />
     <Compile Include="Services\CacheService.cs" />
     <Compile Include="Converters\ComboBoxConverter.cs" />
