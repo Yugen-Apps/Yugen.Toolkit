@@ -1,7 +1,5 @@
-﻿
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 using Windows.Storage;
-using System.Text.Json;
 
 namespace Yugen.Toolkit.Uwp.Helpers
 {
