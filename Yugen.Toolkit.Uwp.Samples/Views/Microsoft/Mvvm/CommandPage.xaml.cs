@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Mvvm
         {
             this.InitializeComponent();
 
-            DataContext = AppContainer.Services.GetService<CommandViewModel>();
+            DataContext = App.Current.Services.GetService<CommandViewModel>();
         }
 
         private CommandViewModel ViewModel => (CommandViewModel)DataContext;

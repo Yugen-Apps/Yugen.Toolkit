@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm
         {
             this.InitializeComponent();
 
-            DataContext = AppContainer.Services.GetService<ObservableSettingsViewModel>();
+            DataContext = App.Current.Services.GetService<ObservableSettingsViewModel>();
         }
 
         private ObservableSettingsViewModel ViewModel => (ObservableSettingsViewModel)DataContext;

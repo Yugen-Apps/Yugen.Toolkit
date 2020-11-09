@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Views.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Helpers;
+using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.Constants
@@ -36,6 +37,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
                 Menu.NewNavigationViewItem ("Notification Banner", nameof (NotificationBannerPage)),
                 Menu.NewNavigationViewItem ("Validation", nameof (ValidationPage)),
                 Menu.NewNavigationViewItem ("Sample In App Control", nameof (SampleInAppControlPage)),
+                Menu.NewNavigationViewItem ("Yugen Dialog", nameof (YugenDialogPage)),
             }
         };
 

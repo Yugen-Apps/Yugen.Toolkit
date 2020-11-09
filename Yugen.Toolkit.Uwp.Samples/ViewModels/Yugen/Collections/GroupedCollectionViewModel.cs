@@ -1,5 +1,4 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using Yugen.Toolkit.Uwp.Collections;
@@ -7,23 +6,22 @@ using Yugen.Toolkit.Uwp.Extensions;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.Models;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
 {
     public class GroupedCollectionViewModel
     {
-        private ICommand _buttonCommand;
-
         public GroupedCollectionViewModel()
         {
             GroupCollection();
+
+            ButtonCommand = new RelayCommand(ButtonCommandBehavior);
         }
 
         public ObservableGroupedCollection<string, Person> GroupedCollection { get; set; }
 
-        public ICommand ButtonCommand => _buttonCommand
-            ?? (_buttonCommand = new RelayCommand(ButtonCommandBehavior));
+        public ICommand ButtonCommand { get; }
+
+        private static string GetGroupName(Person person) => person.Name.First().ToString().ToUpper();
 
         private void GroupCollection()
         {
@@ -34,9 +32,6 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
             var grouped = Data.ContactList.GroupByFirstLetterAscending(item => item.Name);
             GroupedCollection = new ObservableGroupedCollection<string, Person>(grouped);
         }
-
-        private static string GetGroupName(Person person) => person.Name.First().ToString().ToUpper();
-
 
         private void ButtonCommandBehavior()
         {

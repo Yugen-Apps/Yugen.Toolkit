@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
         {
             this.InitializeComponent();
 
-            DataContext = AppContainer.Services.GetService<SampleInAppControlViewModel>();
+            DataContext = App.Current.Services.GetService<SampleInAppControlViewModel>();
         }
 
         private SampleInAppControlViewModel ViewModel => (SampleInAppControlViewModel)DataContext;

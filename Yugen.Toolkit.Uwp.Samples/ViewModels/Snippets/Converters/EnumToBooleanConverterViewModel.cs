@@ -12,13 +12,13 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters
         private readonly IThemeSelectorService _themeSelectorService;
 
         private ElementTheme _elementTheme;
-        private ICommand _switchThemeCommand;
 
         public EnumToBooleanConverterViewModel(IThemeSelectorService themeSelectorService)
         {
             _themeSelectorService = themeSelectorService;
 
             ElementTheme = _themeSelectorService.Theme;
+            SwitchThemeCommand = new AsyncRelayCommand<ElementTheme>(SwitchThemeCommandBehavior);
         }
 
         public ElementTheme ElementTheme
@@ -27,7 +27,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters
             set => SetProperty(ref _elementTheme, value);
         }
 
-        public ICommand SwitchThemeCommand => _switchThemeCommand ?? (_switchThemeCommand = new AsyncRelayCommand<ElementTheme>(SwitchThemeCommandBehavior));
+        public ICommand SwitchThemeCommand { get; }
 
         private async Task SwitchThemeCommandBehavior(ElementTheme param)
         {

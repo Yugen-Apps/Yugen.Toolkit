@@ -12,16 +12,18 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
     {
         public ObservableCollection<Person> List = new ObservableCollection<Person>(Data.ContactList);
 
-        private ICommand _copyCommand;
+        public XamlUICommandViewModel()
+        {
+            CopyCommand = new RelayCommand<object>(CopyCommandBehavior);
+        }
 
-        public ICommand CopyCommand => _copyCommand
-            ?? (_copyCommand = new RelayCommand<object>(CopyCommandBehavior));
+        public ICommand CopyCommand { get; }
 
-        private void CopyCommandBehavior(object o)
+        public void DeleteExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
         {
         }
 
-        public void DeleteExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
+        private void CopyCommandBehavior(object o)
         {
         }
     }

@@ -9,9 +9,13 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
 {
     public class CommandViewModel : ViewModelBase
     {
-        private ICommand _buttonCommand;
-        private ICommand _buttonAsyncCommand;
         private string _text;
+
+        public CommandViewModel()
+        {
+            ButtonCommand = new RelayCommand(ButtonCommandBehavior);
+            ButtonAsyncCommand = new AsyncRelayCommand(ButtonAyncCommandBehavior);
+        }
 
         public string Text
         {
@@ -19,11 +23,9 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
             set => SetProperty(ref _text, value);
         }
 
-        public ICommand ButtonCommand => _buttonCommand 
-            ?? (_buttonCommand = new RelayCommand(ButtonCommandBehavior));
+        public ICommand ButtonCommand { get; }
 
-        public ICommand ButtonAsyncCommand => _buttonAsyncCommand 
-            ?? (_buttonAsyncCommand = new AsyncRelayCommand(ButtonAyncCommandBehavior));
+        public ICommand ButtonAsyncCommand { get; }
 
         private void ButtonCommandBehavior() => Text = "Ciao";
 

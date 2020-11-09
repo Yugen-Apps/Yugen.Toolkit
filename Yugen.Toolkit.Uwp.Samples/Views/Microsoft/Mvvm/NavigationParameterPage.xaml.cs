@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Mvvm
         {
             this.InitializeComponent();
 
-            DataContext = AppContainer.Services.GetService<NavigationParameterViewModel>();
+            DataContext = App.Current.Services.GetService<NavigationParameterViewModel>();
         }
 
         public NavigationParameterViewModel ViewModel => (NavigationParameterViewModel)DataContext;

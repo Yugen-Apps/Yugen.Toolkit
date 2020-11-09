@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters
         {
             this.InitializeComponent();
 
-            DataContext = AppContainer.Services.GetService<EnumToBooleanConverterViewModel>();
+            DataContext = App.Current.Services.GetService<EnumToBooleanConverterViewModel>();
         }
 
         private EnumToBooleanConverterViewModel ViewModel => (EnumToBooleanConverterViewModel)DataContext;

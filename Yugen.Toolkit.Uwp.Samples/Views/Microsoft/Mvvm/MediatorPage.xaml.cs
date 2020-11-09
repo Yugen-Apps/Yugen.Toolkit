@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Mvvm
         {
             this.InitializeComponent();
 
-            DataContext = AppContainer.Services.GetService<MediatorViewModel>();
+            DataContext = App.Current.Services.GetService<MediatorViewModel>();
         }
 
         private MediatorViewModel ViewModel => (MediatorViewModel)DataContext;

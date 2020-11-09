@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen
         {
             this.InitializeComponent();
 
-            DataContext = AppContainer.Services.GetService<SettingsViewModel>();
+            DataContext = App.Current.Services.GetService<SettingsViewModel>();
         }
 
         private SettingsViewModel ViewModel => (SettingsViewModel)DataContext;

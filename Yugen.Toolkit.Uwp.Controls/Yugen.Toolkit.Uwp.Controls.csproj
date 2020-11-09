@@ -11,7 +11,7 @@
     <AssemblyName>Yugen.Toolkit.Uwp.Controls</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -134,6 +134,7 @@
     <Compile Include="Dialogs\NotificationBanner.xaml.cs">
       <DependentUpon>NotificationBanner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\YugenDialog.cs" />
     <Compile Include="Graphs\DataPathEventArgs.cs" />
     <Compile Include="Graphs\BarGraph.xaml.cs">
       <DependentUpon>BarGraph.xaml</DependentUpon>
@@ -172,6 +173,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Dialogs\NotificationBanner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -1,12 +1,23 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Serilog;
+using Serilog.Events;
 using System;
+using System.IO;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Globalization;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Yugen.Toolkit.Standard.Extensions;
+using Yugen.Toolkit.Uwp.Samples.ViewModels;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Services;
 
@@ -23,19 +34,16 @@ namespace Yugen.Toolkit.Uwp.Samples
         /// </summary>
         public App()
         {
+            // Register services
+            Services = ConfigureServices();
+
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-
-            // Register services
-            AppContainer.ConfigureServices();
-
-            //AppContainer.ConfigureServices(services =>
-            //{
-            //    //services.AddSingleton<IProgressService, ProgressService>();
-            //    services.AddSingleton<AppShellViewModel>();
-            //    services.AddTransient<CommandViewModel>();
-            //});
         }
+
+        public new static App Current => (App)Application.Current;
+
+        public IServiceProvider Services { get; }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -44,7 +52,7 @@ namespace Yugen.Toolkit.Uwp.Samples
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            var themeSelectorService = AppContainer.Services.GetService<IThemeSelectorService>();
+            var themeSelectorService = Services.GetService<IThemeSelectorService>();
             themeSelectorService.InitializeAsync(false).FireAndForgetSafeAsync();
 
             // Do not repeat app initialization when the Window already has content,
@@ -100,6 +108,55 @@ namespace Yugen.Toolkit.Uwp.Samples
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private IServiceProvider ConfigureServices()
+        {
+            var logFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "Logs\\Yugen.Toolkit.Log.");
+
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.Debug()
+                .WriteTo.File(logFilePath, restrictedToMinimumLevel: LogEventLevel.Information)
+                .CreateLogger();
+
+            //Log.Logger = new LoggerConfiguration()
+            // .MinimumLevel.Debug()
+            // .WriteTo.Debug()
+            //  .WriteTo.Logger(l => l.Filter
+            //      .ByIncludingOnly(e => e.Level == LogEventLevel.Information)
+            //          .WriteTo.File($"{logFilePath}.Info", rollingInterval: RollingInterval.Day, restrictedToMinimumLevel: LogEventLevel.Information))
+            //  .WriteTo.Logger(l => l.Filter
+            //      .ByIncludingOnly(e => e.Level == LogEventLevel.Warning)
+            //          .WriteTo.File($"{logFilePath}.Warning", rollingInterval: RollingInterval.Day, restrictedToMinimumLevel: LogEventLevel.Information))
+            //  .CreateLogger();
+
+            Log.Debug("Serilog started Debug!");
+            Log.Information("Serilog started Information!");
+            Log.Warning("Serilog started Warning!");
+
+            return new ServiceCollection()
+                .AddSingleton<ITestService, TestService>()
+                .AddSingleton<IThemeSelectorService, ThemeSelectorService>()
+
+                .AddSingleton<AppShellViewModel>()
+                .AddTransient<CommandViewModel>()
+                .AddTransient<EnumToBooleanConverterViewModel>()
+                .AddTransient<MediatorViewModel>()
+                .AddTransient<NavigationViewModel>()
+                .AddTransient<NavigationParameterViewModel>()
+                .AddTransient<ObservableObjectViewModel>()
+                .AddTransient<ObservableSettingsViewModel>()
+                .AddTransient<SampleInAppControlViewModel>()
+                .AddTransient<SettingsViewModel>()
+                .AddTransient<XamlUICommandViewModel>()
+                .AddTransient<YugenDialogViewModel>()
+
+                .AddLogging(loggingBuilder =>
+                {
+                    loggingBuilder.AddSerilog(dispose: true);
+                })
+                .BuildServiceProvider();
         }
     }
 }
