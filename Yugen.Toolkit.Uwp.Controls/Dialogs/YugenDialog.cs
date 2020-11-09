@@ -2,7 +2,7 @@
 
 namespace Yugen.Toolkit.Uwp.Controls.Dialogs
 {
-    public sealed class YugenDialog : ContentDialog
+    public class YugenDialog : ContentDialog
     {
         public YugenDialog()
         {

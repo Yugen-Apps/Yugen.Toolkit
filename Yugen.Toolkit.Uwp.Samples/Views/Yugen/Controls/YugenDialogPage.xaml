@@ -7,8 +7,11 @@
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Button Command="{x:Bind ViewModel.ButtonCommand}"
-                Content="Show Dialog" />
-    </Grid>
+    <StackPanel>
+        <Button Command="{x:Bind ViewModel.YugenDialogCommand}"
+                Content="Show Yugen Dialog" />
+        
+        <Button Command="{x:Bind ViewModel.MyDialogCommand}"
+                Content="Show My Dialog" />
+    </StackPanel>
 </Page>

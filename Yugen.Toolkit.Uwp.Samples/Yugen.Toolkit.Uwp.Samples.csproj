@@ -149,6 +149,9 @@
     <Compile Include="Views\Yugen\Controls\GraphPage.xaml.cs">
       <DependentUpon>GraphPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Yugen\Controls\MyDialog.xaml.cs">
+      <DependentUpon>MyDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Yugen\Controls\NotificationBannerPage.xaml.cs">
       <DependentUpon>NotificationBannerPage.xaml</DependentUpon>
     </Compile>
@@ -314,6 +317,10 @@
     <Page Include="Views\Yugen\Controls\GraphPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Yugen\Controls\MyDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Yugen\Controls\NotificationBannerPage.xaml">
       <SubType>Designer</SubType>
