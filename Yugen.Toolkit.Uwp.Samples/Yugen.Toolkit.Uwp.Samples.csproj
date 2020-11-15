@@ -112,12 +112,12 @@
     <Compile Include="Constants\Menu.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Converters\EnumToBooleanConverterViewModel.cs" />
-    <Compile Include="ViewModels\Snippets\Mvvm\CommandViewModel.cs" />
+    <Compile Include="ViewModels\Snippets\Mvvm\XamlViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Collections\CollectionViewModel.cs" />
     <Compile Include="ViewModels\AppShellViewModel.cs" />
     <Compile Include="Models\ElementThemeOption.cs" />
     <Compile Include="ViewModels\Yugen\Controls\YugenDialogViewModel.cs" />
-    <Compile Include="ViewModels\Yugen\Mvvm\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Yugen\Mvvm\ObservableSettingsViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Helpers\FindControlViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Controls\GraphViewModel.cs" />
     <Compile Include="ObservableObjects\PersonObservableObject.cs" />

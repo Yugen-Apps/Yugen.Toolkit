@@ -5,7 +5,9 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
 {
     public class PersonObservableObject : ObservableObject<Person>
     {
-        public PersonObservableObject(Person model = null) : base(model) { }
+        public PersonObservableObject(Person model = null) : base(model)
+        {
+        }
 
         public string Name
         {

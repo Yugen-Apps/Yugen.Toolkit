@@ -1,23 +1,21 @@
-﻿using Windows.UI.Xaml;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Helpers;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class ValidationPage : Page
     {
-        public ValidationViewModel ViewModel { get; set; } = new ValidationViewModel();
-
         public ValidationPage()
         {
             this.InitializeComponent();
+
+            DataContext = App.Current.Services.GetService<ValidationViewModel>();
         }
+
+        private ValidationViewModel ViewModel => (ValidationViewModel)DataContext;
 
         private void Error_Click(object _1, RoutedEventArgs _2)
         {

@@ -17,8 +17,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             {
                 Menu.NewNavigationViewItem ("Enum To Boolean", nameof (EnumToBooleanConverterPage))
             }
-        };        
-        
+        };
+
         public static NavigationViewItem Mvvm => new NavigationViewItem
         {
             Content = nameof(Mvvm),

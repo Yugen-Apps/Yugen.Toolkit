@@ -14,6 +14,5 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls
         }
 
         private YugenDialogViewModel ViewModel => (YugenDialogViewModel)DataContext;
-
     }
 }

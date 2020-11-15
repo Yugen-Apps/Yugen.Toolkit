@@ -67,4 +67,4 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             }
         };
     }
-  }
+}

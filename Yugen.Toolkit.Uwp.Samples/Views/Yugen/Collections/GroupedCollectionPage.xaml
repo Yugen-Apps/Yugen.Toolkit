@@ -39,7 +39,6 @@
                         <TextBlock Text="{x:Bind Name}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
             <Button Command="{x:Bind ViewModel.ButtonCommand}"
                     Content="Add" />
@@ -101,5 +100,4 @@
             </ListView>
         </StackPanel>
     </StackPanel>
-
 </Page>

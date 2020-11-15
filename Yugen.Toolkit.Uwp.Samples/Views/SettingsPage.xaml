@@ -13,16 +13,15 @@
 
         <muxc:RadioButtons Header="Background"
                            ItemsSource="{x:Bind ViewModel.ElementThemeList}"
-                           SelectedItem="{x:Bind ViewModel.ElementThemeOption, Mode=TwoWay}"/>
+                           SelectedItem="{x:Bind ViewModel.ElementThemeOption, Mode=TwoWay}" />
 
         <!--<ComboBox ItemsSource="{x:Bind ViewModel.ElementThemeList}"
-                  DisplayMemberPath="ElementTheme"/>
+                  DisplayMemberPath="ElementTheme" />
 
         <ListView ItemsSource="{x:Bind ViewModel.ElementThemeList}">
             <DataTemplate x:DataType="yugen:ElementThemeOption">
                 <TextBlock Text="{x:Bind ElementTheme}" />
             </DataTemplate>
         </ListView>-->
-
     </StackPanel>
 </Page>

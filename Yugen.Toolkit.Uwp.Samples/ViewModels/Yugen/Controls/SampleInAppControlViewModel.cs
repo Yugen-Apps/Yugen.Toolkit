@@ -6,17 +6,19 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
     {
         private string _text = "aa";
 
-        public string Text
+        public SampleInAppControlViewModel()
         {
-            get => _text;
-            set => SetProperty(ref _text, value);
         }
-
-        public SampleInAppControlViewModel() { }
 
         public SampleInAppControlViewModel(string text)
         {
             Text = text;
+        }
+
+        public string Text
+        {
+            get => _text;
+            set => SetProperty(ref _text, value);
         }
     }
 }

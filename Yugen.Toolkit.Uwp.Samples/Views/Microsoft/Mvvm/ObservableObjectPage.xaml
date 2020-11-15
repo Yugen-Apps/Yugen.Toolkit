@@ -12,6 +12,5 @@
 
         <Button Click="{x:Bind ViewModel.Button_Click}"
                 Content="Update the name" />
-
     </Grid>
 </Page>

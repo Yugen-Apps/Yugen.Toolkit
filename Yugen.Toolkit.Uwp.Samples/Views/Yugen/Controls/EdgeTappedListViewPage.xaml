@@ -53,6 +53,5 @@
                                         ItemTemplate="{StaticResource ContactListViewTemplate}"
                                         SelectionChanged="OnSelectionChanged">
         </collections:EdgeTappedListView>
-
     </StackPanel>
 </Page>

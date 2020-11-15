@@ -13,12 +13,14 @@ using Windows.UI.Xaml.Navigation;
 using Yugen.Toolkit.Standard.Extensions;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views;
+using Yugen.Toolkit.Uwp.Samples.Views.Collections;
 using Yugen.Toolkit.Uwp.Services;
 
 namespace Yugen.Toolkit.Uwp.Samples
@@ -69,7 +71,7 @@ namespace Yugen.Toolkit.Uwp.Samples
                 }
             }
 
-            // adds callbacks for Back requests and changes 
+            // adds callbacks for Back requests and changes
             NavigationService.Initialize(typeof(App), shell.MainFrame, typeof(HomePage));
 
             // Place our app shell in the current Window
@@ -91,7 +93,7 @@ namespace Yugen.Toolkit.Uwp.Samples
         /// </summary>
         /// <param name="sender">The Frame which failed navigation</param>
         /// <param name="e">Details about the navigation failure</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        private void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
@@ -140,17 +142,25 @@ namespace Yugen.Toolkit.Uwp.Samples
                 .AddSingleton<IThemeSelectorService, ThemeSelectorService>()
 
                 .AddSingleton<AppShellViewModel>()
-                .AddTransient<CommandViewModel>()
-                .AddTransient<EnumToBooleanConverterViewModel>()
-                .AddTransient<MediatorViewModel>()
-                .AddTransient<NavigationViewModel>()
-                .AddTransient<NavigationParameterViewModel>()
-                .AddTransient<ObservableObjectViewModel>()
-                .AddTransient<ObservableSettingsViewModel>()
-                .AddTransient<SampleInAppControlViewModel>()
                 .AddTransient<SettingsViewModel>()
+
+                .AddTransient<CommandViewModel>()
+                .AddTransient<MediatorViewModel>()
+                .AddTransient<NavigationParameterViewModel>()
+                .AddTransient<NavigationViewModel>()
+                .AddTransient<ObservableObjectViewModel>()
                 .AddTransient<XamlUICommandViewModel>()
+
+                .AddTransient<EnumToBooleanConverterViewModel>()
+
+                .AddTransient<CollectionViewModel>()
+                .AddTransient<GroupedCollectionViewModel>()
+                .AddTransient<GraphViewModel>()
+                //.AddTransient<SampleInAppControlViewModel>()
+                .AddTransient<ValidationViewModel>()
                 .AddTransient<YugenDialogViewModel>()
+                .AddTransient<FindControlViewModel>()
+                .AddTransient<ObservableSettingsViewModel>()
 
                 .AddLogging(loggingBuilder =>
                 {

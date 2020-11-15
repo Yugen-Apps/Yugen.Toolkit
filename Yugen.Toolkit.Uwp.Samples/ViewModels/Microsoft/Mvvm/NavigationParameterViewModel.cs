@@ -8,6 +8,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
         private string _parameter;
 
         private string _text;
+
         public string Text
         {
             get => _text;

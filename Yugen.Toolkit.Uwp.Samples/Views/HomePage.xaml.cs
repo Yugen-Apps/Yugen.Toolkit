@@ -4,7 +4,7 @@ using Yugen.Toolkit.Uwp.Samples.Helpers;
 namespace Yugen.Toolkit.Uwp.Samples.Views
 {
     /// <summary>
-    /// HomePage 
+    /// HomePage
     /// </summary>
     public sealed partial class HomePage : Page
     {

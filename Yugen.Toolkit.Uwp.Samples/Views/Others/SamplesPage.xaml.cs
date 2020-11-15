@@ -1,12 +1,7 @@
 ﻿using Windows.UI.Xaml.Controls;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Yugen.Toolkit.Uwp.Samples.Views.Others
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class SamplesPage : Page
     {
         public SamplesPage()
@@ -31,7 +26,6 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Others
         //    System.Diagnostics.Debug.WriteLine($"{n} {masterImageSource.PixelHeight}");
         //}
     }
-
 
     //    public static class SettingsStorageExtensions
     //    {
@@ -62,8 +56,6 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Others
 
     //            return await JsonProvider.ToObjectAsync<T>(fileContent);
     //        }
-
-
 
     //        public static async Task<StorageFile> SaveFileAsync(this StorageFolder folder, byte[] content, string fileName, CreationCollisionOption options = CreationCollisionOption.ReplaceExisting)
     //        {
@@ -121,8 +113,6 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Others
     //        }
     //    }
 
-
-
     //_ = System.Convert.ToDecimal("1.2345"); //new CultureInfo("en-US") //where the number separator is "."
     //        _ = System.Convert.ToDecimal("1.2345", new CultureInfo("it-IT")); //where the number separator is ","
     //        _ = System.Convert.ToDecimal("1.2345", CultureInfo.CurrentUICulture); //The above line returns my culture
@@ -132,67 +122,66 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Others
     //        _ = System.Convert.ToDecimal("1,2345", CultureInfo.CurrentUICulture); //The above line returns my culture
     //        _ = System.Convert.ToDecimal("1,2345", CultureInfo.InvariantCulture); // http://stackoverflow.com/questions/9760237/what-does-cultureinfo-invariantculture-mean
 
+    //    private void Page_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+    //    {
+    //        myProgressService = new MyProgressService(percent =>
+    //        {
+    //            MyProgressBar.Value = percent;
+    //        });
 
-//    private void Page_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-//    {
-//        myProgressService = new MyProgressService(percent =>
-//        {
-//            MyProgressBar.Value = percent;
-//        });
+    //        Increment();
+    //    }
 
-//        Increment();
-//    }
+    //    private async void Increment()
+    //    {
+    //        Parallel.For(0, 50, async y =>
+    //        {
+    //            await Task.Delay(100);
+    //            myProgressService.IncrementProgress();
+    //        });
 
-//    private async void Increment()
-//    {
-//        Parallel.For(0, 50, async y =>
-//        {
-//            await Task.Delay(100);
-//            myProgressService.IncrementProgress();
-//        });
+    //        await myProgressService.Increment(100);
 
-//        await myProgressService.Increment(100);
+    //        //Task.Run(async () =>
+    //        //{
+    //        //    while (percentage < 100)
+    //        //    {
+    //        //        await Task.Delay(100);
+    //        //        IncrementProgress(progress);
+    //        //    }
+    //        //});
 
-//        //Task.Run(async () =>
-//        //{
-//        //    while (percentage < 100)
-//        //    {
-//        //        await Task.Delay(100);
-//        //        IncrementProgress(progress);
-//        //    }
-//        //});
+    //        //await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+    //        //{
+    //        //    await Increment(50);
 
-//        //await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
-//        //{
-//        //    await Increment(50);
+    //        //    await Increment(100);
+    //        //});
+    //    }
+    //}
 
-//        //    await Increment(100);
-//        //});
-//    }
-//}
+    //public class MyProgressService
+    //{
+    //    private int percentage = 0;
+    //    private readonly IProgress<int> _progress;
 
-//public class MyProgressService
-//{
-//    private int percentage = 0;
-//    private readonly IProgress<int> _progress;
+    //    public MyProgressService(Action<int> progress)
+    //    {
+    //        _progress = new Progress<int>(progress);
+    //    }
 
-//    public MyProgressService(Action<int> progress)
-//    {
-//        _progress = new Progress<int>(progress);
-//    }
+    //    public async Task Increment(int total)
+    //    {
+    //        while (percentage < total)
+    //        {
+    //            await Task.Delay(100);
+    //            IncrementProgress();
+    //        }
+    //    }
 
-//    public async Task Increment(int total)
-//    {
-//        while (percentage < total)
-//        {
-//            await Task.Delay(100);
-//            IncrementProgress();
-//        }
-//    }
-
-//    public void IncrementProgress()
-//    {
-//        _progress.Report(++percentage);
-//    }
-//}
+    //    public void IncrementProgress()
+    //    {
+    //        _progress.Report(++percentage);
+    //    }
+    //}
 }

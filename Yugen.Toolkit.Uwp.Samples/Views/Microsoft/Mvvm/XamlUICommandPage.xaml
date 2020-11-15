@@ -30,7 +30,7 @@
                                     <!--<interactivity:Interaction.Behaviors>
                                         <core:EventTriggerBehavior EventName="Invoked">
                                             <core:InvokeCommandAction Command="{StaticResource CustomXamlUICommand}"
-                                                                      CommandParameter="{x:Bind}"/>
+                                                                      CommandParameter="{x:Bind}" />
                                         </core:EventTriggerBehavior>
                                     </interactivity:Interaction.Behaviors>-->
                                 </SwipeItem>
@@ -47,11 +47,9 @@
                         </SwipeControl.RightItems>
 
                         <TextBlock Text="{x:Bind Name}" />
-
                     </SwipeControl>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
     </Grid>
 </Page>

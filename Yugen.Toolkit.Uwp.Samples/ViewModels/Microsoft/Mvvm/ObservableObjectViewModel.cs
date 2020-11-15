@@ -8,6 +8,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
     public class ObservableObjectViewModel : ViewModelBase
     {
         private PersonObservableObject _person = new PersonObservableObject();
+
         public PersonObservableObject Person
         {
             get => _person;

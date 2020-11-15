@@ -39,6 +39,5 @@
                 <xaml:ElementTheme>Default</xaml:ElementTheme>
             </RadioButton.CommandParameter>
         </RadioButton>
-
     </StackPanel>
 </Page>

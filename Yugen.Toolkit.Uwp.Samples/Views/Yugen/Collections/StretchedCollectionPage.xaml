@@ -38,10 +38,8 @@
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
                                    Text="Surname"
                                    Grid.Column="1" />
-
                     </Grid>
                 </DataTemplate>
-
             </ListView.HeaderTemplate>
 
             <ListView.ItemTemplate>
@@ -59,13 +57,9 @@
                         <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
                                    Text="{x:Bind Surname}"
                                    Grid.Column="1" />
-
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
         </ListView>
-
     </StackPanel>
-
 </Page>

@@ -1,15 +1,14 @@
-﻿<Page
-    x:Class="Yugen.Toolkit.Uwp.Samples.Views.HomePage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
         <TextBlock Style="{ThemeResource TitleTextBlockStyle}">Welcome To Yugen Toolkit Samples App</TextBlock>
-        
+
         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Get Started</TextBlock>
 
         <TextBlock Style="{ThemeResource BodyTextBlockStyle}">
@@ -20,6 +19,5 @@
 
         <HyperlinkButton Content="GitHub Repository"
                          NavigateUri="https://github.com/emiliano84/Toolkit/" />
-        
     </StackPanel>
 </Page>

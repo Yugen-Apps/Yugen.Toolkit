@@ -29,14 +29,14 @@
                                                   Text="{x:Bind ViewModel.Name, Mode=OneWay}" />
                     <TextBlock />
 
-                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsSelectAllOnFocusEnabled attribute enabled, 
+                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsSelectAllOnFocusEnabled attribute enabled,
                         means that when you focus on it, all the text will be selected</TextBlock>
                     <validation:ValidatingTextBox Header="Surname"
                                                   Text="{x:Bind ViewModel.Surname, Mode=OneWay}"
                                                   IsSelectAllOnFocusEnabled="True" />
                     <TextBlock />
 
-                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsMandatory attribute enabled, means that is mandatory, 
+                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsMandatory attribute enabled, means that is mandatory,
                         has also ValidationRules="{StaticResource EmailValidation, it means that must be a valid email</TextBlock>
                     <validation:ValidatingTextBox Header="Email"
                                                   Text="{x:Bind ViewModel.Email, Mode=OneWay}"
@@ -44,7 +44,7 @@
                                                   ValidationRules="{StaticResource EmailValidation}" />
                     <TextBlock />
 
-                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has ValidationRules="{StaticResource RegexValidationRule}, 
+                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has ValidationRules="{StaticResource RegexValidationRule},
                         it means that needs a regex rul to be satisified, in this case a phone number</TextBlock>
                     <validation:ValidatingTextBox Header="Mobile"
                                                   Text="{x:Bind ViewModel.Mobile, Mode=OneWay}"
@@ -57,7 +57,7 @@
                                                    IsMandatory="True" />
                     <TextBlock />
 
-                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsMandatory attribute enabled, means that is mandatory, 
+                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsMandatory attribute enabled, means that is mandatory,
                         it will be used also to simulate a custom validation response from the server</TextBlock>
                     <validation:ValidatingTextBox x:Name="UsernameControl"
                                                   Header="Username"
@@ -65,7 +65,7 @@
                                                   IsMandatory="True" />
                     <TextBlock />
 
-                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">Passworda fields has IsMandatory attribute enabled, 
+                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">Passworda fields has IsMandatory attribute enabled,
                         they also have OtherPasswordControl attribute with the other password control, to check if the password correspond</TextBlock>
                     <validation:ValidatingPasswordBox x:Name="Password"
                                                       Header="Password"
@@ -81,14 +81,14 @@
                                                       ValidationRules="{StaticResource PasswordValidation}" />
                     <TextBlock />
 
-                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsRealTimeValidationEnabled attribute enabled, 
+                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">This field has IsRealTimeValidationEnabled attribute enabled,
                         and ValidationRules="{StaticResource RegexDecimalValidationRule}, it means the control doesn't permit you to write any character other than numbers</TextBlock>
                     <validation:ValidatingTextBox Header="Price"
                                                   IsRealTimeValidationEnabled="True"
                                                   ValidationRules="{StaticResource DecimalRegexValidationRule}" />
                     <TextBlock />
 
-                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">On click all fields are validated, 
+                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">On click all fields are validated,
                         We simulate a submission of the form and a username already exist response from the server</TextBlock>
                     <validation:ValidatingButton x:Name="ValidatingButton"
                                                  Click="Error_Click"
@@ -98,7 +98,7 @@
                                                  ValidatingForm="{x:Bind ValidatingForm}" />
                     <TextBlock />
 
-                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">On click all fields are validated, 
+                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}">On click all fields are validated,
                         We simulate a submission of the form with success</TextBlock>
                     <validation:ValidatingButton x:Name="ValidatingButton2"
                                                  Click="Success_Click"
@@ -107,13 +107,9 @@
                                                  Style="{ThemeResource AccentButtonStyle}"
                                                  ValidatingForm="{x:Bind ValidatingForm}" />
                 </StackPanel>
-
             </validation:ValidatingForm>
-
         </StackPanel>
-
     </Grid>
-
 </Page>
 
 <!--
@@ -123,7 +119,7 @@
 <Button Content="Login"
         Click="ButtonBase_OnClick">
     <Button.KeyboardAccelerators>
-        <KeyboardAccelerator Key="Enter"/>
+        <KeyboardAccelerator Key="Enter" />
     </Button.KeyboardAccelerators>
 </Button>
 -->

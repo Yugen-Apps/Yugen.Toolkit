@@ -30,6 +30,5 @@
             <Button Content="Show Error"
                     Tapped="ErrorButton_Tapped" />
         </StackPanel>
-
     </Grid>
 </Page>

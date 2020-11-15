@@ -10,7 +10,7 @@
     <StackPanel>
         <Button Command="{x:Bind ViewModel.YugenDialogCommand}"
                 Content="Show Yugen Dialog" />
-        
+
         <Button Command="{x:Bind ViewModel.MyDialogCommand}"
                 Content="Show My Dialog" />
     </StackPanel>

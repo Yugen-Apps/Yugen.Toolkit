@@ -1,13 +1,14 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Uwp.Helpers;
 using Yugen.Toolkit.Standard.Mvvm;
+using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
 {
     public class FindControlViewModel : ViewModelBase
     {
         private string _title = "Find Control Page";
+
         public string Title
         {
             get => _title;
@@ -24,8 +25,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
         {
             var dependencyObject = FindControlHelper.FindAncestor<Page>(sender);
             ShowResult(dependencyObject);
-        }        
-        
+        }
+
         public void FindAncestorStackPanelByNameButton_Click(object sender, RoutedEventArgs _)
         {
             var dependencyObject = FindControlHelper.FindAncestor<StackPanel>(sender, "myStackPanel");
@@ -45,7 +46,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
             var dependencyObject = FindControlHelper.FindDescendant<Button>(page, "MyButton");
             ShowResult(dependencyObject);
         }
-                
+
         public async void FindButtons_Click(object sender, RoutedEventArgs _)
         {
             var page = FindControlHelper.FindAncestor<Page>(sender);
