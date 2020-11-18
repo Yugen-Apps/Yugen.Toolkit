@@ -34,11 +34,11 @@ jobs:
       run: nuget push Yugen.Toolkit.Standard.Core\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json
       continue-on-error: true
     
-    - name: Nuget Add Source
+    - name: GH Nuget Add Source
       run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/emiliano84/index.json" -UserName emiliano84 -Password ${{ secrets.PACKAGES_TOKEN }}
 
-    - name: Nuget SetAPIKey
+    - name: GH Nuget SetAPIKey
       run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source "GitHub"
 
-    - name: Nuget Push
+    - name: GH Nuget Push
       run: nuget push Yugen.Toolkit.Standard.Core\bin\Release\*.nupkg -Source "GitHub"
