@@ -7,9 +7,15 @@
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <Button Command="{x:Bind ViewModel.YugenDialogCommand}"
-                Content="Show Yugen Dialog" />
+    <StackPanel Spacing="8">
+        <Button Command="{x:Bind ViewModel.YugenDialogNoButtonsCommand}"
+                Content="Show Yugen Dialog NoButtons" />
+
+        <Button Command="{x:Bind ViewModel.YugenDialogOneButtonCommand}"
+                Content="Show Yugen Dialog OneButton" />
+
+        <Button Command="{x:Bind ViewModel.YugenDialogTwoButtonsCommand}"
+                Content="Show Yugen Dialog TwoButtons" />
 
         <Button Command="{x:Bind ViewModel.MyDialogCommand}"
                 Content="Show My Dialog" />

@@ -3,6 +3,16 @@
                     xmlns:local="using:Yugen.Toolkit.Uwp.Controls.Dialogs">
 
     <Style TargetType="local:YugenDialog">
+        <Setter Property="Foreground"
+                Value="{ThemeResource ContentDialogForeground}" />
+        <Setter Property="Background"
+                Value="{ThemeResource ContentDialogBackground}" />
+        <Setter Property="BorderBrush"
+                Value="{ThemeResource ContentDialogBorderBrush}" />
+        <Setter Property="IsTabStop"
+                Value="False" />
+        <Setter Property="CloseButtonText"
+                Value="close" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContentDialog">
@@ -266,8 +276,7 @@
                                     <ScaleTransform x:Name="ScaleTransform" />
                                 </Border.RenderTransform>
                                 <Grid x:Name="DialogSpace"
-                                      Padding="{ThemeResource ContentDialogPadding}"
-                                      Background="{ThemeResource BackButtonPointerOverBackgroundThemeBrush}">
+                                      Padding="{ThemeResource ContentDialogPadding}">
 
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
@@ -312,7 +321,9 @@
                                             </ContentControl.Template>
                                         </ContentControl>
                                         <Button x:Name="CloseButton"
-                                                Grid.Column="2">
+                                                Grid.Column="2"
+                                                Background="Transparent"
+                                                Style="{ThemeResource ButtonRevealStyle}">
                                             <FontIcon Glyph="&#xE8BB;" />
                                         </Button>
                                     </Grid>
@@ -344,8 +355,6 @@
                                           Margin="{ThemeResource ContentDialogCommandSpaceMargin}">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition />
-                                            <ColumnDefinition Width="0.5*" />
-                                            <ColumnDefinition Width="0.5*" />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
                                         <Button x:Name="PrimaryButton"
@@ -365,16 +374,7 @@
                                                 HorizontalAlignment="Stretch"
                                                 VerticalAlignment="Stretch"
                                                 Margin="2,0,2,0"
-                                                Grid.Column="1"
-                                                Grid.ColumnSpan="2" />
-                                        <!--<Button x:Name="CloseButton"
-                                                Content="{TemplateBinding CloseButtonText}"
-                                                Style="{TemplateBinding CloseButtonStyle}"
-                                                ElementSoundMode="FocusOnly"
-                                                HorizontalAlignment="Stretch"
-                                                VerticalAlignment="Stretch"
-                                                Margin="2,0,0,0"
-                                                Grid.Column="3" />-->
+                                                Grid.Column="1"/>
                                     </Grid>
 
                                 </Grid>
