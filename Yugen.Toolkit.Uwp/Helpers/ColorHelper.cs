@@ -9,14 +9,16 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
-        public static System.Drawing.Color Convert(Windows.UI.Color color) => System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B);
+        public static System.Drawing.Color Convert(Windows.UI.Color color) => 
+            System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B);
 
         /// <summary>
         /// convert System.Drawing.Color to Windows.UI.Color
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
-        public static Windows.UI.Color Convert(System.Drawing.Color color) => Windows.UI.Color.FromArgb(color.A, color.R, color.G, color.B);
+        public static Windows.UI.Color Convert(System.Drawing.Color color) => 
+            Windows.UI.Color.FromArgb(color.A, color.R, color.G, color.B);
 
         /// <summary>
         /// convert string hex to Windows.UI.Color
@@ -38,6 +40,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// </summary>
         /// <param name="hex"></param>
         /// <returns></returns>
-        public static SolidColorBrush ConvertHexToSolidColorBrush(string hex) => new SolidColorBrush(Convert(hex));
+        public static SolidColorBrush ConvertHexToSolidColorBrush(string hex) => 
+            new SolidColorBrush(Convert(hex));
     }
 }

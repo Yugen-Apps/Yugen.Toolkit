@@ -9,9 +9,32 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                <ResourceDictionary Source="Dictionary1.xaml" />
-                <ResourceDictionary Source="Dictionary2.xaml" />
+                <!-- Other merged dictionaries here -->
+                <ResourceDictionary Source="ms-appx:///Styles/Dictionary1.xaml" />
+                <ResourceDictionary Source="ms-appx:///Styles/Dictionary2.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
+            <ResourceDictionary.ThemeDictionaries>
+
+                <ResourceDictionary x:Key="Light">
+
+                    <!--TitleBar themed resources-->
+                    <Color x:Key="TitleBarButtonForeground">#242424</Color>
+                    <Color x:Key="TitleBarButtonHoverBackground">White</Color>
+                    <Color x:Key="TitleBarButtonHoverForeground">#242424</Color>
+
+                </ResourceDictionary>
+
+                <ResourceDictionary x:Key="Dark">
+
+                    <!--TitleBar themed resources-->
+                    <Color x:Key="TitleBarButtonForeground">#dcdcdc</Color>
+                    <Color x:Key="TitleBarButtonHoverBackground">#262626</Color>
+                    <Color x:Key="TitleBarButtonHoverForeground">#dcdcdc</Color>
+
+                </ResourceDictionary>
+
+            </ResourceDictionary.ThemeDictionaries>
 
             <validation:ValidationRules x:Key="EmailValidation">
                 <validation:ValidationRules.Rules>

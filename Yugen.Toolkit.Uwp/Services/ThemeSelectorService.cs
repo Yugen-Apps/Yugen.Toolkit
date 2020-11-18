@@ -52,20 +52,12 @@ namespace Yugen.Toolkit.Uwp.Services
 
         private void SetTitleBarTheme(ElementTheme theme)
         {
-            ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            var buttonForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonForeground");
+            var buttonHoverBackgroundColor = GetThemeResource<Color>(theme, "TitleBarButtonHoverBackground");
+            var buttonHoverForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonHoverForeground");
+            var buttonInactiveForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonForeground");
 
-            //Active
-            titleBar.BackgroundColor = Colors.Transparent;
-            titleBar.ButtonBackgroundColor = Colors.Transparent;
-            titleBar.ButtonForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonForeground");
-            titleBar.ButtonHoverBackgroundColor = GetThemeResource<Color>(theme, "TitleBarButtonHoverBackground");
-            titleBar.ButtonHoverForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonHoverForeground");
-
-            //Inactive
-            titleBar.InactiveBackgroundColor = Colors.Transparent;
-            titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-            titleBar.ButtonInactiveForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonForeground");
-
+            TitleBarHelper.StyleTitleBar(buttonForegroundColor, buttonHoverBackgroundColor, buttonHoverForegroundColor, buttonInactiveForegroundColor);
         }
 
         private T GetThemeResource<T>(ElementTheme theme, string resKey)
