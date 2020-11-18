@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Yugen.Toolkit.Uwp.Controls</id>
-    <version>1.0.39</version>
+    <version>1.0.40</version>
     <title>Yugen Toolkit Uwp Controls</title>
     <authors>emiliano84</authors>
     <owners>emiliano84</owners>
@@ -24,8 +24,8 @@
     <repository type="git" url="https://github.com/emiliano84/Yugen.Toolkit.git" /> 
     <dependencies>
       <group targetFramework="uap10.0.17763">
-        <dependency id="Yugen.Toolkit.Standard" version="1.0.39" exclude="Build,Analyzers" />
-        <dependency id="Yugen.Toolkit.Uwp" version="1.0.39" exclude="Build,Analyzers" />
+        <dependency id="Yugen.Toolkit.Standard" version="1.0.40" exclude="Build,Analyzers" />
+        <dependency id="Yugen.Toolkit.Uwp" version="1.0.40" exclude="Build,Analyzers" />
         <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.2.10" exclude="Build,Analyzers" />
       </group>
     </dependencies>
