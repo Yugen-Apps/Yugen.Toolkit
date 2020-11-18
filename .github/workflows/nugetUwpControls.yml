@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v1   
     
     - name: Setup MSBuild.exe
-      uses: warrenbuckley/Setup-MSBuild@v1
+      uses: microsoft/setup-msbuild@v1
 
     - name: MSBuild Restore
       run: msbuild Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj /p:Configuration="Release" /t:restore     
@@ -21,7 +21,7 @@ jobs:
       run: msbuild Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj /p:Configuration="Release"
       
     - name: Setup Nuget.exe
-      uses: warrenbuckley/Setup-Nuget@v1
+      uses: nuget/setup-nuget@v1
       
     - name: Nuget Pack
       run: nuget pack Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj -properties Configuration=Release

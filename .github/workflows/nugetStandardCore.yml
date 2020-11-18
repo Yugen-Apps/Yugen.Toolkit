@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v1   
     
     - name: Setup MSBuild.exe
-      uses: warrenbuckley/Setup-MSBuild@v1
+      uses: microsoft/setup-msbuild@v1
 
     - name: MSBuild Restore
       run: msbuild Yugen.Toolkit.Standard.Core\Yugen.Toolkit.Standard.Core.csproj /p:Configuration="Release" /t:restore     
@@ -25,7 +25,7 @@ jobs:
     #-p:PackageVersion=1.0.2 
 
     - name: Setup Nuget.exe
-      uses: warrenbuckley/Setup-Nuget@v1
+      uses: nuget/setup-nuget@v1
         
     - name: Nuget SetAPIKey
       run: nuget setApiKey ${{ secrets.NUGET_KEY }}
