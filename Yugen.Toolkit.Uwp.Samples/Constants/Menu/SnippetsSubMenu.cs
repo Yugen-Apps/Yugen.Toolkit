@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D;
 
-namespace Yugen.Toolkit.Uwp.Samples.Constants
+namespace Yugen.Toolkit.Uwp.Samples.Constants.Menu
 {
     public static class SnippetsSubMenu
     {
@@ -15,7 +16,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             SelectsOnInvoked = false,
             MenuItemsSource = new List<NavigationViewItem>
             {
-                Menu.NewNavigationViewItem ("Enum To Boolean", nameof (EnumToBooleanConverterPage))
+                MenuBase.NewNavigationViewItem ("Enum To Boolean", nameof (EnumToBooleanConverterPage))
             }
         };
 
@@ -27,7 +28,19 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             SelectsOnInvoked = false,
             MenuItemsSource = new List<NavigationViewItem>
             {
-                Menu.NewNavigationViewItem ("Xaml ViewModel", nameof (XamlViewModelPage))
+                MenuBase.NewNavigationViewItem ("Xaml ViewModel", nameof (XamlViewModelPage))
+            }
+        };
+
+        public static NavigationViewItem Win2D => new NavigationViewItem
+        {
+            Content = nameof(Win2D),
+            Icon = new Windows.UI.Xaml.Controls.FontIcon { Glyph = "\uEA37" },
+            IsExpanded = false,
+            SelectsOnInvoked = false,
+            MenuItemsSource = new List<NavigationViewItem>
+            {
+                MenuBase.NewNavigationViewItem ("Loading Wave", nameof (LoadingWavePage))
             }
         };
     }

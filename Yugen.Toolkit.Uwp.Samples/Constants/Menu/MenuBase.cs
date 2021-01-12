@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Views;
 
-namespace Yugen.Toolkit.Uwp.Samples.Constants
+namespace Yugen.Toolkit.Uwp.Samples.Constants.Menu
 {
-    public static class Menu
+    public static class MenuBase
     {
         public static List<NavigationViewItemBase> MenuList = new List<NavigationViewItemBase>
         {
@@ -18,7 +18,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             MicrosoftSubMenu.Mvvm,
             new NavigationViewItemHeader { Content = "Snippets" },
             SnippetsSubMenu.Converters,
-            SnippetsSubMenu.Mvvm
+            SnippetsSubMenu.Mvvm,
+            SnippetsSubMenu.Win2D
         };
 
         public static NavigationViewItem Home => NewNavigationViewItem(nameof(Home), nameof(HomePage));

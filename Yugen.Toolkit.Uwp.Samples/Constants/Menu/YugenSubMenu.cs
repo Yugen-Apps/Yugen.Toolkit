@@ -6,7 +6,7 @@ using Yugen.Toolkit.Uwp.Samples.Views.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm;
 
-namespace Yugen.Toolkit.Uwp.Samples.Constants
+namespace Yugen.Toolkit.Uwp.Samples.Constants.Menu
 {
     public static class YugenSubMenu
     {
@@ -18,8 +18,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             SelectsOnInvoked = false,
             MenuItemsSource = new List<NavigationViewItem>
             {
-                Menu.NewNavigationViewItem ("Grouped Collection", nameof (GroupedCollectionPage)),
-                Menu.NewNavigationViewItem ("Stretched Listview Item", nameof (StretchedCollectionPage))
+                MenuBase.NewNavigationViewItem ("Grouped Collection", nameof (GroupedCollectionPage)),
+                MenuBase.NewNavigationViewItem ("Stretched Listview Item", nameof (StretchedCollectionPage))
             }
         };
 
@@ -31,13 +31,13 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             SelectsOnInvoked = false,
             MenuItemsSource = new List<NavigationViewItem>
             {
-                Menu.NewNavigationViewItem ("Custom Dialog", nameof (CustomDialogPage)),
-                Menu.NewNavigationViewItem ("EdgeTapped ListView", nameof (EdgeTappedListViewPage)),
-                Menu.NewNavigationViewItem ("Graph", nameof (GraphPage)),
-                Menu.NewNavigationViewItem ("Notification Banner", nameof (NotificationBannerPage)),
-                Menu.NewNavigationViewItem ("Validation", nameof (ValidationPage)),
-                Menu.NewNavigationViewItem ("Sample In App Control", nameof (SampleInAppControlPage)),
-                Menu.NewNavigationViewItem ("Yugen Dialog", nameof (YugenDialogPage)),
+                MenuBase.NewNavigationViewItem ("Custom Dialog", nameof (CustomDialogPage)),
+                MenuBase.NewNavigationViewItem ("EdgeTapped ListView", nameof (EdgeTappedListViewPage)),
+                MenuBase.NewNavigationViewItem ("Graph", nameof (GraphPage)),
+                MenuBase.NewNavigationViewItem ("Notification Banner", nameof (NotificationBannerPage)),
+                MenuBase.NewNavigationViewItem ("Validation", nameof (ValidationPage)),
+                MenuBase.NewNavigationViewItem ("Sample In App Control", nameof (SampleInAppControlPage)),
+                MenuBase.NewNavigationViewItem ("Yugen Dialog", nameof (YugenDialogPage)),
             }
         };
 
@@ -49,9 +49,9 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             SelectsOnInvoked = false,
             MenuItemsSource = new List<NavigationViewItem>
             {
-                Menu.NewNavigationViewItem ("Content Dialog", nameof (ContentDialogPage)),
-                Menu.NewNavigationViewItem ("File Picker", nameof (FilePickerPage)),
-                Menu.NewNavigationViewItem ("Find Control", nameof (FindControlPage))
+                MenuBase.NewNavigationViewItem ("Content Dialog", nameof (ContentDialogPage)),
+                MenuBase.NewNavigationViewItem ("File Picker", nameof (FilePickerPage)),
+                MenuBase.NewNavigationViewItem ("Find Control", nameof (FindControlPage))
             }
         };
 
@@ -63,7 +63,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             SelectsOnInvoked = false,
             MenuItemsSource = new List<NavigationViewItem>
             {
-                Menu.NewNavigationViewItem ("Observable Settings", nameof (ObservableSettingsPage))
+                MenuBase.NewNavigationViewItem ("Observable Settings", nameof (ObservableSettingsPage))
             }
         };
     }

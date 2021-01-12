@@ -105,11 +105,11 @@
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constants\Data.cs" />
-    <Compile Include="Constants\MicrosoftSubMenu.cs" />
-    <Compile Include="Constants\SnippetsSubMenu.cs" />
-    <Compile Include="Constants\YugenSubMenu.cs" />
+    <Compile Include="Constants\Menu\MicrosoftSubMenu.cs" />
+    <Compile Include="Constants\Menu\SnippetsSubMenu.cs" />
+    <Compile Include="Constants\Menu\YugenSubMenu.cs" />
     <Compile Include="Models\Graph.cs" />
-    <Compile Include="Constants\Menu.cs" />
+    <Compile Include="Constants\Menu\MenuBase.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Converters\EnumToBooleanConverterViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Mvvm\XamlViewModel.cs" />
@@ -136,6 +136,9 @@
     </Compile>
     <Compile Include="Views\Snippets\Mvvm\XamlViewModelPage.xaml.cs">
       <DependentUpon>XamlViewModelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Snippets\Win2D\LoadingWavePage.xaml.cs">
+      <DependentUpon>LoadingWavePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Yugen\Collections\StretchedCollectionPage.cs">
       <DependentUpon>StretchedCollectionPage.xaml</DependentUpon>
@@ -302,6 +305,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Snippets\Win2D\LoadingWavePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Yugen\Collections\StretchedCollectionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -416,6 +423,9 @@
     </PackageReference>
     <PackageReference Include="System.IO.FileSystem">
       <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Win2D.uwp">
+      <Version>1.25.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
