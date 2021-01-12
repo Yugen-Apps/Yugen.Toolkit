@@ -134,6 +134,9 @@
     <Compile Include="Views\Snippets\Converters\EnumToBooleanConverterPage.xaml.cs">
       <DependentUpon>EnumToBooleanConverterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Snippets\MediaCompositionNS\MediaCompositionPage.xaml.cs">
+      <DependentUpon>MediaCompositionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Snippets\Mvvm\XamlViewModelPage.xaml.cs">
       <DependentUpon>XamlViewModelPage.xaml</DependentUpon>
     </Compile>
@@ -298,6 +301,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Snippets\Converters\EnumToBooleanConverterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Snippets\MediaCompositionNS\MediaCompositionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

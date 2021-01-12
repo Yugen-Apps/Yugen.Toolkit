@@ -18,6 +18,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants.Menu
             MicrosoftSubMenu.Mvvm,
             new NavigationViewItemHeader { Content = "Snippets" },
             SnippetsSubMenu.Converters,
+            SnippetsSubMenu.MediaComposition,
             SnippetsSubMenu.Mvvm,
             SnippetsSubMenu.Win2D
         };
