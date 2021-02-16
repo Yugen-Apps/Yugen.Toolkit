@@ -18,6 +18,6 @@
         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Useful Links</TextBlock>
 
         <HyperlinkButton Content="GitHub Repository"
-                         NavigateUri="https://github.com/emiliano84/Toolkit/" />
+                         NavigateUri="https://github.com/panda-sharp/Toolkit/" />
     </StackPanel>
 </Page>

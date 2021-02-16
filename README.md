@@ -11,5 +11,5 @@ Everyone is welcome to contribute, if you're looking to help out with the projec
 The project has been primarily built for the universal Windows platform (UWP), so you'll need the latest version of [Visual Studio 2019](https://www.visualstudio.com/) (including the community edition) and the latest Windows 10 SDK which you can install as part of the Visual Studio installer.
 
 ## Docs
-[https://emiliano84.github.io/Toolkit.Docs/](https://emiliano84.github.io/Toolkit.Docs/)
+[https://panda-sharp.github.io/Toolkit.Docs/](https://panda-sharp.github.io/Toolkit.Docs/)
 

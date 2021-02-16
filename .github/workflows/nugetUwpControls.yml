@@ -34,7 +34,7 @@ jobs:
       continue-on-error: true
 
     - name: GH Nuget Add Source
-      run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/emiliano84/index.json" -UserName emiliano84 -Password ${{ secrets.PACKAGES_TOKEN }}
+      run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/panda-sharp/index.json" -UserName panda-sharp -Password ${{ secrets.PACKAGES_TOKEN }}
       
     - name: GH Nuget SetAPIKey
       run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source "GitHub"      
