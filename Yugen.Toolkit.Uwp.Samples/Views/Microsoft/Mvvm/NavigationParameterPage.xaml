@@ -9,7 +9,7 @@
     <Grid>
         <TextBlock Text="{x:Bind ViewModel.Text, Mode=OneWay}" />
 
-        <Button Click="{x:Bind ViewModel.Button_Click}"
+        <Button Command="{x:Bind ViewModel.UpdateTextCommand}"
                 Content="Update the text" />
     </Grid>
 </Page>

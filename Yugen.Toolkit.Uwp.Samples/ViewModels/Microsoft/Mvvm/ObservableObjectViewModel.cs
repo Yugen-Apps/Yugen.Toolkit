@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using System.Collections.Generic;
+using System.Windows.Input;
 using Yugen.Toolkit.Standard.Mvvm;
-using Yugen.Toolkit.Uwp.Samples.Models;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
@@ -9,22 +10,25 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
     {
         private PersonObservableObject _person = new PersonObservableObject();
 
+        public ObservableObjectViewModel()
+        {
+            UpdateCommand = new RelayCommand(UpdateCommandBehavior);
+        }
+
         public PersonObservableObject Person
         {
             get => _person;
             set => SetProperty(ref _person, value);
         }
 
+        public ICommand UpdateCommand { get; }
+
         public override void OnNavigatedTo(object parameter, IDictionary<string, object> state)
         {
             Person.Name = "My Name";
-
-            Person p = Person;
         }
 
-        public void Button_Click(object _1, Windows.UI.Xaml.RoutedEventArgs _2)
-        {
+        public void UpdateCommandBehavior() => 
             Person.Name = "My new name";
-        }
     }
 }

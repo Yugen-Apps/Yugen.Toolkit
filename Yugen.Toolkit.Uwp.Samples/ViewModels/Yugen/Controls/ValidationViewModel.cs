@@ -8,17 +8,11 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
         public List<string> GenderList = new List<string> { "Male", "Female" };
         private string _title = "ValidationPage";
         private string _name;
-
         private string _surname;
-
         private string _email;
-
         private string _mobile;
-
         private string _username;
-
         private string _password;
-
         private string _confirmPassword;
 
         public string Title

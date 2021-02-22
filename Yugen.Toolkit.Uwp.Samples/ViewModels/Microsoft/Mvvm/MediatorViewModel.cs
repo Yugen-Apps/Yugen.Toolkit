@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using System.Windows.Input;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Standard.Mvvm.Mediator;
 
@@ -8,20 +9,25 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
     {
         private string _text;
 
+        public MediatorViewModel()
+        {
+            LoadedCommand = new RelayCommand(LoadedCommandBehavior);
+            NotifyCommand = new RelayCommand(NotifyCommandCommandBehavior);
+        }
+
         public string Text
         {
             get => _text;
             set => SetProperty(ref _text, value);
         }
 
-        public void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            Mediator.Instance.Register("one", (object o) => Text = o.ToString());
-        }
+        public ICommand LoadedCommand { get; }
+        public ICommand NotifyCommand { get; }
 
-        public void Button_Click(object sender, RoutedEventArgs e)
-        {
+        public void LoadedCommandBehavior() => 
+            Mediator.Instance.Register("one", (object o) => Text = o.ToString());
+
+        public void NotifyCommandCommandBehavior() => 
             Mediator.Instance.NotifyColleagues("one", "I'm a notification");
-        }
     }
 }

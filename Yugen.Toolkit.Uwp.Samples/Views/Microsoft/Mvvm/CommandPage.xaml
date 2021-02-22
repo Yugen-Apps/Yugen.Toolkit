@@ -9,10 +9,10 @@
     <StackPanel>
         <TextBlock Text="{x:Bind ViewModel.Text, Mode=OneWay}" />
 
-        <Button Command="{x:Bind ViewModel.ButtonCommand}"
+        <Button Command="{x:Bind ViewModel.ShowTextCommand}"
                 Content="Show Text" />
 
-        <Button Command="{x:Bind ViewModel.ButtonAsyncCommand}"
+        <Button Command="{x:Bind ViewModel.ShowDialogAsyncCommand}"
                 Content="Show Dialog" />
     </StackPanel>
 </Page>

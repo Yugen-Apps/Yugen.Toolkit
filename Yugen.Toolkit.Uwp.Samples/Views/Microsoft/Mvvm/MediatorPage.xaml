@@ -4,14 +4,20 @@
       xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Mvvm"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
       mc:Ignorable="d"
-      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-      Loaded="{x:Bind ViewModel.Page_Loaded}">
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{x:Bind ViewModel.LoadedCommand}" />
+        </core:EventTriggerBehavior>
+    </interactivity:Interaction.Behaviors>
 
     <StackPanel>
         <TextBlock Text="{x:Bind ViewModel.Text, Mode=OneWay}" />
 
         <Button Content="Notify a colleague"
-                Click="{x:Bind ViewModel.Button_Click, Mode=OneWay}" />
+                Command="{x:Bind ViewModel.NotifyCommand}" />
     </StackPanel>
 </Page>

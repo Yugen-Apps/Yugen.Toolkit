@@ -13,8 +13,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
 
         public CommandViewModel()
         {
-            ButtonCommand = new RelayCommand(ButtonCommandBehavior);
-            ButtonAsyncCommand = new AsyncRelayCommand(ButtonAyncCommandBehavior);
+            ShowTextCommand = new RelayCommand(ShowTextCommandBehavior);
+            ShowDialogAsyncCommand = new AsyncRelayCommand(ShowDialogAsyncCommandBehavior);
         }
 
         public string Text
@@ -23,13 +23,13 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
             set => SetProperty(ref _text, value);
         }
 
-        public ICommand ButtonCommand { get; }
+        public ICommand ShowTextCommand { get; }
 
-        public ICommand ButtonAsyncCommand { get; }
+        public ICommand ShowDialogAsyncCommand { get; }
 
-        private void ButtonCommandBehavior() => Text = "Ciao";
+        private void ShowTextCommandBehavior() => Text = "Ciao";
 
-        private async Task ButtonAyncCommandBehavior() =>
+        private async Task ShowDialogAsyncCommandBehavior() =>
             await new ContentDialog { Title = "Ciao", CloseButtonText = "Close" }.ShowAsync();
     }
 }

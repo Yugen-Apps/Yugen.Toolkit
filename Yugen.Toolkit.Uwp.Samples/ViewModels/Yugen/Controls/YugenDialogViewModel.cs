@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Standard.Mvvm;
@@ -12,10 +13,10 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls
     {
         public YugenDialogViewModel()
         {
-            YugenDialogNoButtonsCommand = new RelayCommand(YugenDialogNoButtonsCommandBehavior);
-            YugenDialogOneButtonCommand = new RelayCommand(YugenDialogOneButtonCommandBehavior);
-            YugenDialogTwoButtonsCommand = new RelayCommand(YugenDialogTwoButtonsCommandBehavior);
-            MyDialogCommand = new RelayCommand(MyDialogCommandBehavior);
+            YugenDialogNoButtonsCommand = new AsyncRelayCommand(YugenDialogNoButtonsCommandBehavior);
+            YugenDialogOneButtonCommand = new AsyncRelayCommand(YugenDialogOneButtonCommandBehavior);
+            YugenDialogTwoButtonsCommand = new AsyncRelayCommand(YugenDialogTwoButtonsCommandBehavior);
+            MyDialogCommand = new AsyncRelayCommand(MyDialogCommandBehavior);
         }
 
         public ICommand YugenDialogNoButtonsCommand { get; }
@@ -23,7 +24,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls
         public ICommand YugenDialogTwoButtonsCommand { get; }
         public ICommand MyDialogCommand { get; }
 
-        private async void YugenDialogNoButtonsCommandBehavior()
+        private async Task YugenDialogNoButtonsCommandBehavior()
         {
             var myDialog = new YugenDialog
             {
@@ -44,7 +45,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls
             await myDialog.ShowAsync();
         }
 
-        private async void YugenDialogOneButtonCommandBehavior()
+        private async Task YugenDialogOneButtonCommandBehavior()
         {
             var yugenDialog = new YugenDialog
             {
@@ -66,7 +67,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls
             await yugenDialog.ShowAsync();
         }
 
-        private async void YugenDialogTwoButtonsCommandBehavior()
+        private async Task YugenDialogTwoButtonsCommandBehavior()
         {
             var myDialog = new YugenDialog
             {
@@ -89,7 +90,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls
             await myDialog.ShowAsync();
         }
 
-        private async void MyDialogCommandBehavior()
+        private async Task MyDialogCommandBehavior()
         {
             var myDialog = new MyDialog
             {

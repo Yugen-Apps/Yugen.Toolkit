@@ -10,7 +10,7 @@
     <Grid>
         <TextBlock Text="{x:Bind ViewModel.Person.Name, Mode=OneWay}" />
 
-        <Button Click="{x:Bind ViewModel.Button_Click}"
+        <Button Command="{x:Bind ViewModel.UpdateCommand}"
                 Content="Update the name" />
     </Grid>
 </Page>

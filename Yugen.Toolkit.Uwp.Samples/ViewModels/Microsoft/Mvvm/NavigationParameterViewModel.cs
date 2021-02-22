@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using System.Collections.Generic;
+using System.Windows.Input;
 using Yugen.Toolkit.Standard.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
@@ -6,14 +8,20 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
     public class NavigationParameterViewModel : ViewModelBase
     {
         private string _parameter;
-
         private string _text;
+
+        public NavigationParameterViewModel()
+        {
+            UpdateTextCommand = new RelayCommand(UpdateTextCommandBehavior);
+        }
 
         public string Text
         {
             get => _text;
             set => SetProperty(ref _text, value);
         }
+
+        public ICommand UpdateTextCommand { get;  }
 
         public override void OnNavigatedTo(object parameter, IDictionary<string, object> state)
         {
@@ -22,9 +30,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
             Text = _parameter;
         }
 
-        public void Button_Click(object _1, Windows.UI.Xaml.RoutedEventArgs _2)
-        {
+        public void UpdateTextCommandBehavior() => 
             Text = "I'm the new text";
-        }
     }
 }

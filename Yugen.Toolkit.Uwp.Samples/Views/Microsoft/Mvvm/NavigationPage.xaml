@@ -7,7 +7,7 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Click="{x:Bind ViewModel.Button_Click}"
+        <Button Command="{x:Bind ViewModel.NavigateCommand}"
                 Content="Navigate To Next Page" />
     </Grid>
 </Page>
