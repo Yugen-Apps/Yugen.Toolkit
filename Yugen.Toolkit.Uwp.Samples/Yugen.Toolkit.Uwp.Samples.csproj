@@ -104,7 +104,7 @@
     <Compile Include="AppShell.xaml.cs">
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Constants\Data.cs" />
+    <Compile Include="Constants\DataConstants.cs" />
     <Compile Include="Constants\Menu\MicrosoftSubMenu.cs" />
     <Compile Include="Constants\Menu\SnippetsSubMenu.cs" />
     <Compile Include="Constants\Menu\YugenSubMenu.cs" />
@@ -117,6 +117,7 @@
     <Compile Include="ViewModels\AppShellViewModel.cs" />
     <Compile Include="Models\RadioOption.cs" />
     <Compile Include="ViewModels\Yugen\Controls\YugenDialogViewModel.cs" />
+    <Compile Include="ViewModels\Yugen\Data\DataViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Mvvm\ObservableSettingsViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Helpers\FindControlViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Controls\GraphViewModel.cs" />
@@ -173,6 +174,9 @@
     </Compile>
     <Compile Include="Views\Yugen\Controls\YugenDialogPage.xaml.cs">
       <DependentUpon>YugenDialogPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Yugen\Data\DataPage.xaml.cs">
+      <DependentUpon>DataPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Yugen\Helpers\ContentDialogPage.xaml.cs">
       <DependentUpon>ContentDialogPage.xaml</DependentUpon>
@@ -356,6 +360,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Yugen\Data\DataPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Yugen\Helpers\ContentDialogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -436,6 +444,18 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Yugen.Toolkit.Standard.Core\Yugen.Toolkit.Standard.Core.csproj">
+      <Project>{242A1316-1F16-4EEC-A56A-B18C2CEEB695}</Project>
+      <Name>Yugen.Toolkit.Standard.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yugen.Toolkit.Standard.Data.Sample\Yugen.Toolkit.Standard.Data.Sample.csproj">
+      <Project>{48db5037-a032-45a9-b30f-761c7d3aa5c8}</Project>
+      <Name>Yugen.Toolkit.Standard.Data.Sample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yugen.Toolkit.Standard.Data\Yugen.Toolkit.Standard.Data.csproj">
+      <Project>{3f42ae3f-e4f8-4f91-ba04-10290c4b9b29}</Project>
+      <Name>Yugen.Toolkit.Standard.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj">
       <Project>{01b7d7df-9c32-425d-9b53-737519345032}</Project>
       <Name>Yugen.Toolkit.Standard</Name>

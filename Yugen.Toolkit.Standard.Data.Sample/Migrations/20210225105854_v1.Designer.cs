@@ -9,14 +9,14 @@ using Yugen.Toolkit.Standard.Data.Sample;
 namespace Yugen.Toolkit.Standard.Data.Sample.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    [Migration("20200611155814_V1")]
-    partial class V1
+    [Migration("20210225105854_v1")]
+    partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.5");
+                .HasAnnotation("ProductVersion", "3.1.12");
 
             modelBuilder.Entity("Yugen.Toolkit.Standard.Data.Sample.Models.Blog", b =>
                 {

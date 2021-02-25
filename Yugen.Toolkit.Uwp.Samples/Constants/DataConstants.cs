@@ -3,8 +3,10 @@ using Yugen.Toolkit.Uwp.Samples.Models;
 
 namespace Yugen.Toolkit.Uwp.Samples.Constants
 {
-    public static class Data
+    public static class DataConstants
     {
+        public const string DbFileName = "Yugen.sqlite";
+
         public static List<Person> ContactList = new List<Person>
         {
             new Person { Name = "Staff", Surname="Surname" },

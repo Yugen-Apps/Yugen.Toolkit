@@ -4,6 +4,7 @@ using Yugen.Toolkit.Uwp.Samples.Views.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls;
+using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Data;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm;
 
 namespace Yugen.Toolkit.Uwp.Samples.Constants.Menu
@@ -38,6 +39,18 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants.Menu
                 MenuBase.NewNavigationViewItem ("Validation", nameof (ValidationPage)),
                 MenuBase.NewNavigationViewItem ("Sample In App Control", nameof (SampleInAppControlPage)),
                 MenuBase.NewNavigationViewItem ("Yugen Dialog", nameof (YugenDialogPage)),
+            }
+        };
+
+        public static NavigationViewItem Data => new NavigationViewItem
+        {
+            Content = nameof(Data),
+            Icon = new Windows.UI.Xaml.Controls.FontIcon { Glyph = "\uEA37" },
+            IsExpanded = false,
+            SelectsOnInvoked = false,
+            MenuItemsSource = new List<NavigationViewItem>
+            {
+                MenuBase.NewNavigationViewItem ("Data", nameof (DataPage)),
             }
         };
 

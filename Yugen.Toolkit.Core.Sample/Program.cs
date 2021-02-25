@@ -35,7 +35,7 @@ namespace Yugen.Toolkit.Core.Sample
         //{
         //    public BloggingContext CreateDbContext(string[] args) => 
         //        new BloggingContext(new DbContextOptionsBuilder<BloggingContext>()
-        //            .UseSqlite("Data Source=Yugen.db").Options);
+        //            .UseSqlite("Data Source=YugenCore.sqlite").Options);
         //}
 
 
@@ -45,33 +45,32 @@ namespace Yugen.Toolkit.Core.Sample
         private static void Main(string[] args)
         {
             var serviceProvider = CreateServiceProvider();
+
             var isCreated = serviceProvider.GetService<BloggingContext>().Database.EnsureCreated();
             Console.WriteLine($"isCreated: {isCreated}");
-            var blogService = serviceProvider.GetService<IBlogService>();
+
+            var blogService = serviceProvider.GetService<IBlogRepositoryService>();
+
             blogService.Add(new Blog { Url = "aaa" });
             Console.WriteLine("added");
+
             var list = blogService.Get();
             Console.WriteLine($"list: {list.Count}");
+
+            if (list.Count > 0)
+            {
+                Console.WriteLine($"item: {list[0].Url}");
+            }
         }
 
         private static IServiceProvider CreateServiceProvider()
         {
-            // create service collection
-            var serviceCollection = new ServiceCollection();
-            ConfigureServices(serviceCollection);
-
-            // create service provider
-            return serviceCollection.BuildServiceProvider();
-        }
-
-        private static void ConfigureServices(IServiceCollection serviceCollection)
-        {
-            serviceCollection.AddDbContext<BloggingContext>(options =>
-                options.UseSqlite("Data Source=Yugen.db"))
-                    .AddUnitOfWork<BloggingContext>();
-            serviceCollection.AddTransient<IBlogRepository, BlogRepository>();
-            serviceCollection.AddSingleton<IBlogService, BlogService>();
-
+            return new ServiceCollection()
+                .AddDbContext<BloggingContext>(options => options.UseSqlite("Data Source=YugenCore.sqlite"))
+                    .AddUnitOfWork<BloggingContext>()
+                .AddTransient<IBlogRepository, BlogRepository>()
+                .AddSingleton<IBlogRepositoryService, BlogRepositoryService>()
+                .BuildServiceProvider();
         }
 
         private class Factory : IDesignTimeDbContextFactory<BloggingContext>

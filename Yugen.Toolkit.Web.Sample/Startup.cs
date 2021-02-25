@@ -5,13 +5,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Yugen.Toolkit.Standard.Data.Extensions;
 using Yugen.Toolkit.Standard.Data.Sample;
+using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
+using Yugen.Toolkit.Standard.Data.Sample.Models;
+using Yugen.Toolkit.Standard.Data.Sample.Repository;
+using Yugen.Toolkit.Standard.Data.Sample.Services;
 
 /// <summary>
 /// Add a reference to Yugen.Toolkit.Standard.Data.Sample
 ///
 /// How To Create a Migration
-/// Select: Startup Project: Yugen.Toolkit.Core.Sample
+/// Select: Startup Project: Yugen.Toolkit.Web.Sample
 /// Go To: Package Manager Console
 /// Select: Default Project: Yugen.Toolkit.Standard.Data.Sample
 /// (Optional) Write: Remove-Migration
@@ -33,7 +38,11 @@ namespace Yugen.Toolkit.Web.Sample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BloggingContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("SQLite")));
+                options.UseSqlite(Configuration.GetConnectionString("SQLite")))
+                    .AddUnitOfWork<BloggingContext>();
+
+            services.AddTransient<IBlogRepository, BlogRepository>();
+            services.AddSingleton<IBlogRepositoryService, BlogRepositoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +59,20 @@ namespace Yugen.Toolkit.Web.Sample
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    var blogService = app.ApplicationServices.GetService<IBlogRepositoryService>();
+
+                    blogService.Add(new Blog { Url = "aaa" });
+                    await context.Response.WriteAsync("added");
+                    await context.Response.WriteAsync(System.Environment.NewLine);
+
+                    var list = blogService.Get();
+                    await context.Response.WriteAsync($"list: {list.Count}");
+                    await context.Response.WriteAsync(System.Environment.NewLine);
+
+                    if (list.Count > 0)
+                    {
+                        await context.Response.WriteAsync($"item: {list[0].Url}");
+                    }
                 });
             });
         }

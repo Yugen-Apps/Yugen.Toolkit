@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Yugen.Toolkit.Standard.Core.Helpers;
 using Yugen.Toolkit.Standard.Core.Models;
 using Yugen.Toolkit.Standard.Data.Interfaces;
 
@@ -17,13 +17,17 @@ namespace Yugen.Toolkit.Standard.Data
         /// </summary>
         protected readonly IUnitOfWork _unitOfWork;
 
+        private readonly ILogger _logger;
+
         /// <summary>
         /// BaseService
         /// </summary>
         /// <param name="unitOfWork"></param>
-        public BaseService(IUnitOfWork unitOfWork)
+        /// <param name="logger"></param>
+        public BaseService(IUnitOfWork unitOfWork, ILogger logger = null)
         {
             _unitOfWork = unitOfWork;
+            _logger = logger;
         }
 
         /// <inheritdoc/>
@@ -37,7 +41,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -53,7 +57,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<IEnumerable<T>>($"{GetType()} {exception}");
             }
         }
@@ -80,7 +84,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<IEnumerable<T>>($"{GetType()} {exception}");
             }
         }
@@ -102,7 +106,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<IEnumerable<T>>($"{GetType()} {exception}");
             }
         }
@@ -128,7 +132,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<IEnumerable<T>>($"{GetType()} {exception}");
             }
         }
@@ -157,7 +161,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<IEnumerable<T>>($"{GetType()} {exception}");
             }
         }
@@ -177,7 +181,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<IEnumerable<T>>($"{GetType()} {exception}");
             }
         }
@@ -201,7 +205,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<IEnumerable<T>>($"{GetType()} {exception}");
             }
         }
@@ -220,7 +224,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -235,7 +239,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -251,7 +255,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -273,7 +277,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -296,7 +300,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -321,7 +325,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -350,7 +354,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -370,7 +374,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -389,7 +393,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -409,7 +413,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -428,7 +432,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -445,7 +449,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -461,7 +465,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -478,7 +482,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail($"{GetType()} {exception}");
             }
         }
@@ -503,7 +507,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail($"{GetType()} {exception}");
             }
         }
@@ -547,7 +551,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -595,7 +599,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -611,7 +615,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<int>($"{GetType()} {exception}");
             }
         }
@@ -663,7 +667,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }
@@ -693,7 +697,7 @@ namespace Yugen.Toolkit.Standard.Data
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(GetType(), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>($"{GetType()} {exception}");
             }
         }

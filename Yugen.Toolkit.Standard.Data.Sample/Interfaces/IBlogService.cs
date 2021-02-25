@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Yugen.Toolkit.Standard.Data.Interfaces;
 using Yugen.Toolkit.Standard.Data.Sample.Models;
 
 namespace Yugen.Toolkit.Standard.Data.Sample.Interfaces
 {
-    public interface IBlogService
+    public interface IBlogService : IBaseService<Blog>
     {
-        void Add(Blog entity);
-        List<Blog> Get();
+
     }
 }

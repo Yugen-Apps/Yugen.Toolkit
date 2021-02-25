@@ -8,7 +8,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
     {
         public CollectionViewModel()
         {
-            Collection = new ObservableCollection<Person>(Data.ContactList);
+            Collection = new ObservableCollection<Person>(DataConstants.ContactList);
         }
 
         public ObservableCollection<Person> Collection { get; }

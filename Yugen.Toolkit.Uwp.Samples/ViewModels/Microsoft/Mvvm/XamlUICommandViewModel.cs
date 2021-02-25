@@ -10,7 +10,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
 {
     public class XamlUICommandViewModel : ViewModelBase
     {
-        public ObservableCollection<Person> List = new ObservableCollection<Person>(Data.ContactList);
+        public ObservableCollection<Person> List = new ObservableCollection<Person>(DataConstants.ContactList);
 
         public XamlUICommandViewModel()
         {

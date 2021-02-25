@@ -29,7 +29,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
             //                .GroupBy(item => item.Name.First().ToString().ToUpper())
             //                    .OrderBy(g => g.Key);
 
-            var grouped = Data.ContactList.GroupByFirstLetterAscending(item => item.Name);
+            var grouped = DataConstants.ContactList.GroupByFirstLetterAscending(item => item.Name);
             GroupedCollection = new ObservableGroupedCollection<string, Person>(grouped);
         }
 

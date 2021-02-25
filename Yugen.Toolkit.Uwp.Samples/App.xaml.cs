@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using Serilog.Events;
 using System;
@@ -11,8 +12,13 @@ using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
-using Yugen.Toolkit.Standard.Extensions;
+using Yugen.Toolkit.Standard.Data.Extensions;
+using Yugen.Toolkit.Standard.Data.Sample;
+using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
+using Yugen.Toolkit.Standard.Data.Sample.Repository;
+using Yugen.Toolkit.Standard.Data.Sample.Services;
 using Yugen.Toolkit.Uwp.Helpers;
+using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers;
@@ -20,11 +26,26 @@ using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Collections;
 using Yugen.Toolkit.Uwp.Services;
 
+/// <summary>
+/// Add a reference to Yugen.Toolkit.Standard.Data
+/// Add a reference to Yugen.Toolkit.Standard.Data.Sample
+/// 
+/// To Create a Migration you need a web or console .net core project
+/// 
+/// How To Create a Migration
+/// Select: Startup Project: 
+/// Yugen.Toolkit.Core.Sample or Yugen.Toolkit.Web.Sample
+/// Go To: Package Manager Console
+/// Select: Default Project: Yugen.Toolkit.Standard.Data.Sample
+/// (Optional) Write: Remove-Migration
+/// Write: Add-Migration {MigrationName}
+/// </summary>
 namespace Yugen.Toolkit.Uwp.Samples
 {
     /// <summary>
@@ -143,30 +164,38 @@ namespace Yugen.Toolkit.Uwp.Samples
             Log.Warning("Serilog started Warning!");
 
             return new ServiceCollection()
+                .AddDbContext<BloggingContext>(options => options.UseSqlite($"Data Source={DataConstants.DbFileName}"))
+                .AddUnitOfWork<BloggingContext>()
+                // Data
+                //.AddTransient<IBlogRepository, BlogRepository>()
+                //.AddSingleton<IBlogRepositoryService, BlogRepositoryService>()\
+                .AddSingleton<IBlogService, BlogService>()
+                // Services
                 .AddSingleton<ITestService, TestService>()
                 .AddSingleton<IThemeSelectorService, ThemeSelectorService>()
-
+                // Root
                 .AddSingleton<AppShellViewModel>()
                 .AddTransient<SettingsViewModel>()
-
+                // Microsoft
                 .AddTransient<CommandViewModel>()
                 .AddTransient<MediatorViewModel>()
                 .AddTransient<NavigationParameterViewModel>()
                 .AddTransient<NavigationViewModel>()
                 .AddTransient<ObservableObjectViewModel>()
                 .AddTransient<XamlUICommandViewModel>()
-
+                // Snippets
                 .AddTransient<EnumToBooleanConverterViewModel>()
-
+                // Yugen
                 .AddTransient<CollectionViewModel>()
                 .AddTransient<GroupedCollectionViewModel>()
                 .AddTransient<GraphViewModel>()
                 //.AddTransient<SampleInAppControlViewModel>()
                 .AddTransient<ValidationViewModel>()
                 .AddTransient<YugenDialogViewModel>()
+                .AddTransient<DataViewModel>()
                 .AddTransient<FindControlViewModel>()
                 .AddTransient<ObservableSettingsViewModel>()
-
+                // Log
                 .AddLogging(loggingBuilder =>
                 {
                     loggingBuilder.AddSerilog(dispose: true);
@@ -176,7 +205,15 @@ namespace Yugen.Toolkit.Uwp.Samples
 
         private async Task InitializeServices()
         {
+            var bloggingContext = Services.GetService<BloggingContext>();
+            //var isCreated = bloggingContext.Database.EnsureCreated();
+            bloggingContext.Database.Migrate();
+
             await Services.GetService<IThemeSelectorService>().InitializeAsync(true);
         }
     }
 }
+
+// https://docs.microsoft.com/en-gb/aspnet/core/fundamentals/dependency-injection
+// https://stackoverflow.com/questions/39174989/how-to-register-multiple-implementations-of-the-same-interface-in-asp-net-core
+// https://stackoverflow.com/questions/42221895/how-to-get-an-instance-of-iserviceprovider-in-net-core

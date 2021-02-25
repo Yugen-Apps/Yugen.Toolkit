@@ -12,6 +12,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants.Menu
             new NavigationViewItemHeader { Content = "Yugen Toolkit" },
             YugenSubMenu.Collections,
             YugenSubMenu.Controls,
+            YugenSubMenu.Data,
             YugenSubMenu.Helpers,
             YugenSubMenu.Mvvm,
             new NavigationViewItemHeader { Content = "Microsoft Toolkit" },

@@ -14,7 +14,7 @@ namespace Yugen.Toolkit.Standard.Data.Sample.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.5");
+                .HasAnnotation("ProductVersion", "3.1.12");
 
             modelBuilder.Entity("Yugen.Toolkit.Standard.Data.Sample.Models.Blog", b =>
                 {
