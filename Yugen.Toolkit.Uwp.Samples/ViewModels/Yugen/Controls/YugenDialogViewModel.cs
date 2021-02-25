@@ -1,8 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Controls.Dialogs;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls;
@@ -19,10 +17,10 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls
             MyDialogCommand = new AsyncRelayCommand(MyDialogCommandBehavior);
         }
 
-        public ICommand YugenDialogNoButtonsCommand { get; }
-        public ICommand YugenDialogOneButtonCommand { get; }
-        public ICommand YugenDialogTwoButtonsCommand { get; }
-        public ICommand MyDialogCommand { get; }
+        public IAsyncRelayCommand YugenDialogNoButtonsCommand { get; }
+        public IAsyncRelayCommand YugenDialogOneButtonCommand { get; }
+        public IAsyncRelayCommand YugenDialogTwoButtonsCommand { get; }
+        public IAsyncRelayCommand MyDialogCommand { get; }
 
         private async Task YugenDialogNoButtonsCommandBehavior()
         {

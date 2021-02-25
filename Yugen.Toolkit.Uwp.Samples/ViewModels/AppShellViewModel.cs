@@ -1,7 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using Microsoft.UI.Xaml.Controls;
 using System.Collections.Generic;
-using System.Windows.Input;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Constants.Menu;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen;
@@ -21,7 +20,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels
 
         public IEnumerable<NavigationViewItemBase> NavItems => MenuBase.MenuList;
 
-        public ICommand NavigationViewOnItemInvokedCommand { get; }
+        public IRelayCommand NavigationViewOnItemInvokedCommand { get; }
 
         private void NavigationViewOnItemInvokedCommandBehavior(NavigationViewItemInvokedEventArgs args)
         {

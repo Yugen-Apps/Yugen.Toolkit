@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Toolkit.Mvvm.Input;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
 using Yugen.Toolkit.Standard.Data.Sample.Models;
@@ -11,20 +13,58 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data
         private readonly IBlogService _blogService;
         private readonly ILogger<DataViewModel> _logger;
 
+        private string _url;
+
         public DataViewModel(IBlogService blogService, ILogger<DataViewModel> logger)
         {
             _blogService = blogService;
             _logger = logger;
 
-            _blogService.Add(new Blog { Url = "aaa" });
-            _logger.LogDebug("added");
+            AddCommand = new RelayCommand(AddCommandBehavior, () => !string.IsNullOrEmpty(Url));
+            LoadedCommand = new RelayCommand(LoadCommandBehavior);
+        }
 
-            var list = _blogService.Get();
-            _logger.LogDebug($"list: {list.Value.Count()}");
+        public ObservableCollection<Blog> BlogCollection { get; } = new ObservableCollection<Blog>();
 
-            if (list.Value.Count() > 0)
+        public string Url
+        {
+            get => _url;
+            set
             {
-                _logger.LogDebug($"item: {list.Value.FirstOrDefault()?.Url}");
+                if (SetProperty(ref _url, value))
+                {
+                    AddCommand?.NotifyCanExecuteChanged();
+                }
+            }
+        }
+
+        public IRelayCommand AddCommand { get; }
+
+        public IRelayCommand LoadedCommand { get; }
+
+        private void AddCommandBehavior()
+        {
+            var blog = new Blog { Url = Url };
+            var result = _blogService.Add(blog);
+
+            if (result.IsSuccess)
+            {
+                _logger.LogDebug("added");
+                BlogCollection.Add(blog);
+            }
+        }
+
+        private void LoadCommandBehavior()
+        {
+            var blogListResult = _blogService.Get();
+
+            if (blogListResult.IsSuccess)
+            {
+                _logger.LogDebug($"list: {blogListResult.Value.Count()}");
+                foreach (var blog in blogListResult.Value)
+                {
+                    BlogCollection.Add(blog);
+                }
             }
         }
     }

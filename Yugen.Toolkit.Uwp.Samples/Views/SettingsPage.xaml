@@ -4,7 +4,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-      xmlns:yugen="using:Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -16,10 +15,10 @@
                            SelectedItem="{x:Bind ViewModel.ElementThemeOption, Mode=TwoWay}" />
 
         <!--<ComboBox ItemsSource="{x:Bind ViewModel.ElementThemeList}"
-                  DisplayMemberPath="ElementTheme" />
+                  DisplayMemberPath="ElementTheme" />-->
 
-        <ListView ItemsSource="{x:Bind ViewModel.ElementThemeList}">
-            <DataTemplate x:DataType="yugen:ElementThemeOption">
+        <!--<ListView ItemsSource="{x:Bind ViewModel.ElementThemeList}">
+            <DataTemplate x:DataType="models:RadioOption">
                 <TextBlock Text="{x:Bind ElementTheme}" />
             </DataTemplate>
         </ListView>-->

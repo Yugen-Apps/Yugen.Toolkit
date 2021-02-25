@@ -1,6 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using System.Collections.Generic;
-using System.Windows.Input;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation;
 
@@ -21,7 +20,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
             set => SetProperty(ref _person, value);
         }
 
-        public ICommand UpdateCommand { get; }
+        public IRelayCommand UpdateCommand { get; }
 
         public override void OnNavigatedTo(object parameter, IDictionary<string, object> state)
         {

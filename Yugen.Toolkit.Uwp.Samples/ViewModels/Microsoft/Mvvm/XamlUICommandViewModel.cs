@@ -1,6 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 using Windows.UI.Xaml.Input;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Constants;
@@ -17,7 +16,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
             CopyCommand = new RelayCommand<object>(CopyCommandBehavior);
         }
 
-        public ICommand CopyCommand { get; }
+        public IRelayCommand CopyCommand { get; }
 
         public void DeleteExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
         {

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
-using System.Windows.Input;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Standard.Mvvm.Mediator;
 
@@ -21,8 +20,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
             set => SetProperty(ref _text, value);
         }
 
-        public ICommand LoadedCommand { get; }
-        public ICommand NotifyCommand { get; }
+        public IRelayCommand LoadedCommand { get; }
+        public IRelayCommand NotifyCommand { get; }
 
         public void LoadedCommandBehavior() => 
             Mediator.Instance.Register("one", (object o) => Text = o.ToString());

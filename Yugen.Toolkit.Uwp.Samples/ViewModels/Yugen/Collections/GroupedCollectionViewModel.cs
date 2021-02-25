@@ -1,6 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using System.Linq;
-using System.Windows.Input;
 using Yugen.Toolkit.Uwp.Collections;
 using Yugen.Toolkit.Uwp.Extensions;
 using Yugen.Toolkit.Uwp.Samples.Constants;
@@ -19,7 +18,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
 
         public ObservableGroupedCollection<string, Person> GroupedCollection { get; set; }
 
-        public ICommand ButtonCommand { get; }
+        public IRelayCommand ButtonCommand { get; }
 
         private static string GetGroupName(Person person) => person.Name.First().ToString().ToUpper();
 

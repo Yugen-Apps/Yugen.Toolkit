@@ -1,6 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using Windows.UI.Xaml;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Services;
@@ -27,7 +26,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters
             set => SetProperty(ref _elementTheme, value);
         }
 
-        public ICommand SwitchThemeCommand { get; }
+        public IAsyncRelayCommand<ElementTheme> SwitchThemeCommand { get; }
 
         private async Task SwitchThemeCommandBehavior(ElementTheme param)
         {
