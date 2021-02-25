@@ -167,8 +167,10 @@ namespace Yugen.Toolkit.Uwp.Samples
                 .AddDbContext<BloggingContext>(options => options.UseSqlite($"Data Source={DataConstants.DbFileName}"))
                 .AddUnitOfWork<BloggingContext>()
                 // Data
+                // Use Base Repository
                 //.AddTransient<IBlogRepository, BlogRepository>()
                 //.AddSingleton<IBlogRepositoryService, BlogRepositoryService>()\
+                // Use Base Service
                 .AddSingleton<IBlogService, BlogService>()
                 // Services
                 .AddSingleton<ITestService, TestService>()

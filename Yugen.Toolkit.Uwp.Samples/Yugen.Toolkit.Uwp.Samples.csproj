@@ -110,6 +110,7 @@
     <Compile Include="Constants\Menu\YugenSubMenu.cs" />
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu\MenuBase.cs" />
+    <Compile Include="ObservableObjects\BlogObservableObject.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Converters\EnumToBooleanConverterViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Mvvm\XamlViewModel.cs" />

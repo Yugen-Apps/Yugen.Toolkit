@@ -6,7 +6,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:core="using:Microsoft.Xaml.Interactions.Core"
-      xmlns:models="using:Yugen.Toolkit.Standard.Data.Sample.Models"
+      xmlns:navigation="using:Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <interactivity:Interaction.Behaviors>
@@ -22,9 +22,10 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <ListView ItemsSource="{x:Bind ViewModel.BlogCollection, Mode=OneWay}">
+        <ListView ItemsSource="{x:Bind ViewModel.BlogCollection, Mode=OneWay}"
+                  SelectedItem="{x:Bind ViewModel.SelectedBlog, Mode=TwoWay}">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="models:Blog">
+                <DataTemplate x:DataType="navigation:BlogObservableObject">
                     <TextBlock Text="{x:Bind Url, Mode=OneWay}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -34,8 +35,14 @@
             <TextBox Header="Blog Url"
                      Text="{x:Bind ViewModel.Url, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Button Content="Add"
-                    Command="{x:Bind ViewModel.AddCommand}" />
+            <Button Content="AddOrUpdate"
+                    Command="{x:Bind ViewModel.AddOrUpdateCommand}" />
+
+            <Button Content="New"
+                    Command="{x:Bind ViewModel.NewCommand}" />
+
+            <Button Content="Delete"
+                    Command="{x:Bind ViewModel.DeleteCommand}" />
         </StackPanel>
 
     </Grid>
