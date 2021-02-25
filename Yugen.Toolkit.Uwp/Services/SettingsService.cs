@@ -25,7 +25,6 @@
 //            }
 //            catch (Exception exception)
 //            {
-//                LoggerHelper.WriteLine(typeof(SettingsService), exception);
 //                return false;
 //            }
 //        }

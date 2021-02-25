@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,13 +8,19 @@ using Windows.Storage;
 using Windows.Storage.Provider;
 using Windows.Storage.Search;
 using Windows.Storage.Streams;
-using Yugen.Toolkit.Standard.Core.Helpers;
 using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Services
 {
     public static class UserStorageService
     {
+        private static ILogger _logger;
+
+        public static void Init(ILogger logger = null)
+        {
+            _logger = logger;
+        }
+
         public static async void CopyFile(string sourceFolder, string sourceFile, string targetFolderName = "", CreationCollisionOption creationCollisionOption = CreationCollisionOption.OpenIfExists)
         {
 
@@ -24,7 +31,7 @@ namespace Yugen.Toolkit.Uwp.Services
 
             var oldFile = await folder.TryGetItemAsync(sourceFile);
             if (oldFile != null) return;
-            
+
             StorageFile newFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"{sourceFolder}{sourceFile}"));
             await newFile.CopyAsync(folder);
         }
@@ -42,7 +49,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
                 return null;
             }
         }
@@ -59,7 +66,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
             }
             return string.Empty;
         }
@@ -76,7 +83,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
             }
             return null;
         }
@@ -102,7 +109,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
             }
             return null;
         }
@@ -115,7 +122,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
             }
         }
 
@@ -135,18 +142,21 @@ namespace Yugen.Toolkit.Uwp.Services
                     // Completing updates may require Windows to ask for user input.
                     FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
 
-                    LoggerHelper.WriteLine(typeof(UserStorageService), status == FileUpdateStatus.Complete ? 
-                                                                       $"File {file.Name} was saved." : 
-                                                                       $"File {file.Name} couldn\'t be saved.");
+                    var text = status == FileUpdateStatus.Complete ?
+                                         $"File {file.Name} was saved." :
+                                         $"File {file.Name} couldn\'t be saved.";
+
+                    _logger?.LogDebug($"{typeof(UserStorageService)} text");
+
                 }
                 else
                 {
-                    LoggerHelper.WriteLine(typeof(UserStorageService), "Operation cancelled.");
+                    _logger?.LogDebug($"{typeof(UserStorageService)} Operation cancelled.");
                 }
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
             }
         }
 
@@ -165,18 +175,21 @@ namespace Yugen.Toolkit.Uwp.Services
                     // Completing updates may require Windows to ask for user input.
                     FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
 
-                    LoggerHelper.WriteLine(typeof(UserStorageService), status == FileUpdateStatus.Complete ?
-                                                                       $"File {file.Name} was saved." :
-                                                                       $"File {file.Name} couldn\'t be saved.");
+                    var text = status == FileUpdateStatus.Complete ?
+                                         $"File {file.Name} was saved." :
+                                         $"File {file.Name} couldn\'t be saved.";
+
+                    _logger?.LogDebug($"{typeof(UserStorageService)} text");
+
                 }
                 else
                 {
-                    LoggerHelper.WriteLine(typeof(UserStorageService), "Operation cancelled.");
+                    _logger?.LogDebug($"{typeof(UserStorageService)} Operation cancelled.");
                 }
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
             }
         }
 
@@ -206,7 +219,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
             }
             return null;
         }
@@ -224,7 +237,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
             }
         }
 
@@ -239,7 +252,7 @@ namespace Yugen.Toolkit.Uwp.Services
             catch (Exception exception)
             {
                 /* Avoid any exception at this point. */
-                LoggerHelper.WriteLine(typeof(UserStorageService), exception);
+                _logger?.LogDebug(exception, typeof(UserStorageService).ToString());
             }
         }
 
@@ -255,7 +268,7 @@ namespace Yugen.Toolkit.Uwp.Services
             await WriteBufferAsync(oldFile, fileContent);
         }
 
-        public static async Task SaveFile(string oldfile, string fileName, string fileTypeName, string fileTypeExtension )
+        public static async Task SaveFile(string oldfile, string fileName, string fileTypeName, string fileTypeExtension)
         {
             var dbFile = await GetFile(oldfile);
             var fileContent = await ReadBufferFromFileAsync(dbFile);

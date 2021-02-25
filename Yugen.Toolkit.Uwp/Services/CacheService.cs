@@ -1,16 +1,23 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
-using System.Threading.Tasks;
-using Yugen.Toolkit.Standard.Core.Helpers;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Yugen.Toolkit.Uwp.Services
 {
     public static class CacheService
     {
         private static readonly Dictionary<string, string> MemoryCache = new Dictionary<string, string>();
+
+        private static ILogger _logger;
+
+        public static void Init(ILogger logger = null)
+        {
+            _logger = logger;
+        }
 
         public static async Task<T> GetItemAsync<T>(string fileName, string folderName = null)
         {
@@ -35,7 +42,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(CacheService), exception);
+                _logger?.LogDebug(exception, typeof(CacheService).ToString());
             }
             return default;
         }
@@ -102,7 +109,7 @@ namespace Yugen.Toolkit.Uwp.Services
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(CacheService), exception);
+                _logger?.LogDebug(exception, typeof(CacheService).ToString());
             }
         }
 

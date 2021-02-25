@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using Yugen.Toolkit.Standard.Core.Helpers;
-using Yugen.Toolkit.Standard.Core.Models;
 using System.Text.Json;
+using System.Threading.Tasks;
+using Yugen.Toolkit.Standard.Core.Models;
 
 namespace Yugen.Toolkit.Standard.Http
 {
@@ -16,6 +16,17 @@ namespace Yugen.Toolkit.Standard.Http
     public class RestClient
     {
         private readonly HttpClient _httpClient = new HttpClient();
+
+        private readonly ILogger _logger;
+
+        /// <summary>
+        /// RestClient
+        /// </summary>
+        /// <param name="logger"></param>
+        public RestClient(ILogger logger = null)
+        {
+            _logger = logger;
+        }
 
         /// <summary>
         /// Executes a request asynchronously, authenticating if needed
@@ -36,7 +47,7 @@ namespace Yugen.Toolkit.Standard.Http
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(RestClient), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<T>("");
             }
         }
@@ -83,12 +94,12 @@ namespace Yugen.Toolkit.Standard.Http
                     return Result.Ok(await response.Content.ReadAsStringAsync());
                 }
 
-                LoggerHelper.WriteLine(typeof(RestClient), $"response failed: {response}");
+                _logger?.LogDebug($"{GetType()} response: {response}");
                 return Result.Fail<string>("");
             }
             catch (Exception exception)
             {
-                LoggerHelper.WriteLine(typeof(RestClient), exception);
+                _logger?.LogDebug(exception, GetType().ToString());
                 return Result.Fail<string>("");
             }
         }

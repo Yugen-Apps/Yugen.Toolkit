@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
 using System.Text;
 using Windows.System;
-using Yugen.Toolkit.Standard.Core.Helpers;
-using Yugen.Toolkit.Standard.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Handlers
 {
@@ -11,14 +10,17 @@ namespace Yugen.Toolkit.Uwp.Handlers
     {
         private readonly Stopwatch _inputStopwatch = new Stopwatch();
         private readonly StringBuilder _builderBarcode = new StringBuilder();
+        private readonly ILogger _logger;
 
         public bool IsHandledBarcode;
         public string BuilderBarcodeString => _builderBarcode.ToString();
 
         public static int BarcodeThreshold => 100;
 
-        public BarcodeHandler()
+        public BarcodeHandler(ILogger logger = null)
         {
+            _logger = logger;
+
             if (!_inputStopwatch.IsRunning)
                 _inputStopwatch.Start();
         }
@@ -40,7 +42,7 @@ namespace Yugen.Toolkit.Uwp.Handlers
                 if (!IsThreshold())
                     search(query);
 
-                LoggerHelper.WriteLine(typeof(BarcodeHandler), $"DEBUG KEY={virtualKey} - ELAPSED TIME={_inputStopwatch.ElapsedMilliseconds}ms - IsHandledBarcode={IsHandledBarcode} - IsThreshold={IsThreshold()}");
+                _logger?.LogDebug($"{GetType()} DEBUG KEY={virtualKey} - ELAPSED TIME={_inputStopwatch.ElapsedMilliseconds}ms - IsHandledBarcode={IsHandledBarcode} - IsThreshold={IsThreshold()}");
 
                 _inputStopwatch.Restart();
             }

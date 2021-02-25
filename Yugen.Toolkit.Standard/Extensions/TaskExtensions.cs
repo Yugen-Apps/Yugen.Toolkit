@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Yugen.Toolkit.Standard.Core.Helpers;
+using Yugen.Toolkit.Standard.Helpers;
 
 namespace Yugen.Toolkit.Standard.Extensions
 {

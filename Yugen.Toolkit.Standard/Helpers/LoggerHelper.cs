@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace Yugen.Toolkit.Standard.Core.Helpers
+namespace Yugen.Toolkit.Standard.Helpers
 {
     /// <summary>
     /// LoggerHelper
