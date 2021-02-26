@@ -17,7 +17,8 @@
 
     <StackPanel>
 
-        <StackPanel Margin="20">
+        <StackPanel Margin="20" 
+                    Spacing="4">
             <TextBlock Text="Grouped Style1"
                        Style="{ThemeResource TitleTextBlockStyle}" />
             <ListView ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView, Mode=OneWay}"
@@ -40,6 +41,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <TextBox Text="{x:Bind ViewModel.NewName, Mode=TwoWay}" />
+
             <Button Command="{x:Bind ViewModel.ButtonCommand}"
                     Content="Add" />
         </StackPanel>

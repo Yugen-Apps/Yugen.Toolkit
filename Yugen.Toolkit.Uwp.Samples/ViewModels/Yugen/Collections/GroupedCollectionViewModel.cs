@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using System.Linq;
+using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Collections;
 using Yugen.Toolkit.Uwp.Extensions;
 using Yugen.Toolkit.Uwp.Samples.Constants;
@@ -7,13 +8,21 @@ using Yugen.Toolkit.Uwp.Samples.Models;
 
 namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
 {
-    public class GroupedCollectionViewModel
+    public class GroupedCollectionViewModel : ViewModelBase
     {
+        private string _newName;
+
         public GroupedCollectionViewModel()
         {
             GroupCollection();
 
             ButtonCommand = new RelayCommand(ButtonCommandBehavior);
+        }
+
+        public string NewName
+        {
+            get => _newName;
+            set => SetProperty(ref _newName, value);
         }
 
         public ObservableGroupedCollection<string, Person> GroupedCollection { get; set; }
@@ -36,7 +45,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
         {
             var newContact = new Person
             {
-                Name = "zLooking Glass",
+                Name = NewName,
                 Surname = "Surname"
             };
 
@@ -44,11 +53,22 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
             var targetGroup = GroupedCollection.FirstOrDefault(group => group.Key == groupName);
             if (targetGroup is null)
             {
-                GroupedCollection.Add(new ObservableGroup<string, Person>(groupName, new[] { newContact }));
+                var tempList = GroupedCollection.ToDictionary(x => x.Key).Keys.ToList();
+                tempList.Add(groupName);
+                tempList.Sort();
+                GroupedCollection.Insert(tempList.IndexOf(groupName), new ObservableGroup<string, Person>(groupName, new[] { newContact }));
+
+                //GroupedCollection.Add(new ObservableGroup<string, Person>(groupName, new[] { newContact }));
             }
             else
             {
-                GroupedCollection.Replace(targetGroup, newContact);
+                var tempList = targetGroup.ToList();
+                tempList.Add(newContact);
+                var query = tempList.OrderBy(x => x.Name);
+                tempList = query.ToList();
+                targetGroup.Insert(tempList.IndexOf(newContact), newContact);
+
+                //GroupedCollection.Replace(targetGroup, newContact);
             }
         }
     }
