@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Yugen.Toolkit.Uwp.Extensions
 {
     public static class GroupedCollectionExtension
@@ -18,6 +16,7 @@ namespace Yugen.Toolkit.Uwp.Extensions
     }
 
 
+    // TODO: to test
     //    var query = productList.GroupBy(item => item.Title);
     //    return CollectionHelper.GroupCollectionAscending(query).ToList();
 

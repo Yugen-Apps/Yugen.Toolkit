@@ -203,6 +203,9 @@ namespace Yugen.Toolkit.Uwp.Samples
                     loggingBuilder.AddSerilog(dispose: true);
                 })
                 .BuildServiceProvider();
+
+                // services.AddTransient<IRestClientService, RestClientService>(s => new RestClientService(CacheProvider.Content.Settings.Default.ApiUrl));
+                // (s => new SyncAttributeTypeService(s.GetService<IAttributeTypeService>()));
         }
 
         private async Task InitializeServices()

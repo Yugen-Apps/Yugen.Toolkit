@@ -5,7 +5,7 @@ using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
 {
-    public class BlogObservableObject : ObservableObject<Blog>
+    public class BlogObservableObject : ObservableObject<Blog>, IComparable<BlogObservableObject>
     {
         public BlogObservableObject(Blog model = null) : base(model)
         {
@@ -27,6 +27,17 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
         {
             get => Model.Posts;
             //set => SetProperty(Model.Posts, value, (v) => Model.Posts = value);
+        }
+
+        int IComparable<BlogObservableObject>.CompareTo(BlogObservableObject next) =>
+            new BlogObservableObjectComparer().Compare(this, next);
+    }
+
+    public class BlogObservableObjectComparer : IComparer<BlogObservableObject> 
+    {
+        public int Compare(BlogObservableObject x, BlogObservableObject y)
+        {
+            return x.Url.CompareTo(y.Url);
         }
     }
 }

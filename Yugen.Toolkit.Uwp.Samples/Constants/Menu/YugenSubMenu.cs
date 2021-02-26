@@ -50,7 +50,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants.Menu
             SelectsOnInvoked = false,
             MenuItemsSource = new List<NavigationViewItem>
             {
-                MenuBase.NewNavigationViewItem ("Data", nameof (DataPage)),
+                MenuBase.NewNavigationViewItem ("CRUD", nameof (DataPage)),
             }
         };
 

@@ -1,10 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Toolkit.Mvvm.Input;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
-using Yugen.Toolkit.Standard.Data.Sample.Models;
+using Yugen.Toolkit.Standard.Extensions;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation;
 
@@ -20,7 +21,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data
 
         public DataViewModel(IBlogService blogService, ILogger<DataViewModel> logger)
         {
-            _blogService = blogService;
+            _blogService = blogService ?? throw new ArgumentNullException(nameof(IBlogService)); 
             _logger = logger;
 
             AddOrUpdateCommand = new RelayCommand(AddOrUpdateCommandBehavior, () => !string.IsNullOrEmpty(Url));
@@ -72,7 +73,15 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data
             if (SelectedBlog == null && blogResult.IsSuccess)
             {
                 _logger.LogDebug("added");
-                BlogCollection.Add(blog);
+
+                //BlogCollection.Add(blog);
+                //BlogCollection.SortBy(x => x.Url);
+
+                //BlogCollection.AddSorted(blog, x => x.Url);
+
+                //BlogCollection.AddSorted(blog, new BlogObservableObjectComparer());
+
+                BlogCollection.AddSorted(blog);
             }
         }
 
@@ -98,10 +107,10 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data
             if (blogListResult.IsSuccess)
             {
                 _logger.LogDebug($"list: {blogListResult.Value.Count()}");
-                foreach (var blog in blogListResult.Value)
-                {
-                    BlogCollection.Add(new BlogObservableObject(blog));
-                }
+
+                var blogCollection = blogListResult.Value.Select(b => new BlogObservableObject(b));
+                blogCollection = blogCollection.OrderBy(x => x.Url);
+                BlogCollection.AddRange(blogCollection);
             }
         }
     }
