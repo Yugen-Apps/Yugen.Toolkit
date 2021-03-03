@@ -15,17 +15,17 @@ namespace Yugen.Toolkit.Standard.Extensions
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>
-        /// <param name="itemsToAdd"></param>
-        public static void Refresh<T>(this ObservableCollection<T> collection, IEnumerable<T> itemsToAdd)
+        /// <param name="items"></param>
+        public static void Refresh<T>(this ObservableCollection<T> collection, IEnumerable<T> items)
         {
-            if (itemsToAdd == null)
+            if (items == null)
             {
                 return;
             }
 
             collection.Clear();
 
-            collection.AddRange(itemsToAdd);
+            collection.AddRange(items);
         }
 
         /// <summary>
@@ -34,27 +34,27 @@ namespace Yugen.Toolkit.Standard.Extensions
         /// <param name="collection">
         /// The collection.
         /// </param>
-        /// <param name="itemsToAdd">
+        /// <param name="items">
         /// The items to add to the collection.
         /// </param>
         /// <typeparam name="T">
         /// The type of object within the collections.
         /// </typeparam>
-        public static void AddRange<T>(this ObservableCollection<T> collection, IEnumerable<T> itemsToAdd)
+        public static void AddRange<T>(this ObservableCollection<T> collection, IEnumerable<T> items)
         {
-            if (itemsToAdd == null)
+            if (items == null)
             {
                 return;
             }
 
-            foreach (T item in itemsToAdd)
+            foreach (T item in items)
             {
                 collection.Add(item);
             }
         }
 
         /// <summary>
-        /// Sorts the items within the collection by the given key selector.
+        /// Sorts the elements of a sequence in order according to a key.
         /// </summary>
         /// <param name="collection">
         /// The collection to sort.
@@ -68,7 +68,7 @@ namespace Yugen.Toolkit.Standard.Extensions
         /// <typeparam name="TKey">
         /// The type to order by.
         /// </typeparam>
-        public static void SortBy<TSource, TKey>(this ObservableCollection<TSource> collection, Func<TSource, TKey> keySelector)
+        public static void Sort<TSource, TKey>(this ObservableCollection<TSource> collection, Func<TSource, TKey> keySelector)
         {
             if (collection == null || collection.Count <= 1)
             {
@@ -88,50 +88,52 @@ namespace Yugen.Toolkit.Standard.Extensions
         }
 
         /// <summary>
-        /// TODO: to test 
-        /// Sorts the items within the collection by the given key selector.
+        /// Sorts the elements of a sequence in order according to the default comparer.
         /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>
-        /// <param name="keySelector"></param>
-        public static void Sort<TSource, TKey>(this ObservableCollection<TSource> collection, Func<TSource, TKey> keySelector)
-        {
-            List<TSource> sorted = collection.OrderBy(keySelector).ToList();
-            Dictionary<TSource, int> indexOf = new Dictionary<TSource, int>();
+        public static void Sort<T>(this ObservableCollection<T> collection) where T : IComparable<T> => 
+            Sort(collection, Comparer<T>.Default);
 
-            for (int i = 0; i < sorted.Count; i++)
+        /// <summary>
+        /// Sorts the elements of a sequence in order according to a comparer.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="collection"></param>
+        /// <param name="comparer"></param>
+        public static void Sort<T>(this ObservableCollection<T> collection, IComparer<T> comparer)
+        {
+            if (collection == null || collection.Count <= 1)
             {
-                indexOf[sorted[i]] = i;
+                return;
             }
 
-            int idx = 0;
-            while (idx < sorted.Count)
+            var newIndex = 0;
+            foreach (var oldIndex in collection.OrderBy(x => x, comparer).Select(collection.IndexOf))
             {
-                if (!collection[idx].Equals(sorted[idx]))
+                if (oldIndex != newIndex)
                 {
-                    int newIdx = indexOf[collection[idx]]; // where should current item go?
-                    collection.Move(newIdx, idx); // move whatever's there to current location
-                    collection.Move(idx + 1, newIdx); // move current item to proper location
+                    collection.Move(oldIndex, newIndex);
                 }
-                else
-                {
-                    idx++;
-                }
+
+                newIndex++;
             }
         }
 
         /// <summary>
-        /// Add item in the correct position in sorted list
+        /// Inserts an element into the ordered collection at the proper index.
         /// </summary>
         /// <typeparam name="TSource"></typeparam>
         /// <typeparam name="TKey"></typeparam>
         /// <param name="collection"></param>
         /// <param name="item"></param>
         /// <param name="keySelector"></param>
-        public static void AddSorted<TSource, TKey>(this ObservableCollection<TSource> collection, TSource item, Func<TSource, TKey> keySelector) where TKey : IComparable<TKey>
+        public static void AddSorted<TSource, TKey>(this ObservableCollection<TSource> collection, TSource item, 
+            Func<TSource, TKey> keySelector) where TKey : IComparable<TKey>
         {
-            var i = collection.Select((Value, Index) => new { Value, Index }).FirstOrDefault(x => keySelector(x.Value).CompareTo(keySelector(item)) > 0);
+            var i = collection.Select((Value, Index) => new { Value, Index })
+                                .FirstOrDefault(x => keySelector(x.Value)
+                                    .CompareTo(keySelector(item)) > 0);
 
             if (i == null)
             {
@@ -144,61 +146,30 @@ namespace Yugen.Toolkit.Standard.Extensions
         }
 
         /// <summary>
-        /// Add item in the correct position in sorted list
+        /// Inserts an element into the ordered collection at the proper index.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="list"></param>
+        /// <param name="collection"></param>
+        /// <param name="item"></param>
+        public static void AddSorted<T>(this ObservableCollection<T> collection, T item) where T : IComparable<T> =>
+            AddSorted(collection, item, Comparer<T>.Default);
+
+        /// <summary>
+        /// Inserts an element into the ordered collection at the proper index.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="collection"></param>
         /// <param name="item"></param>
         /// <param name="comparer"></param>
-        public static void AddSorted<T>(this IList<T> list, T item, IComparer<T> comparer = null)
+        public static void AddSorted<T>(this ObservableCollection<T> collection, T item, IComparer<T> comparer)
         {
-            if (comparer == null)
-            {
-                comparer = Comparer<T>.Default;
-            }
-
             int i = 0;
-            while (i < list.Count && comparer.Compare(list[i], item) < 0)
+            while (i < collection.Count && comparer.Compare(collection[i], item) < 0)
             {
                 i++;
             }
 
-            list.Insert(i, item);
-        }
-
-        /// <summary>
-        /// Add item in the correct position in sorted list
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="list"></param>
-        /// <param name="item"></param>
-        public static void AddSorted<T>(this List<T> list, T item) where T : IComparable<T>
-        {
-            if (list.Count == 0)
-            {
-                list.Add(item);
-                return;
-            }
-
-            if (list[list.Count - 1].CompareTo(item) <= 0)
-            {
-                list.Add(item);
-                return;
-            }
-
-            if (list[0].CompareTo(item) >= 0)
-            {
-                list.Insert(0, item);
-                return;
-            }
-
-            int index = list.BinarySearch(item);
-            if (index < 0)
-            {
-                index = ~index;
-            }
-
-            list.Insert(index, item);
+            collection.Insert(i, item);
         }
     }
 }

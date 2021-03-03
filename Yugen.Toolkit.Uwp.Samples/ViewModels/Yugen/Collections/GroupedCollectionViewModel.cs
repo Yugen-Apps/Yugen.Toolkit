@@ -1,10 +1,11 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using System.Linq;
 using Yugen.Toolkit.Standard.Mvvm;
-using Yugen.Toolkit.Uwp.Collections;
 using Yugen.Toolkit.Uwp.Extensions;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.Models;
+using Microsoft.Toolkit.Collections;
+using Windows.UI.Xaml.Data;
 
 namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
 {
@@ -16,7 +17,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
         {
             GroupCollection();
 
-            ButtonCommand = new RelayCommand(ButtonCommandBehavior);
+            AddCommand = new RelayCommand(AddCommandBehavior);
         }
 
         public string NewName
@@ -27,7 +28,11 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
 
         public ObservableGroupedCollection<string, Person> GroupedCollection { get; set; }
 
-        public IRelayCommand ButtonCommand { get; }
+        public IRelayCommand AddCommand { get; }
+
+        public CollectionViewSource Cvs { get; set; }
+
+        public ICollectionView CvsView => Cvs.View;
 
         private static string GetGroupName(Person person) => person.Name.First().ToString().ToUpper();
 
@@ -39,9 +44,15 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
 
             var grouped = DataConstants.ContactList.GroupByFirstLetterAscending(item => item.Name);
             GroupedCollection = new ObservableGroupedCollection<string, Person>(grouped);
+
+            Cvs = new CollectionViewSource
+            {
+                IsSourceGrouped = true,
+                Source = GroupedCollection,
+            };
         }
 
-        private void ButtonCommandBehavior()
+        private void AddCommandBehavior()
         {
             var newContact = new Person
             {
@@ -50,26 +61,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
             };
 
             var groupName = GetGroupName(newContact);
-            var targetGroup = GroupedCollection.FirstOrDefault(group => group.Key == groupName);
-            if (targetGroup is null)
-            {
-                var tempList = GroupedCollection.ToDictionary(x => x.Key).Keys.ToList();
-                tempList.Add(groupName);
-                tempList.Sort();
-                GroupedCollection.Insert(tempList.IndexOf(groupName), new ObservableGroup<string, Person>(groupName, new[] { newContact }));
-
-                //GroupedCollection.Add(new ObservableGroup<string, Person>(groupName, new[] { newContact }));
-            }
-            else
-            {
-                var tempList = targetGroup.ToList();
-                tempList.Add(newContact);
-                var query = tempList.OrderBy(x => x.Name);
-                tempList = query.ToList();
-                targetGroup.Insert(tempList.IndexOf(newContact), newContact);
-
-                //GroupedCollection.Replace(targetGroup, newContact);
-            }
+            GroupedCollection.AddOrReplaceSorted(groupName, newContact, group => group.Key == groupName, x => x.Name);
         }
     }
-}
+ }

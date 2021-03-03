@@ -6,7 +6,8 @@ using System.Linq;
 using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
 using Yugen.Toolkit.Standard.Extensions;
 using Yugen.Toolkit.Standard.Mvvm;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation;
+using Yugen.Toolkit.Uwp.Samples.Comparers;
+using Yugen.Toolkit.Uwp.Samples.ObservableObjects;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data
 {
@@ -77,9 +78,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data
                 //BlogCollection.SortBy(x => x.Url);
 
                 //BlogCollection.AddSorted(blog, x => x.Url);
-
                 //BlogCollection.AddSorted(blog, new BlogObservableObjectComparer());
-
                 BlogCollection.AddSorted(blog);
             }
         }
@@ -108,8 +107,13 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data
                 _logger.LogDebug($"list: {blogListResult.Value.Count()}");
 
                 var blogCollection = blogListResult.Value.Select(b => new BlogObservableObject(b));
-                blogCollection = blogCollection.OrderBy(x => x.Url);
+                //blogCollection = blogCollection.OrderBy(x => x.Url);
+                
                 BlogCollection.AddRange(blogCollection);
+
+                //BlogCollection.Sort(x => x.Url);
+                //BlogCollection.Sort(new BlogObservableObjectComparer());
+                BlogCollection.Sort();
             }
         }
     }

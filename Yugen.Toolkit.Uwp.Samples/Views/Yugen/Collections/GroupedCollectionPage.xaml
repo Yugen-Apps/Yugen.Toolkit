@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:collections="using:Yugen.Toolkit.Uwp.Collections"
+      xmlns:collections="using:Microsoft.Toolkit.Collections"
       xmlns:models="using:Yugen.Toolkit.Uwp.Samples.Models"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -12,16 +12,17 @@
         <CollectionViewSource x:Key="cvs"
                               x:Name="cvs"
                               IsSourceGrouped="True"
-                              Source="{x:Bind ViewModel.Contacts}" />
+                              Source="{x:Bind ViewModel.GroupedCollection}" />
     </Page.Resources>-->
 
     <StackPanel>
 
-        <StackPanel Margin="20" 
+        <StackPanel Margin="20"
                     Spacing="4">
             <TextBlock Text="Grouped Style1"
                        Style="{ThemeResource TitleTextBlockStyle}" />
-            <ListView ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView, Mode=OneWay}"
+
+            <ListView ItemsSource="{x:Bind ViewModel.CvsView}"
                       Height="400">
 
                 <ListView.GroupStyle>
@@ -29,7 +30,7 @@
                         <GroupStyle.HeaderTemplate>
                             <DataTemplate x:DataType="collections:IReadOnlyObservableGroup">
                                 <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
-                                           Text="{x:Bind Key}" />
+                                           Text="{x:Bind (x:String)Key}" />
                             </DataTemplate>
                         </GroupStyle.HeaderTemplate>
                     </GroupStyle>
@@ -44,14 +45,15 @@
 
             <TextBox Text="{x:Bind ViewModel.NewName, Mode=TwoWay}" />
 
-            <Button Command="{x:Bind ViewModel.ButtonCommand}"
+            <Button Command="{x:Bind ViewModel.AddCommand}"
                     Content="Add" />
         </StackPanel>
 
-        <StackPanel Margin="20">
+        <!--<StackPanel Margin="20">
             <TextBlock Text="Grouped Style2"
                        Style="{ThemeResource TitleTextBlockStyle}" />
-            <GridView ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView}"
+
+            <GridView ItemsSource="{x:Bind cvs}"
                       Height="400">
 
                 <GridView.GroupStyle>
@@ -76,7 +78,8 @@
         <StackPanel Margin="20">
             <TextBlock Text="Grouped Style3"
                        Style="{ThemeResource TitleTextBlockStyle}" />
-            <ListView ItemsSource="{x:Bind ViewModel.GroupedCollection.SourceView}"
+
+            <ListView ItemsSource="{x:Bind cvs}"
                       Height="400">
 
                 <ListView.GroupStyle>
@@ -102,6 +105,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackPanel>
+        </StackPanel>-->
+        
     </StackPanel>
 </Page>

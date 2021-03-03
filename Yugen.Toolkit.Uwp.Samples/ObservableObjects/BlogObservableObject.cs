@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Yugen.Toolkit.Standard.Data.Sample.Models;
 using Yugen.Toolkit.Standard.Mvvm.ComponentModel;
+using Yugen.Toolkit.Uwp.Samples.Comparers;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
+namespace Yugen.Toolkit.Uwp.Samples.ObservableObjects
 {
     public class BlogObservableObject : ObservableObject<Blog>, IComparable<BlogObservableObject>
     {
@@ -31,13 +32,5 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
 
         int IComparable<BlogObservableObject>.CompareTo(BlogObservableObject next) =>
             new BlogObservableObjectComparer().Compare(this, next);
-    }
-
-    public class BlogObservableObjectComparer : IComparer<BlogObservableObject> 
-    {
-        public int Compare(BlogObservableObject x, BlogObservableObject y)
-        {
-            return x.Url.CompareTo(y.Url);
-        }
     }
 }

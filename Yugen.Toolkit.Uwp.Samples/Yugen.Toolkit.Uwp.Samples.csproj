@@ -111,6 +111,7 @@
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu\MenuBase.cs" />
     <Compile Include="ObservableObjects\BlogObservableObject.cs" />
+    <Compile Include="Comparers\BlogObservableObjectComparer.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Converters\EnumToBooleanConverterViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Mvvm\XamlViewModel.cs" />
@@ -421,6 +422,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.12</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit">
+      <Version>6.1.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.5.0</Version>

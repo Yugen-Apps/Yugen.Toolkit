@@ -110,10 +110,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Collections\IReadOnlyObservableGroup.cs" />
-    <Compile Include="Collections\ObservableGroup.cs" />
-    <Compile Include="Collections\ObservableGroupedCollection.cs" />
-    <Compile Include="Collections\ObservableGroupedCollectionExtensions.cs" />
+    <Compile Include="Collections\ToDo.cs" />
     <Compile Include="Constants\UwpConstants.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Converters\NullableToBoolConverter.cs" />
@@ -123,6 +120,8 @@
     <Compile Include="Evaluators\BindingEvaluator.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="Extensions\GroupedCollectionExtension.cs" />
+    <Compile Include="Extensions\ObservableGroupedCollectionExtensions.cs" />
+    <Compile Include="Extensions\ObservableGroupExtensions.cs" />
     <Compile Include="Handlers\BarcodeHandler.cs" />
     <Compile Include="Helpers\PrintHelperStateBag.cs" />
     <Compile Include="Helpers\ResourceHelper.cs" />
@@ -164,6 +163,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.12</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit">
+      <Version>6.1.1</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Json">
       <Version>4.7.2</Version>
