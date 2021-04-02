@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
+    <StackPanel Spacing="4">
 
         <Button Content="Open"
                 Click="Open_Click" />

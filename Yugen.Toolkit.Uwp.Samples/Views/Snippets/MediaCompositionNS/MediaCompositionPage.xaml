@@ -15,28 +15,25 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal"
+                    Spacing="4">
             
-            <Button  Content="Add Clip"
-                     Click="OnAddClipClick" />
-            <Button Margin="4,0,0,0"
-                    Content="Add Audio"
+            <Button Content="Add Clip"
+                    Click="OnAddClipClick" />
+            <Button Content="Add Audio"
                     Click="OnAddAudioClick" />
-            <Button Margin="4,0,0,0"
-                    Content="Add Overlay"
+            <Button Content="Add Overlay"
                     Click="OnAddOverlayClick" />
             
             <Grid>
                 <Button x:Name="btnCaptureStart"
                         Visibility="Visible"
                         Width="120"
-                        Margin="4,0,0,0"
                         Content="Cpature Screen"
                         Click="OnCaptureScreenClick" />
                 <Button x:Name="btnCaptureStop"
                         Visibility="Collapsed"
                         Width="120"
-                        Margin="4,0,0,0"
                         Content="Stop Capture"
                         Click="OnCaptureStopClick" />
             </Grid>
@@ -49,23 +46,20 @@
                 
                 <Button Grid.ColumnSpan="2"
                         x:Name="btnSave"
-                        Margin="4,0,0,0"
                         Content="Save Clips"
                         Click="OnSaveClipClick" />
                 <ProgressRing Grid.Column="0"
-                              Margin="4,0,0,0"
                               x:Name="progressRing"
                               Visibility="Collapsed" />
                 <TextBlock Grid.Column="1"
                            x:Name="tbProgress"
                            VerticalAlignment="Center"
-                           Visibility="Collapsed"></TextBlock>
+                           Visibility="Collapsed" />
             </Grid>
 
         </StackPanel>
         
         <MediaPlayerElement Grid.Row="2"
-                            Margin="0,4"
                             x:Name="mediaPlayerElement"
                             AutoPlay="False"
                             HorizontalAlignment="Stretch"

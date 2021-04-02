@@ -22,7 +22,8 @@
                                     Grid.ColumnSpan="2" />
 
         <StackPanel Grid.Row="1"
-                    Orientation="Horizontal">
+                    Orientation="Horizontal"
+                    Spacing="4">
             <Button Content="Show Success"
                     Tapped="SuccessButton_Tapped" />
             <Button Content="Show Warning"

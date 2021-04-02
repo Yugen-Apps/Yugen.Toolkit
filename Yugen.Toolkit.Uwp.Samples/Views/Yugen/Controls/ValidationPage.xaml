@@ -18,7 +18,7 @@
         <StackPanel Grid.Column="1">
 
             <validation:ValidatingForm x:Name="ValidatingForm">
-                <StackPanel>
+                <StackPanel Spacing="4">
                     <TextBlock Text="{x:Bind ViewModel.Title, Mode=OneWay}"
                                Style="{ThemeResource TitleTextBlockStyle}" />
                     <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">These controls are useful when we need validations, for example in a form</TextBlock>

@@ -35,7 +35,8 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1"
+                    Spacing="4">
             <TextBox Header="Blog Url"
                      Text="{x:Bind ViewModel.Url, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 

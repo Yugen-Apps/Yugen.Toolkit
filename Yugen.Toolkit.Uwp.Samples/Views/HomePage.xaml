@@ -6,7 +6,7 @@
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
+    <StackPanel Spacing="4">
         <TextBlock Style="{ThemeResource TitleTextBlockStyle}">Welcome To Yugen Toolkit Samples App</TextBlock>
 
         <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Get Started</TextBlock>

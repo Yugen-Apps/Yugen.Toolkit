@@ -105,11 +105,8 @@
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constants\DataConstants.cs" />
-    <Compile Include="Constants\Menu\MicrosoftSubMenu.cs" />
-    <Compile Include="Constants\Menu\SnippetsSubMenu.cs" />
-    <Compile Include="Constants\Menu\YugenSubMenu.cs" />
     <Compile Include="Models\Graph.cs" />
-    <Compile Include="Constants\Menu\MenuBase.cs" />
+    <Compile Include="Constants\Menu.cs" />
     <Compile Include="ObservableObjects\BlogObservableObject.cs" />
     <Compile Include="Comparers\BlogObservableObjectComparer.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />

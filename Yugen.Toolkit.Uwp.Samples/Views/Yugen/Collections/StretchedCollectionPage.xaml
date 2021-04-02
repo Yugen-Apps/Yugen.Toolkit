@@ -8,7 +8,7 @@
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
+    <StackPanel Spacing="4">
 
         <TextBlock Text="Stretched Listview Item"
                    Style="{ThemeResource TitleTextBlockStyle}" />

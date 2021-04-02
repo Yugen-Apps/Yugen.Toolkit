@@ -14,7 +14,7 @@
         </core:EventTriggerBehavior>
     </interactivity:Interaction.Behaviors>
 
-    <StackPanel>
+    <StackPanel Spacing="4">
         <TextBlock Text="{x:Bind ViewModel.Text, Mode=OneWay}" />
 
         <Button Content="Notify a colleague"

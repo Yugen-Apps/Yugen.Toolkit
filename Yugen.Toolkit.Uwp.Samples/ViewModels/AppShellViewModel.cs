@@ -2,7 +2,7 @@
 using Microsoft.UI.Xaml.Controls;
 using System.Collections.Generic;
 using Yugen.Toolkit.Standard.Mvvm;
-using Yugen.Toolkit.Uwp.Samples.Constants.Menu;
+using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen;
 using Yugen.Toolkit.Uwp.Services;
 
@@ -18,7 +18,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels
             NavigationViewOnItemInvokedCommand = new RelayCommand<NavigationViewItemInvokedEventArgs>(NavigationViewOnItemInvokedCommandBehavior);
         }
 
-        public IEnumerable<NavigationViewItemBase> NavItems => MenuBase.MenuList;
+        public IEnumerable<NavigationViewItemBase> NavItems => MenuConstants.NavItems;
 
         public IRelayCommand NavigationViewOnItemInvokedCommand { get; }
 
