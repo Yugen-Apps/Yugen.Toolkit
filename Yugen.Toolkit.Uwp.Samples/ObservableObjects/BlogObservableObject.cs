@@ -15,19 +15,19 @@ namespace Yugen.Toolkit.Uwp.Samples.ObservableObjects
         public Guid BlogId
         {
             get => Model.BlogId;
-            set => SetProperty(Model.BlogId, value, (v) => Model.BlogId = value);
+            set => SetProperty(Model.BlogId, value, (v) => Model.BlogId = v);
         }
 
         public string Url
         {
             get => Model.Url;
-            set => SetProperty(Model.Url, value, (v) => Model.Url = value);
+            set => SetProperty(Model.Url, value, (v) => Model.Url = v);
         }
 
         public List<Post> Posts
         {
             get => Model.Posts;
-            //set => SetProperty(Model.Posts, value, (v) => Model.Posts = value);
+            //set => SetProperty(Model.Posts, value, (v) => Model.Posts = v);
         }
 
         int IComparable<BlogObservableObject>.CompareTo(BlogObservableObject next) =>

@@ -44,6 +44,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Snippets", "Snippets", "{38DFBC26-4754-45B0-A36C-6C62BA156E2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CS", "CS", "{0238026F-9564-418E-998F-16F4AAC9EBC3}"
+	ProjectSection(SolutionItems) = preProject
+		Snippets\Cs\AsyncRelayCommand.snippet = Snippets\Cs\AsyncRelayCommand.snippet
+		Snippets\Cs\DataContext.snippet = Snippets\Cs\DataContext.snippet
+		Snippets\Cs\NotifyProperty.snippet = Snippets\Cs\NotifyProperty.snippet
+		Snippets\Cs\NotifyPropertyAction.snippet = Snippets\Cs\NotifyPropertyAction.snippet
+		Snippets\Cs\NotifyPropertyWrap.snippet = Snippets\Cs\NotifyPropertyWrap.snippet
+		Snippets\Cs\RelayCommand.snippet = Snippets\Cs\RelayCommand.snippet
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xaml", "Xaml", "{AA22FAC8-90D0-4FBE-B413-6C9E99A3E3E1}"
+	ProjectSection(SolutionItems) = preProject
+		Snippets\Xaml\Behaviors.snippet = Snippets\Xaml\Behaviors.snippet
+		Snippets\Xaml\Storyboard.snippet = Snippets\Xaml\Storyboard.snippet
+		Snippets\Xaml\WinUI.snippet = Snippets\Xaml\WinUI.snippet
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -327,6 +346,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0238026F-9564-418E-998F-16F4AAC9EBC3} = {38DFBC26-4754-45B0-A36C-6C62BA156E2B}
+		{AA22FAC8-90D0-4FBE-B413-6C9E99A3E3E1} = {38DFBC26-4754-45B0-A36C-6C62BA156E2B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A035CBB-81CA-440F-B135-B44184574F05}

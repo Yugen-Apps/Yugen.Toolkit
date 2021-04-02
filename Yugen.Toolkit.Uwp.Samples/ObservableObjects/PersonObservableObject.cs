@@ -13,7 +13,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation
         {
             get => Model.Name;
             //set => SetProperty(Model.Name, value, Model, (m, v) => m.Name = v);
-            set => SetProperty(Model.Name, value, (v) => Model.Name = value);
+            set => SetProperty(Model.Name, value, (v) => Model.Name = v);
         }
     }
 }

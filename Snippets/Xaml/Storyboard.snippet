@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+    <Title>Storyboard</Title>
+    <Author>PandaSharp</Author>
+    <Description>XAML snippet for Storyboard</Description>
+    <Shortcut>strybrd</Shortcut>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>TargetName</ID>
+        <ToolTip>Name of the target element</ToolTip>
+        <Default>element1</Default>
+        <Function>
+        </Function>
+      </Literal>
+      <Literal Editable="true">
+        <ID>PropertyName</ID>
+        <ToolTip>Property of the element</ToolTip>
+        <Default>Property1</Default>
+        <Function>
+        </Function>
+      </Literal>
+    </Declarations>
+    <Code Language="XAML">
+      <![CDATA[
+        <Storyboard Storyboard.TargetName="$TargetName$" Storyboard.TargetProperty="$PropertyName$">
+      
+        </Storyboard>
+      ]]>
+    </Code>
+  </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

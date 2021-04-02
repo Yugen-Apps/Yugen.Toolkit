@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>RelayCommand Property (MVVM Toolkit)</Title>
+      <Author>PandaSharp</Author>
+      <Description>Insert RelayCommand compatible with MVVM toolkit.</Description>
+      <Shortcut>commr</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[          
+          $Name$Command = new RelayCommand($Name$CommandBehavior);
+          public IRelayCommand $Name$Command { get; }
+          
+          private void $Name$CommandBehavior()
+          {
+          }
+          
+        ]]>
+      </Code>
+      <Imports>
+        <Import>
+          <Namespace>Microsoft.Toolkit.Mvvm.Input</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>Name</ID>
+          <ToolTip>Name</ToolTip>
+          <Default>Name</Default>
+        </Literal>
+    </Declarations>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

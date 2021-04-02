@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Fulll Notify Property (MVVM Toolkit)</Title>
+      <Author>PandaSharp</Author>
+      <Description>Insert Full Property using SetProperty compatible with MVVM toolkit.</Description>
+      <Shortcut>propfn</Shortcut>
+      <HelpUrl>https://docs.microsoft.com/en-us/windows/communitytoolkit/mvvm/observableobject</HelpUrl>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[          
+          private $type$ $_field$;
+          public $type$ $Property$ 
+          {
+            get => $_field$;
+            set => SetProperty(ref $_field$, value);
+          }
+
+        ]]>
+      </Code>
+      <Declarations>
+        <Literal>
+          <ID>_field</ID>
+          <ToolTip>Private field</ToolTip>
+          <Default>_field</Default>
+        </Literal>
+        <Literal>
+          <ID>Property</ID>
+          <ToolTip>Public property</ToolTip>
+          <Default>Property</Default>
+        </Literal>
+        <Literal>
+          <ID>type</ID>
+          <ToolTip>Type</ToolTip>
+          <Default>string</Default>
+        </Literal>
+    </Declarations>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>AsyncRelayCommand Property (MVVM Toolkit)</Title>
+      <Author>PandaSharp</Author>
+      <Description>Insert AsyncRelayCommand compatible with MVVM toolkit.</Description>
+      <Shortcut>comma</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[                  
+          $Name$AsyncCommand = new AsyncRelayCommand($Name$AsyncCommandBehavior);
+          
+          $end$
+ 
+          $selected$
+          
+          public IAsyncRelayCommand $Name$AsyncCommand { get; }
+          
+          private async Task $Name$AsyncCommandBehavior()
+          {
+          }
+
+        ]]>
+      </Code>
+      <Imports>
+        <Import>
+          <Namespace>Microsoft.Toolkit.Mvvm.Input</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Threading.Tasks</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>Name</ID>
+          <ToolTip>Name</ToolTip>
+          <Default>Name</Default>
+        </Literal>
+    </Declarations>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
