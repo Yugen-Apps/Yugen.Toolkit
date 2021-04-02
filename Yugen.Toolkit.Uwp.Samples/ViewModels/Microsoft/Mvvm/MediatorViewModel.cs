@@ -2,7 +2,7 @@
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Standard.Mvvm.Mediator;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm
 {
     public class MediatorViewModel : ViewModelBase
     {
@@ -23,10 +23,10 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
         public IRelayCommand LoadedCommand { get; }
         public IRelayCommand NotifyCommand { get; }
 
-        public void LoadedCommandBehavior() => 
-            Mediator.Instance.Register("one", (object o) => Text = o.ToString());
+        public void LoadedCommandBehavior() =>
+            Mediator.Instance.Register("one", (o) => Text = o.ToString());
 
-        public void NotifyCommandCommandBehavior() => 
+        public void NotifyCommandCommandBehavior() =>
             Mediator.Instance.NotifyColleagues("one", "I'm a notification");
     }
 }

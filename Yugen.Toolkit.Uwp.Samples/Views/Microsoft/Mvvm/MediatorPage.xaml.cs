@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Mvvm
+namespace Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm
 {
     public sealed partial class MediatorPage : Page
     {

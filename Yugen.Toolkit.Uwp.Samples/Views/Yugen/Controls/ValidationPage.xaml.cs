@@ -2,9 +2,9 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Helpers;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
+namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls
 {
     public sealed partial class ValidationPage : Page
     {

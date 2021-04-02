@@ -7,7 +7,7 @@ using Yugen.Toolkit.Uwp.Samples.Models;
 using Microsoft.Toolkit.Collections;
 using Windows.UI.Xaml.Data;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Collections
 {
     public class GroupedCollectionViewModel : ViewModelBase
     {
@@ -64,4 +64,4 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
             GroupedCollection.AddOrReplaceSorted(groupName, newContact, group => group.Key == groupName, x => x.Name);
         }
     }
- }
+}

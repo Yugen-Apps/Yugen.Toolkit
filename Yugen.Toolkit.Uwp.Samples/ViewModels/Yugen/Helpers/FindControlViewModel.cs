@@ -3,7 +3,7 @@ using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Helpers;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Helpers
 {
     public class FindControlViewModel : ViewModelBase
     {

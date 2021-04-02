@@ -1,16 +1,15 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Views;
-using Yugen.Toolkit.Uwp.Samples.Views.Collections;
-using Yugen.Toolkit.Uwp.Samples.Views.Controls;
-using Yugen.Toolkit.Uwp.Samples.Views.Helpers;
-using Yugen.Toolkit.Uwp.Samples.Views.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D;
+using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Data;
+using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm;
 using FontIcon = Windows.UI.Xaml.Controls.FontIcon;
 

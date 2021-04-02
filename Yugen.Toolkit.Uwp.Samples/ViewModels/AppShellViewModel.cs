@@ -3,7 +3,7 @@ using Microsoft.UI.Xaml.Controls;
 using System.Collections.Generic;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Constants;
-using Yugen.Toolkit.Uwp.Samples.Views.Yugen;
+using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Services;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels

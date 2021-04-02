@@ -20,16 +20,14 @@ using Yugen.Toolkit.Standard.Data.Sample.Services;
 using Yugen.Toolkit.Uwp.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Controls;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Helpers;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Collections;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Helpers;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views;
-using Yugen.Toolkit.Uwp.Samples.Views.Collections;
 using Yugen.Toolkit.Uwp.Services;
 
 /// <summary>

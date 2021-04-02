@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Standard.Mvvm;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm
 {
     public class CommandViewModel : ViewModelBase
     {

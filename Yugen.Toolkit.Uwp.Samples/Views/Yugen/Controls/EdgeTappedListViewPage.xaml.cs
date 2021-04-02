@@ -3,7 +3,7 @@ using Windows.ApplicationModel.Contacts;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
+namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls
 {
     public sealed partial class EdgeTappedListViewPage : Page
     {

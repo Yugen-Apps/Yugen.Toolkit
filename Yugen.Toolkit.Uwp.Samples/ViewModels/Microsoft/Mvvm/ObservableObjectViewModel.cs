@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Navigation;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm
 {
     public class ObservableObjectViewModel : ViewModelBase
     {
@@ -27,7 +27,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
             Person.Name = "My Name";
         }
 
-        public void UpdateCommandBehavior() => 
+        public void UpdateCommandBehavior() =>
             Person.Name = "My new name";
     }
 }

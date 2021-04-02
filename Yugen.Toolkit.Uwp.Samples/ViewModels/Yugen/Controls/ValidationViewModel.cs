@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Yugen.Toolkit.Standard.Mvvm;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls
 {
     public class ValidationViewModel : ViewModelBase
     {

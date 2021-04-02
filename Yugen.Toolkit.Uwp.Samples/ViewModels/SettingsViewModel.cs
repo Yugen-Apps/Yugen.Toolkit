@@ -5,7 +5,7 @@ using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Models;
 using Yugen.Toolkit.Uwp.Services;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels
 {
     public class SettingsViewModel : ViewModelBase
     {

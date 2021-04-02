@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen;
+using Yugen.Toolkit.Uwp.Samples.ViewModels;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen
+namespace Yugen.Toolkit.Uwp.Samples.Views
 {
     public sealed partial class SettingsPage : Page
     {

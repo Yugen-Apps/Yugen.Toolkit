@@ -2,7 +2,7 @@
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Helpers;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Helpers
+namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen.Helpers
 {
     public sealed partial class FilePickerPage : Page
     {

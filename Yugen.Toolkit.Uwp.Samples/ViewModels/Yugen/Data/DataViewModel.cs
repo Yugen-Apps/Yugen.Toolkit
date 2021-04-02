@@ -6,7 +6,6 @@ using System.Linq;
 using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
 using Yugen.Toolkit.Standard.Extensions;
 using Yugen.Toolkit.Standard.Mvvm;
-using Yugen.Toolkit.Uwp.Samples.Comparers;
 using Yugen.Toolkit.Uwp.Samples.ObservableObjects;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data

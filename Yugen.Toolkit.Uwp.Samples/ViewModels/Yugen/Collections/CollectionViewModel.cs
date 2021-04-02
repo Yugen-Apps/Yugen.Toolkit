@@ -2,7 +2,7 @@
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.Models;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Collections
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Collections
 {
     public class CollectionViewModel
     {

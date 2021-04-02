@@ -1,6 +1,6 @@
 ﻿using Yugen.Toolkit.Standard.Mvvm;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Mvvm
 {
     public class XamlViewModel : ViewModelBase
     {

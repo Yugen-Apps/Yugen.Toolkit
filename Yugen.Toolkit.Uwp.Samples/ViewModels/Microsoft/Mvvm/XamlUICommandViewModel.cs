@@ -5,7 +5,7 @@ using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.Models;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm
 {
     public class XamlUICommandViewModel : ViewModelBase
     {

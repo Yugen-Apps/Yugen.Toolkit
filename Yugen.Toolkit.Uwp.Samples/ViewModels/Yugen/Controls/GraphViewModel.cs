@@ -2,7 +2,7 @@
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Models;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Controls
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls
 {
     public class GraphViewModel : ViewModelBase
     {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using Yugen.Toolkit.Standard.Mvvm;
-using Yugen.Toolkit.Uwp.Samples.Views.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm;
 using Yugen.Toolkit.Uwp.Services;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm
 {
     public class NavigationViewModel : ViewModelBase
     {
@@ -14,7 +14,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Mvvm
 
         public IRelayCommand NavigateCommand { get; }
 
-        public void NavigateCommandBehavior() => 
+        public void NavigateCommandBehavior() =>
             NavigationService.NavigateToPage(typeof(NavigationParameterPage), "I'm a parameter");
     }
 }

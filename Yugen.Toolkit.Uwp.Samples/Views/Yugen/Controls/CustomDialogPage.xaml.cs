@@ -1,7 +1,7 @@
 ﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Controls
+namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls
 {
     public sealed partial class CustomDialogPage : Page
     {
