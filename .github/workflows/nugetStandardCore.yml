@@ -2,7 +2,7 @@ name: Yugen.Toolkit.Standard.Core/Build, Pack and Publish Nuget
 on:
   push:
     branches:    
-      - master   
+      - main   
 
 jobs:   
   build_pack_publish:
