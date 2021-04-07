@@ -21,6 +21,7 @@ using Yugen.Toolkit.Uwp.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Cs;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Collections;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls;
@@ -30,24 +31,21 @@ using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Services;
 
-/// <summary>
-/// Add a reference to Yugen.Toolkit.Standard.Data
-/// Add a reference to Yugen.Toolkit.Standard.Data.Sample
-/// 
-/// To Create a Migration you need a web or console .net core project
-/// 
-/// How To Create a Migration
-/// Select: Startup Project: 
-/// Yugen.Toolkit.Core.Sample or Yugen.Toolkit.Web.Sample
-/// Go To: Package Manager Console
-/// Select: Default Project: Yugen.Toolkit.Standard.Data.Sample
-/// (Optional) Write: Remove-Migration
-/// Write: Add-Migration {MigrationName}
-/// </summary>
 namespace Yugen.Toolkit.Uwp.Samples
 {
     /// <summary>
-    /// Provides application-specific behavior to supplement the default Application class.
+    /// Add a reference to Yugen.Toolkit.Standard.Data
+    /// Add a reference to Yugen.Toolkit.Standard.Data.Sample
+    /// 
+    /// To Create a Migration you need a web or console .net core project
+    /// 
+    /// How To Create a Migration
+    /// Select: Startup Project: 
+    /// Yugen.Toolkit.Core.Sample or Yugen.Toolkit.Web.Sample
+    /// Go To: Package Manager Console
+    /// Select: Default Project: Yugen.Toolkit.Standard.Data.Sample
+    /// (Optional) Write: Remove-Migration
+    /// Write: Add-Migration {MigrationName}
     /// </summary>
     sealed partial class App : Application
     {
@@ -183,6 +181,8 @@ namespace Yugen.Toolkit.Uwp.Samples
                 .AddTransient<NavigationViewModel>()
                 .AddTransient<ObservableObjectViewModel>()
                 .AddTransient<XamlUICommandViewModel>()
+                // Sandbox
+                .AddTransient<DeferralViewModel>()
                 // Snippets
                 .AddTransient<EnumToBooleanConverterViewModel>()
                 // Yugen

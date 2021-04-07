@@ -6,7 +6,18 @@
     <members>
         <member name="T:Yugen.Toolkit.Uwp.Samples.App">
             <summary>
-            Provides application-specific behavior to supplement the default Application class.
+            Add a reference to Yugen.Toolkit.Standard.Data
+            Add a reference to Yugen.Toolkit.Standard.Data.Sample
+            
+            To Create a Migration you need a web or console .net core project
+            
+            How To Create a Migration
+            Select: Startup Project: 
+            Yugen.Toolkit.Core.Sample or Yugen.Toolkit.Web.Sample
+            Go To: Package Manager Console
+            Select: Default Project: Yugen.Toolkit.Standard.Data.Sample
+            (Optional) Write: Remove-Migration
+            Write: Add-Migration {MigrationName}
             </summary>
         </member>
         <member name="M:Yugen.Toolkit.Uwp.Samples.App.#ctor">
@@ -156,6 +167,21 @@
             </summary>
         </member>
         <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D.LoadingWavePage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Cs.DeferralPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Cs.DeferralPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Cs.DeferralPage.GetBindingConnector(System.Int32,System.Object)">
             <summary>
             GetBindingConnector(int connectionId, object target)
             </summary>

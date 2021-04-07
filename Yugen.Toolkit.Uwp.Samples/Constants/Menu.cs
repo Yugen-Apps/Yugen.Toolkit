@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Cs;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
@@ -20,6 +21,41 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
         public static List<NavigationViewItemBase> NavItems = new List<NavigationViewItemBase>
         {
             NewItem("Home", nameof(HomePage)),
+
+            NewHeader("Microsoft Toolkit"),
+            NewSubMenu("MVVM",new List<NavigationViewItem>
+            {
+                NewItem ("Command", nameof (CommandPage)),
+                NewItem ("Mediator ", nameof (MediatorPage)),
+                NewItem ("Navigation Parameters", nameof (NavigationPage)),
+                NewItem ("Observable Object ", nameof (ObservableObjectPage)),
+                NewItem ("XamlUICommandPage", nameof (XamlUICommandPage))
+            }),
+
+            NewHeader("Snippets"),
+            NewSubMenu("Converters",new List<NavigationViewItem>
+            {
+                NewItem ("Enum To Boolean", nameof (EnumToBooleanConverterPage))
+            }),
+            NewSubMenu("MediaComposition",new List<NavigationViewItem>
+            {
+                NewItem ("Demo", nameof (MediaCompositionPage))
+            }),
+            NewSubMenu("MVVM",new List<NavigationViewItem>
+            {
+                NewItem ("Xaml ViewModel", nameof (XamlViewModelPage))
+            }),
+            NewSubMenu("Win2D",new List<NavigationViewItem>
+            {
+                NewItem ("Loading Wave", nameof (LoadingWavePage))
+            }),
+
+            NewHeader("Sandbox"),
+            NewSubMenu("C#",new List<NavigationViewItem>
+            {
+                NewItem ("Deferral", nameof (DeferralPage))
+            }),
+
             NewHeader("Yugen Toolkit"),
             NewSubMenu("Collections",new List<NavigationViewItem>
             {
@@ -49,32 +85,6 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             NewSubMenu("MVVM",new List<NavigationViewItem>
             {
                 NewItem ("Observable Settings", nameof (ObservableSettingsPage))
-            }),
-            NewHeader("Microsoft Toolkit"),
-            NewSubMenu("MVVM",new List<NavigationViewItem>
-            {
-                NewItem ("Command", nameof (CommandPage)),
-                NewItem ("Mediator ", nameof (MediatorPage)),
-                NewItem ("Navigation Parameters", nameof (NavigationPage)),
-                NewItem ("Observable Object ", nameof (ObservableObjectPage)),
-                NewItem ("XamlUICommandPage", nameof (XamlUICommandPage))
-            }),
-            NewHeader("Snippets"),
-            NewSubMenu("Converters",new List<NavigationViewItem>
-            {
-                NewItem ("Enum To Boolean", nameof (EnumToBooleanConverterPage))
-            }),
-            NewSubMenu("MediaComposition",new List<NavigationViewItem>
-            {
-                NewItem ("Demo", nameof (MediaCompositionPage))
-            }),
-            NewSubMenu("MVVM",new List<NavigationViewItem>
-            {
-                NewItem ("Xaml ViewModel", nameof (XamlViewModelPage))
-            }),
-            NewSubMenu("Win2D",new List<NavigationViewItem>
-            {
-                NewItem ("Loading Wave", nameof (LoadingWavePage))
             })
         };
 
