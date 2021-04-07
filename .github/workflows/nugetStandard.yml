@@ -7,38 +7,45 @@ on:
 jobs:   
   build_pack_publish:
     runs-on: windows-latest
-    name: Build
+
+    env:
+      SOLUTION_FILE: Yugen.Toolkit.sln
+      CONFIGURATION: Release
+      PROJECT_FOLDER: Yugen.Toolkit.Standard
+      PROJECT_FILE: Yugen.Toolkit.Standard.csproj
+      NUGET_SOURCE_URL: https://api.nuget.org/v3/index.json
+      GH_NUGET_SOURCE_NAME: GitHub
+      GH_NUGET_SOURCE_URL: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+
     steps:
     - uses: actions/checkout@v1   
+
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-api-key: ${{ secrets.NUGET_KEY }}
+
+    - name: Restore dependencies
+      run: nuget restore $env:SOLUTION_FILE
     
     - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1
-
-    - name: MSBuild Restore
-      run: msbuild Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration="Release" /t:restore     
+      uses: microsoft/setup-msbuild@v1      
 
     - name: MSBuild Build
-      run: msbuild Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration="Release"
+      run: msbuild $env:PROJECT_FOLDER\$env:PROJECT_FILE /p:Configuration=$env:CONFIGURATION
 
     - name: MSBuild Pack
-      run: msbuild Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration="Release" /t:pack 
-    #-p:PackageVersion=1.0.2 
-
-    - name: Setup Nuget.exe
-      uses: nuget/setup-nuget@v1
-        
-    - name: Nuget SetAPIKey
-      run: nuget setApiKey ${{ secrets.NUGET_KEY }}
+      run: msbuild $env:PROJECT_FOLDER\$env:PROJECT_FILE /p:Configuration=$env:CONFIGURATION /t:pack 
 
     - name: Nuget Push
-      run: nuget push Yugen.Toolkit.Standard\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json
+      run: nuget push $env:PROJECT_FOLDER\bin\$env:CONFIGURATION\*.nupkg -Source $env:NUGET_SOURCE_URL
       continue-on-error: true
     
     - name: GH Nuget Add Source
-      run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/panda-sharp/index.json" -UserName panda-sharp -Password ${{ secrets.PACKAGES_TOKEN }}
-
+      run: nuget source Add -Name $env:GH_NUGET_SOURCE_NAME -Source $env:GH_NUGET_SOURCE_URL -UserName ${{ github.repository_owner }} -Password ${{ secrets.PACKAGES_TOKEN }}
+      
     - name: GH Nuget SetAPIKey
-      run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source "GitHub"
+      run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source $env:GH_NUGET_SOURCE_NAME
 
     - name: GH Nuget Push
-      run: nuget push Yugen.Toolkit.Standard\bin\Release\*.nupkg -Source "GitHub"
+      run: nuget push $env:PROJECT_FOLDER\bin\$env:CONFIGURATION\*.nupkg -Source $env:GH_NUGET_SOURCE_NAME

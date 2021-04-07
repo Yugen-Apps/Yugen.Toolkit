@@ -7,38 +7,45 @@ on:
 jobs:   
   build_pack_publish:
     runs-on: windows-latest
-    name: Build
+
+    env:
+      SOLUTION_FILE: Yugen.Toolkit.sln
+      CONFIGURATION: Release
+      PROJECT_FOLDER: Yugen.Toolkit.Uwp.Controls
+      PROJECT_FILE: Yugen.Toolkit.Uwp.Controls.csproj
+      NUGET_SOURCE_URL: https://api.nuget.org/v3/index.json
+      GH_NUGET_SOURCE_NAME: GitHub
+      GH_NUGET_SOURCE_URL: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+
     steps:
     - uses: actions/checkout@v1   
+
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-api-key: ${{ secrets.NUGET_KEY }}
+
+    - name: Restore dependencies
+      run: nuget restore $env:SOLUTION_FILE
     
     - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1
-
-    - name: MSBuild Restore
-      run: msbuild Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj /p:Configuration="Release" /t:restore     
+      uses: microsoft/setup-msbuild@v1      
 
     - name: MSBuild Build
-      run: msbuild Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj /p:Configuration="Release"
-      
-    - name: Setup Nuget.exe
-      uses: nuget/setup-nuget@v1
+      run: msbuild $env:PROJECT_FOLDER\$env:PROJECT_FILE /p:Configuration=$env:CONFIGURATION
       
     - name: Nuget Pack
-      run: nuget pack Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj -properties Configuration=Release
-        
-    - name: Nuget SetAPIKey
-      run: nuget setApiKey ${{ secrets.NUGET_KEY }}
+      run: nuget pack $env:PROJECT_FOLDER\$env:PROJECT_FILE -properties Configuration=$env:CONFIGURATION
 
     - name: Nuget Push
-      run: nuget push *.nupkg -Source https://api.nuget.org/v3/index.json
+      run: nuget push *.nupkg -Source $env:NUGET_SOURCE_URL
       continue-on-error: true
-
+    
     - name: GH Nuget Add Source
-      run: nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/panda-sharp/index.json" -UserName panda-sharp -Password ${{ secrets.PACKAGES_TOKEN }}
+      run: nuget source Add -Name $env:GH_NUGET_SOURCE_NAME -Source $env:GH_NUGET_SOURCE_URL -UserName ${{ github.repository_owner }} -Password ${{ secrets.PACKAGES_TOKEN }}
       
     - name: GH Nuget SetAPIKey
-      run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source "GitHub"      
-    
+      run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source $env:GH_NUGET_SOURCE_NAME
+
     - name: GH Nuget Push
-      run: nuget push *.nupkg -Source "GitHub"
-      
+      run: nuget push *.nupkg -Source $env:GH_NUGET_SOURCE_NAME  
