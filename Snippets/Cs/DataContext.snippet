@@ -13,8 +13,10 @@
     <Snippet>
       <Code Language="CSharp">
         <![CDATA[       
-          DataContext = App.Current.Services.GetService<$Name$ViewModel>();
-        
+          DataContext = App.Current.Services.GetService<$Name$ViewModel>();                 
+          $end$ 
+          $selected$      
+          
           private $Name$ViewModel ViewModel => ($Name$ViewModel)DataContext;
 
         ]]>
