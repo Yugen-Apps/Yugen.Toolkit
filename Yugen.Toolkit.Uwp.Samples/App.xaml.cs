@@ -21,7 +21,7 @@ using Yugen.Toolkit.Uwp.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Cs;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Csharp;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Collections;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls;

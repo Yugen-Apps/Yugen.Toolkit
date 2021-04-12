@@ -109,7 +109,7 @@
     <Compile Include="Constants\Menu.cs" />
     <Compile Include="ObservableObjects\BlogObservableObject.cs" />
     <Compile Include="Comparers\BlogObservableObjectComparer.cs" />
-    <Compile Include="ViewModels\Sandbox\Cs\DeferralViewModel.cs" />
+    <Compile Include="ViewModels\Sandbox\Csharp\DeferralViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Converters\EnumToBooleanConverterViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Mvvm\XamlViewModel.cs" />
@@ -135,7 +135,7 @@
     <Compile Include="Views\Snippets\Converters\EnumToBooleanConverterPage.xaml.cs">
       <DependentUpon>EnumToBooleanConverterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Sandbox\Cs\DeferralPage.xaml.cs">
+    <Compile Include="Views\Sandbox\Csharp\DeferralPage.xaml.cs">
       <DependentUpon>DeferralPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Snippets\MediaCompositionNS\MediaCompositionPage.xaml.cs">
@@ -311,7 +311,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Sandbox\Cs\DeferralPage.xaml">
+    <Page Include="Views\Sandbox\Csharp\DeferralPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

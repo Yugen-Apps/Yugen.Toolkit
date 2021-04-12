@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Cs;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Csharp;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Cs
+namespace Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp
 {
     public sealed partial class DeferralPage : Page
     {

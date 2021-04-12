@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm;
-using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Cs;
+using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
