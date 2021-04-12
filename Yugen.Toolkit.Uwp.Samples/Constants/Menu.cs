@@ -53,7 +53,8 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             NewHeader("Sandbox"),
             NewSubMenu("C#",new List<NavigationViewItem>
             {
-                NewItem ("Deferral", nameof (DeferralPage))
+                NewItem ("Deferral", nameof (DeferralPage)),
+                NewItem ("Images Grid", nameof (ImagesGridPage))
             }),
 
             NewHeader("Yugen Toolkit"),

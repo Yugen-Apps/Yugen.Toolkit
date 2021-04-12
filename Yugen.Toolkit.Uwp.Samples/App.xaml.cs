@@ -183,6 +183,7 @@ namespace Yugen.Toolkit.Uwp.Samples
                 .AddTransient<XamlUICommandViewModel>()
                 // Sandbox
                 .AddTransient<DeferralViewModel>()
+                .AddTransient<ImagesGridViewModel>()
                 // Snippets
                 .AddTransient<EnumToBooleanConverterViewModel>()
                 // Yugen

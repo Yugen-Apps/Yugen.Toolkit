@@ -1,0 +1,60 @@
+﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp.ImagesGridPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:models="using:Yugen.Toolkit.Uwp.Samples.Models"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Spacing="4">
+        <StackPanel Orientation="Horizontal"
+                    Spacing="4">
+            <Button Command="{x:Bind ViewModel.StartBitmapImageAsyncCommand}"
+                    Content="BitmapImage" />
+            <Button Command="{x:Bind ViewModel.StartGetThumbnailAsyncAsyncCommand}"
+                    Content="GetThumbnailAsync" />
+            <Button Command="{x:Bind ViewModel.StartSoftwareBitmapSourceAsyncCommand}"
+                    Content="SoftwareBitmapSource" />
+            <Button Command="{x:Bind ViewModel.StartWriteableBitmapAsyncCommand}"
+                    Content="WriteableBitmap" />
+            <Button Command="{x:Bind ViewModel.StartStorageFilePathAsyncCommand}"
+                    Content="StorageFilePath" />
+            <!--<Button Command="{x:Bind ViewModel.StartLoadImageAsyncCommand}"
+                    Content="LoadImage" />-->
+        </StackPanel>
+
+        <GridView ItemsSource="{x:Bind ViewModel.ImageCollection, Mode=OneWay}"
+                  SelectedItem="{x:Bind ViewModel.SelectedPerson, Mode=TwoWay}">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="models:Person">
+                    <Image Source="{x:Bind ImageSource}"
+                           Stretch="Uniform"
+                           Height="200"
+                           Width="200"/>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+        <GridView ItemsSource="{x:Bind ViewModel.Image5Collection, Mode=OneWay}"
+                  SelectedItem="{x:Bind ViewModel.SelectedPerson, Mode=TwoWay}">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="models:Person">
+                    <Image Source="{x:Bind ImagePath}"
+                           Stretch="Uniform"
+                           Height="200"
+                           Width="200" />
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+        <!--<Image Source="{x:Bind ViewModel.Image, Mode=OneWay}"
+               Height="400"
+               Width="400" />
+
+        <Image Source="{x:Bind ViewModel.ImageSource, Mode=OneWay}"
+               Height="400"
+               Width="400" />-->
+    </StackPanel>
+</Page>

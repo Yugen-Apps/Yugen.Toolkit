@@ -129,6 +129,10 @@
     <Compile Include="ViewModels\Microsoft\Mvvm\ObservableObjectViewModel.cs" />
     <Compile Include="Helpers\DocHelper.cs" />
     <Compile Include="ObservableObjects\Settings.cs" />
+    <Compile Include="Views\Sandbox\Csharp\ImagesGridPage.xaml.cs">
+      <DependentUpon>ImagesGridPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Sandbox\Csharp\ImagesGridViewModel.cs" />
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -303,6 +307,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Sandbox\Csharp\ImagesGridPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -429,7 +437,7 @@
       <Version>6.2.12</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit">
-      <Version>7.0.1</Version>
+      <Version>7.0.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.5.0</Version>
@@ -450,7 +458,7 @@
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="Win2D.uwp">
-      <Version>1.25.0</Version>
+      <Version>1.26.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
