@@ -126,11 +126,13 @@
     <Compile Include="Helpers\PrintHelperStateBag.cs" />
     <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\SettingsHelper.cs" />
+    <Compile Include="Helpers\StreamHelper.cs" />
     <Compile Include="Helpers\TitleBarHelper.cs" />
     <Compile Include="Helpers\WriteableBitmapHelper.cs" />
     <Compile Include="Helpers\ColorHelper.cs" />
     <Compile Include="Helpers\DebugVisibilityHelper.cs" />
     <Compile Include="Helpers\FindControlHelper.cs" />
+    <Compile Include="Helpers\ZipArchiveHelper.cs" />
     <Compile Include="Mvvm\DependencyInjection\Attributes\DependencyAttribute.cs" />
     <Compile Include="Mvvm\DependencyInjection\Attributes\ViewModelAttribute.cs" />
     <Compile Include="Mvvm\DependencyInjection\Host.cs" />
