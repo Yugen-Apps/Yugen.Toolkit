@@ -3,7 +3,7 @@ using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.ObservableObjects;
 using Yugen.Toolkit.Uwp.Services;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Mvvm
 {
     public class ObservableSettingsViewModel : ViewModelBase
     {

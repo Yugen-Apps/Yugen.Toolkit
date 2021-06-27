@@ -118,7 +118,7 @@
     <Compile Include="Models\RadioOption.cs" />
     <Compile Include="ViewModels\Yugen\Controls\YugenDialogViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Data\DataViewModel.cs" />
-    <Compile Include="ViewModels\Yugen\Mvvm\ObservableSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Sandbox\Mvvm\ObservableSettingsViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Helpers\FindControlViewModel.cs" />
     <Compile Include="ViewModels\Yugen\Controls\GraphViewModel.cs" />
     <Compile Include="ObservableObjects\PersonObservableObject.cs" />
@@ -226,8 +226,8 @@
     <Compile Include="Views\Others\SamplesPage.xaml.cs">
       <DependentUpon>SamplesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Yugen\Mvvm\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    <Compile Include="Views\Sandbox\Mvvm\ObservableSettingsPage.xaml.cs">
+      <DependentUpon>ObservableSettingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -427,7 +427,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Yugen\Mvvm\SettingsPage.xaml">
+    <Page Include="Views\Sandbox\Mvvm\ObservableSettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
