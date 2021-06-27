@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Windows.UI.Xaml.Controls;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Mvvm;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm
+namespace Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Mvvm
 {
     public sealed partial class ObservableSettingsPage : Page
     {

@@ -184,4 +184,46 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Others
     //        _progress.Report(++percentage);
     //    }
     //}
+
+    //public static class FileHelper
+    //{
+    //    //http://windowsapptutorials.com/windows-10/application-data-in-universal-windows-apps/
+    //    //access a file in the app package.
+    //    //var uri = "ms-appx:///Assets/readium-js/dev/index_RequireJS_single-bundle.html"
+    //    //var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri(uri));
+
+    //    //access a file in the app package
+    //    //Package.Current.InstalledLocation = "C:\\Dev\\Kortext-UWP-Reader\\UWP\\samples\\ReadiumUwp\\ReadiumUWP\\bin\\x86\\Debug\\AppX\\"
+    //    //var folder = await Package.Current.InstalledLocation.GetFolderAsync("Assets\\readium-js\\dev\\");
+    //    //var file = await folder.GetFileAsync("index_RequireJS_single-bundle.html");
+
+    //    //access a file in the app package.
+    //    //var file = await Package.Current.InstalledLocation.GetFileAsync("Assets\\readium-js\\dev\\index_RequireJS_single-bundle.html");
+
+    //    //access a web file in the app package.
+    //    //var uri = "ms-appx-web:///Assets/readium-js/dev/index_RequireJS_single-bundle.html"
+
+    //    //access a file in local app data store
+    //    //var uriFile = "ms-appdata:///local/file.ext";
+
+    //    //access a file in local app data store 
+    //    //ApplicationData.Current.LocalFolder = "C:\\Users\\emili\\AppData\\Local\\Packages\\Readium.UWP_q2jkdtkhjs7ty\\LocalState"
+    //    //var folder = ApplicationData.Current.LocalFolder;
+    //    //var file = await folder.GetFileAsync("index_RequireJS_single-bundle.html");
+
+    //    public static async Task<string> OpenAsString(string path)
+    //    {
+    //        var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri(path));
+    //        return await StreamHelper.FileToString(file);
+    //    }
+
+    //    //public static async Task Write()
+    //    //{
+    //    //    var a = ApplicationData.Current.LocalCacheFolder;
+    //    //    var s = ApplicationData.Current.LocalFolder;
+    //    //    var d = ApplicationData.Current.LocalSettings;
+    //    //    StorageFile sampleFile = await s.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting);
+    //    //    await FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
+
+    //}
 }

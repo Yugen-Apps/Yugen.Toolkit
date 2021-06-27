@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm;
-using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Cs;
+using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp;
+using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
@@ -11,7 +12,6 @@ using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Data;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Helpers;
-using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Mvvm;
 using FontIcon = Windows.UI.Xaml.Controls.FontIcon;
 
 namespace Yugen.Toolkit.Uwp.Samples.Constants
@@ -53,7 +53,12 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             NewHeader("Sandbox"),
             NewSubMenu("C#",new List<NavigationViewItem>
             {
-                NewItem ("Deferral", nameof (DeferralPage))
+                NewItem ("Deferral", nameof (DeferralPage)),
+                NewItem ("Images Grid", nameof (ImagesGridPage))
+            }),
+            NewSubMenu("MVVM",new List<NavigationViewItem>
+            {
+                NewItem ("Observable Settings", nameof (ObservableSettingsPage))
             }),
 
             NewHeader("Yugen Toolkit"),
@@ -81,10 +86,6 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
                 NewItem ("Content Dialog", nameof (ContentDialogPage)),
                 NewItem ("File Picker", nameof (FilePickerPage)),
                 NewItem ("Find Control", nameof (FindControlPage))
-            }),
-            NewSubMenu("MVVM",new List<NavigationViewItem>
-            {
-                NewItem ("Observable Settings", nameof (ObservableSettingsPage))
             })
         };
 

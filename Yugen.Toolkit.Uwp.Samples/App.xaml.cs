@@ -15,19 +15,18 @@ using Windows.UI.Xaml.Navigation;
 using Yugen.Toolkit.Standard.Data.Extensions;
 using Yugen.Toolkit.Standard.Data.Sample;
 using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
-using Yugen.Toolkit.Standard.Data.Sample.Repository;
 using Yugen.Toolkit.Standard.Data.Sample.Services;
 using Yugen.Toolkit.Uwp.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Microsoft.Mvvm;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Cs;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Csharp;
+using Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Collections;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Helpers;
-using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Services;
 
@@ -183,6 +182,7 @@ namespace Yugen.Toolkit.Uwp.Samples
                 .AddTransient<XamlUICommandViewModel>()
                 // Sandbox
                 .AddTransient<DeferralViewModel>()
+                .AddTransient<ImagesGridViewModel>()
                 // Snippets
                 .AddTransient<EnumToBooleanConverterViewModel>()
                 // Yugen

@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Cs
+namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Csharp
 {
     public class DeferralViewModel
     {
