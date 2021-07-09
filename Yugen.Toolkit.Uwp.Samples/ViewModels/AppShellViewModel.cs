@@ -1,9 +1,11 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 using Microsoft.UI.Xaml.Controls;
+using System;
 using System.Collections.Generic;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.Views;
+using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml;
 using Yugen.Toolkit.Uwp.Services;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels
@@ -26,13 +28,16 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels
         {
             var tag = args.InvokedItemContainer.Tag?.ToString();
 
-            if (tag == "Settings")
+            switch (tag)
             {
-                NavigationService.NavigateToPage(nameof(SettingsPage));
-            }
-            else
-            {
-                NavigationService.NavigateToPage(tag);
+                case "Settings":
+                    NavigationService.NavigateToPage(nameof(SettingsPage));
+                    break;
+                case nameof(RsodPage):
+                    throw new Exception("Hello");
+                default:
+                    NavigationService.NavigateToPage(tag);
+                    break;
             }
         }
     }

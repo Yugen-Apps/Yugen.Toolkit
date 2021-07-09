@@ -1,0 +1,61 @@
+﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml.RsodPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:toolkitcontrols="using:Microsoft.Toolkit.Uwp.UI.Controls"
+      xmlns:icons="using:Fluent.Icons"
+      mc:Ignorable="d"
+      Background="DarkRed">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center"
+                    Canvas.ZIndex="2"
+                    Margin="50,50,50,200">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="100"
+                           Text="(╯" />
+                <toolkitcontrols:DropShadowPanel Color="Red">
+                    <TextBlock Foreground="Red"
+                               FontSize="100"
+                               Text="°" />
+                </toolkitcontrols:DropShadowPanel>
+                <TextBlock FontSize="100"
+                           Text="□" />
+                <toolkitcontrols:DropShadowPanel Color="Red">
+                    <TextBlock Foreground="Red"
+                               FontSize="100"
+                               Text="°" />
+                </toolkitcontrols:DropShadowPanel>
+                <TextBlock FontSize="100"
+                           Text="）╯︵ ┻━┻" />
+            </StackPanel>
+            <TextBlock FontSize="36"
+                       FontWeight="SemiBold"
+                       Text="We ran into an unexpected error."
+                       Margin="0,20,0,20" />
+            <TextBlock Text="Exception:"
+                       FontWeight="SemiBold"
+                       FontSize="24" />
+            <TextBlock FontSize="24"
+                       Text="{x:Bind ExceptionText}"
+                       ScrollViewer.VerticalScrollBarVisibility="Auto"
+                       IsTextSelectionEnabled="True"
+                       TextWrapping="Wrap" />
+            <Button Foreground="White">
+                <StackPanel Orientation="Horizontal">
+                    <icons:FluentSymbolIcon Symbol="Bug24"
+                                            VerticalAlignment="Center"
+                                            Margin="0,0,4,0"
+                                            Foreground="Red" />
+                    <TextBlock VerticalAlignment="Center">Report the error</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <WebView  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Source="ms-appx-web:///Assets/Html/Rsod.html"></WebView>
+    </Grid>
+
+</Page>

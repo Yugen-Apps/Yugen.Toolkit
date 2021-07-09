@@ -10,6 +10,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.Globalization;
 using Windows.Storage;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Yugen.Toolkit.Standard.Data.Extensions;
@@ -28,6 +29,7 @@ using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Data;
 using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Views;
+using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml;
 using Yugen.Toolkit.Uwp.Services;
 
 namespace Yugen.Toolkit.Uwp.Samples
@@ -59,6 +61,7 @@ namespace Yugen.Toolkit.Uwp.Samples
 
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            this.UnhandledException += OnUnhandledException;
         }
 
         public new static App Current => (App)Application.Current;
@@ -213,6 +216,17 @@ namespace Yugen.Toolkit.Uwp.Samples
             bloggingContext.Database.Migrate();
 
             await Services.GetService<IThemeSelectorService>().InitializeAsync(true);
+        }
+
+        private void OnUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)
+        {
+            e.Handled = true;
+            Frame rootFrame = new Frame();
+            Window.Current.Content = rootFrame;
+
+            this.UnhandledException -= OnUnhandledException;
+
+            rootFrame.Navigate(typeof(RsodPage), e);
         }
     }
 }

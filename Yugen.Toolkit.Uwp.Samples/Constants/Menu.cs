@@ -4,6 +4,7 @@ using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp;
 using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
@@ -59,6 +60,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             NewSubMenu("MVVM",new List<NavigationViewItem>
             {
                 NewItem ("Observable Settings", nameof (ObservableSettingsPage))
+            }),
+            NewSubMenu("Xaml",new List<NavigationViewItem>
+            {
+                NewItem ("RSOD", nameof (RsodPage))
             }),
 
             NewHeader("Yugen Toolkit"),
