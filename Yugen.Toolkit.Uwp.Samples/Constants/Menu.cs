@@ -9,6 +9,7 @@ using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D;
+using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Data;
@@ -49,6 +50,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             NewSubMenu("Win2D",new List<NavigationViewItem>
             {
                 NewItem ("Loading Wave", nameof (LoadingWavePage))
+            }),
+            NewSubMenu("Xaml",new List<NavigationViewItem>
+            {
+                NewItem ("Customization", nameof (CustomizationPage))
             }),
 
             NewHeader("Sandbox"),

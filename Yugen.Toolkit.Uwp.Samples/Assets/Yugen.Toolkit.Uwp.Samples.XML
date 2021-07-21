@@ -236,6 +236,26 @@
             GetBindingConnector(int connectionId, object target)
             </summary>
         </member>
+        <member name="T:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage">
+            <summary>
+            An empty page that can be used on its own or navigated to within a Frame.
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
         <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Collections.StretchedCollectionPage.InitializeComponent">
             <summary>
             InitializeComponent()

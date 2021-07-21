@@ -154,6 +154,9 @@
     <Compile Include="Views\Snippets\Win2D\LoadingWavePage.xaml.cs">
       <DependentUpon>LoadingWavePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Snippets\Xaml\CustomizationPage.xaml.cs">
+      <DependentUpon>CustomizationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Yugen\Collections\StretchedCollectionPage.cs">
       <DependentUpon>StretchedCollectionPage.xaml</DependentUpon>
     </Compile>
@@ -340,6 +343,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Snippets\Win2D\LoadingWavePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Snippets\Xaml\CustomizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
