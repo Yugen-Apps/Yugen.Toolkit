@@ -4,10 +4,12 @@ using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp;
 using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Mvvm;
+using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D;
+using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Data;
@@ -49,6 +51,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             {
                 NewItem ("Loading Wave", nameof (LoadingWavePage))
             }),
+            NewSubMenu("Xaml",new List<NavigationViewItem>
+            {
+                NewItem ("Customization", nameof (CustomizationPage))
+            }),
 
             NewHeader("Sandbox"),
             NewSubMenu("C#",new List<NavigationViewItem>
@@ -59,6 +65,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             NewSubMenu("MVVM",new List<NavigationViewItem>
             {
                 NewItem ("Observable Settings", nameof (ObservableSettingsPage))
+            }),
+            NewSubMenu("Xaml",new List<NavigationViewItem>
+            {
+                NewItem ("RSOD", nameof (RsodPage))
             }),
 
             NewHeader("Yugen Toolkit"),

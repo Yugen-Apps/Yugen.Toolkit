@@ -1,4 +1,6 @@
-﻿using Windows.UI.Xaml.Media;
+﻿using System;
+using Windows.UI;
+using Windows.UI.Xaml.Media;
 
 namespace Yugen.Toolkit.Uwp.Helpers
 {
@@ -42,5 +44,12 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// <returns></returns>
         public static SolidColorBrush ConvertHexToSolidColorBrush(string hex) => 
             new SolidColorBrush(Convert(hex));
+
+        public static Color GradientColor(float mu)
+        {
+            var c = (byte)((Math.Sin(mu * Math.PI * 2) + 1) * 127.5);
+
+            return Color.FromArgb(255, (byte)(255 - c), c, 220);
+        }
     }
 }
