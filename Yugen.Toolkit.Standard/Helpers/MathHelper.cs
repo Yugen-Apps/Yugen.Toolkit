@@ -29,5 +29,11 @@ namespace Yugen.Toolkit.Standard.Helpers
                 ? new Tuple<int, int>((int)(newHeight * ratio), newHeight)
                 : new Tuple<int, int>(newWidth, (int)(newWidth / ratio));
         }
+
+        public static double ConvertAngleToRadians(double angle) =>
+            Math.PI / 180 * angle;
+
+        public static double ConvertRadiansToAngle(double radians) =>
+            180 / Math.PI * radians;
     }
 }

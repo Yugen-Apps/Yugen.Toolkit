@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Yugen.Toolkit.Uwp.Controls</id>
-    <version>1.0.45</version>
+    <version>1.0.46</version>
     <title>Yugen Toolkit Uwp Controls</title>
     <authors>panda-sharp</authors>
     <owners>panda-sharp</owners>
@@ -23,26 +23,26 @@
     <tags>Yugen Toolkit Uwp Controls XAML Dialogs Graphs Menu Validation</tags>
     <repository type="git" url="https://github.com/panda-sharp/Yugen.Toolkit.git" /> 
     <dependencies>
-      <group targetFramework="uap10.0.17763">
-        <dependency id="Yugen.Toolkit.Standard" version="1.0.45" exclude="Build,Analyzers" />
-        <dependency id="Yugen.Toolkit.Uwp" version="1.0.45" exclude="Build,Analyzers" />
+      <group targetFramework="uap10.0.18362">
+        <dependency id="Yugen.Toolkit.Standard" version="1.0.46" exclude="Build,Analyzers" />
+        <dependency id="Yugen.Toolkit.Uwp" version="1.0.46" exclude="Build,Analyzers" />
         <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.2.10" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>
   <files>  
     <!-- Dll -->
-    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.dll" target="lib\uap10.0.17763" /> 
+    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.dll" target="lib\uap10.0.18362" /> 
 
     <!-- Resources -->
-    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.pdb" target="lib\uap10.0.17763" />
-    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.pri" target="lib\uap10.0.17763" />  
+    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.pdb" target="lib\uap10.0.18362" />
+    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.pri" target="lib\uap10.0.18362" />  
 
     <!-- IntelliSense -->
-    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.XML" target="lib\uap10.0.17763" />
+    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls.XML" target="lib\uap10.0.18362" />
 
     <!-- XAML control -->
-    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls\**\*.*" target="lib\uap10.0.17763\Yugen.Toolkit.Uwp.Controls" />
+    <file src="bin\Release\Yugen.Toolkit.Uwp.Controls\**\*.*" target="lib\uap10.0.18362\Yugen.Toolkit.Uwp.Controls" />
 
     <!-- Icon -->
     <file src="..\icon.png" target="images\" />
