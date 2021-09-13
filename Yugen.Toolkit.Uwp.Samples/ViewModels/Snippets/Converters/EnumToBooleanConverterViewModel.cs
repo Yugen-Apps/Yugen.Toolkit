@@ -31,7 +31,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Snippets.Converters
         private async Task SwitchThemeCommandBehavior(ElementTheme param)
         {
             ElementTheme = param;
-            await _themeSelectorService.SetThemeAsync(param, false);
+            await _themeSelectorService.SetThemeAsync(param);
         }
     }
 }

@@ -83,7 +83,7 @@ namespace Yugen.Toolkit.Uwp.Samples
 
                 // Initial UI styling
                 TitleBarHelper.ExpandViewIntoTitleBar();
-                //TitleBarHelper.StyleTitleBar(...);
+                TitleBarHelper.StyleTitleBar(true);
 
                 // Create a AppShell to act as the navigation context and navigate to the first page
                 shell = new AppShell { Language = ApplicationLanguages.Languages[0] };
@@ -215,7 +215,7 @@ namespace Yugen.Toolkit.Uwp.Samples
             //var isCreated = bloggingContext.Database.EnsureCreated();
             bloggingContext.Database.Migrate();
 
-            await Services.GetService<IThemeSelectorService>().InitializeAsync(true);
+            await Services.GetService<IThemeSelectorService>().InitializeAsync();
         }
 
         private void OnUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)

@@ -35,7 +35,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels
             {
                 if (value != null && SetProperty(ref _elementThemeOption, value))
                 {
-                    _themeSelectorService.SetThemeAsync(_elementThemeOption.Element, false);
+                    _themeSelectorService.SetThemeAsync(_elementThemeOption.Element);
                 }
             }
         }
