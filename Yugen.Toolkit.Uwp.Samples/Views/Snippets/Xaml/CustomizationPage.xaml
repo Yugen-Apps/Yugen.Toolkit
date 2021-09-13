@@ -282,14 +282,14 @@
             <muxc:NavigationView.MenuItems>
                 <muxc:NavigationViewItem Content="{x:Bind NamedColor1}" 
                                     ContentTemplate="{StaticResource MyDataTemplate}" 
-                                    local:NavigationViewItemAttachedProperty.IsVisible="{x:Bind NamedColor1.IsVisible,Mode=OneWay}"
+                                    local:NavigationViewItemAttachedProperty.IsVisible="{x:Bind NamedColor1.IsVisible}"
                                     IsSelected="True"/>
                 <muxc:NavigationViewItem Content="{x:Bind NamedColor2}" 
                                     ContentTemplate="{StaticResource MyDataTemplate}" 
-                                    local:NavigationViewItemAttachedProperty.IsVisible="{x:Bind NamedColor2.IsVisible,Mode=OneWay}"/>
+                                    local:NavigationViewItemAttachedProperty.IsVisible="{x:Bind NamedColor2.IsVisible}"/>
                 <muxc:NavigationViewItem Content="{x:Bind NamedColor3}" 
                                     ContentTemplate="{StaticResource MyDataTemplate}" 
-                                    local:NavigationViewItemAttachedProperty.IsVisible="{x:Bind NamedColor3.IsVisible,Mode=OneWay}"/>
+                                    local:NavigationViewItemAttachedProperty.IsVisible="{x:Bind NamedColor3.IsVisible}"/>
             </muxc:NavigationView.MenuItems>
             <muxc:NavigationView.Header>
                 <Rectangle Height="1"
@@ -419,7 +419,7 @@
                              MenuItemsSource="{x:Bind NamedColorList}">
             <muxc:NavigationView.MenuItemTemplate>
                 <DataTemplate x:DataType="local:NamedColor">
-                    <Grid local:NavigationViewItemAttachedProperty.IsVisible="{x:Bind IsVisible,Mode=OneWay}">
+                    <Grid local:NavigationViewItemAttachedProperty.IsVisible="{x:Bind IsVisible}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition MinWidth="54"/>
                             <ColumnDefinition Width="32"/>

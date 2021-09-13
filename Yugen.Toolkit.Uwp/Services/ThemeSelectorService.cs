@@ -17,23 +17,24 @@ namespace Yugen.Toolkit.Uwp.Services
 
         public ElementTheme Theme { get; set; } = ElementTheme.Default;
 
-        public async Task InitializeAsync(bool setTransparentTitleBar)
+        public async Task InitializeAsync()
         {
             ElementTheme theme = LoadThemeFromSettingsAsync();
-            await SetThemeAsync(theme, setTransparentTitleBar);
+            await SetThemeAsync(theme);
         }
 
-        public async Task SetThemeAsync(ElementTheme theme, bool setTransparentTitleBar)
+        public async Task SetThemeAsync(ElementTheme theme)
         {
             Theme = theme;
 
             await SetRequestedThemeAsync();
+
             SaveThemeInSettingsAsync(Theme);
             
-            if (setTransparentTitleBar)
-            {
-                SetTitleBarTheme(Theme);
-            }
+            //if (setTransparentTitleBar)
+            //{
+            //    SetTitleBarTheme(Theme);
+            //}
         }
 
         public async Task SetRequestedThemeAsync()
@@ -50,15 +51,15 @@ namespace Yugen.Toolkit.Uwp.Services
             }
         }
 
-        private void SetTitleBarTheme(ElementTheme theme)
-        {
-            var buttonForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonForeground");
-            var buttonHoverBackgroundColor = GetThemeResource<Color>(theme, "TitleBarButtonHoverBackground");
-            var buttonHoverForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonHoverForeground");
-            var buttonInactiveForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonForeground");
+        //private void SetTitleBarTheme(ElementTheme theme)
+        //{
+        //    var buttonForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonForeground");
+        //    var buttonHoverBackgroundColor = GetThemeResource<Color>(theme, "TitleBarButtonHoverBackground");
+        //    var buttonHoverForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonHoverForeground");
+        //    var buttonInactiveForegroundColor = GetThemeResource<Color>(theme, "TitleBarButtonForeground");
 
-            TitleBarHelper.StyleTitleBar(buttonForegroundColor, buttonHoverBackgroundColor, buttonHoverForegroundColor, buttonInactiveForegroundColor);
-        }
+        //    TitleBarHelper.StyleTitleBar(buttonForegroundColor, buttonHoverBackgroundColor, buttonHoverForegroundColor, buttonInactiveForegroundColor);
+        //}
 
         private T GetThemeResource<T>(ElementTheme theme, string resKey)
         {
