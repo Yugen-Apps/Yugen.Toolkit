@@ -145,6 +145,12 @@
     <Compile Include="Views\Sandbox\Csharp\DeferralPage.xaml.cs">
       <DependentUpon>DeferralPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Snippets\DragAndDrop\DragAndDropCanvasPage.xaml.cs">
+      <DependentUpon>DragAndDropCanvasPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Snippets\DragAndDrop\DragAndDropGridPage.xaml.cs">
+      <DependentUpon>DragAndDropGridPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Snippets\MediaCompositionNS\MediaCompositionPage.xaml.cs">
       <DependentUpon>MediaCompositionPage.xaml</DependentUpon>
     </Compile>
@@ -331,6 +337,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Sandbox\Csharp\DeferralPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Snippets\DragAndDrop\DragAndDropCanvasPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Snippets\DragAndDrop\DragAndDropGridPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
