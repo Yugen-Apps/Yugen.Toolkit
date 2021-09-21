@@ -1,0 +1,79 @@
+﻿<Page
+    x:Class="Yugen.Toolkit.Uwp.CodeChallenge.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:interfaces="using:Yugen.Toolkit.Uwp.CodeChallenge.Interfaces"
+      mc:Ignorable="d">
+    
+    <Page.Resources>
+
+        <interfaces:PasscodeInputDescriptionConverter x:Key="PasscodeInputDescriptionConverter" />
+        
+        <Storyboard x:Name="CloseAppAnimation">
+            <DoubleAnimation
+                Storyboard.TargetName="Button"
+                Storyboard.TargetProperty="Opacity"
+                From="1" To="0.0" Duration="0:0:2" />
+        </Storyboard>
+
+    </Page.Resources>
+
+    <Grid>
+
+        <Grid 
+            VerticalAlignment="Center" HorizontalAlignment="Center" Height="200" Width="400" Padding="30,30">
+            
+            <TextBlock 
+                Text="{x:Bind ViewModel.IsPasscodeConfigured, Converter={StaticResource PasscodeInputDescriptionConverter}}"
+                VerticalAlignment="Top" />
+            
+            <Grid
+                Visibility="{x:Bind ViewModel.IsPasscodeNotConfigured}">
+
+                <TextBox 
+                    Height="30" 
+                    Margin="0,30,0,0"
+                    MaxLength="6" 
+                    PlaceholderText="123456" 
+                    Text="{x:Bind ViewModel.NewPasscode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    VerticalAlignment="Top" />
+
+                <Button 
+                    Content="Navigate"
+                    Command="{x:Bind ViewModel.SetPasswordAndNavigateCommand}"
+                    CommandParameter="{x:Bind ViewModel.NewPasscode, Mode=OneWay}"
+                    HorizontalAlignment="Right"
+                    IsEnabled="{x:Bind ViewModel.IsNewPasscodeToSetValid, Mode=OneWay}"
+                    Margin="0,70,0,0"
+                    VerticalAlignment="Top" />
+
+            </Grid>
+            
+            <Grid
+                Visibility="{x:Bind ViewModel.IsPasscodeConfigured}">
+
+                <TextBox 
+                    Height="30" 
+                    Margin="0,30,0,0"
+                    MaxLength="6" 
+                    PlaceholderText="123456" 
+                    Text="{x:Bind ViewModel.Passcode, Mode=TwoWay}"
+                    VerticalAlignment="Top" />
+
+                <Button 
+                    Content="Navigate"
+                    Command="{x:Bind ViewModel.ValidatePasswordAndNavigateCommand}"
+                    CommandParameter="{x:Bind ViewModel.Passcode, Mode=OneWay}"
+                    HorizontalAlignment="Right"
+                    Margin="0,70,0,0"
+                    VerticalAlignment="Top" />
+
+            </Grid>
+            
+        </Grid>
+
+    </Grid>
+
+</Page>
