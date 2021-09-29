@@ -9,7 +9,7 @@
 		<license type="expression">GPL-3.0-or-later</license>
 		<projectUrl>https://github.com/panda-sharp/Yugen.Toolkit</projectUrl>
 		<icon>images\icon.png</icon>
-		<readme>docs\readme.md</readme>
+		<readme>docs\Readme.md</readme>
 		<description>
 			This package includes Uwp converters, extension, helpers...
 			It is part of the Yugen Toolkit.
@@ -38,6 +38,6 @@
 
 		<!-- Icon -->
 		<file src="Docs\icon.png" target="images\" />
-		<file src="Docs\readme.md" target="docs\" />
+		<file src="Docs\Readme.md" target="docs\" />
 	</files>
 </package>
