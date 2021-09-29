@@ -1,0 +1,112 @@
+﻿<Page
+    x:Class="Yugen.Toolkit.Uwp.CodeChallenge.View.ValuesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:model="using:Yugen.Toolkit.Uwp.CodeChallenge.Model"
+      mc:Ignorable="d">
+
+    <Grid
+        Padding="24">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            FontSize="36"
+            Text="Company Values" />
+
+        <Grid
+            Grid.Row="1"
+            Margin="0,24,0,24">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ListView
+                AllowDrop="True"
+                CanReorderItems="True"
+                ItemsSource="{x:Bind ViewModel.Values}"
+                SelectedItem="{x:Bind ViewModel.SelectedValueModel, Mode=TwoWay}"
+                SelectionMode="Single">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:ValueModel">
+                        <TextBlock
+                            FontSize="16"
+                            Text="{x:Bind Title}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+            <StackPanel
+                Grid.Column="1"
+                Margin="24,0"
+                Visibility="{x:Bind ViewModel.HasSelectedModel, Mode=OneWay}">
+
+                <TextBlock TextWrapping="Wrap">
+
+                    <Run FontWeight="Bold"
+                         Text="Description:" />
+                    <Run Text="{x:Bind ViewModel.SelectedValueModel.Description, Mode=OneWay}" />
+
+                </TextBlock>
+
+                <TextBlock
+                    Margin="0,8,0,0"
+                    TextWrapping="Wrap"
+                    Visibility="{x:Bind ViewModel.SelectedValueModel.HasClaim, Mode=OneWay}">
+
+                    <Run
+                        FontWeight="Bold"
+                        Text="Claim:" />
+                    <Run Text="{x:Bind ViewModel.SelectedValueModel.Claim, Mode=OneWay}" />
+
+                </TextBlock>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Button
+            Grid.Row="3"
+            Content="Sync"
+            Command="{x:Bind ViewModel.SyncCommand}"
+            IsEnabled="{x:Bind ViewModel.CanSync, Mode=OneWay}"
+            FontSize="24"
+            HorizontalAlignment="Right"
+            Margin="24,24,0,0" />
+
+        <StackPanel
+            Grid.Row="0"
+            Grid.RowSpan="4"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Visibility="{x:Bind ViewModel.IsSynching, Mode=OneWay}">
+
+            <ProgressRing
+                Foreground="#0099FF"
+                Height="24"
+                IsActive="{x:Bind ViewModel.IsSynching, Mode=OneWay}"
+                Width="24" />
+
+            <TextBlock
+                Foreground="#0099FF"
+                Margin="8,0,0,0"
+                Text="Synching values..." />
+
+        </StackPanel>
+
+
+    </Grid>
+
+</Page>

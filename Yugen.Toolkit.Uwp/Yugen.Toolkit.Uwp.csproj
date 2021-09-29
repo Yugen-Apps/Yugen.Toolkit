@@ -110,6 +110,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\ManipulationBothDirectionsBehavior.cs" />
     <Compile Include="Collections\ToDo.cs" />
     <Compile Include="Constants\UwpConstants.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
@@ -167,7 +168,10 @@
       <Version>6.2.12</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit">
-      <Version>7.0.2</Version>
+      <Version>7.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.1</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Json">
       <Version>4.7.2</Version>

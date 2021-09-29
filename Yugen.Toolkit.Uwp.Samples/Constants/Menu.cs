@@ -6,6 +6,7 @@ using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp;
 using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters;
+using Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D;
@@ -38,6 +39,11 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             NewSubMenu("Converters",new List<NavigationViewItem>
             {
                 NewItem ("Enum To Boolean", nameof (EnumToBooleanConverterPage))
+            }),
+            NewSubMenu("DragAndDrop",new List<NavigationViewItem>
+            {
+                NewItem ("DragAndDrop Canvas", nameof (DragAndDropCanvasPage)),
+                NewItem ("DragAndDrop Grid", nameof (DragAndDropGridPage))
             }),
             NewSubMenu("MediaComposition",new List<NavigationViewItem>
             {

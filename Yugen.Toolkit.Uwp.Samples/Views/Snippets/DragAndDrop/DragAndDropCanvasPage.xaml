@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropCanvasPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <Canvas x:Name="MyCanvas"
+                AllowDrop="True"
+                Background="Gray"
+                DragOver="PanelDragOver"
+                Drop="PanelDrop">
+
+            <Grid Height="200"
+                  HorizontalAlignment="Center"
+                  Padding="30,30"
+                  VerticalAlignment="Center"
+                  Width="400">
+
+            </Grid>
+
+            <Grid x:Name="DragableGrid"
+                  Background="White"
+                  CanDrag="True"
+                  Height="200"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Width="400"
+                  DragStarting="UiElementDragStarting">
+
+            </Grid>
+
+        </Canvas>
+    </Grid>
+</Page>
