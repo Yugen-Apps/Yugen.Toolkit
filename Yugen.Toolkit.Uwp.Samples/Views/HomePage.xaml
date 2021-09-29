@@ -19,5 +19,8 @@
 
         <HyperlinkButton Content="GitHub Repository"
                          NavigateUri="https://github.com/panda-sharp/Toolkit/" />
+
+        <Button Content="Load"
+                Click="OnLoadButtonClick" />
     </StackPanel>
 </Page>
