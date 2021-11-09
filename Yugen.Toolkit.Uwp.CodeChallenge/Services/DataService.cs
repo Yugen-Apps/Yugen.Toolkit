@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Streams;
@@ -32,13 +33,13 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
             if (valuesFile != null)
             {
                 var buffer = await FileIO.ReadBufferAsync((IStorageFile)valuesFile);
-                //var content = await DecryptBuffer(buffer);
-                //var values = JsonConvert.DeserializeObject<List<ValueModel>>(content);
+                var content = await DecryptBuffer(buffer);
+                var values = JsonSerializer.Deserialize<List<ValueModel>>(content);
 
-                //foreach (var valueModel in values)
-                //{
-                //    Values.Add(valueModel);
-                //}
+                foreach (var valueModel in values)
+                {
+                    Values.Add(valueModel);
+                }
             }
         }
 
@@ -47,10 +48,10 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
             Values = values;
 
             var valuesFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("Values.txt", CreationCollisionOption.ReplaceExisting);
-            //var json = JsonConvert.SerializeObject(Values);
-            //var encryptedData = await EncryptJson(json);
+            var json = JsonSerializer.Serialize(Values);
+            var encryptedData = await EncryptJson(json);
 
-            //await FileIO.WriteBytesAsync(valuesFile, encryptedData);
+            await FileIO.WriteBytesAsync(valuesFile, encryptedData);
         }
 
         private async Task<string> DecryptBuffer(IBuffer buffer)
