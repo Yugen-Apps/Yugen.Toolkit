@@ -19,7 +19,7 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
             _semaphores = new Dictionary<string, SemaphoreSlim>();
         }
 
-        public async Task<byte[]> EncryptV2(byte[] bytes, bool isDemoMode)
+        public byte[] EncryptV2(byte[] bytes, bool isDemoMode)
         {
             try
             {
@@ -27,23 +27,23 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
 
                 return EncryptDataV2(bytes, key, key);
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
             }
         }
 
-        public async Task<byte[]> DecryptV2(byte[] bytes, bool isDemoMode)
+        public async Task<byte[]> DecryptV2Async(byte[] bytes, bool isDemoMode)
         {
             try
             {
                 if (bytes == null) return null;
                 var key = _keyManager.GetEncryptionKey(isDemoMode);
-                var decryptedBytes = await DecryptDataV2(bytes, key, key);
+                var decryptedBytes = await DecryptDataV2Async(bytes, key, key);
 
                 return decryptedBytes;
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
             }
@@ -80,8 +80,7 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
 
             // encrypt data buffer using symmetric key and derived salt material
             var resultBuffer = CryptographicEngine.Encrypt(symmKey, plainBuffer, saltMaterial);
-            byte[] result;
-            CryptographicBuffer.CopyToByteArray(resultBuffer, out result);
+            CryptographicBuffer.CopyToByteArray(resultBuffer, out byte[] result);
             if (result.Length > 1000000)
             {
                 GC.Collect();
@@ -89,10 +88,10 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
             return result;
         }
 
-        private async Task<byte[]> DecryptDataV2(byte[] encryptedData, string pw, string salt)
+        private async Task<byte[]> DecryptDataV2Async(byte[] encryptedData, string pw, string salt)
         {
-            //var semaphore = GetSemaphore("default");
-            //await semaphore.WaitAsync();
+            var semaphore = GetSemaphore("default");
+            await semaphore.WaitAsync();
             try
             {
                 var pwBuffer = CryptographicBuffer.ConvertStringToBinary(pw, BinaryStringEncoding.Utf8);
@@ -135,13 +134,13 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
                 }
                 return byteArray2;
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
             }
             finally
             {
-                //semaphore.Release();
+                semaphore.Release();
             }
         }
 

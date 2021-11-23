@@ -24,6 +24,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views
             picker.FileTypeFilter.Add("*");
 
             var file = await picker.PickSingleFileAsync();
+            
             byte[] bytes;
             if (file != null)
             {
@@ -37,8 +38,11 @@ namespace Yugen.Toolkit.Uwp.Samples.Views
                     }
                 }
             }
-            bytes = null;
+        //    bytes = null;
         }
+
+        // using Microsoft.Toolkit.Uwp.Helpers;
+        // file.ReadBytesAsync
 
         //private async void OnLoadButtonClick(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         //{

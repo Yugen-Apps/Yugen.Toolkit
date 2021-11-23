@@ -33,7 +33,7 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
             if (valuesFile != null)
             {
                 var buffer = await FileIO.ReadBufferAsync((IStorageFile)valuesFile);
-                var content = await DecryptBuffer(buffer);
+                var content = await DecryptBufferAsync(buffer);
                 var values = JsonSerializer.Deserialize<List<ValueModel>>(content);
 
                 foreach (var valueModel in values)
@@ -49,23 +49,23 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
 
             var valuesFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("Values.txt", CreationCollisionOption.ReplaceExisting);
             var json = JsonSerializer.Serialize(Values);
-            var encryptedData = await EncryptJson(json);
+            var encryptedData = EncryptJson(json);
 
             await FileIO.WriteBytesAsync(valuesFile, encryptedData);
         }
 
-        private async Task<string> DecryptBuffer(IBuffer buffer)
+        private async Task<string> DecryptBufferAsync(IBuffer buffer)
         {
             var bytesToDecrypt = buffer.ToArray();
-            var decryptedBytes = await _encryptionManager.DecryptV2(bytesToDecrypt, true);
+            var decryptedBytes = await _encryptionManager.DecryptV2Async(bytesToDecrypt, true);
             var content = Encoding.ASCII.GetString(decryptedBytes);
             return content;
         }
 
-        private async Task<byte[]> EncryptJson(string json)
+        private byte[] EncryptJson(string json)
         {
             var bytesToEncrypt = Encoding.ASCII.GetBytes(json);
-            var encryptedData = await _encryptionManager.EncryptV2(bytesToEncrypt, true);
+            var encryptedData = _encryptionManager.EncryptV2(bytesToEncrypt, true);
             return encryptedData;
         }
     }

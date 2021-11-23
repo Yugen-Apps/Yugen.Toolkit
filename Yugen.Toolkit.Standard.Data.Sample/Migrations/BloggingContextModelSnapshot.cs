@@ -14,7 +14,7 @@ namespace Yugen.Toolkit.Standard.Data.Sample.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.12");
+                .HasAnnotation("ProductVersion", "3.1.21");
 
             modelBuilder.Entity("Yugen.Toolkit.Standard.Data.Sample.Models.Blog", b =>
                 {
@@ -51,10 +51,7 @@ namespace Yugen.Toolkit.Standard.Data.Sample.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("BlogId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<Guid?>("BlogId1")
+                    b.Property<Guid>("BlogId")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset>("ClientLastUpdated")
@@ -80,7 +77,7 @@ namespace Yugen.Toolkit.Standard.Data.Sample.Migrations
 
                     b.HasKey("PostId");
 
-                    b.HasIndex("BlogId1");
+                    b.HasIndex("BlogId");
 
                     b.ToTable("Posts");
                 });
@@ -89,7 +86,9 @@ namespace Yugen.Toolkit.Standard.Data.Sample.Migrations
                 {
                     b.HasOne("Yugen.Toolkit.Standard.Data.Sample.Models.Blog", "Blog")
                         .WithMany("Posts")
-                        .HasForeignKey("BlogId1");
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

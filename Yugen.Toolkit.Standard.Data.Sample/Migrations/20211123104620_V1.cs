@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Yugen.Toolkit.Standard.Data.Sample.Migrations
 {
-    public partial class v1 : Migration
+    public partial class V1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,24 +36,23 @@ namespace Yugen.Toolkit.Standard.Data.Sample.Migrations
                     ClientLastUpdated = table.Column<DateTimeOffset>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     Content = table.Column<string>(nullable: true),
-                    BlogId = table.Column<int>(nullable: false),
-                    BlogId1 = table.Column<Guid>(nullable: true)
+                    BlogId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Posts", x => x.PostId);
                     table.ForeignKey(
-                        name: "FK_Posts_Blogs_BlogId1",
-                        column: x => x.BlogId1,
+                        name: "FK_Posts_Blogs_BlogId",
+                        column: x => x.BlogId,
                         principalTable: "Blogs",
                         principalColumn: "BlogId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Posts_BlogId1",
+                name: "IX_Posts_BlogId",
                 table: "Posts",
-                column: "BlogId1");
+                column: "BlogId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
