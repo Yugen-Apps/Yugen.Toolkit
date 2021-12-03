@@ -129,6 +129,9 @@
     <Compile Include="ViewModels\Microsoft\Mvvm\ObservableObjectViewModel.cs" />
     <Compile Include="Helpers\DocHelper.cs" />
     <Compile Include="ObservableObjects\Settings.cs" />
+    <Compile Include="Views\Snippets\Xaml\StylesPage.xaml.cs">
+      <DependentUpon>StylesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sandbox\Csharp\ImagesGridPage.xaml.cs">
       <DependentUpon>ImagesGridPage.xaml</DependentUpon>
     </Compile>
@@ -235,8 +238,8 @@
       <DependentUpon>XamlUICommandPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Microsoft\Mvvm\XamlUICommandViewModel.cs" />
-    <Compile Include="Views\Others\SamplesPage.xaml.cs">
-      <DependentUpon>SamplesPage.xaml</DependentUpon>
+    <Compile Include="Views\Sandbox\Csharp\PlaygroundPage.xaml.cs">
+      <DependentUpon>PlaygroundPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Sandbox\Mvvm\ObservableSettingsPage.xaml.cs">
       <DependentUpon>ObservableSettingsPage.xaml</DependentUpon>
@@ -312,11 +315,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Dictionary2.xaml">
+    <Page Include="Styles\Progress.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Dictionary1.xaml">
+    <Page Include="Styles\Brushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Override.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Validation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Snippets\Xaml\StylesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -452,7 +475,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Others\SamplesPage.xaml">
+    <Page Include="Views\Sandbox\Csharp\PlaygroundPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

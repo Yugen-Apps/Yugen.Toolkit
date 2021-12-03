@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///Styles/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Default">            
+             <!--Override system generated accent colors--> 
+             <!--AutoSuggestBox TextBox TextControlBorderBrushFocused TextControlElevationBorderFocusedBrush-->
+            <StaticResource x:Key="SystemAccentColorDark1"
+                            ResourceKey="PinkColor" />
+            <StaticResource x:Key="SystemAccentColorDark2"
+                            ResourceKey="PinkColor" />
+            <StaticResource x:Key="SystemAccentColorDark3"
+                            ResourceKey="PinkColor" />
+            <StaticResource x:Key="SystemAccentColorLight1"
+                            ResourceKey="PinkColor" />
+            <StaticResource x:Key="SystemAccentColorLight2"
+                            ResourceKey="PinkColor" />
+            <StaticResource x:Key="SystemAccentColorLight3"
+                            ResourceKey="PinkColor" />
+
+            <!--<Color x:Key="SystemAccentColorDark1">#FF00FF</Color>
+            <Color x:Key="SystemAccentColorDark2">#FFFF00</Color>
+            <Color x:Key="SystemAccentColorDark3">#00FFFF</Color>
+            <Color x:Key="SystemAccentColorLight1">#FF0000</Color>
+            <Color x:Key="SystemAccentColorLight2">#00FF00</Color>
+            <Color x:Key="SystemAccentColorLight3">#0000FF</Color>-->
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Light">
+            <!--Override system generated accent colors-->
+            <StaticResource x:Key="SystemAccentColorLight1"
+                            ResourceKey="YellowColor" />
+            <StaticResource x:Key="SystemAccentColorLight2"
+                            ResourceKey="YellowColor" />
+            <StaticResource x:Key="SystemAccentColorLight3"
+                            ResourceKey="YellowColor" />
+            <!--AutoSuggestBox TextBox TextControlBorderBrushFocused TextControlElevationBorderFocusedBrush-->
+            <StaticResource x:Key="SystemAccentColorDark1"
+                            ResourceKey="YellowColor" />
+            <StaticResource x:Key="SystemAccentColorDark2"
+                            ResourceKey="YellowColor" />
+            <StaticResource x:Key="SystemAccentColorDark3"
+                            ResourceKey="YellowColor" />
+        </ResourceDictionary>
+        
+        <!--If the dictionary is not declared the key fall back to the default dictionary--> 
+        <!--<ResourceDictionary x:Key="Dark">-->
+
+         <!--If the dictionary is declared but the key is not decalerd the key value fall back to the system one--> 
+        <ResourceDictionary x:Key="HighContrast">
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+    
+    <!--This affect all themes-->
+    <!--<StaticResource x:Key="SystemAccentColorDark1"
+                            ResourceKey="YellowColor" />-->
+
+</ResourceDictionary>

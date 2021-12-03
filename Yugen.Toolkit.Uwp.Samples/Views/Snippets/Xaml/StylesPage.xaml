@@ -1,0 +1,50 @@
+﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm.StylesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <VariableSizedWrapGrid Orientation="Horizontal"
+                           MaximumRowsOrColumns="4"
+                           ItemHeight="140"
+                           ItemWidth="240">
+
+        <TextBlock Foreground="{StaticResource CyanBrush}"
+                   Style="{ThemeResource TitleTextBlockStyle}"
+                   Text="TitleTextBlockStyle CyanBrush" />
+
+        <TextBlock Foreground="{ThemeResource RedBrush}"
+                   Style="{ThemeResource SubtitleTextBlockStyle}"
+                   Text="SubtitleTextBlockStyle RedBrush" />
+
+        <TextBlock Foreground="{StaticResource ForegroundBrush}"
+                   Style="{ThemeResource BodyTextBlockStyle}"
+                   Text="BodyTextBlockStyle ForegroundBrush" />
+
+        <TextBlock Foreground="{ThemeResource SystemAccentColorDark1}"
+                   Style="{ThemeResource SubtitleTextBlockStyle}"
+                   Text="SubtitleTextBlockStyle SystemAccentColorDark1" />
+
+        <TextBlock Foreground="{ThemeResource ForegroundBrush}"
+                   Style="{ThemeResource SubtitleTextBlockStyle}"
+                   Text="SubtitleTextBlockStyle ForegroundBrush" />
+
+        <Button Content="Button" />
+
+        <Button Content="MyButtonStyle"
+                Style="{ThemeResource MyButtonStyle}" />
+
+        <TextBox Header="TextBox" />
+
+        <AutoSuggestBox Header="AutoSuggestBox" />
+
+        <muxc:ProgressBar Value="50"/>
+
+        <!--<muxc:ProgressBar Style="{ThemeResource MyProgressBarStyle}"
+                          Value="50" />-->
+
+    </VariableSizedWrapGrid>
+</Page>

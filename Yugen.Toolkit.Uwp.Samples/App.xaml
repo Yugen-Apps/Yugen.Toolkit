@@ -1,78 +1,36 @@
-﻿<Application
-    x:Class="Yugen.Toolkit.Uwp.Samples.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:validation="using:Yugen.Toolkit.Standard.Validation">
-
+﻿<Application x:Class="Yugen.Toolkit.Uwp.Samples.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
     <Application.Resources>
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                <!-- Other merged dictionaries here -->
-                <ResourceDictionary Source="ms-appx:///Styles/Dictionary1.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/Dictionary2.xaml" />
+                <muxc:XamlControlsResources>
+                    <ResourceDictionary.MergedDictionaries>
+                        <!--Static-->
+                        <ResourceDictionary Source="ms-appx:///Styles/Colors.xaml" />
+                        <ResourceDictionary Source="ms-appx:///Styles/Validation.xaml" />
+                        <!--Theme-->
+                        <ResourceDictionary Source="ms-appx:///Styles/Brushes.xaml" />
+                        <!--Lightweight-->
+                        <ResourceDictionary Source="ms-appx:///Styles/Override.xaml" />
+                        <!--Lightweight and Theme-->
+                        <ResourceDictionary Source="ms-appx:///Styles/Buttons.xaml" />
+                        <ResourceDictionary Source="ms-appx:///Styles/Progress.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </muxc:XamlControlsResources>
             </ResourceDictionary.MergedDictionaries>
-            
-            <ResourceDictionary.ThemeDictionaries>
-
-                <ResourceDictionary x:Key="Light">
-
-                    <!--TitleBar themed resources-->
-                    <Color x:Key="TitleBarButtonForeground">#242424</Color>
-                    <Color x:Key="TitleBarButtonHoverBackground">White</Color>
-                    <Color x:Key="TitleBarButtonHoverForeground">#242424</Color>
-
-                </ResourceDictionary>
-
-                <ResourceDictionary x:Key="Dark">
-
-                    <!--TitleBar themed resources-->
-                    <Color x:Key="TitleBarButtonForeground">#dcdcdc</Color>
-                    <Color x:Key="TitleBarButtonHoverBackground">#262626</Color>
-                    <Color x:Key="TitleBarButtonHoverForeground">#dcdcdc</Color>
-
-                </ResourceDictionary>
-
-            </ResourceDictionary.ThemeDictionaries>
-
-            <validation:ValidationRules x:Key="EmailValidation">
-                <validation:ValidationRules.Rules>
-                    <validation:EmailValidationRule />
-                </validation:ValidationRules.Rules>
-            </validation:ValidationRules>
-
-            <validation:ValidationRules x:Key="DecimalValidation">
-                <validation:ValidationRules.Rules>
-                    <validation:DecimalValidationRule />
-                </validation:ValidationRules.Rules>
-            </validation:ValidationRules>
-
-            <validation:ValidationRules x:Key="PasswordValidation">
-                <validation:ValidationRules.Rules>
-                    <validation:PasswordValidationRule />
-                </validation:ValidationRules.Rules>
-            </validation:ValidationRules>
-
-            <validation:ValidationRules x:Key="PhoneRegexValidationRule">
-                <validation:ValidationRules.Rules>
-                    <validation:RegexValidationRule RegexPattern="^\+?\d+$" />
-                </validation:ValidationRules.Rules>
-            </validation:ValidationRules>
-
-            <validation:ValidationRules x:Key="DecimalRegexValidationRule">
-                <validation:ValidationRules.Rules>
-                    <validation:RegexValidationRule RegexPattern="^\d+([.]\d{0,2})?$" />
-                </validation:ValidationRules.Rules>
-            </validation:ValidationRules>
-
-            <validation:ValidationRules x:Key="Decimal2RegexValidationRule">
-                <validation:ValidationRules.Rules>
-                    <validation:RegexValidationRule RegexPattern="^\d+([,.]\d{0,2})?$" />
-                </validation:ValidationRules.Rules>
-            </validation:ValidationRules>
         </ResourceDictionary>
 
-    </Application.Resources>
+        <!--<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>         
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <ResourceDictionary Source="ms-appx:///Styles/Colors.xaml" />
+                <ResourceDictionary Source="ms-appx:///Styles/Validation.xaml" />
+                <ResourceDictionary Source="ms-appx:///Styles/Brushes.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>-->
 
+    </Application.Resources>
 </Application>

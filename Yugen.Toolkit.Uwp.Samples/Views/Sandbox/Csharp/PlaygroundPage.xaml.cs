@@ -1,13 +1,69 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using System;
+using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml.Controls;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Others
+namespace Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp
 {
-    public sealed partial class SamplesPage : Page
+    public sealed partial class PlaygroundPage : Page
     {
-        public SamplesPage()
+        public PlaygroundPage()
         {
             this.InitializeComponent();
         }
+
+
+        private async void OnLoadButtonClick(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            FileOpenPicker picker = new FileOpenPicker
+            {
+                SuggestedStartLocation = PickerLocationId.Downloads,
+            };
+            picker.FileTypeFilter.Add("*");
+
+            var file = await picker.PickSingleFileAsync();
+
+            byte[] bytes;
+            if (file != null)
+            {
+                using (IRandomAccessStream stream = await file.OpenReadAsync())
+                {
+                    using (var reader = new DataReader(stream.GetInputStreamAt(0)))
+                    {
+                        await reader.LoadAsync((uint)stream.Size);
+                        bytes = new byte[stream.Size];
+                        reader.ReadBytes(bytes);
+                    }
+                }
+            }
+            //    bytes = null;
+        }
+
+        // using Microsoft.Toolkit.Uwp.Helpers;
+        // file.ReadBytesAsync
+
+        //private async void OnLoadButtonClick(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        //{
+        //    FileOpenPicker picker = new FileOpenPicker
+        //    {
+        //        SuggestedStartLocation = PickerLocationId.Downloads,
+        //    };
+        //    picker.FileTypeFilter.Add("*");
+
+        //    var file = await picker.PickSingleFileAsync();
+        //    if (file != null)
+        //    {
+        //        
+        //        using (Stream stream = await file.OpenStreamForReadAsync())
+        //        {
+        //            using (MemoryStream ms = new MemoryStream())
+        //            {
+        //                stream.CopyTo(ms);
+        //                bytes = ms.ToArray();
+        //            }
+        //        }
+        //    }
+        //}
 
         //public async Task RunTasks(WriteableBitmap clone)
         //{

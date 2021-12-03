@@ -59,14 +59,16 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             }),
             NewSubMenu("Xaml",new List<NavigationViewItem>
             {
-                NewItem ("Customization", nameof (CustomizationPage))
+                NewItem ("Customization", nameof (CustomizationPage)),
+                NewItem ("StylesPage", nameof (StylesPage))
             }),
 
             NewHeader("Sandbox"),
             NewSubMenu("C#",new List<NavigationViewItem>
             {
                 NewItem ("Deferral", nameof (DeferralPage)),
-                NewItem ("Images Grid", nameof (ImagesGridPage))
+                NewItem ("Images Grid", nameof (ImagesGridPage)),
+                NewItem ("PlaygroundPage", nameof (PlaygroundPage))
             }),
             NewSubMenu("MVVM",new List<NavigationViewItem>
             {

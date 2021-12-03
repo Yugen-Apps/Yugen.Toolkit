@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///Styles/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <SolidColorBrush x:Key="CyanBrush"
+                     Color="{StaticResource CyanColor}" />
+    <SolidColorBrush x:Key="RedBrush"
+                     Color="{StaticResource RedColor}" />
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Default">
+            <SolidColorBrush x:Key="ForegroundBrush"
+                             Color="{StaticResource CyanColor}" />
+            
+            <SolidColorBrush x:Key="MyBackgroundPointerOver"
+                             Color="{StaticResource PinkColor}"
+                             Opacity="0.8" />
+            <SolidColorBrush x:Key="MyBackgroundPressed"
+                             Color="{StaticResource PinkColor}"
+                             Opacity="0.6" />
+            
+            <!--<LinearGradientBrush x:Key="TextControlBorderBrushFocused"
+                                 MappingMode="Absolute"
+                                 StartPoint="0,0"
+                                 EndPoint="0,2">
+                <LinearGradientBrush.RelativeTransform>
+                    <ScaleTransform ScaleY="-1"
+                                    CenterY="0.5" />
+                </LinearGradientBrush.RelativeTransform>
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="1.0"
+                                  Color="{ThemeResource PurpleColor}" />
+                    <GradientStop Offset="1.0"
+                                  Color="{StaticResource ControlStrokeColorDefault}" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>-->
+        </ResourceDictionary>
+        
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="ForegroundBrush"
+                             Color="{StaticResource RedColor}" />
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="HighContrast">
+            <SolidColorBrush x:Key="ForegroundBrush"
+                             Color="{StaticResource SystemColorWindowTextColor}" />
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>
