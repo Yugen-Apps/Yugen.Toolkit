@@ -89,6 +89,148 @@
             AppShellViewModel
             </summary>
         </member>
+        <member name="T:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp.TasksPage">
+            <summary>
+            An empty page that can be used on its own or navigated to within a Frame.
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp.TasksPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp.TasksPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp.TasksPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters.EnumToBooleanConverterPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters.EnumToBooleanConverterPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters.EnumToBooleanConverterPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropCanvasPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropCanvasPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropCanvasPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="T:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropGridPage">
+            <summary>
+            An empty page that can be used on its own or navigated to within a Frame.
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropGridPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropGridPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropGridPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS.MediaCompositionPage.CreateClipInMemory(Microsoft.Graphics.Canvas.CanvasDevice,Microsoft.Graphics.Canvas.CanvasBitmap)">
+            <summary>
+            TODO: need to dispose CanvasRenderTarget.
+            </summary>
+            <param name="canvasDevice"></param>
+            <param name="canvasBitmap"></param>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS.MediaCompositionPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS.MediaCompositionPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS.MediaCompositionPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm.XamlViewModelPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm.XamlViewModelPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm.XamlViewModelPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D.LoadingWavePage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D.LoadingWavePage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D.LoadingWavePage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="T:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage">
+            <summary>
+            An empty page that can be used on its own or navigated to within a Frame.
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
         <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm.StylesPage.InitializeComponent">
             <summary>
             InitializeComponent()
@@ -285,128 +427,6 @@
             </summary>
         </member>
         <member name="M:Yugen.Toolkit.Uwp.Samples.Views.SettingsPage.GetBindingConnector(System.Int32,System.Object)">
-            <summary>
-            GetBindingConnector(int connectionId, object target)
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters.EnumToBooleanConverterPage.InitializeComponent">
-            <summary>
-            InitializeComponent()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters.EnumToBooleanConverterPage.Connect(System.Int32,System.Object)">
-            <summary>
-            Connect()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Converters.EnumToBooleanConverterPage.GetBindingConnector(System.Int32,System.Object)">
-            <summary>
-            GetBindingConnector(int connectionId, object target)
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropCanvasPage.InitializeComponent">
-            <summary>
-            InitializeComponent()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropCanvasPage.Connect(System.Int32,System.Object)">
-            <summary>
-            Connect()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropCanvasPage.GetBindingConnector(System.Int32,System.Object)">
-            <summary>
-            GetBindingConnector(int connectionId, object target)
-            </summary>
-        </member>
-        <member name="T:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropGridPage">
-            <summary>
-            An empty page that can be used on its own or navigated to within a Frame.
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropGridPage.InitializeComponent">
-            <summary>
-            InitializeComponent()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropGridPage.Connect(System.Int32,System.Object)">
-            <summary>
-            Connect()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.DragAndDrop.DragAndDropGridPage.GetBindingConnector(System.Int32,System.Object)">
-            <summary>
-            GetBindingConnector(int connectionId, object target)
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS.MediaCompositionPage.CreateClipInMemory(Microsoft.Graphics.Canvas.CanvasDevice,Microsoft.Graphics.Canvas.CanvasBitmap)">
-            <summary>
-            TODO: need to dispose CanvasRenderTarget.
-            </summary>
-            <param name="canvasDevice"></param>
-            <param name="canvasBitmap"></param>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS.MediaCompositionPage.InitializeComponent">
-            <summary>
-            InitializeComponent()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS.MediaCompositionPage.Connect(System.Int32,System.Object)">
-            <summary>
-            Connect()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS.MediaCompositionPage.GetBindingConnector(System.Int32,System.Object)">
-            <summary>
-            GetBindingConnector(int connectionId, object target)
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm.XamlViewModelPage.InitializeComponent">
-            <summary>
-            InitializeComponent()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm.XamlViewModelPage.Connect(System.Int32,System.Object)">
-            <summary>
-            Connect()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm.XamlViewModelPage.GetBindingConnector(System.Int32,System.Object)">
-            <summary>
-            GetBindingConnector(int connectionId, object target)
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D.LoadingWavePage.InitializeComponent">
-            <summary>
-            InitializeComponent()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D.LoadingWavePage.Connect(System.Int32,System.Object)">
-            <summary>
-            Connect()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D.LoadingWavePage.GetBindingConnector(System.Int32,System.Object)">
-            <summary>
-            GetBindingConnector(int connectionId, object target)
-            </summary>
-        </member>
-        <member name="T:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage">
-            <summary>
-            An empty page that can be used on its own or navigated to within a Frame.
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage.InitializeComponent">
-            <summary>
-            InitializeComponent()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage.Connect(System.Int32,System.Object)">
-            <summary>
-            Connect()
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml.CustomizationPage.GetBindingConnector(System.Int32,System.Object)">
             <summary>
             GetBindingConnector(int connectionId, object target)
             </summary>

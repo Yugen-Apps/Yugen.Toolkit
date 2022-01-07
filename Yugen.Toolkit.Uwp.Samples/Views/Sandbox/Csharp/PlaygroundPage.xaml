@@ -10,5 +10,11 @@
 
         <Button Content="Load"
                 Click="OnLoadButtonClick" />
+
+        <Button Content="Load"
+                Click="OnLoadButton2Click" />
+
+        <Button Content="Load"
+                Click="OnLoadButton3Click" />
     </Grid>
 </Page>

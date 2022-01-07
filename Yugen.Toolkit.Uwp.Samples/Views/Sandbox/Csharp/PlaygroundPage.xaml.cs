@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Helpers;
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Controls;
@@ -12,16 +16,21 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp
             this.InitializeComponent();
         }
 
-
         private async void OnLoadButtonClick(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            FileOpenPicker picker = new FileOpenPicker
-            {
-                SuggestedStartLocation = PickerLocationId.Downloads,
-            };
-            picker.FileTypeFilter.Add("*");
+            var file = await GetFile();
 
-            var file = await picker.PickSingleFileAsync();
+            byte[] bytes;
+            if (file != null)
+            {
+                bytes = await file.ReadBytesAsync();
+            }
+            // bytes = null;
+        }
+
+        private async void OnLoadButton2Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var file = await GetFile();
 
             byte[] bytes;
             if (file != null)
@@ -36,34 +45,39 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp
                     }
                 }
             }
-            //    bytes = null;
+            // bytes = null;
         }
 
-        // using Microsoft.Toolkit.Uwp.Helpers;
-        // file.ReadBytesAsync
+        private async void OnLoadButton3Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var file = await GetFile();
 
-        //private async void OnLoadButtonClick(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        //{
-        //    FileOpenPicker picker = new FileOpenPicker
-        //    {
-        //        SuggestedStartLocation = PickerLocationId.Downloads,
-        //    };
-        //    picker.FileTypeFilter.Add("*");
+            byte[] bytes;
+            if (file != null)
+            {
 
-        //    var file = await picker.PickSingleFileAsync();
-        //    if (file != null)
-        //    {
-        //        
-        //        using (Stream stream = await file.OpenStreamForReadAsync())
-        //        {
-        //            using (MemoryStream ms = new MemoryStream())
-        //            {
-        //                stream.CopyTo(ms);
-        //                bytes = ms.ToArray();
-        //            }
-        //        }
-        //    }
-        //}
+                using (Stream stream = await file.OpenStreamForReadAsync())
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        stream.CopyTo(ms);
+                        bytes = ms.ToArray();
+                    }
+                }
+            }
+            // bytes = null;
+        }
+
+        private async Task<StorageFile> GetFile()
+        {
+            FileOpenPicker picker = new FileOpenPicker
+            {
+                SuggestedStartLocation = PickerLocationId.Downloads,
+            };
+            picker.FileTypeFilter.Add("*");
+
+            return await picker.PickSingleFileAsync();
+        }
 
         //public async Task RunTasks(WriteableBitmap clone)
         //{

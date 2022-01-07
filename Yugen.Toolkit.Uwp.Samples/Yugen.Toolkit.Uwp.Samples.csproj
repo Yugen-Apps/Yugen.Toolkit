@@ -129,6 +129,9 @@
     <Compile Include="ViewModels\Microsoft\Mvvm\ObservableObjectViewModel.cs" />
     <Compile Include="Helpers\DocHelper.cs" />
     <Compile Include="ObservableObjects\Settings.cs" />
+    <Compile Include="Views\Snippets\Csharp\TasksPage.xaml.cs">
+      <DependentUpon>TasksPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Snippets\Xaml\StylesPage.xaml.cs">
       <DependentUpon>StylesPage.xaml</DependentUpon>
     </Compile>
@@ -336,6 +339,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Snippets\Csharp\TasksPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
