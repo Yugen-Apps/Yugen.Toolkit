@@ -6,7 +6,7 @@
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <StackPanel Spacing="4">
 
         <Button Content="Load"
                 Click="OnLoadButtonClick" />
@@ -16,5 +16,5 @@
 
         <Button Content="Load"
                 Click="OnLoadButton3Click" />
-    </Grid>
+    </StackPanel>
 </Page>

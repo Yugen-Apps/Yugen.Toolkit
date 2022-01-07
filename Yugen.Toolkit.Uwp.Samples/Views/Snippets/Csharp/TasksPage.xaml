@@ -8,7 +8,24 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <StackPanel Spacing="4">
 
-    </Grid>
+        <Button Content="Start"
+                Click="OnStartButtonClick" />
+
+        <Button Content="Start"
+                Click="OnStartButton2Click" />
+
+        <Button Content="Start"
+                Click="OnStartButton3Click" />
+
+        <Button Content="Start"
+                Click="OnStartButton4Click" />
+
+        <Button Content="Start"
+                Click="OnStartButton5Click" />
+
+        <ListView x:Name="MyListView"
+                  ItemsSource="{x:Bind MyCollection, Mode=OneWay}" />
+    </StackPanel>
 </Page>

@@ -89,11 +89,6 @@
             AppShellViewModel
             </summary>
         </member>
-        <member name="T:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp.TasksPage">
-            <summary>
-            An empty page that can be used on its own or navigated to within a Frame.
-            </summary>
-        </member>
         <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp.TasksPage.InitializeComponent">
             <summary>
             InitializeComponent()
