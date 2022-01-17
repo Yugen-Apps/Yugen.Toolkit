@@ -84,6 +84,21 @@
             GetBindingConnector(int connectionId, object target)
             </summary>
         </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Controls.SampleUserControl.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Controls.SampleUserControl.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Controls.SampleUserControl.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
         <member name="T:Yugen.Toolkit.Uwp.Samples.ViewModels.AppShellViewModel">
             <summary>
             AppShellViewModel

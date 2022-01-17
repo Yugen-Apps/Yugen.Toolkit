@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Controls">
+
+    <Style TargetType="local:SampleTemplatedControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SampleTemplatedControl">
+                    <StackPanel Spacing="4">
+                        <!--<TextBlock Text="{x:Bind Message, Mode=OneWay}" />
+                        <TextBlock Text="{x:Bind Message2, Mode=OneWay}" />
+                        <TextBlock Text="{x:Bind Message3, Mode=OneWay}" />
+                        <TextBlock Text="{x:Bind Message4, Mode=OneWay}" />-->
+
+                        <TextBlock Text="{TemplateBinding Message}" />
+                        <!--<TextBlock Text="{TemplateBinding Message2}" />-->
+                        <TextBlock Text="{TemplateBinding Message3}" />
+                        <!--<TextBlock Text="{TemplateBinding Message4}" />-->
+
+                        <TextBlock Text="{Binding Message}" />
+                        <TextBlock Text="{Binding Message2}" />
+                        <TextBlock Text="{Binding Message3}" />
+                        <TextBlock Text="{Binding Message4}" />
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

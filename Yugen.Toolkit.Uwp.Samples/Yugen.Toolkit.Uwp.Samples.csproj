@@ -105,6 +105,7 @@
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constants\DataConstants.cs" />
+    <Compile Include="Controls\SampleTemplatedControl.cs" />
     <Compile Include="Models\Graph.cs" />
     <Compile Include="Constants\Menu.cs" />
     <Compile Include="ObservableObjects\BlogObservableObject.cs" />
@@ -129,6 +130,9 @@
     <Compile Include="ViewModels\Microsoft\Mvvm\ObservableObjectViewModel.cs" />
     <Compile Include="Helpers\DocHelper.cs" />
     <Compile Include="ObservableObjects\Settings.cs" />
+    <Compile Include="Controls\SampleUserControl.cs">
+      <DependentUpon>SampleUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Snippets\Csharp\TasksPage.xaml.cs">
       <DependentUpon>TasksPage.xaml</DependentUpon>
     </Compile>
@@ -318,6 +322,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\SampleUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles\Progress.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -341,6 +349,10 @@
     <Page Include="Styles\Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Snippets\Csharp\TasksPage.xaml">
       <SubType>Designer</SubType>

@@ -4,11 +4,23 @@
       xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:controls="using:Yugen.Toolkit.Uwp.Samples.Controls"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <local:SampleInAppControl x:Name="MyUserControl"
-                                  DataContext="{x:Bind SampleControlViewModel}" />
-    </Grid>
+    <StackPanel Spacing="4">
+        <!--<local:SampleInAppControl x:Name="MyUserControl"
+                                  DataContext="{x:Bind SampleControlViewModel}" />-->
+
+        <controls:SampleUserControl Message="{x:Bind SampleControlViewModel.Text, Mode=OneWay}"
+                                    Message2="{x:Bind SampleControlViewModel.Text2, Mode=OneWay}" />
+
+        <controls:SampleTemplatedControl Message="{x:Bind SampleControlViewModel.Text, Mode=OneWay}" />
+        <!--Message2="{x:Bind SampleControlViewModel.Text2, Mode=OneWay}" />-->
+
+        <Button Click="Button_Click"
+                Content="Button_Click" />
+        <Button Click="Button2_Click"
+                Content="Button2_Click" />
+    </StackPanel>
 </Page>

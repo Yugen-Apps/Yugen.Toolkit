@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 
 namespace Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp
 {
@@ -77,6 +79,25 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp
             picker.FileTypeFilter.Add("*");
 
             return await picker.PickSingleFileAsync();
+        }
+
+        private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            FlyoutButton.ContextFlyout.ShowAt((FrameworkElement)sender);
+        }
+
+        private void Image_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            var flyout = FlyoutBase.GetAttachedFlyout((FrameworkElement)sender);
+            var options = new FlyoutShowOptions()
+            {
+                // Position shows the flyout next to the pointer.
+                // "Transient" ShowMode makes the flyout open in its collapsed state.
+                Position = e.GetPosition((FrameworkElement)sender),
+                ShowMode = FlyoutShowMode.Transient,
+                Placement = FlyoutPlacementMode.TopEdgeAlignedLeft
+            };
+            flyout?.ShowAt((FrameworkElement)sender, options);
         }
     }
 
