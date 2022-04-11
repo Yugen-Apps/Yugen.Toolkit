@@ -11,7 +11,7 @@ namespace Yugen.Toolkit.Standard.Extensions
     public static class ObservableCollectionExtensions
     {
         /// <summary>
-        /// Refresh COllection
+        /// Refresh Collection
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>
