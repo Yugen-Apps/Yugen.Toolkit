@@ -22,7 +22,7 @@
 
         <HyperlinkButton Content="GitHub Repository"
                          NavigateUri="{x:Bind ViewModel.GitHubRepositoryUrl, Mode=OneWay}" />
-        
+
         <TextBlock>
             <Run Text="Task status:" />
             <Run Text="{x:Bind ViewModel.DownloadTextCommand.ExecutionTask.Status, Mode=OneWay}" />
