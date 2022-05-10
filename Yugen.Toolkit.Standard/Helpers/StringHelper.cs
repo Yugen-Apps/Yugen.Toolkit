@@ -1,4 +1,6 @@
-﻿namespace Yugen.Toolkit.Standard.Helpers
+﻿using System.Text.RegularExpressions;
+
+namespace Yugen.Toolkit.Standard.Helpers
 {
     public static class StringHelper
     {
@@ -29,5 +31,8 @@
 
             return s.Substring(0, width);
         }
+
+        public static string SplitCamelCase(string input) =>
+            Regex.Replace(input, "(?<=[a-z])([A-Z])", " $1", RegexOptions.Compiled);
     }
 }

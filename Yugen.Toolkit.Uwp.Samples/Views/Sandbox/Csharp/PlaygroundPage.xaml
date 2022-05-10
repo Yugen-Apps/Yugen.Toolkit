@@ -1,0 +1,48 @@
+﻿<Page x:Class="Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp.PlaygroundPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Spacing="4">
+        <StackPanel.Resources>
+            <CommandBarFlyout x:Name="ImageCommandsFlyout">
+                <AppBarButton Icon="OutlineStar"
+                              ToolTipService.ToolTip="Favorite" />
+                <AppBarButton Icon="Copy"
+                              ToolTipService.ToolTip="Copy" />
+                <AppBarButton Icon="Share"
+                              ToolTipService.ToolTip="Share" />
+                <CommandBarFlyout.SecondaryCommands>
+                    <AppBarButton Label="Select all" />
+                    <AppBarButton Label="Delete"
+                                  Icon="Delete" />
+                </CommandBarFlyout.SecondaryCommands>
+            </CommandBarFlyout>
+        </StackPanel.Resources>
+
+        <Button Content="Load"
+                Click="OnLoadButtonClick" />
+
+        <Button Content="Load"
+                Click="OnLoadButton2Click" />
+
+        <Button Content="Load"
+                Click="OnLoadButton3Click" />
+
+        <Button x:Name="FlyoutButton"
+                Content="Flyout"
+                Click="Button_Click"
+                Height="400"
+                Width="400"
+                ContextFlyout="{x:Bind ImageCommandsFlyout}" />
+
+        <Image Source="ms-appx:///Assets/LargeTile.scale-400.png"
+               Width="300"
+               Tapped="Image_Tapped"
+               FlyoutBase.AttachedFlyout="{x:Bind ImageCommandsFlyout}"
+               ContextFlyout="{x:Bind ImageCommandsFlyout}" />
+    </StackPanel>
+</Page>

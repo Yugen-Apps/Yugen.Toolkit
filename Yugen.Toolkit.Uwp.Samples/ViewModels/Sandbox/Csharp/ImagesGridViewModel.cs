@@ -21,8 +21,8 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Csharp
         public ObservableCollection<Person> ImageCollection = new ObservableCollection<Person>();
         public ObservableCollection<Person> Image5Collection = new ObservableCollection<Person>();
 
-        private string _image = "ms-appx:///";
-        private ImageSource _imageSource;
+        //private string _image = "ms-appx:///";
+        //private ImageSource _imageSource;
         private Person _selectedPerson;
 
         public ImagesGridViewModel()
@@ -103,8 +103,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Csharp
                     },
                     CloseButtonText = "Ok"
                 };
-
-                ContentDialogResult result = await dialog.ShowAsync();
+                _ = await dialog.ShowAsync();
             }
         }
 
@@ -243,19 +242,19 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Sandbox.Csharp
         }
 
         // KO
-        private async Task StartAsyncCommandBehavior()
-        {
-            var list = await FilePickerHelper.OpenFiles();
+        //private async Task StartAsyncCommandBehavior()
+        //{
+        //    var list = await FilePickerHelper.OpenFiles();
 
-            foreach (var storageFile in list)
-            {
-                ImageCollection.Add(new Person
-                {
-                    Name = storageFile.FolderRelativeId,
-                    ImagePath = storageFile.Path,
-                    ImageSource = new BitmapImage(new Uri(storageFile.Path))
-                });
-            }
-        }
+        //    foreach (var storageFile in list)
+        //    {
+        //        ImageCollection.Add(new Person
+        //        {
+        //            Name = storageFile.FolderRelativeId,
+        //            ImagePath = storageFile.Path,
+        //            ImageSource = new BitmapImage(new Uri(storageFile.Path))
+        //        });
+        //    }
+        //}
     }
 }

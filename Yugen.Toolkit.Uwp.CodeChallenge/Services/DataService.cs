@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Streams;
@@ -32,13 +33,13 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
             if (valuesFile != null)
             {
                 var buffer = await FileIO.ReadBufferAsync((IStorageFile)valuesFile);
-                //var content = await DecryptBuffer(buffer);
-                //var values = JsonConvert.DeserializeObject<List<ValueModel>>(content);
+                var content = await DecryptBufferAsync(buffer);
+                var values = JsonSerializer.Deserialize<List<ValueModel>>(content);
 
-                //foreach (var valueModel in values)
-                //{
-                //    Values.Add(valueModel);
-                //}
+                foreach (var valueModel in values)
+                {
+                    Values.Add(valueModel);
+                }
             }
         }
 
@@ -47,24 +48,24 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
             Values = values;
 
             var valuesFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("Values.txt", CreationCollisionOption.ReplaceExisting);
-            //var json = JsonConvert.SerializeObject(Values);
-            //var encryptedData = await EncryptJson(json);
+            var json = JsonSerializer.Serialize(Values);
+            var encryptedData = EncryptJson(json);
 
-            //await FileIO.WriteBytesAsync(valuesFile, encryptedData);
+            await FileIO.WriteBytesAsync(valuesFile, encryptedData);
         }
 
-        private async Task<string> DecryptBuffer(IBuffer buffer)
+        private async Task<string> DecryptBufferAsync(IBuffer buffer)
         {
             var bytesToDecrypt = buffer.ToArray();
-            var decryptedBytes = await _encryptionManager.DecryptV2(bytesToDecrypt, true);
+            var decryptedBytes = await _encryptionManager.DecryptV2Async(bytesToDecrypt, true);
             var content = Encoding.ASCII.GetString(decryptedBytes);
             return content;
         }
 
-        private async Task<byte[]> EncryptJson(string json)
+        private byte[] EncryptJson(string json)
         {
             var bytesToEncrypt = Encoding.ASCII.GetBytes(json);
-            var encryptedData = await _encryptionManager.EncryptV2(bytesToEncrypt, true);
+            var encryptedData = _encryptionManager.EncryptV2(bytesToEncrypt, true);
             return encryptedData;
         }
     }

@@ -4,10 +4,17 @@
       xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:toolkitcontrols="using:Microsoft.Toolkit.Uwp.UI.Controls"
+      xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
       xmlns:icons="using:Fluent.Icons"
       mc:Ignorable="d"
       Background="DarkRed">
+
+    <Page.Resources>
+        <ui:AttachedDropShadow x:Key="CommonShadow"
+                               Color="Red"
+                               Offset="4"
+                               CastTo="{x:Bind}" />
+    </Page.Resources>
 
     <Grid>
         <StackPanel VerticalAlignment="Center"
@@ -16,18 +23,16 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock FontSize="100"
                            Text="(╯" />
-                <toolkitcontrols:DropShadowPanel Color="Red">
-                    <TextBlock Foreground="Red"
-                               FontSize="100"
-                               Text="°" />
-                </toolkitcontrols:DropShadowPanel>
+                <TextBlock Foreground="Red"
+                           FontSize="100"
+                           Text="°"
+                           ui:Effects.Shadow="{StaticResource CommonShadow}" />
                 <TextBlock FontSize="100"
                            Text="□" />
-                <toolkitcontrols:DropShadowPanel Color="Red">
-                    <TextBlock Foreground="Red"
-                               FontSize="100"
-                               Text="°" />
-                </toolkitcontrols:DropShadowPanel>
+                <TextBlock Foreground="Red"
+                           FontSize="100"
+                           Text="°"
+                           ui:Effects.Shadow="{StaticResource CommonShadow}" />
                 <TextBlock FontSize="100"
                            Text="）╯︵ ┻━┻" />
             </StackPanel>
@@ -55,7 +60,7 @@
         </StackPanel>
         <WebView  HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch"
-                  Source="ms-appx-web:///Assets/Html/Rsod.html"></WebView>
+                  Source="ms-appx-web:///Assets/Html/Rsod.html" />
     </Grid>
 
 </Page>

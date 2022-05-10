@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:validation="using:Yugen.Toolkit.Standard.Validation">
+
+    <validation:ValidationRules x:Key="EmailValidation">
+        <validation:ValidationRules.Rules>
+            <validation:EmailValidationRule />
+        </validation:ValidationRules.Rules>
+    </validation:ValidationRules>
+
+    <validation:ValidationRules x:Key="DecimalValidation">
+        <validation:ValidationRules.Rules>
+            <validation:DecimalValidationRule />
+        </validation:ValidationRules.Rules>
+    </validation:ValidationRules>
+
+    <validation:ValidationRules x:Key="PasswordValidation">
+        <validation:ValidationRules.Rules>
+            <validation:PasswordValidationRule />
+        </validation:ValidationRules.Rules>
+    </validation:ValidationRules>
+
+    <validation:ValidationRules x:Key="PhoneRegexValidationRule">
+        <validation:ValidationRules.Rules>
+            <validation:RegexValidationRule RegexPattern="^\+?\d+$" />
+        </validation:ValidationRules.Rules>
+    </validation:ValidationRules>
+
+    <validation:ValidationRules x:Key="DecimalRegexValidationRule">
+        <validation:ValidationRules.Rules>
+            <validation:RegexValidationRule RegexPattern="^\d+([.]\d{0,2})?$" />
+        </validation:ValidationRules.Rules>
+    </validation:ValidationRules>
+
+    <validation:ValidationRules x:Key="Decimal2RegexValidationRule">
+        <validation:ValidationRules.Rules>
+            <validation:RegexValidationRule RegexPattern="^\d+([,.]\d{0,2})?$" />
+        </validation:ValidationRules.Rules>
+    </validation:ValidationRules>
+
+</ResourceDictionary>

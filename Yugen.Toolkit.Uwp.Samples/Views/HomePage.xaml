@@ -7,20 +7,19 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel Spacing="4">
-        <TextBlock Style="{ThemeResource TitleTextBlockStyle}">Welcome To Yugen Toolkit Samples App</TextBlock>
+        <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
+                   Text="Welcome To Yugen Toolkit Samples App" />
 
-        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Get Started</TextBlock>
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                   Text="Get Started" />
 
-        <TextBlock Style="{ThemeResource BodyTextBlockStyle}">
-            The Yugen Toolkit is a collection of helper functions, custom controls, and app services. It helps develop common task for UWP apps.
-        </TextBlock>
+        <TextBlock Style="{ThemeResource BodyTextBlockStyle}"
+                   Text="The Yugen Toolkit is a collection of helper functions, custom controls, and app services. It helps develop common task for UWP apps." />
 
-        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Useful Links</TextBlock>
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}"
+                   Text="Useful Links" />
 
         <HyperlinkButton Content="GitHub Repository"
                          NavigateUri="https://github.com/panda-sharp/Toolkit/" />
-
-        <Button Content="Load"
-                Click="OnLoadButtonClick" />
     </StackPanel>
 </Page>

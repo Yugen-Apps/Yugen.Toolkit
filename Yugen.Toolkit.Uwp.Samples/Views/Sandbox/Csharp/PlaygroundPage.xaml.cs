@@ -1,30 +1,104 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using Microsoft.Toolkit.Uwp.Helpers;
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Windows.Storage;
+using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 
-namespace Yugen.Toolkit.Uwp.Samples.Views.Others
+namespace Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Csharp
 {
-    public sealed partial class SamplesPage : Page
+    public sealed partial class PlaygroundPage : Page
     {
-        public SamplesPage()
+        public PlaygroundPage()
         {
             this.InitializeComponent();
         }
 
-        //public async Task RunTasks(WriteableBitmap clone)
-        //{
-        //    var tasks = new List<Task>();
+        private async void OnLoadButtonClick(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var file = await GetFile();
 
-        //    tasks.Add(Task.Run(() => DoWork(400, 1, clone)));
-        //    tasks.Add(Task.Run(() => DoWork(200, 2, clone)));
-        //    tasks.Add(Task.Run(() => DoWork(300, 3, clone)));
+            byte[] bytes;
+            if (file != null)
+            {
+                bytes = await file.ReadBytesAsync();
+            }
+            // bytes = null;
+        }
 
-        //    await Task.WhenAll(tasks);
-        //}
+        private async void OnLoadButton2Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var file = await GetFile();
 
-        //public async Task DoWork(int delay, int n, WriteableBitmap masterImageSource)
-        //{
-        //    await Task.Delay(delay);
-        //    System.Diagnostics.Debug.WriteLine($"{n} {masterImageSource.PixelHeight}");
-        //}
+            byte[] bytes;
+            if (file != null)
+            {
+                using (IRandomAccessStream stream = await file.OpenReadAsync())
+                {
+                    using (var reader = new DataReader(stream.GetInputStreamAt(0)))
+                    {
+                        await reader.LoadAsync((uint)stream.Size);
+                        bytes = new byte[stream.Size];
+                        reader.ReadBytes(bytes);
+                    }
+                }
+            }
+            // bytes = null;
+        }
+
+        private async void OnLoadButton3Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var file = await GetFile();
+
+            byte[] bytes;
+            if (file != null)
+            {
+
+                using (Stream stream = await file.OpenStreamForReadAsync())
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        stream.CopyTo(ms);
+                        bytes = ms.ToArray();
+                    }
+                }
+            }
+            // bytes = null;
+        }
+
+        private async Task<StorageFile> GetFile()
+        {
+            FileOpenPicker picker = new FileOpenPicker
+            {
+                SuggestedStartLocation = PickerLocationId.Downloads,
+            };
+            picker.FileTypeFilter.Add("*");
+
+            return await picker.PickSingleFileAsync();
+        }
+
+        private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            FlyoutButton.ContextFlyout.ShowAt((FrameworkElement)sender);
+        }
+
+        private void Image_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            var flyout = FlyoutBase.GetAttachedFlyout((FrameworkElement)sender);
+            var options = new FlyoutShowOptions()
+            {
+                // Position shows the flyout next to the pointer.
+                // "Transient" ShowMode makes the flyout open in its collapsed state.
+                Position = e.GetPosition((FrameworkElement)sender),
+                ShowMode = FlyoutShowMode.Transient,
+                Placement = FlyoutPlacementMode.TopEdgeAlignedLeft
+            };
+            flyout?.ShowAt((FrameworkElement)sender, options);
+        }
     }
 
     //    public static class SettingsStorageExtensions

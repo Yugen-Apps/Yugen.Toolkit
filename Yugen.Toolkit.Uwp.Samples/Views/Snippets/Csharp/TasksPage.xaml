@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp.TasksPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Spacing="4">
+
+        <Button Content="Start"
+                Click="OnStartButtonClick" />
+
+        <Button Content="Start"
+                Click="OnStartButton2Click" />
+
+        <Button Content="Start"
+                Click="OnStartButton3Click" />
+
+        <Button Content="Start"
+                Click="OnStartButton4Click" />
+
+        <Button Content="Start"
+                Click="OnStartButton5Click" />
+
+        <ListView x:Name="MyListView"
+                  ItemsSource="{x:Bind MyCollection, Mode=OneWay}" />
+    </StackPanel>
+</Page>

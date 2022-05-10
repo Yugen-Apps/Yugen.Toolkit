@@ -8,7 +8,7 @@ namespace Yugen.Toolkit.Standard.Data.Sample.Models
         public string Title { get; set; }
         public string Content { get; set; }
 
-        public int BlogId { get; set; }
+        public Guid BlogId { get; set; }
         public Blog Blog { get; set; }
     }
 }

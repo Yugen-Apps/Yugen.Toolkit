@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///Styles/Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Default">            
+            <StaticResource x:Key="ButtonBackgroundPointerOver"
+                            ResourceKey="MyBackgroundPointerOver" />
+            <StaticResource x:Key="ButtonBackgroundPressed"
+                            ResourceKey="MyBackgroundPressed" />
+            
+            <Style x:Key="MyButtonStyle"
+                   TargetType="Button"
+                   BasedOn="{StaticResource AccentButtonStyle}">
+                <Setter Property="Foreground"
+                        Value="{ThemeResource ForegroundBrush}" />
+            </Style>
+        </ResourceDictionary>
+        
+        <!--<ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                             Color="{StaticResource YellowColor}"
+                             Opacity="0.8" />
+            <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                             Color="{StaticResource YellowColor}"
+                             Opacity="0.6" />
+        </ResourceDictionary>-->        
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>

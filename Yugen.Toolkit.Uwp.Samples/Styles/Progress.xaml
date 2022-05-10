@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///Styles/Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <StaticResource x:Key="ProgressBarForeground"
+                    ResourceKey="ForegroundBrush" />
+
+    <!--<Style x:Key="MyProgressBarStyle"
+           TargetType="muxc:ProgressBar">
+        <Setter Property="Foreground"
+                Value="{ThemeResource ForegroundBrush}" />
+    </Style>-->
+
+</ResourceDictionary>
