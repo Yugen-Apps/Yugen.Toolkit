@@ -1,4 +1,6 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Windows.UI.Xaml.Controls;
+using Yugen.Toolkit.Uwp.Samples.ViewModels;
 
 namespace Yugen.Toolkit.Uwp.Samples.Views
 {
@@ -10,6 +12,10 @@ namespace Yugen.Toolkit.Uwp.Samples.Views
         public HomePage()
         {
             this.InitializeComponent();
+
+            DataContext = App.Current.Services.GetService<HomeViewModel>();
         }
+
+        private HomeViewModel ViewModel => (HomeViewModel)DataContext;
     }
 }

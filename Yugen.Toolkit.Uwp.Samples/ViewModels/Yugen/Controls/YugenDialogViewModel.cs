@@ -1,4 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Threading.Tasks;
 using Yugen.Toolkit.Standard.Mvvm;

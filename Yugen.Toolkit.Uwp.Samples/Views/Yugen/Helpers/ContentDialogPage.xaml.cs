@@ -1,4 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Yugen.Toolkit.Uwp.Helpers;

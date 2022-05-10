@@ -1,4 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.Input;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Standard.Mvvm.Mediator;
 

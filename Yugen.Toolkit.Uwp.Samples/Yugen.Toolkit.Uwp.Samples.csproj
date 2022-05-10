@@ -111,6 +111,7 @@
     <Compile Include="ObservableObjects\BlogObservableObject.cs" />
     <Compile Include="Comparers\BlogObservableObjectComparer.cs" />
     <Compile Include="ViewModels\Sandbox\Csharp\DeferralViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Converters\EnumToBooleanConverterViewModel.cs" />
     <Compile Include="ViewModels\Snippets\Mvvm\XamlViewModel.cs" />
@@ -504,6 +505,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm">
+      <Version>7.1.2</Version>
+    </PackageReference>
     <PackageReference Include="Fluent.Icons">
       <Version>1.1.110</Version>
     </PackageReference>

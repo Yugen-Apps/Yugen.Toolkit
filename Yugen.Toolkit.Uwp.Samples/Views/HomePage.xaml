@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -20,6 +21,18 @@
                    Text="Useful Links" />
 
         <HyperlinkButton Content="GitHub Repository"
-                         NavigateUri="https://github.com/panda-sharp/Toolkit/" />
+                         NavigateUri="{x:Bind ViewModel.GitHubRepositoryUrl, Mode=OneWay}" />
+        
+        <TextBlock>
+            <Run Text="Task status:" />
+            <Run Text="{x:Bind ViewModel.DownloadTextCommand.ExecutionTask.Status, Mode=OneWay}" />
+            <LineBreak />
+            <!--<Run Text="Result:" />
+            <Run Text="{x:Bind ViewModel.DownloadTextCommand.ExecutionTask, Converter={StaticResource TaskResultConverter}, Mode=OneWay}" />-->
+        </TextBlock>
+        <Button Command="{x:Bind ViewModel.DownloadTextCommand}"
+                Content="Click me!" />
+        <muxc:ProgressRing HorizontalAlignment="Left"
+                           IsActive="{x:Bind ViewModel.DownloadTextCommand.IsRunning, Mode=OneWay}" />
     </StackPanel>
 </Page>

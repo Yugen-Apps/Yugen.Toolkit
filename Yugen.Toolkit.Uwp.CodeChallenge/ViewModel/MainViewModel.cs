@@ -1,5 +1,5 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
 using Yugen.Toolkit.Uwp.CodeChallenge.Interfaces;
 using Yugen.Toolkit.Uwp.CodeChallenge.Model;
