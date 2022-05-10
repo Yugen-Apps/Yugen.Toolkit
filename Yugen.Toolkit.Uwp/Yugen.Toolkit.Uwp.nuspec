@@ -20,8 +20,8 @@
 		<repository type="git" url="https://github.com/panda-sharp/Yugen.Toolkit.git" />
 		<dependencies>
 			<group targetFramework="uap10.0.18362">
-				<dependency id="Yugen.Toolkit.Standard" exclude="Build,Analyzers" />
-				<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" exclude="Build,Analyzers" />
+				<dependency id="Yugen.Toolkit.Standard" version="*" exclude="Build,Analyzers" />
+				<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="*" exclude="Build,Analyzers" />
 			</group>
 		</dependencies>
 	</metadata>
