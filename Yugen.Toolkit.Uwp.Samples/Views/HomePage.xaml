@@ -20,6 +20,6 @@
                    Text="Useful Links" />
 
         <HyperlinkButton Content="GitHub Repository"
-                         NavigateUri="https://github.com/panda-sharp/Toolkit/" />
+                         NavigateUri="{x:Bind ViewModel.GitHubRepositoryUrl, Mode=OneWay}" />
     </StackPanel>
 </Page>

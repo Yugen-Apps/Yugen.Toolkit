@@ -175,6 +175,7 @@ namespace Yugen.Toolkit.Uwp.Samples
                 .AddSingleton<IThemeSelectorService, ThemeSelectorService>()
                 // Root
                 .AddSingleton<AppShellViewModel>()
+                .AddTransient<HomeViewModel>()
                 .AddTransient<SettingsViewModel>()
                 // Microsoft
                 .AddTransient<CommandViewModel>()
