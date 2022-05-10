@@ -91,6 +91,25 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp
             //await Task.WhenAll(tasks);
         }
 
+        private async void OnStartButton6Click(object sender, RoutedEventArgs e)
+        {
+            MyCollection.Clear();
+            var tasks = new List<Task>();
+
+            for (int i = 0; i < 100; i++)
+            {
+                var t = new Task(DoWorkAction(_random.Next(1, 10), i));
+                tasks.Add(t);
+            }
+
+            Parallel.ForEach(tasks, task =>
+            {
+                Task.Run(() => task.Start());
+            });
+
+            //await Task.WhenAll(tasks);
+        }
+
         private async Task DoWork(int delay, int content)
         {
             var start = DateTime.Now.Ticks;
@@ -100,6 +119,20 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp
             {
                 MyCollection.Add($"{content}: {start}/{end}");
             });
+        }
+
+        private Action DoWorkAction(int delay, int content)
+        {
+            return async () =>
+            {
+                var start = DateTime.Now.Ticks;
+                await Task.Delay(delay);
+                var end = DateTime.Now.Ticks;
+                await _dispatcherQueue.EnqueueAsync(() =>
+                {
+                    MyCollection.Add($"{content}: {start}/{end}");
+                });
+            };
         }
     }
 }
