@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<PackageId>Yugen.Toolkit.Standard.Core</PackageId>
-		<Version>1.0.50</Version>
+		<Version>1.0.51</Version>
 		<Product>Yugen Toolkit Standard Core</Product>
 		<Authors>panda-sharp</Authors>
 		<Company>panda-sharp</Company>
