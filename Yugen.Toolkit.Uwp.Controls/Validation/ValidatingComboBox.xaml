@@ -1,10 +1,16 @@
 ﻿<validation:BaseValidating x:Class="Yugen.Toolkit.Uwp.Controls.Validation.ValidatingComboBox"
                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                           xmlns:validation="using:Yugen.Toolkit.Uwp.Controls.Validation">
+                           xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+                           xmlns:validation="using:Yugen.Toolkit.Uwp.Controls.Validation"
+                           DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <UserControl.Resources>
-        <ResourceDictionary Source="ms-appx:///Yugen.Toolkit.Uwp.Controls/Validation/Styles.xaml" />
+        <controls:XamlControlsResources>
+            <controls:XamlControlsResources.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Yugen.Toolkit.Uwp.Controls/Validation/Styles.xaml" />
+            </controls:XamlControlsResources.MergedDictionaries>
+        </controls:XamlControlsResources>
     </UserControl.Resources>
 
     <Grid>
@@ -20,8 +26,6 @@
                     <VisualState.Setters>
                         <Setter Target="ErrorMessageTextBlock.(UIElement.Visibility)"
                                 Value="Collapsed" />
-                        <Setter Target="MyComboBox.(Control.BorderBrush)"
-                                Value="{StaticResource ValidatingSuccessBrush}" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Invalid">
@@ -53,7 +57,7 @@
 
         <TextBlock x:Name="ErrorMessageTextBlock"
                    Grid.Row="1"
-                   Style="{StaticResource ValidatingTextBlockStyle}" />
+                   Style="{StaticResource CaptionTextBlockStyle}" />
 
     </Grid>
 

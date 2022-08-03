@@ -52,7 +52,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
                     await zipFile.DeleteAsync(StorageDeleteOption.PermanentDelete);
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 //LoggerHelper.WriteLine(typeof(ZipArchiveHelper), $"Failed to read file ...{ex.Message}");
             }

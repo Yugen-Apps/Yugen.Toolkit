@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<PackageId>Yugen.Toolkit.Standard.Data</PackageId>
-		<Version>1.0.51</Version>
+		<Version>1.0.52</Version>
 		<Product>Yugen Toolkit Standard Data</Product>
 		<Authors>panda-sharp</Authors>
 		<Company>panda-sharp</Company>
@@ -24,8 +24,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.27" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.27">
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.28" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.28">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
