@@ -25,6 +25,9 @@
         <Button Content="Start"
                 Click="OnStartButton5Click" />
 
+        <Button Content="Start"
+                Click="OnStartButton6Click" />
+
         <ListView x:Name="MyListView"
                   ItemsSource="{x:Bind MyCollection, Mode=OneWay}" />
     </StackPanel>

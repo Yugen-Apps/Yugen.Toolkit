@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<PackageId>Yugen.Toolkit.Standard</PackageId>
-		<Version>1.0.50</Version>
+		<Version>1.0.51</Version>
 		<Product>Yugen Toolkit Standard</Product>
 		<Authors>panda-sharp</Authors>
 		<Company>panda-sharp</Company>
@@ -26,7 +26,7 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-		<PackageReference Include="System.Text.Json" Version="6.0.3" />
+		<PackageReference Include="System.Text.Json" Version="6.0.5" />
 	</ItemGroup>
 
 	<ItemGroup>
