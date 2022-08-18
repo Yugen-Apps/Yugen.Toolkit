@@ -1,31 +1,25 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <ResourceDictionary.MergedDictionaries>
-        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-        <!-- Other merged dictionaries here -->
-    </ResourceDictionary.MergedDictionaries>
-
-    <!-- Other app resources here -->
-    <Color x:Key="ValidatingErrorColor">red</Color>
-    <SolidColorBrush x:Key="ValidatingErrorBrush"
-                     Color="{StaticResource ValidatingErrorColor}" />
-
-    <Color x:Key="ValidatingSuccessColor">Gray</Color>
-    <SolidColorBrush x:Key="ValidatingSuccessBrush"
-                     Color="{StaticResource ValidatingSuccessColor}" />
-
-    <Style x:Key="ValidatingTextBlockStyle"
-           TargetType="TextBlock">
-        <Setter Property="Foreground"
-                Value="White" />
-        <Setter Property="FontSize"
-                Value="12" />
-        <Setter Property="TextWrapping"
-                Value="WrapWholeWords" />
-        <Setter Property="FontWeight"
-                Value="SemiLight" />
-    </Style>
+    <Color x:Key="ValidatingErrorColor">#FFDC143C</Color>
     
+    <!--
+    TextControlElevationBorderBrush
+    TextControlElevationBorderFocusedBrush
+    -->
+    <LinearGradientBrush x:Key="ValidatingErrorBrush"
+                         MappingMode="Absolute"
+                         StartPoint="0,0"
+                         EndPoint="0,2">
+        <LinearGradientBrush.RelativeTransform>
+            <ScaleTransform ScaleY="-1"
+                            CenterY="0.5" />
+        </LinearGradientBrush.RelativeTransform>
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="1.0"
+                          Color="{StaticResource ValidatingErrorColor}" />
+            <GradientStop Offset="1.0"
+                          Color="{StaticResource ControlStrokeColorDefault}" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
 </ResourceDictionary>

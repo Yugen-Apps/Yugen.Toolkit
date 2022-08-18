@@ -35,5 +35,14 @@ namespace Yugen.Toolkit.Standard.Helpers
 
         public static double ConvertRadiansToAngle(double radians) =>
             180 / Math.PI * radians;
+
+        /// <summary>
+        /// Return a value multiple of
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="multipleOf"></param>
+        /// <returns></returns>
+        public static double RoundToNearestMultiple(double value, double multipleOf) =>
+            Math.Round(value / multipleOf) * multipleOf;
     }
 }
