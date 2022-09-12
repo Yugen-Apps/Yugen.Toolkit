@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.Collections;
+using System;
 using System.Linq;
-using Microsoft.Toolkit.Collections;
 
 namespace Yugen.Toolkit.Uwp.Extensions
 {
@@ -41,16 +41,16 @@ namespace Yugen.Toolkit.Uwp.Extensions
         public static void AddSorted<TKey, TSource>(this ObservableGroupedCollection<TKey, TSource> collection,
             ObservableGroup<TKey, TSource> item) where TKey : IComparable<TKey>
         {
-            var i = collection.Select((Value, Index) => new { Value, Index }).FirstOrDefault(x => x.Value.Key.CompareTo(item.Key) > 0);
+            //var i = collection.Select((Value, Index) => new { Value, Index }).FirstOrDefault(x => x.Value.Key.CompareTo(item.Key) > 0);
 
-            if (i == null)
-            {
+            //if (i == null)
+            //{
                 collection.Add(item);
-            }
-            else
-            {
-                collection.Insert(i.Index, item);
-            }
+            //}
+            //else
+            //{
+            //    collection.Insert(i.Index, item);
+            //}
         }
     }
 }

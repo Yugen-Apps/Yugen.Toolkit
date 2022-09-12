@@ -13,10 +13,16 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using Yugen.Audio.Samples.Interfaces;
+using Yugen.Audio.Samples.Services;
+using Yugen.Audio.Samples.ViewModels.Controls;
+using Yugen.Audio.Samples.ViewModels;
 using Yugen.Toolkit.Standard.Data.Extensions;
 using Yugen.Toolkit.Standard.Data.Sample;
 using Yugen.Toolkit.Standard.Data.Sample.Interfaces;
 using Yugen.Toolkit.Standard.Data.Sample.Services;
+using Yugen.Toolkit.Uwp.Audio.Services.Abstractions;
+using Yugen.Toolkit.Uwp.Audio.Services.NAudio;
 using Yugen.Toolkit.Uwp.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.ViewModels;
@@ -31,6 +37,7 @@ using Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml;
 using Yugen.Toolkit.Uwp.Services;
+using Yugen.Toolkit.Uwp.Audio.Services.Common.Helpers;
 
 namespace Yugen.Toolkit.Uwp.Samples
 {
@@ -173,6 +180,9 @@ namespace Yugen.Toolkit.Uwp.Samples
                 // Services
                 .AddSingleton<ITestService, TestService>()
                 .AddSingleton<IThemeSelectorService, ThemeSelectorService>()
+                .AddSingleton<IAudioGraphAudioPlayer, AudioGraphAudioPlayer>()
+                .AddTransient<IWaveformService, WaveformService>()
+                .AddTransient<IBPMService, BPMService>()
                 // Root
                 .AddSingleton<AppShellViewModel>()
                 .AddTransient<HomeViewModel>()
@@ -199,6 +209,16 @@ namespace Yugen.Toolkit.Uwp.Samples
                 .AddTransient<DataViewModel>()
                 .AddTransient<FindControlViewModel>()
                 .AddTransient<ObservableSettingsViewModel>()
+                .AddSingleton<AudioFrameInputNodeViewModel>()
+                .AddSingleton<AudioGraphViewModel>()
+                .AddSingleton<BassViewModel>()
+                .AddSingleton<CsCoreViewModel>()
+                .AddSingleton<SharpDXViewModel>()
+                .AddSingleton<VuBarsVieModel>()
+                .AddSingleton<DeckViewModel>()
+                .AddSingleton<VinylViewModel>()
+                .AddSingleton<WaveformViewModel>()
+                .AddSingleton<LoopbackAudioCaptureViewModel>()
                 // Log
                 .AddLogging(loggingBuilder =>
                 {
@@ -217,6 +237,7 @@ namespace Yugen.Toolkit.Uwp.Samples
             bloggingContext.Database.Migrate();
 
             await Services.GetService<IThemeSelectorService>().InitializeAsync();
+            await AudioDevicesHelper.Initialize();
         }
 
         private void OnUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)

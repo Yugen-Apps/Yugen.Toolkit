@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="Yugen.Toolkit.Uwp.Samples.Views.Yugen.Audio.LoopbackAudioCapturePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Audio"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Spacing="8">
+
+        <ComboBox x:Uid="SettingsMasterAudioDevice"
+                  DisplayMemberPath="Name"
+                  ItemsSource="{x:Bind ViewModel.AudioDeviceCollection, Mode=OneWay}"
+                  SelectedItem="{x:Bind ViewModel.SelectedAudioDevice, Mode=TwoWay}"
+                  Width="200" />
+
+        <ToggleButton x:Name="PlayToggleButton"
+                      IsChecked="{x:Bind ViewModel.IsRecording, Mode=TwoWay}"
+                      Margin="8">
+            <FontIcon FontSize="40"
+                      Glyph="{x:Bind ViewModel.PlayToggleButtonGlyph, Mode=OneWay}" />
+        </ToggleButton>
+
+    </StackPanel>
+</Page>
