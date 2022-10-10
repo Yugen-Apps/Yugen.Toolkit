@@ -673,7 +673,7 @@
       <Version>7.1.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.7.3</Version>
+      <Version>2.8.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
       <Version>2.0.1</Version>
@@ -712,7 +712,7 @@
       <Version>1.0.38</Version>
     </PackageReference>
     <PackageReference Include="Vortice.XAudio2">
-      <Version>2.1.19</Version>
+      <Version>2.1.32</Version>
     </PackageReference>
     <PackageReference Include="Win2D.uwp">
       <Version>1.26.0</Version>
