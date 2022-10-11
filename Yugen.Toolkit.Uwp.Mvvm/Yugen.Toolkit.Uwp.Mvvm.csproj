@@ -1,0 +1,50 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+	<PropertyGroup>
+	  <TargetFrameworks>uap10.0.18362</TargetFrameworks>
+	  <TargetPlatformBaseVersion>10.0</TargetPlatformBaseVersion>
+	  <TargetPlatformRevision>19041</TargetPlatformRevision>
+	  <TargetPlatformMinRevision>18362</TargetPlatformMinRevision>
+	  <TargetPlatformVersion>$(TargetPlatformBaseVersion).$(TargetPlatformRevision).0</TargetPlatformVersion>
+	  <TargetPlatformMinVersion>$(TargetPlatformBaseVersion).$(TargetPlatformMinRevision).0</TargetPlatformMinVersion>
+	  <DebugType>Portable</DebugType>
+	  <GenerateLibraryLayout>true</GenerateLibraryLayout>
+	  <IsPackable>true</IsPackable>
+	  <IsPublishable>true</IsPublishable>
+	  <ExtrasEnableDefaultXamlItems>true</ExtrasEnableDefaultXamlItems>
+	  <EmbedUntrackedSources>true</EmbedUntrackedSources>
+	  <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	  <RootNamespace>Yugen.Toolkit.Uwp.Mvvm</RootNamespace>
+	  <Platforms>x64;ARM64</Platforms>
+	  <RuntimeIdentifiers>win10-x64;win-arm64</RuntimeIdentifiers>
+	  <NoWarn>$(NoWarn);NETSDK1023</NoWarn>
+	</PropertyGroup>
+  
+	<PropertyGroup>
+	  <PackageId>Yugen.Toolkit.Uwp.Mvvm</PackageId>
+	  <PackageVersion>0.0.1-preview</PackageVersion>
+	  <Description>A UWP library</Description>
+	  <Author>panda-sharp</Author>
+	  <Authors>$(Author)</Authors>
+	  <Title>$(PackageId)</Title>
+	  <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+	  <PackageProjectUrl>https://github.com/$(Author)/$(PackageId)</PackageProjectUrl>
+	  <PackageIcon>images\icon.png</PackageIcon>
+	  <PackageReadmeFile>docs\Readme.md</PackageReadmeFile>
+	  <!-- <PackageReleaseNotes>releaseNotes</PackageReleaseNotes> -->
+	  <!-- <Copyright>Copyright</Copyright> -->
+	  <PackageTags>uwp</PackageTags>
+	  <RepositoryUrl>https://github.com/$(Author)/$(PackageId).git"</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+  
+	<ItemGroup>
+	  <None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
+	  <None Include="..\Docs\Readme.md" Pack="true" PackagePath="\docs\" />
+	</ItemGroup>
+  
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.14" />
+	</ItemGroup>
+  
+  </Project>
