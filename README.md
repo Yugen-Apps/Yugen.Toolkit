@@ -12,10 +12,3 @@ The project has been primarily built for the universal Windows platform (UWP), s
 
 ## Docs
 [https://panda-sharp.github.io/Yugen.Toolkit.Docs/](https://panda-sharp.github.io/Yugen.Toolkit.Docs/)
-
-
-msbuild C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj /p:Configuration=Release /t:pack
-msbuild C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Uwp.Mvvm\Yugen.Toolkit.Uwp.Mvvm.csproj /p:Configuration=Release /t:pack
-
-msbuild C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj /p:Configuration=Release
-.\nuget.exe pack C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj -properties Configuration=Release
