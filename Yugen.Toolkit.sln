@@ -23,6 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yugen.Toolkit.Standard.Secu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{FBFFFB30-2C0E-4868-A203-D71F8918CD59}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\nuget-uwp-mvvm.yml = .github\workflows\nuget-uwp-mvvm.yml
 		.github\workflows\nugetStandard.yml = .github\workflows\nugetStandard.yml
 		.github\workflows\nugetStandardCore.yml = .github\workflows\nugetStandardCore.yml
 		.github\workflows\nugetStandardData.yml = .github\workflows\nugetStandardData.yml
@@ -82,6 +83,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AudioVisualizer", "AudioVisualizer\AudioVisualizer.vcxproj", "{DA1A2266-1149-4A19-8A3A-3F1CA7717A6F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScreenSenderComponent", "ScreenSenderComponent\ScreenSenderComponent.vcxproj", "{9762CC81-D63D-4952-9CBA-F812755C3444}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yugen.Toolkit.Uwp.Mvvm", "Yugen.Toolkit.Uwp.Mvvm\Yugen.Toolkit.Uwp.Mvvm.csproj", "{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -575,6 +578,26 @@ Global
 		{9762CC81-D63D-4952-9CBA-F812755C3444}.Release|x64.Build.0 = Release|x64
 		{9762CC81-D63D-4952-9CBA-F812755C3444}.Release|x86.ActiveCfg = Release|Win32
 		{9762CC81-D63D-4952-9CBA-F812755C3444}.Release|x86.Build.0 = Release|Win32
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|ARM.Build.0 = Debug|ARM
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|ARM64.Build.0 = Debug|ARM64
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|x64.ActiveCfg = Debug|x64
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|x64.Build.0 = Debug|x64
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|x86.ActiveCfg = Debug|x86
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Debug|x86.Build.0 = Debug|x86
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|ARM.ActiveCfg = Release|ARM
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|ARM.Build.0 = Release|ARM
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|ARM64.ActiveCfg = Release|ARM64
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|ARM64.Build.0 = Release|ARM64
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|x64.ActiveCfg = Release|x64
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|x64.Build.0 = Release|x64
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|x86.ActiveCfg = Release|x86
+		{395D85CB-BCDA-4232-AA5E-C7CC30C42C2D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
