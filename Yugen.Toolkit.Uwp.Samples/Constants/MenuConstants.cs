@@ -1,5 +1,6 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using System.Collections.Generic;
+using Yugen.Audio.Samples.Views;
 using Yugen.Toolkit.Standard.Helpers;
 using Yugen.Toolkit.Uwp.Samples.Views;
 using Yugen.Toolkit.Uwp.Samples.Views.Microsoft.Mvvm;
@@ -13,6 +14,7 @@ using Yugen.Toolkit.Uwp.Samples.Views.Snippets.MediaCompositionNS;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Mvvm;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Win2D;
 using Yugen.Toolkit.Uwp.Samples.Views.Snippets.Xaml;
+using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Audio;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Collections;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Controls;
 using Yugen.Toolkit.Uwp.Samples.Views.Yugen.Data;
@@ -86,6 +88,19 @@ namespace Yugen.Toolkit.Uwp.Samples.Constants
             }),
 
             NewHeader("Yugen Toolkit"),
+            NewSubMenu("Audio",new List<NavigationViewItem>
+            {
+                NewItem(nameof(AudioGraphPage)),
+                NewItem(nameof(BassPage)),
+                NewItem(nameof(CsCorePage)),
+                NewItem(nameof(SharpDXPage)),
+                NewItem(nameof(AudioFrameInputNodePage)),
+                NewItem(nameof(WaveformPage)),
+                NewItem(nameof(VinylPage)),
+                NewItem(nameof(DeckPage)),
+                NewItem(nameof(VuBarPage)),
+                NewItem(nameof(LoopbackAudioCapturePage))
+            }),
             NewSubMenu("Collections",new List<NavigationViewItem>
             {
                 NewItem (nameof (GroupedCollectionPage)),

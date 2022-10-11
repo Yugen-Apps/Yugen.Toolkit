@@ -441,6 +441,21 @@
             GetBindingConnector(int connectionId, object target)
             </summary>
         </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Audio.LoopbackAudioCapturePage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Audio.LoopbackAudioCapturePage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Audio.LoopbackAudioCapturePage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
         <member name="M:Yugen.Toolkit.Uwp.Samples.Views.Yugen.Collections.StretchedCollectionPage.InitializeComponent">
             <summary>
             InitializeComponent()
@@ -709,6 +724,279 @@
         <member name="M:Yugen.Toolkit.Uwp.Samples.Yugen_Toolkit_Uwp_Samples_XamlTypeInfo.XamlMetaDataProvider.GetXmlnsDefinitions">
             <summary>
             GetXmlnsDefinitions()
+            </summary>
+        </member>
+        <member name="F:Yugen.Audio.Samples.Models.AudioPlayerState.Stopped">
+            <summary>
+            The player is stopped (default).
+            </summary>
+        </member>
+        <member name="F:Yugen.Audio.Samples.Models.AudioPlayerState.Playing">
+            <summary>
+            The player is playing a sound.
+            </summary>
+        </member>
+        <member name="F:Yugen.Audio.Samples.Models.AudioPlayerState.Paused">
+            <summary>
+            The player is paused.
+            </summary>
+        </member>
+        <member name="P:Yugen.Audio.Samples.Services.BassPlayer.Volume">
+            <summary>
+            Gets or Sets the Volume (0 ... 1.0).
+            </summary>
+        </member>
+        <member name="P:Yugen.Audio.Samples.Services.BassPlayer.Pitch">
+            <summary>
+            Gets or Sets the Pitch in Semitones (-60 ... 0 ... 60).
+            </summary>
+        </member>
+        <member name="P:Yugen.Audio.Samples.Services.BassPlayer.Tempo">
+            <summary>
+            Gets or Sets the Tempo in Percentage (-95% ... 0 ... 5000%)
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yugen.Audio.Samples.Services.SharpDXAudioPlayer" /> class.
+            </summary>
+        </member>
+        <member name="P:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.State">
+            <summary>
+            Gets the state of this instance.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="P:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.Duration">
+            <summary>
+            Gets the duration in seconds of the current sound.
+            </summary>
+            <value>The duration.</value>
+        </member>
+        <member name="P:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.Position">
+            <summary>
+            Gets or sets the position in seconds.
+            </summary>
+            <value>The position.</value>
+        </member>
+        <member name="P:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.IsRepeating">
+            <summary>
+            Gets or sets a value indicating whether to the sound is looping when the end of the buffer is reached.
+            </summary>
+            <value><c>true</c> if to loop the sound; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.Volume">
+            <summary>
+            Gets or sets the volume.
+            </summary>
+            <value>The volume.</value>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.Close">
+            <summary>
+            Close this audio player.
+            </summary>
+            <remarks>
+            This is similar to call Stop(), Dispose(), Wait().
+            </remarks>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.Play">
+            <summary>
+            Plays the sound.
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.Pause">
+            <summary>
+            Pauses the sound.
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.Stop">
+            <summary>
+            Stops the sound.
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.Wait">
+            <summary>
+            Wait that the player is finished.
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.PlayAsync">
+            <summary>
+            Internal method to play the sound.
+            </summary>
+        </member>
+        <member name="P:Yugen.Audio.Samples.ViewModels.BassViewModel.Volume">
+            <summary>
+            Gets or Sets the Volume (0 ... 1.0).
+            </summary>
+        </member>
+        <member name="P:Yugen.Audio.Samples.ViewModels.BassViewModel.Pitch">
+            <summary>
+            Gets or Sets the Pitch in Semitones (-60 ... 0 ... 60).
+            </summary>
+        </member>
+        <member name="P:Yugen.Audio.Samples.ViewModels.BassViewModel.Tempo">
+            <summary>
+            Gets or Sets the Tempo in Percentage (-95% ... 0 ... 5000%)
+            </summary>
+        </member>
+        <member name="T:Yugen.Audio.Samples.Views.AudioFrameInputNodePage">
+            <summary>
+            AudioFrameInputNodeDemo
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.AudioFrameInputNodePage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.AudioFrameInputNodePage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.AudioFrameInputNodePage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.AudioGraphPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.AudioGraphPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.AudioGraphPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="T:Yugen.Audio.Samples.Views.BassPage">
+            <summary>
+            An empty page that can be used on its own or navigated to within a Frame.
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.BassPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.BassPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.BassPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.Controls.VuBars.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.Controls.VuBars.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.Controls.VuBars.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.CsCorePage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.CsCorePage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.CsCorePage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.DeckPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.DeckPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.DeckPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.SharpDXPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.SharpDXPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.SharpDXPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.VinylPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.VinylPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.VinylPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.VuBarPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.VuBarPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.VuBarPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.WaveformPage.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.WaveformPage.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Yugen.Audio.Samples.Views.WaveformPage.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
             </summary>
         </member>
         <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">

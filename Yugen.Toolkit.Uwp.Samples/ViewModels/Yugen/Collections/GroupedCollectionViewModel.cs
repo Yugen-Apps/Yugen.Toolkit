@@ -1,11 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Collections;
 using System.Linq;
+using Windows.UI.Xaml.Data;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Extensions;
 using Yugen.Toolkit.Uwp.Samples.Constants;
 using Yugen.Toolkit.Uwp.Samples.Models;
-using Microsoft.Toolkit.Collections;
-using Windows.UI.Xaml.Data;
 
 namespace Yugen.Toolkit.Uwp.Samples.ViewModels.Yugen.Collections
 {
