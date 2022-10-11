@@ -60,7 +60,7 @@
         </StackPanel>
         <WebView  HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch"
-                  Source="ms-appx-web:///Assets/Html/Rsod.html"></WebView>
+                  Source="ms-appx-web:///Assets/Html/Rsod.html" />
     </Grid>
 
 </Page>

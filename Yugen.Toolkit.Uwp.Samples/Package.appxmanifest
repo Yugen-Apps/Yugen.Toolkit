@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6" IgnorableNamespaces="uap mp uap6">
   <Identity Name="Yugen.Toolkit.Uwp.Samples" Publisher="CN=0259C6DD-5945-485D-962F-C84F7531D6C4" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="163b9713-b166-4c8c-b327-9d1be790ce42" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
@@ -23,6 +23,7 @@
     </Application>
   </Applications>
   <Capabilities>
+    <uap6:Capability Name="graphicsCapture" />
     <Capability Name="internetClient" />
   </Capabilities>
 </Package>

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.Collections;
+using System;
 using System.Linq;
-using Microsoft.Toolkit.Collections;
 
 namespace Yugen.Toolkit.Uwp.Extensions
 {

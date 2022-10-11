@@ -40,7 +40,6 @@
   
 	<ItemGroup>
 	  <None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
-	  <None Include="..\Docs\Readme.md" Pack="true" PackagePath="\docs\" />
 	</ItemGroup>
   
 	<ItemGroup>

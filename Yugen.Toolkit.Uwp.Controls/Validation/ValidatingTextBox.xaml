@@ -1,12 +1,17 @@
-﻿<validation:BaseValidating 
-    x:Class="Yugen.Toolkit.Uwp.Controls.Validation.ValidatingTextBox"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:validation="using:Yugen.Toolkit.Uwp.Controls.Validation"
-    DataContext="{Binding RelativeSource={RelativeSource Self}}">
+﻿<validation:BaseValidating x:Class="Yugen.Toolkit.Uwp.Controls.Validation.ValidatingTextBox"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+                           xmlns:validation="using:Yugen.Toolkit.Uwp.Controls.Validation"
+                           DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <UserControl.Resources>
-        <ResourceDictionary Source="ms-appx:///Yugen.Toolkit.Uwp.Controls/Validation/Styles.xaml" />
+        <controls:XamlControlsResources>
+            <controls:XamlControlsResources.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Yugen.Toolkit.Uwp.Controls/Validation/Styles.xaml" />
+                <!--<ResourceDictionary></ResourceDictionary>-->
+            </controls:XamlControlsResources.MergedDictionaries>
+        </controls:XamlControlsResources>
     </UserControl.Resources>
 
     <Grid>
@@ -22,8 +27,6 @@
                     <VisualState.Setters>
                         <Setter Target="ErrorMessageTextBlock.(UIElement.Visibility)"
                                 Value="Collapsed" />
-                        <Setter Target="MyTextBox.(Control.BorderBrush)"
-                                Value="{StaticResource ValidatingSuccessBrush}" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Invalid">
@@ -52,15 +55,15 @@
                  InputScope="{x:Bind InputScope, Mode=OneWay}"
                  IsSpellCheckEnabled="{x:Bind IsSpellCheckEnabled, Mode=OneWay}"
                  PlaceholderText="{x:Bind PlaceholderText, Mode=OneWay}"
-                 Style="{x:Bind TextBoxStyle, Mode=OneWay}" 
+                 Style="{x:Bind TextBoxStyle, Mode=OneWay}"
                  TextWrapping="Wrap"
                  Text="{x:Bind Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  TextChanging="MyTextBox_OnTextChanging"
-                 TextChanged="MyTextBox_OnTextChanged"/>
+                 TextChanged="MyTextBox_OnTextChanged" />
 
         <TextBlock x:Name="ErrorMessageTextBlock"
                    Grid.Row="1"
-                   Style="{StaticResource ValidatingTextBlockStyle}" />
+                   Style="{StaticResource CaptionTextBlockStyle}" />
 
     </Grid>
 
