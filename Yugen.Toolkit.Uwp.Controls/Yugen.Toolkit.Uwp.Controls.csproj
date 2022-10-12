@@ -56,7 +56,7 @@
 		<None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
 		<None Include="..\Readme.md" Pack="true" PackagePath="\docs\" />
 		<!-- XAML control -->
-		<None Include="bin\Release\Yugen.Toolkit.Uwp.Controls\**\*.xaml" Pack="true" PackagePath="\lib\uap10.0.18362\Yugen.Toolkit.Uwp.Controls" />
+		<None Include="bin\Release\uap10.0.18362\Yugen.Toolkit.Uwp.Controls\**\*.xaml" Pack="true" PackagePath="\lib\uap10.0.18362\Yugen.Toolkit.Uwp.Controls" />
 	</ItemGroup>
 
 	<ItemGroup>
