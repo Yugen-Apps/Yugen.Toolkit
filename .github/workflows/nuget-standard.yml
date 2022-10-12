@@ -1,8 +1,8 @@
-name: Yugen.Toolkit.Uwp/Build, Pack and Publish Nuget
+name: Yugen.Toolkit.Standard/Build, Pack and Publish Nuget
 on:
   push:
-    branches:    
-      - main   
+    branches:
+      - release/*
 
 jobs:   
   build_pack_publish:
@@ -11,14 +11,26 @@ jobs:
     env:
       SOLUTION_FILE: Yugen.Toolkit.sln
       CONFIGURATION: Release
-      PROJECT_FOLDER: Yugen.Toolkit.Uwp
-      PROJECT_FILE: Yugen.Toolkit.Uwp.csproj
+      PROJECT_FOLDER: Yugen.Toolkit.Standard
+      PROJECT_FILE: Yugen.Toolkit.Standard.csproj
       NUGET_SOURCE_URL: https://api.nuget.org/v3/index.json
       GH_NUGET_SOURCE_NAME: GitHub
       GH_NUGET_SOURCE_URL: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
 
     steps:
-    - uses: actions/checkout@v1   
+    - name: Checkout
+      uses: actions/checkout@v3.1.0  
+      with:
+        fetch-depth: 0
+      
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0.9.13
+      with:
+        versionSpec: '5.x'        
+      
+    - name: Determine Version
+      id:   gitversion
+      uses: gittools/actions/gitversion/execute@v0.9.13 
 
     - name: Setup NuGet
       uses: nuget/setup-nuget@v1
@@ -33,13 +45,12 @@ jobs:
 
     - name: MSBuild Build
       run: msbuild $env:PROJECT_FOLDER\$env:PROJECT_FILE /p:Configuration=$env:CONFIGURATION
-      
-    - name: Nuget Pack
-      run: nuget pack $env:PROJECT_FOLDER\$env:PROJECT_FILE -properties Configuration=$env:CONFIGURATION
 
+    - name: MSBuild Pack
+      run: msbuild $env:PROJECT_FOLDER\$env:PROJECT_FILE /p:Configuration=$env:CONFIGURATION /t:pack /p:PackageVersion=${{ steps.gitversion.outputs.majorMinorPatch }}
+      
     - name: Nuget Push
-      run: nuget push *.nupkg -Source $env:NUGET_SOURCE_URL
-      continue-on-error: true
+      run: nuget push $env:PROJECT_FOLDER\bin\$env:CONFIGURATION\*.nupkg -Source $env:NUGET_SOURCE_URL -SkipDuplicate
     
     - name: GH Nuget Add Source
       run: nuget source Add -Name $env:GH_NUGET_SOURCE_NAME -Source $env:GH_NUGET_SOURCE_URL -UserName ${{ github.repository_owner }} -Password ${{ secrets.PACKAGES_TOKEN }}
@@ -48,4 +59,4 @@ jobs:
       run: nuget setApiKey ${{ secrets.PACKAGES_TOKEN }} -Source $env:GH_NUGET_SOURCE_NAME
 
     - name: GH Nuget Push
-      run: nuget push *.nupkg -Source $env:GH_NUGET_SOURCE_NAME
+      run: nuget push $env:PROJECT_FOLDER\bin\$env:CONFIGURATION\*.nupkg -Source $env:GH_NUGET_SOURCE_NAME -SkipDuplicate
