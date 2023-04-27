@@ -2,38 +2,47 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<PackageId>Yugen.Toolkit.Standard.Data</PackageId>
-		<Version>1.0.52</Version>
-		<Product>Yugen Toolkit Standard Data</Product>
-		<Authors>panda-sharp</Authors>
-		<Company>panda-sharp</Company>
-		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/panda-sharp/Yugen.Toolkit</PackageProjectUrl>
-		<PackageIcon>icon.png</PackageIcon>
-		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Author>panda-sharp</Author>
+		<Solution>Yugen.Toolkit</Solution>
+		<Project>Yugen.Toolkit.Standard.Data</Project>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>$(Project)</PackageId>
+		<PackageVersion>1.0.0</PackageVersion>
 		<Description>
 			This package includes code .Net Standard EF core data repository and service
 			It is part of the Yugen Toolkit.
 		</Description>
-		<PackageReleaseNotes></PackageReleaseNotes>
-		<Copyright></Copyright>
+		<Authors>$(Author)</Authors>
+		<Title>$(Project)</Title>
+		<!--<Company>panda-sharp</Company>-->
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/$(Author)/$(Solution)</PackageProjectUrl>
+		<PackageIcon>images\icon.png</PackageIcon>
+		<PackageReadmeFile>docs\Readme.md</PackageReadmeFile>
+		<!-- <PackageReleaseNotes>releaseNotes</PackageReleaseNotes> -->
+		<!-- <Copyright>Copyright</Copyright> -->
 		<PackageTags>Yugen Toolkit Data</PackageTags>
 		<RepositoryUrl>https://github.com/panda-sharp/Yugen.Toolkit.git</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.29" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.29">
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.31" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.31">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="Docs\icon.png" Pack="true" PackagePath="\" />
-		<None Include="Docs\Readme.md" Pack="true" PackagePath="\" />
+		<None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
+		<None Include="..\Readme.md" Pack="true" PackagePath="\docs\" />
 	</ItemGroup>
 
 	<ItemGroup>
