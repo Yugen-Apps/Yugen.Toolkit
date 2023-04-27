@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>uap10.0.18362</TargetFrameworks>
 		<TargetPlatformBaseVersion>10.0</TargetPlatformBaseVersion>
-		<TargetPlatformRevision>19041</TargetPlatformRevision>
+		<TargetPlatformRevision>22000</TargetPlatformRevision>
 		<TargetPlatformMinRevision>18362</TargetPlatformMinRevision>
 		<TargetPlatformVersion>$(TargetPlatformBaseVersion).$(TargetPlatformRevision).0</TargetPlatformVersion>
 		<TargetPlatformMinVersion>$(TargetPlatformBaseVersion).$(TargetPlatformMinRevision).0</TargetPlatformMinVersion>
@@ -56,7 +56,7 @@
 		<None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
 		<None Include="..\Readme.md" Pack="true" PackagePath="\docs\" />
 		<!-- XAML control -->
-		<None Include="bin\Release\uap10.0.18362\Yugen.Toolkit.Uwp.Controls\**\*.xaml" Pack="true" PackagePath="\lib\uap10.0.18362\Yugen.Toolkit.Uwp.Controls" />
+		<None Include="bin\Release\uap10.0.22000\Yugen.Toolkit.Uwp.Controls\**\*.xaml" Pack="true" PackagePath="\lib\uap10.0.22000\Yugen.Toolkit.Uwp.Controls" />
 	</ItemGroup>
 
 	<ItemGroup>
