@@ -30,3 +30,9 @@ msbuild C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Contro
 msbuild C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Uwp.Mvvm\Yugen.Toolkit.Uwp.Mvvm.csproj /p:Configuration=Release /t:pack /p:PackageVersion=1.1.1
 
 C:\Dev\.tools\nuget.exe pack C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Uwp.Audio.Services.Abstractions\Yugen.Toolkit.Uwp.Audio.Services.Abstractions.csproj -properties Configuration=Release -Version 1.1.1
+
+## Other
+
+msbuild C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj /p:Configuration=Release /p:TargetFramwork=uap10.0.18362 
+msbuild C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj /p:Configuration=Release /p:TargetFramwork=uap10.0.18362 /p:AppTargetFramework=netstandard2.0
+msbuild C:\Dev\Yugen.Toolkit\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj /p:Configuration=Release /p:TargetFramwork=netstandard2.0 /p:AppTargetFramework=uap10.0.18362
