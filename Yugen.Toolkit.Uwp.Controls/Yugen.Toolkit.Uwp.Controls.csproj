@@ -61,7 +61,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.14" />
-		<PackageReference Include="Microsoft.UI.Xaml" Version="2.7.3" />
+		<PackageReference Include="Microsoft.UI.Xaml" Version="2.8.4" />
 	</ItemGroup>
 
 	<ItemGroup>

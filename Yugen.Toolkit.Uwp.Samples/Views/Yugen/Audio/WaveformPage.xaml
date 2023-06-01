@@ -14,8 +14,12 @@
         <Button Content="Open"
                 Command="{x:Bind ViewModel.OpenCommand}" />
 
-        <controls:Waveform PeakList="{x:Bind ViewModel.PeakList, Mode=OneWay}" />
+        <controls:Waveform PeakList="{x:Bind ViewModel.PeakList, Mode=OneWay}"
+                           Height="100"
+                           Width="500" />
 
-        <controls:Waveform PeakList="{x:Bind ViewModel.PeakList2, Mode=OneWay}" />
+        <controls:Waveform PeakList="{x:Bind ViewModel.PeakList2, Mode=OneWay}"
+                           Height="100"
+                           Width="500" />
     </StackPanel>
 </Page>
